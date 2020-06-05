@@ -1,0 +1,59 @@
+.text {
+	line-height: 1.5;
+	font-size: 16px;
+	p {
+		margin-bottom: 1em;
+		padding-right: 44px;
+		@include r(1260) {
+			padding-right: 0px;
+		}
+	}
+	blockquote {
+		margin-bottom: 1rem;
+		padding-left: 15px;
+		border-left: 2px solid #CAD4D4;
+		font-style: italic;
+	}
+	strong, b {
+		font-weight: bold;
+	}
+	a {
+		color: inherit;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+	i {
+		font-style: italic;
+	}
+	figure {
+		display: block;
+		margin-bottom: 22px;
+	}
+	picture {
+		display: block;
+		margin-bottom: 5px;
+	}
+	img {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+	figcaption {
+		color: #6F8488;
+	}
+	ul {
+		list-style-type: disc;
+		list-style-position: inside;
+		margin-bottom: 2em;
+		line-height: 2;
+		font-size: inherit;
+	}
+	ol {
+		list-style-type: decimal;
+		list-style-position: inside;
+		margin-bottom: 2em;
+		line-height: 2;
+		font-size: inherit;
+	}
+}

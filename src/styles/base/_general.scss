@@ -1,12 +1,31 @@
-h1, h2, h3, h4, h5, h6, ul {
-    margin: 0;
-    padding: 0;
+svg, a {
+	transition: 0.3s all;
 }
 
-.container {
-    @include container();
-    @include sm(max-width, rem(510));
-    @include md(max-width, rem(690));
-    @include lg(max-width, rem(930));
-    @include xl(max-width, rem(1110));
+svg, img {
+	display: block;
+}
+
+.icon-svg {
+	height: 1rem;
+	width: 1rem;
+}
+
+i {
+	font-size: inherit;
+	color: inherit;
+}
+
+.body {
+	// font-family: $font-main;
+	// font-size: 14px;
+	// overflow-x: hidden;
+	// line-height: 1.4;
+	// background-color: #F4F8F8;
+	@include r(1100) {
+
+	}
+	@include r(580) {
+
+	}
 }
