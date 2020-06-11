@@ -17,11 +17,12 @@ i {
 }
 
 .body {
-	// font-family: $font-main;
-	// font-size: 14px;
-	// overflow-x: hidden;
-	// line-height: 1.4;
-	// background-color: #F4F8F8;
+	font-family: $font-main;
+	font-size: 16px;
+	line-height: 1.5;
+	overflow-x: hidden;
+	background-color: $light;
+	color: $dark;
 	@include r(1100) {
 
 	}
