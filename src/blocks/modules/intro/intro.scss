@@ -10,10 +10,17 @@
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
+		@include r(1700) {
+			padding: 41px 47px 63px 47px;
+			min-height: 500px;
+		}
 	}
 	&__thumb {
 		width: 50%;
 		min-height: 636px;
+		@include r(1700) {
+			min-height: 500px;
+		}
 		img {
 			display: block;
 			height: 100%;
@@ -29,12 +36,16 @@
 	&__title {
 		font-weight: bold;
 		font-size: 50px;
-		line-height: 60px;
 		margin-bottom: 45px;
 		text-transform: uppercase;
 		flex-grow: 1;
+		line-height: 1.2;
+		@include r(1700) {
+			font-weight: bold;
+			font-size: 30px;
+		}
 	}
 	&__btn {
-
+		width: 194px;
 	}
 }

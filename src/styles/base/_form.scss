@@ -27,12 +27,15 @@
 }
 
 .btn {
-	// height: 50px;
-	padding: 16px 22px;
+	height: 50px;
+	display: inline-flex;
+	justify-content: center;
+	align-items:center;
 	text-decoration: none;
-	display: inline-block;
 	font-size: 20px;
 	font-weight: bold;
+	transition: 0.3s all;
+	cursor: pointer;
 	&--dark {
 		background-color: $dark;
 		color: $light;
@@ -41,10 +44,13 @@
 	&--green {
 		background-color: $green;
 	}
+	&--gray {
+		// color: $gray;
+		background: #E5E5E5;
+	}
 	&--light {
 		color: $dark;
-		background: #E5E5E5;
-		background-color: #fff;
+		background-color: #ffffff;
 	}
 	&:hover {
 		opacity: 0.7;
