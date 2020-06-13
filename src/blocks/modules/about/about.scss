@@ -1,0 +1,32 @@
+.about {
+	margin-bottom: 50px;
+	padding-top: 50px;
+	&__title {
+		margin-bottom: 38px;
+	}
+	&__columns {
+		display: flex;
+		justify-content: space-between;
+	}
+	&__column {
+		&--video {
+			width: calc(100% / 12 * 7 - 16px);
+			@include r(1700) {
+				width: calc(100% / 12 * 8 - 10px);
+			}
+			iframe {
+				height: 570px;
+				width: 100%;
+				@include r(1700) {
+					height: 470px;
+				}
+			}
+		}
+		&--content {
+			width: calc(100% / 12 * 5 - 16px);
+			@include r(1700) {
+				width: calc(100% / 12 * 4 - 10px);
+			}
+		}
+	}
+}

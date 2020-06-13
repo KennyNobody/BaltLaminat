@@ -5,6 +5,7 @@
 	display: flex;
 	&__main {
 		flex-grow: 1;
+		// margin-bottom: 100px;
 	}
 }
 
@@ -17,5 +18,14 @@
 	padding-right: 15px;
 	@include r(1700) {
 		max-width: 1210px;
+	}
+}
+
+.articles {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	&--around {
+		justify-content: space-around;
 	}
 }
