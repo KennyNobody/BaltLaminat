@@ -1,0 +1,24 @@
+.single {
+	&__content {
+		margin-bottom: 100px;
+	}
+	&__title-black {
+		margin-bottom: 32px;
+	}
+	&__columns {
+		margin-bottom: 48px;
+		display: flex;
+		justify-content: space-between;
+	}
+	&__column {
+		&--4 {
+			width: calc(100% / 12 * 4 - 16px);
+		}
+		&--8 {
+			width: calc(100% / 12 * 8 - 16px);
+		}
+	}
+	&__date {
+		margin-bottom: 32px;
+	}
+}

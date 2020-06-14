@@ -1,6 +1,10 @@
 @import "modules/header/header";
 @import "modules/subscribe/subscribe";
 @import "modules/footer/footer";
+@import "modules/temp/temp";
+@import "modules/modal/modal";
+@import "modules/breadcrumbs/breadcrumbs";
+@import "modules/sidebar/sidebar";
 
 // Front
 @import "modules/intro/intro";
@@ -8,3 +12,6 @@
 @import "modules/news/news";
 @import "modules/about/about";
 @import "modules/partners/partners";
+
+//Pages
+@import "modules/single/single";
