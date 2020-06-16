@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <title>2. Новинки</title>
+    <title>24. Партнер</title>
     @@include("../blocks/modules/head/head.html")
 </head>
 <body class="body">
@@ -9,6 +9,47 @@
         @@include("../blocks/modules/header/header.html")
         <main class="layout__main">
             @@include("../blocks/modules/breadcrumbs/breadcrumbs.html")
+            <section class="single">
+                <div class="container">
+                    <div class="single__content">
+                        <div class="single__columns">
+                            <div class="single__column single__column--8">
+
+                                <!-- Ссылка на сайт партнера, если есть -->
+                                <a href="http://glazovmebel.ru/" target="_blank" class="single__partner">
+                                    <img src="img/partner-1.png" alt="ГлазовМебель">
+                                </a>
+
+                                <h2 class="title-black single__title-black">
+                                    Глазов мебель
+                                </h2>
+                                <div class="text single__text">
+                                    <p>
+                                        Мы — фабрика с 80-летней историей производства. Это означает, что покупать нашу мебель безопасно: вы получаете предсказуемый результат на долгие годы. Причем в любое время в течение этих лет фабрика ответит на любой вопрос своих покупателей.
+                                    </p>
+                                    <p>
+                                        У нас нет собственной розничной сети, потому что мы сосредоточились на том, чтобы делать хорошую мебель. У наших партнеров получается ее хорошо продавать.
+                                    </p>
+                                    <p>
+                                        <a href="http://glazovmebel.ru/" target="_blank">http://glazovmebel.ru/</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        @@include("../blocks/modules/gallery/gallery.html")
+                        <div class="single__back">
+                            <a href="" class="arrow arrow--prev">
+                                <p class="arrow__title">
+                                    Назад
+                                </p>
+                                <svg class="icon-svg">
+                                    <use xlink:href="img/sprites/sprite.svg#icon-back"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
         @@include("../blocks/modules/footer/footer.html")
         @@include("../blocks/modules/temp/temp.html")

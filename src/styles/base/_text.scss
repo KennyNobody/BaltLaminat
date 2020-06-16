@@ -10,11 +10,15 @@
 	// 	border-left: 2px solid #CAD4D4;
 	// 	font-style: italic;
 	// }
+	h5 {
+		font-weight: bold;
+		font-size: 20px;
+	}
 	strong, b {
 		font-weight: bold;
 	}
 	a {
-		color: inherit;
+		color: $green;
 		&:hover {
 			text-decoration: none;
 		}
@@ -22,22 +26,27 @@
 	i {
 		font-style: italic;
 	}
-	figure {
+	iframe {
 		display: block;
-		margin-bottom: 1rem;
+		max-width: 948px;
+		width: 100%;
+		margin-bottom: 2rem;
+		height: 570px;
+		margin-top: 2rem;
+		@include r(1700) {
+			height: 480px;
+		}
 	}
 	picture {
+		padding-right: 140px;
 		display: block;
-		margin-bottom: 1rem;
 	}
 	img {
 		display: block;
-		max-width: 948px;
+		max-width: 100%;
 		width: auto;
 		margin-bottom: 2rem;
-	}
-	figcaption {
-		
+		margin-top: 2rem;
 	}
 	ul {
 		list-style-type: square;

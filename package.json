@@ -68,6 +68,7 @@
         "yargs": "^13.2.4"
     },
     "dependencies": {
+        "@fancyapps/fancybox": "^3.5.7",
         "jquery": "^3.5.1",
         "magnific-popup": "^1.1.0",
         "smart-grid": "^2.1.2"

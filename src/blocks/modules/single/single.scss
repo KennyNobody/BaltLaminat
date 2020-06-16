@@ -2,6 +2,9 @@
 	&__content {
 		margin-bottom: 100px;
 	}
+	&__title {
+		margin-bottom: 32px;
+	}
 	&__title-black {
 		margin-bottom: 32px;
 	}
@@ -17,8 +20,41 @@
 		&--8 {
 			width: calc(100% / 12 * 8 - 16px);
 		}
+		&--6 {
+			width: calc(100% / 12 * 6 - 16px);
+		}
+		&--5 {
+			width: calc(100% / 12 * 5 - 16px);
+		}
+		&--7 {
+			width: calc(100% / 12 * 7 - 16px);
+		}
+		&--aligh-center {
+			display: flex;
+			align-items: center;
+			img {
+				width: 100%;
+				display: block;
+			}
+		}
 	}
 	&__date {
 		margin-bottom: 32px;
+	}
+	&__partner {
+		display: block;
+		margin-bottom: 48px;
+		width: fit-content;
+		img {
+			display: block;
+			width: 248px;
+			height: auto;
+		}
+		&:hover {
+			opacity: 0.7;
+		}
+	}
+	&__articles {
+		margin-bottom: 60px;
 	}
 }
