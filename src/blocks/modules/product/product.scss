@@ -14,6 +14,12 @@
 			width: calc(100% / 12 * 3 - 12px);
 		}
 	}
+	&__block {
+		&--sticky {
+			position: sticky;
+			top: 15px;
+		}
+	}
 }
 
 .product {

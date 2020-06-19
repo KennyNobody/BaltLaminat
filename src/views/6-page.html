@@ -13,8 +13,8 @@
                 <div class="container">
                     <div class="grid">
                         <div class="grid__column grid__column--4">
-                            <div class="grid__block" style="background-color: green; height: 300px;">
-                                1
+                            <div class="grid__block">
+                                @@include("../blocks/modules/slider/slider.html")
                             </div>
 
                             <div class="grid__block">
@@ -244,7 +244,7 @@
                         </div>
 
                         <div class="grid__column grid__column--3">
-                            <div class="grid__block">
+                            <div class="grid__block grid__block--sticky">
                                 <div class="product-card">
                                     <div class="product-card__price">
                                         <p class="product-card__price-title">
@@ -287,6 +287,7 @@
                                                     <use xlink:href="img/sprites/sprite.svg#icon-minus"></use>
                                                 </svg>
                                             </button>
+                                            
                                             <div class="counter__input">
                                                 <input type="number" class="counter__input" value="10" min="0">
                                                 <p class="counter__type">

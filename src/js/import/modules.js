@@ -7,3 +7,4 @@ import "%modules%/footer/footer";
 import "%modules%/modal/modal";
 import "%modules%/product/product";
 import "%modules%/gallery/gallery";
+import "%modules%/slider/slider";

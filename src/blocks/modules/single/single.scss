@@ -57,4 +57,10 @@
 	&__articles {
 		margin-bottom: 60px;
 	}
+	&__offers {
+		width: calc(100% / 12 * 10 - 16px);
+		@include r(1700) {
+			width: 100%;
+		}
+	}
 }

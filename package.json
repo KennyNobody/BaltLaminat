@@ -69,9 +69,11 @@
     },
     "dependencies": {
         "@fancyapps/fancybox": "^3.5.7",
+        "choices.js": "^9.0.1",
         "jquery": "^3.5.1",
         "magnific-popup": "^1.1.0",
-        "smart-grid": "^2.1.2"
+        "smart-grid": "^2.1.2",
+        "swiper": "^5.4.5"
     },
     "lint-staged": {
         "!(_*).scss": [

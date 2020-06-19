@@ -6,6 +6,7 @@
 @import "modules/breadcrumbs/breadcrumbs";
 @import "modules/sidebar/sidebar";
 @import "modules/gallery/gallery";
+@import "modules/slider/slider";
 
 // Front
 @import "modules/intro/intro";
@@ -17,3 +18,5 @@
 //Pages
 @import "modules/single/single";
 @import "modules/product/product";
+@import "modules/catalog/catalog";
+@import "modules/catalog/filter";
