@@ -1,0 +1,50 @@
+.service {
+	&__grid {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+	&__column {
+		margin-bottom: 50px;
+		&--4 {
+			width: calc(100% / 10 * 4 - 16px);
+			// background-color: red;
+		}
+		&--6 {
+			width: calc(100% / 10 * 6 - 16px);
+			// background-color: green;
+		}
+		&--8 {
+			width: calc(100% / 10 * 8 - 16px);
+			// background-color: blue;
+		}
+	}
+	&__ill {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+}
+
+.service-text {
+	margin-bottom: 40px;
+	&__title {
+		margin-bottom: 40px;
+		font-weight: bold;
+		font-size: 30px;
+		line-height: 1.3;
+	}
+}
+
+.service-table {
+	margin-bottom: 40px;
+	&__title {
+		margin-bottom: 40px;
+	}
+}
+
+.service-catalog {
+	&__title {
+		margin-bottom: 40px;
+	}
+}

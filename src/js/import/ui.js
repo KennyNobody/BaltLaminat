@@ -1,4 +1,5 @@
 import Choices from 'choices.js';
+import SimpleBar from 'simplebar';
 
 $(document).ready(function() {
 
@@ -30,73 +31,90 @@ $(document).ready(function() {
 	})();
 
 	(function () {
-		const element = document.querySelector('.dropdown');
-		// const choices = new Choices(element);
+		const elements = document.querySelectorAll('.dropdown');
 
-		const choices = new Choices(element, {
-			silent: false,
-			items: [],
-			choices: [],
-			renderChoiceLimit: -1,
-			maxItemCount: -1,
-			addItems: true,
-			addItemFilter: null,
-			removeItems: false,
-			removeItemButton: false,
-			editItems: false,
-			duplicateItemsAllowed: true,
-			delimiter: ',',
-			paste: true,
-			// searchEnabled: true,
-			// searchChoices: true,
-			// searchFloor: 1,
-			// searchResultLimit: 4,
-			// searchFields: ['label', 'value'],
-			// position: 'auto',
-			// resetScrollPosition: true,
-			// shouldSort: true,
-			// shouldSortItems: false,
-			placeholder: false,
-			placeholderValue: null,
-			searchPlaceholderValue: null,
-			prependValue: null,
-			appendValue: null,
-			renderSelectedChoices: 'auto',
-			loadingText: 'Загрузка...',
-			noResultsText: 'No results found',
-			noChoicesText: 'No choices to choose from',
-			itemSelectText: '123',
-			classNames: {
-				containerOuter: 'sort-price__dropdown',
-				containerInner: 'sort-price__inner',
-				input: 'sort-price__input',
-				inputCloned: 'sort-price__input--cloned',
-				list: 'sort-price__list',
-				listItems: 'sort-price__list--multiple',
-				listSingle: 'sort-price__list--single',
-				listDropdown: 'sort-price__list--dropdown',
-				item: 'sort-price__item',
-				itemSelectable: 'sort-price__item--selectable',
-				itemDisabled: 'sort-price__item--disabled',
-				itemChoice: 'sort-price__item--choice',
-				placeholder: 'sort-price__placeholder',
-				group: 'sort-price__group',
-				groupHeading: 'sort-price__heading',
-				button: 'sort-price__button',
-				activeState: 'sort-price__list--is-active',
-				focusState: 'sort-price__dropdown--is-focused',
-				openState: 'sort-price__dropdown--is-open',
-				disabledState: 'sort-price__dropdown--is-disabled',
-				highlightedState: 'sort-price__item--is-highlighted',
-				selectedState: 'sort-price__item--is-selected',
-				flippedState: 'sort-price__dropdown--is-flipped',
-				loadingState: 'sort-price__dropdown--is-loading',
-				noResults: 'has-no-results',
-				noChoices: 'has-no-choices'
-			},
-		});
+		for (let n = 0; n < elements.length; n++) {
+			const choices = new Choices(elements[n], {
+				silent: false,
+				items: [],
+				choices: [],
+				renderChoiceLimit: -1,
+				maxItemCount: -1,
+				addItems: true,
+				addItemFilter: null,
+				removeItems: false,
+				removeItemButton: false,
+				editItems: false,
+				duplicateItemsAllowed: true,
+				delimiter: ',',
+				paste: true,
+				// searchEnabled: true,
+				// searchChoices: true,
+				// searchFloor: 1,
+				// searchResultLimit: 4,
+				// searchFields: ['label', 'value'],
+				// position: 'auto',
+				// resetScrollPosition: true,
+				// shouldSort: true,
+				// shouldSortItems: false,
+				placeholder: false,
+				placeholderValue: null,
+				searchPlaceholderValue: null,
+				prependValue: null,
+				appendValue: null,
+				renderSelectedChoices: 'auto',
+				loadingText: 'Загрузка...',
+				noResultsText: 'No results found',
+				noChoicesText: 'No choices to choose from',
+				itemSelectText: '123',
+				classNames: {
+					containerOuter: 'sort-price__dropdown',
+					containerInner: 'sort-price__inner',
+					input: 'sort-price__input',
+					inputCloned: 'sort-price__input--cloned',
+					list: 'sort-price__list',
+					listItems: 'sort-price__list--multiple',
+					listSingle: 'sort-price__list--single',
+					listDropdown: 'sort-price__list--dropdown',
+					item: 'sort-price__item',
+					itemSelectable: 'sort-price__item--selectable',
+					itemDisabled: 'sort-price__item--disabled',
+					itemChoice: 'sort-price__item--choice',
+					placeholder: 'sort-price__placeholder',
+					group: 'sort-price__group',
+					groupHeading: 'sort-price__heading',
+					button: 'sort-price__button',
+					activeState: 'sort-price__list--is-active',
+					focusState: 'sort-price__dropdown--is-focused',
+					openState: 'sort-price__dropdown--is-open',
+					disabledState: 'sort-price__dropdown--is-disabled',
+					highlightedState: 'sort-price__item--is-highlighted',
+					selectedState: 'sort-price__item--is-selected',
+					flippedState: 'sort-price__dropdown--is-flipped',
+					loadingState: 'sort-price__dropdown--is-loading',
+					noResults: 'has-no-results',
+					noChoices: 'has-no-choices'
+				},
+			});
+		}
+
+		
 	})();
 
-	
+	// Выпадашки фильтра
+
+	(function toggleFilterDrop(){
+		const drops = document.querySelectorAll('.filter-drop__header');
+
+		if (drops) {
+			for (let i = 0; i < drops.length; i++) {
+				drops[i].addEventListener('click', toggle);
+			}
+		}
+
+		function toggle(event) {
+			this.parentNode.classList.toggle('filter-drop--opened');
+		}
+	})();
 
 });

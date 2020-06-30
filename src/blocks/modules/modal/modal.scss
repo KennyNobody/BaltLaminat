@@ -38,3 +38,18 @@
 		}
 	}
 }
+
+.modal-write {
+	position: relative;
+	padding: 23px 37px;
+	&__title {
+		margin-bottom: 48px;
+	}
+	&__btn {
+		width: 248px;
+	}
+	&__toolbar {
+		margin-bottom: 52px;
+		display: flex;
+	}
+}

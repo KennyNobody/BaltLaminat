@@ -23,6 +23,13 @@ i {
 	overflow-x: hidden;
 	background-color: $light;
 	color: $dark;
+	background: url(../img/bg-svg.svg) 0px 140px no-repeat, 
+                url(../img/bg-svg.svg) 0px 1640px no-repeat,
+                url(../img/bg-svg.svg) 0px 3140px no-repeat,
+                url(../img/bg-svg.svg) 0px 4640px no-repeat,
+                url(../img/bg-large-svg.svg) right 50px no-repeat,
+                url(../img/bg-large-svg.svg) right 3250px no-repeat,
+                ;
 	@include r(1700) {
 
 	}

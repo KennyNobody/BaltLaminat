@@ -33,3 +33,34 @@
 .hidden {
 	// display: none;
 }
+
+.grid {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	&__column {
+		// margin-right: 32px;
+		margin-bottom: 50px;
+		&--3 {
+			width: calc(100% / 12 * 3 - 12px);
+		}
+		&--4 {
+			width: calc(100% / 12 * 4 - 12px);
+		}
+		&--5 {
+			width: calc(100% / 12 * 5 - 12px);
+		}
+		&--6 {
+			width: calc(100% / 12 * 6 - 12px);
+		}
+		&--8 {
+			width: calc(100% / 12 * 8 - 12px);
+		}
+	}
+	&__block {
+		&--sticky {
+			position: sticky;
+			top: 15px;
+		}
+	}
+}

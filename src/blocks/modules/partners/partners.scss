@@ -1,5 +1,5 @@
 .partners {
-	margin-bottom: 104px;
+	margin-bottom: 150px;
 	padding-top: 50px;
 	&__title {
 		margin-bottom: 67px;
@@ -15,9 +15,11 @@
 .front-partner {
 	text-decoration: none;
 	display: flex;
-	width: 248px;
-	height: 248px;
+	width: 128px;
+	height: 128px;
 	padding: 10px;
+	background-color: $light;
+	margin-bottom: 20px;
 	@include r(1700) {
 		width: 180px;
 		height: 180px;

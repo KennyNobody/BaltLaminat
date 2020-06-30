@@ -126,45 +126,39 @@
 					</button>
 				</form>
 			</div>
-<!-- 			<div class="head-main__column">
-				
-			</div>
-			<div class="head-main__column">
-				
-			</div> -->
 		</div>
 	</div>
 	<div class="head-nav">
 		<div class="container">
 			<nav class="head-nav__content">
-				<a href="#modal-menu--1" class="head-nav__link open-modal-menu">
+				<a href="#modal-menu--1" data-fancybox="modal" class="head-nav__link">
 					Плитные материалы
 				</a>
-				<a href="#modal-menu--2" class="head-nav__link open-modal-menu">
+				<a href="#modal-menu--2" data-fancybox="modal" class="head-nav__link">
 					Мебельная фурнитура
 				</a>
-				<a href="#modal-menu--3" class="head-nav__link open-modal-menu">
+				<a href="#modal-menu--3" data-fancybox="modal" class="head-nav__link">
 					Инструменты, расходные материалы
 				</a>
-				<a href="#modal-menu--4" class="head-nav__link open-modal-menu">
+				<a href="#modal-menu--4" data-fancybox="modal" class="head-nav__link">
 					Кухонная техника
 				</a>
-				<a href="#modal-menu--5" class="head-nav__link open-modal-menu">
+				<a href="#modal-menu--5" data-fancybox="modal" class="head-nav__link">
 					Напольные покрытия
 				</a>
-				<a href="#modal-menu--6" class="head-nav__link open-modal-menu">
+				<a href="#modal-menu--6" data-fancybox="modal" class="head-nav__link">
 					Кромка
 				</a>
-				<a href="#modal-menu--7" class="head-nav__link open-modal-menu">
+				<a href="#modal-menu--7" data-fancybox="modal" class="head-nav__link">
 					Мебель
 				</a>
-				<a href="#modal-menu--8" class="head-nav__link open-modal-menu">
+				<a href="#modal-menu--8" data-fancybox="modal" class="head-nav__link">
 					Услуги
 				</a>
-				<a href="#modal-menu--9" class="head-nav__link open-modal-menu">
+				<a href="#modal-menu--9" data-fancybox="modal" class="head-nav__link">
 					Фасады
 				</a>
-				<a href="#modal-menu--10" class="head-nav__link open-modal-menu">
+				<a href="#modal-menu--10" data-fancybox="modal" class="head-nav__link">
 					Химия, Упаковка, Реставрация
 				</a>
 			</nav>
@@ -197,7 +191,91 @@
                 <div class="container">
                     <div class="catalog__content">
                         <aside class="catalog__side">
-                            Фильтр
+                            <section class="filter">
+	<div class="filter__section">
+		<div class="filter__title">
+			<p class="title-small title-small--product">
+				<span>
+					Категории
+				</span>
+			</p>
+		</div>
+		<div data-simplebar data-simplebar-auto-hide="false" class="filter__content filter__content--scroll" >
+			<div class="filter-drop">
+				<div class="filter-drop__header">
+					<svg class="icon-svg filter-drop__icon">
+						<use xlink:href="img/sprites/sprite.svg#icon-arrow"></use>
+					</svg>
+					<p class="filter-drop__title">
+						Инструмент
+						и электроинструмент
+					</p>
+					<button class="filter-drop__close">
+						<svg class="icon-svg">
+							<use xlink:href="img/sprites/sprite.svg#icon-close-filter"></use>
+						</svg>
+					</button>
+				</div>
+				<div class="filter-drop__content">
+
+				</div>
+			</div>
+		</div>
+		
+	</div>
+
+	<div class="filter__section">
+		<div class="filter__title">
+			<p class="title-small title-small--product">
+				<span>
+					Фильтр
+				</span>
+			</p>
+		</div>
+		<div data-simplebar data-simplebar-auto-hide="false" class="filter__content filter__content--scroll">
+			<div class="filter-drop">
+				<div class="filter-drop__header">
+					<svg class="icon-svg filter-drop__icon">
+						<use xlink:href="img/sprites/sprite.svg#icon-arrow"></use>
+					</svg>
+					<p class="filter-drop__title">
+						<strong>
+							Радио баттон
+						</strong>
+					</p>
+					<button class="filter-drop__close">
+						<svg class="icon-svg">
+							<use xlink:href="img/sprites/sprite.svg#icon-close-filter"></use>
+						</svg>
+					</button>
+				</div>
+				<div class="filter-drop__content">
+
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	<label class="filter-checkbox">
+		<input type="checkbox" class="filter-checkbox__input">
+		<div class="filter-checkbox__icon">
+			<div class="filter-checkbox__bit-icon">
+
+			</div>
+		</div>
+		<span class="filter-checkbox__title">
+			ARVANT ARVANT ARVANT ARVANT ARVANT ARVANT ARVANT ARVANT ARVANT ARVANT ARVANT ARVANT 
+		</span>
+	</label>
+	<div class="filter__toolbar">
+		<button class="btn filter__btn">
+			Очистить
+		</button>
+		<button class="btn btn--dark filter__btn filter__btn--dark">
+			Искать
+		</button>
+	</div>
+</section>
                         </aside>
                         <div class="catalog__main">
                             <div class="catalog__header">
@@ -953,28 +1031,30 @@
 				<div class="bottom__columns">
 					<div class="bottom__column">
 						<div class="bottom__socials">
-							<a href="" class="bottom__soc-link">
-								<svg class="icon-svg">
-									<use xlink:href="img/sprites/sprite.svg#icon-fb"></use>
-								</svg>
-							</a>
-							<a href="" class="bottom__soc-link">
-								<svg class="icon-svg">
-									<use xlink:href="img/sprites/sprite.svg#icon-vk"></use>
-								</svg>
-							</a>
-							<a href="" class="bottom__soc-link">
-								<svg class="icon-svg">
-									<use xlink:href="img/sprites/sprite.svg#icon-ok"></use>
-								</svg>
-							</a>
-							<a href="" class="bottom__soc-link">
-								<svg class="icon-svg">
-									<use xlink:href="img/sprites/sprite.svg#icon-inst"></use>
-								</svg>
-							</a>
+							<div class="socials">
+	<a href="" class="socials__link">
+		<svg class="icon-svg">
+			<use xlink:href="img/sprites/sprite.svg#icon-fb"></use>
+		</svg>
+	</a>
+	<a href="" class="socials__link">
+		<svg class="icon-svg">
+			<use xlink:href="img/sprites/sprite.svg#icon-vk"></use>
+		</svg>
+	</a>
+	<a href="" class="socials__link">
+		<svg class="icon-svg">
+			<use xlink:href="img/sprites/sprite.svg#icon-ok"></use>
+		</svg>
+	</a>
+	<a href="" class="socials__link">
+		<svg class="icon-svg">
+			<use xlink:href="img/sprites/sprite.svg#icon-inst"></use>
+		</svg>
+	</a>
+</div>
 						</div>
-						<a href="" class="btn btn--light bottom__btn">
+						<a href="#modal-write" class="btn btn--light bottom__btn" data-fancybox>
 							Написать директору
 						</a>
 						<div class="bottom__text">
@@ -1144,7 +1224,7 @@
 </section>
     </div>
     <div class="hidden">
-        <section id="modal-menu--1" class="modal-menu mfp-hide">
+        <section id="modal-menu--1" class="modal-menu" style="display: none;">
 	<div class="container">
 		<div class="modal-menu__content">
 
@@ -1495,7 +1575,7 @@
 	</div>
 </section>
 
-<section id="modal-menu--2" class="modal-menu mfp-hide">
+<section id="modal-menu--2" class="modal-menu" style="display: none;">
 	<div class="container">
 		<div class="modal-menu__content">
 
@@ -1846,7 +1926,7 @@
 	</div>
 </section>
 
-<section id="modal-menu--3" class="modal-menu mfp-hide">
+<section id="modal-menu--3" class="modal-menu" style="display: none;">
 	<div class="container">
 		<div class="modal-menu__content">
 
@@ -2197,7 +2277,7 @@
 	</div>
 </section>
 
-<section id="modal-menu--4" class="modal-menu mfp-hide">
+<section id="modal-menu--4" class="modal-menu" style="display: none;">
 	<div class="container">
 		<div class="modal-menu__content">
 
@@ -2548,7 +2628,7 @@
 	</div>
 </section>
 
-<section id="modal-menu--5" class="modal-menu mfp-hide">
+<section id="modal-menu--5" class="modal-menu" style="display: none;">
 	<div class="container">
 		<div class="modal-menu__content">
 
@@ -2899,7 +2979,7 @@
 	</div>
 </section>
 
-<section id="modal-menu--6" class="modal-menu mfp-hide">
+<section id="modal-menu--6" class="modal-menu" style="display: none;">
 	<div class="container">
 		<div class="modal-menu__content">
 
@@ -3250,7 +3330,7 @@
 	</div>
 </section>
 
-<section id="modal-menu--7" class="modal-menu mfp-hide">
+<section id="modal-menu--7" class="modal-menu" style="display: none;">
 	<div class="container">
 		<div class="modal-menu__content">
 
@@ -3601,7 +3681,7 @@
 	</div>
 </section>
 
-<section id="modal-menu--8" class="modal-menu mfp-hide">
+<section id="modal-menu--8" class="modal-menu" style="display: none;">
 	<div class="container">
 		<div class="modal-menu__content">
 
@@ -3952,7 +4032,7 @@
 	</div>
 </section>
 
-<section id="modal-menu--9" class="modal-menu mfp-hide">
+<section id="modal-menu--9" class="modal-menu" style="display: none;">
 	<div class="container">
 		<div class="modal-menu__content">
 
@@ -4303,7 +4383,7 @@
 	</div>
 </section>
 
-<section id="modal-menu--10" class="modal-menu mfp-hide">
+<section id="modal-menu--10" class="modal-menu" style="display: none;">
 	<div class="container">
 		<div class="modal-menu__content">
 
@@ -4654,6 +4734,37 @@
 	</div>
 </section>
 
+<form id="modal-write" class="modal-write" style="display: none;">
+	<h2 class="title modal-write__title">
+		Написать директору
+	</h2>
+	<label class="input">
+		<p class="input__title">
+			Имя: 
+		</p>
+		<input type="text" class="input__input" placeholder="Как к вам обращаться?">
+	</label>
+
+	<label class="input">
+		<p class="input__title">
+			E-mail или телефон: 
+		</p>
+		<input type="text" class="input__input" placeholder="Как к вам обращаться?">
+	</label>
+
+	<label class="input">
+		<p class="input__title">
+			Ваше сообщение:
+		</p>
+		<textarea class="input__textarea" placeholder="Ваш вопрос, пожелание или жалоба"></textarea>
+	</label>
+	<div class="modal-write__toolbar">
+		
+	</div>
+	<button class="btn btn--green modal-write__btn">
+		Отправить
+	</button>
+</form>
     </div>
     <script src="js/vendor.js"></script>
     <script src="js/main.js"></script>

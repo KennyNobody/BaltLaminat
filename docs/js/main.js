@@ -205,16 +205,20 @@ $(document).ready(function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var magnific_popup__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! magnific-popup */ "./node_modules/magnific-popup/dist/jquery.magnific-popup.js");
-/* harmony import */ var magnific_popup__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(magnific_popup__WEBPACK_IMPORTED_MODULE_0__);
+/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var _fancyapps_fancybox__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fancyapps/fancybox */ "./node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js");
+/* harmony import */ var _fancyapps_fancybox__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_fancyapps_fancybox__WEBPACK_IMPORTED_MODULE_0__);
+// import magnificPopup from 'magnific-popup';
+// $(document).ready(function() {
+// 	$('.open-modal-menu').magnificPopup({
+// 		type: 'inline',
+// 		image: {
+// 			verticalFit: true
+// 		}
+// 	});
+// });
 
 $(document).ready(function () {
-  $('.open-modal-menu').magnificPopup({
-    type: 'inline',
-    image: {
-      verticalFit: true
-    }
-  });
+  $('[data-fancybox="modal"]').fancybox({});
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
@@ -318,6 +322,8 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var choices_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! choices.js */ "./node_modules/choices.js/public/assets/scripts/choices.js");
 /* harmony import */ var choices_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(choices_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var simplebar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! simplebar */ "./node_modules/simplebar/dist/simplebar.esm.js");
+
 
 $(document).ready(function () {
   // Счетчики
@@ -349,70 +355,87 @@ $(document).ready(function () {
   })();
 
   (function () {
-    var element = document.querySelector('.dropdown'); // const choices = new Choices(element);
+    var elements = document.querySelectorAll('.dropdown');
 
-    var choices = new choices_js__WEBPACK_IMPORTED_MODULE_0___default.a(element, {
-      silent: false,
-      items: [],
-      choices: [],
-      renderChoiceLimit: -1,
-      maxItemCount: -1,
-      addItems: true,
-      addItemFilter: null,
-      removeItems: false,
-      removeItemButton: false,
-      editItems: false,
-      duplicateItemsAllowed: true,
-      delimiter: ',',
-      paste: true,
-      // searchEnabled: true,
-      // searchChoices: true,
-      // searchFloor: 1,
-      // searchResultLimit: 4,
-      // searchFields: ['label', 'value'],
-      // position: 'auto',
-      // resetScrollPosition: true,
-      // shouldSort: true,
-      // shouldSortItems: false,
-      placeholder: false,
-      placeholderValue: null,
-      searchPlaceholderValue: null,
-      prependValue: null,
-      appendValue: null,
-      renderSelectedChoices: 'auto',
-      loadingText: 'Загрузка...',
-      noResultsText: 'No results found',
-      noChoicesText: 'No choices to choose from',
-      itemSelectText: '123',
-      classNames: {
-        containerOuter: 'sort-price__dropdown',
-        containerInner: 'sort-price__inner',
-        input: 'sort-price__input',
-        inputCloned: 'sort-price__input--cloned',
-        list: 'sort-price__list',
-        listItems: 'sort-price__list--multiple',
-        listSingle: 'sort-price__list--single',
-        listDropdown: 'sort-price__list--dropdown',
-        item: 'sort-price__item',
-        itemSelectable: 'sort-price__item--selectable',
-        itemDisabled: 'sort-price__item--disabled',
-        itemChoice: 'sort-price__item--choice',
-        placeholder: 'sort-price__placeholder',
-        group: 'sort-price__group',
-        groupHeading: 'sort-price__heading',
-        button: 'sort-price__button',
-        activeState: 'sort-price__list--is-active',
-        focusState: 'sort-price__dropdown--is-focused',
-        openState: 'sort-price__dropdown--is-open',
-        disabledState: 'sort-price__dropdown--is-disabled',
-        highlightedState: 'sort-price__item--is-highlighted',
-        selectedState: 'sort-price__item--is-selected',
-        flippedState: 'sort-price__dropdown--is-flipped',
-        loadingState: 'sort-price__dropdown--is-loading',
-        noResults: 'has-no-results',
-        noChoices: 'has-no-choices'
+    for (var n = 0; n < elements.length; n++) {
+      var choices = new choices_js__WEBPACK_IMPORTED_MODULE_0___default.a(elements[n], {
+        silent: false,
+        items: [],
+        choices: [],
+        renderChoiceLimit: -1,
+        maxItemCount: -1,
+        addItems: true,
+        addItemFilter: null,
+        removeItems: false,
+        removeItemButton: false,
+        editItems: false,
+        duplicateItemsAllowed: true,
+        delimiter: ',',
+        paste: true,
+        // searchEnabled: true,
+        // searchChoices: true,
+        // searchFloor: 1,
+        // searchResultLimit: 4,
+        // searchFields: ['label', 'value'],
+        // position: 'auto',
+        // resetScrollPosition: true,
+        // shouldSort: true,
+        // shouldSortItems: false,
+        placeholder: false,
+        placeholderValue: null,
+        searchPlaceholderValue: null,
+        prependValue: null,
+        appendValue: null,
+        renderSelectedChoices: 'auto',
+        loadingText: 'Загрузка...',
+        noResultsText: 'No results found',
+        noChoicesText: 'No choices to choose from',
+        itemSelectText: '123',
+        classNames: {
+          containerOuter: 'sort-price__dropdown',
+          containerInner: 'sort-price__inner',
+          input: 'sort-price__input',
+          inputCloned: 'sort-price__input--cloned',
+          list: 'sort-price__list',
+          listItems: 'sort-price__list--multiple',
+          listSingle: 'sort-price__list--single',
+          listDropdown: 'sort-price__list--dropdown',
+          item: 'sort-price__item',
+          itemSelectable: 'sort-price__item--selectable',
+          itemDisabled: 'sort-price__item--disabled',
+          itemChoice: 'sort-price__item--choice',
+          placeholder: 'sort-price__placeholder',
+          group: 'sort-price__group',
+          groupHeading: 'sort-price__heading',
+          button: 'sort-price__button',
+          activeState: 'sort-price__list--is-active',
+          focusState: 'sort-price__dropdown--is-focused',
+          openState: 'sort-price__dropdown--is-open',
+          disabledState: 'sort-price__dropdown--is-disabled',
+          highlightedState: 'sort-price__item--is-highlighted',
+          selectedState: 'sort-price__item--is-selected',
+          flippedState: 'sort-price__dropdown--is-flipped',
+          loadingState: 'sort-price__dropdown--is-loading',
+          noResults: 'has-no-results',
+          noChoices: 'has-no-choices'
+        }
+      });
+    }
+  })(); // Выпадашки фильтра
+
+
+  (function toggleFilterDrop() {
+    var drops = document.querySelectorAll('.filter-drop__header');
+
+    if (drops) {
+      for (var i = 0; i < drops.length; i++) {
+        drops[i].addEventListener('click', toggle);
       }
-    });
+    }
+
+    function toggle(event) {
+      this.parentNode.classList.toggle('filter-drop--opened');
+    }
   })();
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))

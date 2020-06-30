@@ -446,6 +446,16 @@
 		padding: 0px;
 		overflow: hidden;
 	}
+	&--small {
+		width: calc(25% - 16px);
+	}
+	&--small-clear {
+		width: calc(25% - 16px);
+		height: 0px;
+		margin: 0px;
+		padding: 0px;
+		overflow: hidden;
+	}
 	&__thumb {
 		height: 248px;
 		margin-bottom: 10px;
@@ -555,20 +565,28 @@
 		transition: 0.3s all;
 		cursor: pointer;
 		&--green {
-			background-color: $green;
+			&:hover {
+				background-color: $green;
+			}
 		}
 		&--blue {
-			background-color: $blue;
+			&:hover {
+				background-color: $blue;
+			}
 		}
 		&--orange {
-			background-color: $yellow;
+			&:hover {
+				background-color: $yellow;
+			}
 		}
 		&--red {
-			background-color: $red;
+			&:hover {
+				background-color: $red;
+			}
 		}
-		&:hover {
-			opacity: 0.7;
-		}
+		// &:hover {
+		// 	opacity: 0.7;
+		// }
 		svg {
 			height: 30px;
 			width: 30px;
