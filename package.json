@@ -70,6 +70,7 @@
     "dependencies": {
         "@fancyapps/fancybox": "^3.5.7",
         "choices.js": "^9.0.1",
+        "dropzone": "^5.7.1",
         "jquery": "^3.5.1",
         "simplebar": "^5.2.1",
         "smart-grid": "^2.1.2",

@@ -1,16 +1,4 @@
-// import magnificPopup from 'magnific-popup';
-
-// $(document).ready(function() {
-
-// 	$('.open-modal-menu').magnificPopup({
-// 		type: 'inline',
-// 		image: {
-// 			verticalFit: true
-// 		}
-// 	});
-
-// });
-
+import Dropzone from 'dropzone';
 
 import fancybox from '@fancyapps/fancybox';
 
@@ -19,3 +7,12 @@ $( document ).ready(function() {
 		
 	});
 });
+
+(function(){
+	var myDropzone = new Dropzone(".dropfile", { 
+		url: pathToScript,
+	});
+	Dropzone.clickable = true;
+
+})();
+

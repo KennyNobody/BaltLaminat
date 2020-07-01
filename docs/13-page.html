@@ -4369,9 +4369,27 @@
 		</p>
 		<textarea class="input__textarea" placeholder="Ваш вопрос, пожелание или жалоба"></textarea>
 	</label>
+
+	<script>
+		// Указываем путь для выполняемого скрипта
+		var pathToScript = '/file/post';
+
+		// Максимальный размер файла (мегабайт)
+		var maxFilesize = 8
+	</script>
+
 	<div class="modal-write__toolbar">
-		
+		<div class="dropfile">
+			<svg class="icon-svg dropfile__icon">
+				<use xlink:href="img/sprites/sprite.svg#icon-upload"></use>
+			</svg>
+			<p class="dropfile__text">
+				Перетащите сюда файл *.pdf, *.jpg или *.png <br>
+				или кликните внутри поля для выбора файлов
+			</p>
+		</div>
 	</div>
+
 	<button class="btn btn--green modal-write__btn">
 		Отправить
 	</button>

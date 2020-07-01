@@ -101,6 +101,77 @@ $(document).ready(function() {
 		
 	})();
 
+	(function () {
+		const elements = document.querySelectorAll('.filter-dropdown');
+
+		for (let n = 0; n < elements.length; n++) {
+			const choices = new Choices(elements[n], {
+				silent: false,
+				items: [],
+				choices: [],
+				renderChoiceLimit: -1,
+				maxItemCount: -1,
+				addItems: true,
+				addItemFilter: null,
+				removeItems: false,
+				removeItemButton: false,
+				editItems: false,
+				duplicateItemsAllowed: true,
+				delimiter: ',',
+				paste: true,
+				// searchEnabled: true,
+				// searchChoices: true,
+				// searchFloor: 1,
+				// searchResultLimit: 4,
+				// searchFields: ['label', 'value'],
+				// position: 'auto',
+				// resetScrollPosition: true,
+				// shouldSort: true,
+				// shouldSortItems: false,
+				placeholder: false,
+				placeholderValue: null,
+				searchPlaceholderValue: null,
+				prependValue: null,
+				appendValue: null,
+				renderSelectedChoices: 'auto',
+				loadingText: 'Загрузка...',
+				noResultsText: 'No results found',
+				noChoicesText: 'No choices to choose from',
+				itemSelectText: '123',
+				classNames: {
+					containerOuter: 'filter-dropdown',
+					containerInner: 'filter-dropdown__inner',
+					input: 'filter-dropdown__input',
+					inputCloned: 'filter-dropdown__input--cloned',
+					list: 'filter-dropdown__list',
+					listItems: 'filter-dropdown__list--multiple',
+					listSingle: 'filter-dropdown__list--single',
+					listDropdown: 'filter-dropdown__list--dropdown',
+					item: 'filter-dropdown__item',
+					itemSelectable: 'filter-dropdown__item--selectable',
+					itemDisabled: 'filter-dropdown__item--disabled',
+					itemChoice: 'filter-dropdown__item--choice',
+					placeholder: 'filter-dropdown__placeholder',
+					group: 'filter-dropdown__group',
+					groupHeading: 'filter-dropdown__heading',
+					button: 'filter-dropdown__button',
+					activeState: 'filter-dropdown__list--is-active',
+					focusState: 'filter-dropdown--is-focused',
+					openState: 'filter-dropdown--is-open',
+					disabledState: 'filter-dropdown--is-disabled',
+					highlightedState: 'filter-dropdown__item--is-highlighted',
+					selectedState: 'filter-dropdown__item--is-selected',
+					flippedState: 'filter-dropdown--is-flipped',
+					loadingState: 'filter-dropdown--is-loading',
+					noResults: 'has-no-results',
+					noChoices: 'has-no-choices'
+				},
+			});
+		}
+
+		
+	})();
+
 	// Выпадашки фильтра
 
 	(function toggleFilterDrop(){
@@ -114,6 +185,20 @@ $(document).ready(function() {
 
 		function toggle(event) {
 			this.parentNode.classList.toggle('filter-drop--opened');
+		}
+	})();
+
+	(function toggleFilterDrop(){
+		const drops = document.querySelectorAll('.filter-subdrop__header');
+
+		if (drops) {
+			for (let i = 0; i < drops.length; i++) {
+				drops[i].addEventListener('click', toggle);
+			}
+		}
+
+		function toggle(event) {
+			this.parentNode.classList.toggle('filter-subdrop--opened');
 		}
 	})();
 

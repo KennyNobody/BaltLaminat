@@ -403,3 +403,35 @@
 		}
 	}
 }
+
+.dropfile {
+	border: 1px dashed #E5E5E5;
+	box-sizing: border-box;
+	background: inherit;
+	min-height: 128px;
+	flex-grow: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding: 25px;
+	&__icon {
+		position: relative;
+		width: 60px;
+		height: 60px;
+		display: block;
+		margin-bottom: 15px;
+		pointer-events: none;
+	}
+	&__text {
+		pointer-events: none;
+		text-align: center;
+	}
+}
+
+.zbs {
+	cursor: pointer;
+	width: 50px;
+	background-color: red;
+	height: 50px;
+}

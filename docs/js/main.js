@@ -205,21 +205,22 @@ $(document).ready(function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var _fancyapps_fancybox__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fancyapps/fancybox */ "./node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js");
-/* harmony import */ var _fancyapps_fancybox__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_fancyapps_fancybox__WEBPACK_IMPORTED_MODULE_0__);
-// import magnificPopup from 'magnific-popup';
-// $(document).ready(function() {
-// 	$('.open-modal-menu').magnificPopup({
-// 		type: 'inline',
-// 		image: {
-// 			verticalFit: true
-// 		}
-// 	});
-// });
+/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var dropzone__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! dropzone */ "./node_modules/dropzone/dist/dropzone.js");
+/* harmony import */ var dropzone__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(dropzone__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _fancyapps_fancybox__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fancyapps/fancybox */ "./node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js");
+/* harmony import */ var _fancyapps_fancybox__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_fancyapps_fancybox__WEBPACK_IMPORTED_MODULE_1__);
+
 
 $(document).ready(function () {
   $('[data-fancybox="modal"]').fancybox({});
 });
+
+(function () {
+  var myDropzone = new dropzone__WEBPACK_IMPORTED_MODULE_0___default.a(".dropfile", {
+    url: pathToScript
+  });
+  dropzone__WEBPACK_IMPORTED_MODULE_0___default.a.clickable = true;
+})();
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
@@ -421,6 +422,75 @@ $(document).ready(function () {
         }
       });
     }
+  })();
+
+  (function () {
+    var elements = document.querySelectorAll('.filter-dropdown');
+
+    for (var n = 0; n < elements.length; n++) {
+      var choices = new choices_js__WEBPACK_IMPORTED_MODULE_0___default.a(elements[n], {
+        silent: false,
+        items: [],
+        choices: [],
+        renderChoiceLimit: -1,
+        maxItemCount: -1,
+        addItems: true,
+        addItemFilter: null,
+        removeItems: false,
+        removeItemButton: false,
+        editItems: false,
+        duplicateItemsAllowed: true,
+        delimiter: ',',
+        paste: true,
+        // searchEnabled: true,
+        // searchChoices: true,
+        // searchFloor: 1,
+        // searchResultLimit: 4,
+        // searchFields: ['label', 'value'],
+        // position: 'auto',
+        // resetScrollPosition: true,
+        // shouldSort: true,
+        // shouldSortItems: false,
+        placeholder: false,
+        placeholderValue: null,
+        searchPlaceholderValue: null,
+        prependValue: null,
+        appendValue: null,
+        renderSelectedChoices: 'auto',
+        loadingText: 'Загрузка...',
+        noResultsText: 'No results found',
+        noChoicesText: 'No choices to choose from',
+        itemSelectText: '123',
+        classNames: {
+          containerOuter: 'filter-dropdown',
+          containerInner: 'filter-dropdown__inner',
+          input: 'filter-dropdown__input',
+          inputCloned: 'filter-dropdown__input--cloned',
+          list: 'filter-dropdown__list',
+          listItems: 'filter-dropdown__list--multiple',
+          listSingle: 'filter-dropdown__list--single',
+          listDropdown: 'filter-dropdown__list--dropdown',
+          item: 'filter-dropdown__item',
+          itemSelectable: 'filter-dropdown__item--selectable',
+          itemDisabled: 'filter-dropdown__item--disabled',
+          itemChoice: 'filter-dropdown__item--choice',
+          placeholder: 'filter-dropdown__placeholder',
+          group: 'filter-dropdown__group',
+          groupHeading: 'filter-dropdown__heading',
+          button: 'filter-dropdown__button',
+          activeState: 'filter-dropdown__list--is-active',
+          focusState: 'filter-dropdown--is-focused',
+          openState: 'filter-dropdown--is-open',
+          disabledState: 'filter-dropdown--is-disabled',
+          highlightedState: 'filter-dropdown__item--is-highlighted',
+          selectedState: 'filter-dropdown__item--is-selected',
+          flippedState: 'filter-dropdown--is-flipped',
+          loadingState: 'filter-dropdown--is-loading',
+          noResults: 'has-no-results',
+          noChoices: 'has-no-choices'
+        }
+      });
+    }
   })(); // Выпадашки фильтра
 
 
@@ -435,6 +505,20 @@ $(document).ready(function () {
 
     function toggle(event) {
       this.parentNode.classList.toggle('filter-drop--opened');
+    }
+  })();
+
+  (function toggleFilterDrop() {
+    var drops = document.querySelectorAll('.filter-subdrop__header');
+
+    if (drops) {
+      for (var i = 0; i < drops.length; i++) {
+        drops[i].addEventListener('click', toggle);
+      }
+    }
+
+    function toggle(event) {
+      this.parentNode.classList.toggle('filter-subdrop--opened');
     }
   })();
 });
