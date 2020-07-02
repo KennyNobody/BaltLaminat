@@ -510,7 +510,9 @@ $(document).ready(function () {
     }
 
     function toggle(event) {
-      this.parentNode.classList.toggle('filter-drop--opened');
+      if (event.target.tagName !== 'BUTTON') {
+        this.parentNode.classList.toggle('filter-drop--opened');
+      }
     }
   })();
 
@@ -539,7 +541,10 @@ $(document).ready(function () {
         range: {
           'min': minPrice,
           'max': maxPrice
-        }
+        },
+        format: wnumb__WEBPACK_IMPORTED_MODULE_3___default()({
+          decimals: 0
+        })
       });
       slider[i].noUiSlider.on('update', function (values) {
         slider[i].parentNode.parentNode.querySelector('.filter-range__input--start').value = values[0];
@@ -550,10 +555,19 @@ $(document).ready(function () {
     for (var i = 0; i < slider.length; i++) {
       _loop2(i);
     }
-  })();
+  })(); // Сброс фильтра
+
 
   (function resetFilter() {
     var btns = document.querySelectorAll('.filter__btn-all');
+
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener('click', reset);
+    }
+
+    function reset(e) {
+      console.log(this);
+    }
   })();
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))

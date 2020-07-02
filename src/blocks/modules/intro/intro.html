@@ -2,9 +2,9 @@
 	<div class="container">
 		<div class="intro__columns">
 			<div class="intro__content">
-				<img class="intro__logo" src="img/intro-img.svg" alt="Заглавная картинка">
+				<img class="intro__logo" src="img/intro-img.png" alt="Заглавная картинка">
 				<h2 class="intro__title">
-					Система <br> профилей мебели <br> без ручек
+					Egger decorative collection 2020-22
 				</h2>
 				<a href="" class="btn btn--dark intro__btn">
 					Подробнее
@@ -16,3 +16,24 @@
 		</div>
 	</div>
 </section>
+
+
+<script>
+	const cities = [
+	'Советск',
+	'Балтийск',
+	'Правдинск',
+	'Черняховск',
+	'Мамоново',
+	'Гвардейск',
+	'Светлый',
+	'Пионерск',
+	'Нестерово',
+	'Зеленоградск',
+	'Светлогорск'
+	]
+
+	const randomMonth = cities[Math.floor(Math.random() * cities.length)];
+
+	console.log("Идеальный город для поездки -", randomMonth);
+</script>

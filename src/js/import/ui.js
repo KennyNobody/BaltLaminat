@@ -186,7 +186,9 @@ $(document).ready(function() {
 		}
 
 		function toggle(event) {
-			this.parentNode.classList.toggle('filter-drop--opened');
+			if (event.target.tagName !== 'BUTTON') {
+				this.parentNode.classList.toggle('filter-drop--opened');
+			}
 		}
 	})();
 
@@ -216,6 +218,9 @@ $(document).ready(function() {
 					'min': minPrice,
 					'max': maxPrice
 				},
+				format: wNumb({
+					decimals: 0
+				}),
 			});
 
 			
@@ -227,8 +232,19 @@ $(document).ready(function() {
 		}
 	})();
 
+	// Сброс фильтра
+
 	(function resetFilter(){
 		const btns = document.querySelectorAll('.filter__btn-all');
+
+		for (let i = 0; i < btns.length; i++) {
+			btns[i].addEventListener('click', reset);
+		}
+
+		function reset(e) {
+			console.log(this)
+		}
+
 	})();
 
 });
