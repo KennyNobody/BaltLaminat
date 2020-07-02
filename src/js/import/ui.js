@@ -1,5 +1,7 @@
 import Choices from 'choices.js';
 import SimpleBar from 'simplebar';
+import noUiSlider from 'nouislider';
+import wNumb from 'wnumb';
 
 $(document).ready(function() {
 
@@ -200,6 +202,33 @@ $(document).ready(function() {
 		function toggle(event) {
 			this.parentNode.classList.toggle('filter-subdrop--opened');
 		}
+	})();
+
+	(function initRangeSlider(){
+		let slider = document.querySelectorAll('.range-slider');
+
+		for (let i = 0; i < slider.length; i++) {
+			noUiSlider.create(slider[i], {
+				start: [minPrice, maxPrice],
+				connect: true,
+				step: 1,
+				range: {
+					'min': minPrice,
+					'max': maxPrice
+				},
+			});
+
+			
+
+			slider[i].noUiSlider.on('update', function (values) {
+				slider[i].parentNode.parentNode.querySelector('.filter-range__input--start').value = values[0];
+				slider[i].parentNode.parentNode.querySelector('.filter-range__input--end').value = values[1];
+			});
+		}
+	})();
+
+	(function resetFilter(){
+		const btns = document.querySelectorAll('.filter__btn-all');
 	})();
 
 });

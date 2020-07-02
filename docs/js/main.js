@@ -324,6 +324,12 @@ __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var choices_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! choices.js */ "./node_modules/choices.js/public/assets/scripts/choices.js");
 /* harmony import */ var choices_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(choices_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var simplebar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! simplebar */ "./node_modules/simplebar/dist/simplebar.esm.js");
+/* harmony import */ var nouislider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! nouislider */ "./node_modules/nouislider/distribute/nouislider.js");
+/* harmony import */ var nouislider__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(nouislider__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var wnumb__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! wnumb */ "./node_modules/wnumb/wNumb.js");
+/* harmony import */ var wnumb__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(wnumb__WEBPACK_IMPORTED_MODULE_3__);
+
+
 
 
 $(document).ready(function () {
@@ -520,6 +526,34 @@ $(document).ready(function () {
     function toggle(event) {
       this.parentNode.classList.toggle('filter-subdrop--opened');
     }
+  })();
+
+  (function initRangeSlider() {
+    var slider = document.querySelectorAll('.range-slider');
+
+    var _loop2 = function _loop2(i) {
+      nouislider__WEBPACK_IMPORTED_MODULE_2___default.a.create(slider[i], {
+        start: [minPrice, maxPrice],
+        connect: true,
+        step: 1,
+        range: {
+          'min': minPrice,
+          'max': maxPrice
+        }
+      });
+      slider[i].noUiSlider.on('update', function (values) {
+        slider[i].parentNode.parentNode.querySelector('.filter-range__input--start').value = values[0];
+        slider[i].parentNode.parentNode.querySelector('.filter-range__input--end').value = values[1];
+      });
+    };
+
+    for (var i = 0; i < slider.length; i++) {
+      _loop2(i);
+    }
+  })();
+
+  (function resetFilter() {
+    var btns = document.querySelectorAll('.filter__btn-all');
   })();
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))

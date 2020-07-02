@@ -72,9 +72,11 @@
         "choices.js": "^9.0.1",
         "dropzone": "^5.7.1",
         "jquery": "^3.5.1",
+        "nouislider": "^14.6.0",
         "simplebar": "^5.2.1",
         "smart-grid": "^2.1.2",
-        "swiper": "^5.4.5"
+        "swiper": "^5.4.5",
+        "wnumb": "^1.2.0"
     },
     "lint-staged": {
         "!(_*).scss": [
