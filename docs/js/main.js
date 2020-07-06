@@ -213,6 +213,12 @@ __webpack_require__.r(__webpack_exports__);
 
 $(document).ready(function () {
   $('[data-fancybox="modal"]').fancybox({});
+  $('[data-fancybox="service-modal"]').fancybox({
+    onActivate: function onActivate(instance, current) {
+      console.info('Clicked element:');
+      console.info(current.opts.$orig);
+    }
+  });
 });
 
 (function () {
@@ -242,6 +248,26 @@ $(document).ready(function () {
 // function unwrap(node) {
 //     node.replaceWith(...node.childNodes);
 // }
+// document.addEventListener('scroll', e => {
+// 	console.log(stickyCard.offsetTop)
+// });
+(function () {
+  var stickyCard = document.querySelector('.grid__block--product-card');
+
+  if (stickyCard) {
+    var startPosition = stickyCard.offsetTop;
+    var title = stickyCard.querySelector('.product-card__title');
+    window.addEventListener("scroll", function () {
+      var nowPosition = stickyCard.offsetTop;
+
+      if (startPosition != nowPosition) {
+        title.classList.add('product-card__title--visible');
+      } else {
+        title.classList.remove('product-card__title--visible');
+      }
+    });
+  }
+})();
 
 /***/ }),
 
@@ -258,22 +284,31 @@ __webpack_require__.r(__webpack_exports__);
 
 $(document).ready(function () {
   (function () {
-    var mySwiperThumbs = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.slider-bottom', {
-      slidesPerView: 'auto',
-      spaceBetween: 32,
-      freeMode: true
-    });
-    var mySwiperTop = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.slider-top', {
-      slidesPerView: 1,
-      navigation: {
-        nextEl: '.slider-bottom__btn--right',
-        prevEl: '.slider-bottom__btn--left'
-      },
-      thumbs: {
-        swiper: mySwiperThumbs,
-        slideThumbActiveClass: 'slider-bottom__slide--active'
-      }
-    });
+    var sliderTop = document.querySelectorAll('.slider-top');
+    var sliderBottom = document.querySelectorAll('.slider-bottom');
+
+    for (var i = 0; i < sliderTop.length; i++) {
+      var mySwiperThumbs = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](sliderBottom[i], {
+        slidesPerView: 'auto',
+        spaceBetween: 32,
+        freeMode: true,
+        observer: true,
+        observeParents: true
+      });
+      var mySwiperTop = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](sliderTop[i], {
+        slidesPerView: 1,
+        observer: true,
+        observeParents: true,
+        navigation: {
+          nextEl: '.slider-bottom__btn--right',
+          prevEl: '.slider-bottom__btn--left'
+        },
+        thumbs: {
+          swiper: mySwiperThumbs,
+          slideThumbActiveClass: 'slider-bottom__slide--active'
+        }
+      });
+    }
   })();
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))

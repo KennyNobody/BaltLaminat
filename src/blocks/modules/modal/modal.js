@@ -6,6 +6,13 @@ $( document ).ready(function() {
 	$('[data-fancybox="modal"]').fancybox({
 		
 	});
+
+	$('[data-fancybox="service-modal"]').fancybox({
+		onActivate: function( instance, current ) {
+			console.info( 'Clicked element:' );
+			console.info( current.opts.$orig );
+		}
+	});
 });
 
 (function(){

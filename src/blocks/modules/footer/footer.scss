@@ -2,6 +2,9 @@
 	padding-top: 56px;
 	padding-bottom: 56px;
 	background-color: $green;
+	background-image: url('../img/bg-green.svg');
+	background-repeat: no-repeat;
+	background-position: left bottom;
 	&__nav {
 		// , column-gap, column-width и column-rule
 		column-count: 4;

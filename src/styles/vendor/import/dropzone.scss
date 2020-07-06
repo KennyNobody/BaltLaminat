@@ -1,0 +1,26 @@
+.dz-preview {
+	width: 50%;
+	padding: 25px;
+	text-align: center;
+}
+
+.dz-image {
+	margin-bottom: 10px;
+	img {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+.dz-success-mark {
+	display: none;
+}
+
+.dz-error-mark {
+	display: none;
+}
+
+.dz-error-message {
+	display: none;
+}

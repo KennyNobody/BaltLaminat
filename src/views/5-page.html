@@ -9,6 +9,564 @@
         @@include("../blocks/modules/header/header.html")
         <main class="layout__main">
             @@include("../blocks/modules/breadcrumbs/breadcrumbs.html")
+            <section class="catalog">
+                <div class="container">
+                    <div class="catalog__content">
+                        <aside class="catalog__side">
+                            @@include("../blocks/modules/filter/filter.html")
+                        </aside>
+                        <div class="catalog__main">
+                            <div class="catalog__header">
+                                <div class="toolbar">
+                                    <div class="sort-type">
+                                        <button class="sort-type__btn sort-type__btn--active sort-type__btn--masonry">
+                                            <svg class="icon-svg">
+                                                <use xlink:href="img/sprites/sprite.svg#icon-masonry"></use>
+                                            </svg>
+                                            <span>
+                                                Плитка
+                                            </span>
+                                        </button>
+
+                                        <button class="sort-type__btn sort-type__btn--list">
+                                            <svg class="icon-svg">
+                                                <use xlink:href="img/sprites/sprite.svg#icon-list"></use>
+                                            </svg>
+                                            <span>
+                                                Список
+                                            </span>
+                                        </button>
+                                    </div>
+
+                                    <div class="toolbar__spreader"></div>
+
+                                    <div class="sort-price">
+                                        <p class="sort-price__title">
+                                            Сортировать по:
+                                        </p>
+                                        <select class="dropdown">
+                                            <option value="1">Цене (возрастанию)</option>
+                                            <option value="2">Цене (убыванию)</option>
+                                            <option value="3">Популярности (возрастанию)</option>
+                                            <option value="4">Популярности (убыванию)</option>
+
+                                        </select>
+                                    </div>
+
+                                    <div class="sort-quanity">
+                                        <p class="sort-quanity__title">
+                                            Показывать по:
+                                        </p>
+                                        <button class="sort-quanity__btn sort-quanity__btn--active">
+                                            20
+                                        </button>
+                                        <button class="sort-quanity__btn">
+                                            40
+                                        </button>
+                                        <button class="sort-quanity__btn">
+                                            100
+                                        </button>
+                                        <button class="sort-quanity__btn">
+                                            Все
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="table">
+                                <div class="table__line table__line--head">
+                                    <div class="table__cell table__cell--flex table__cell--10">
+                                        <p class="table__text">
+                                            Артикул
+                                        </p>
+                                        <div class="table__control">
+                                            <div class="table__arrow table__arrow--top table__arrow--active">
+                                                <svg class="icon-svg">
+                                                    <use xlink:href="img/sprites/sprite.svg#icon-arrow-top"></use>
+                                                </svg>
+                                            </div>
+                                            <div class="table__arrow table__arrow--bottom">
+                                                <svg class="icon-svg">
+                                                    <use xlink:href="img/sprites/sprite.svg#icon-arrow-bottom"></use>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="table__cell table__cell--flex table__cell--45">
+                                        <p class="table__text">
+                                            Наименование 
+                                        </p>
+                                        <div class="table__control">
+                                            <div class="table__arrow table__arrow--top">
+                                                <svg class="icon-svg">
+                                                    <use xlink:href="img/sprites/sprite.svg#icon-arrow-top"></use>
+                                                </svg>
+                                            </div>
+                                            <div class="table__arrow table__arrow--bottom">
+                                                <svg class="icon-svg">
+                                                    <use xlink:href="img/sprites/sprite.svg#icon-arrow-bottom"></use>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="table__cell table__cell--flex table__cell--10">
+                                        <p class="table__text">
+                                            Декор
+                                        </p>
+                                        <div class="table__control">
+                                            <div class="table__arrow table__arrow--top">
+                                                <svg class="icon-svg">
+                                                    <use xlink:href="img/sprites/sprite.svg#icon-arrow-top"></use>
+                                                </svg>
+                                            </div>
+                                            <div class="table__arrow table__arrow--bottom">
+                                                <svg class="icon-svg">
+                                                    <use xlink:href="img/sprites/sprite.svg#icon-arrow-bottom"></use>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="table__cell table__cell--flex table__cell--15">
+                                        <p class="table__text">
+                                            Цена
+                                        </p>
+                                        <div class="table__control">
+                                            <div class="table__arrow table__arrow--top">
+                                                <svg class="icon-svg">
+                                                    <use xlink:href="img/sprites/sprite.svg#icon-arrow-top"></use>
+                                                </svg>
+                                            </div>
+                                            <div class="table__arrow table__arrow--bottom">
+                                                <svg class="icon-svg">
+                                                    <use xlink:href="img/sprites/sprite.svg#icon-arrow-bottom"></use>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="table__cell table__cell--flex table__cell--10">
+                                        <p class="table__text">
+                                            Наличие
+                                        </p>
+                                        <div class="table__control">
+                                            <div class="table__arrow table__arrow--top">
+                                                <svg class="icon-svg">
+                                                    <use xlink:href="img/sprites/sprite.svg#icon-arrow-top"></use>
+                                                </svg>
+                                            </div>
+                                            <div class="table__arrow table__arrow--bottom">
+                                                <svg class="icon-svg">
+                                                    <use xlink:href="img/sprites/sprite.svg#icon-arrow-bottom"></use>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="table__cell table__cell--flex table__cell--10">
+                                        <p class="table__text">
+                                            Добавить в корзину
+                                        </p>
+                                        <div class="table__control">
+                                            <div class="table__arrow table__arrow--top">
+                                                <svg class="icon-svg">
+                                                    <use xlink:href="img/sprites/sprite.svg#icon-arrow-top"></use>
+                                                </svg>
+                                            </div>
+                                            <div class="table__arrow table__arrow--bottom">
+                                                <svg class="icon-svg">
+                                                    <use xlink:href="img/sprites/sprite.svg#icon-arrow-bottom"></use>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="table__line">
+                                    <div class="table__cell table__cell--10">
+                                        39446
+                                    </div>
+                                    <div class="table__cell table__cell--45">
+                                        <a href="" class="table__link">
+                                            140.120.61 Фреза концевая DIA D12/NL27/L70/S12140.120.61 Фреза концевая DIA
+                                        </a>
+                                    </div>
+                                    <div class="table__cell table__cell--10">
+                                        112.0271.333
+                                    </div>
+                                    <div class="table__cell table__cell--15">
+                                        <p class="table__text table__text--strike">
+                                            500 190 РУБ
+                                        </p>
+                                        <p class="table__price">
+                                            цена со скидкой <br>
+                                            <strong>500 550</strong> руб.
+                                        </p>
+                                    </div>
+                                    <div class="table__cell table__cell--10">
+                                        Больше 10
+                                    </div>
+                                    <div class="table__cell table__cell--10">
+                                        <form action="" class="table-form">
+                                            <input type="text" class="table-form__input" value="1000">
+                                            <button class="table-form__btn">
+                                                <svg class="icon-svg">
+                                                    <use xlink:href="img/sprites/sprite.svg#icon-card-2"></use>
+                                                </svg>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="table__line">
+                                    <div class="table__cell table__cell--10">
+                                        39446
+                                    </div>
+                                    <div class="table__cell table__cell--45">
+                                        <a href="" class="table__link">
+                                            140.120.61 Фреза концевая DIA D12/NL27/L70/S12140.120.61 Фреза концевая DIA
+                                        </a>
+                                    </div>
+                                    <div class="table__cell table__cell--10">
+                                        112.0271.333
+                                    </div>
+                                    <div class="table__cell table__cell--15">
+                                        <p class="table__text table__text--strike">
+                                            500 190 РУБ
+                                        </p>
+                                        <p class="table__price">
+                                            цена со скидкой <br>
+                                            <strong>500 550</strong> руб.
+                                        </p>
+                                    </div>
+                                    <div class="table__cell table__cell--10">
+                                        Больше 10
+                                    </div>
+                                    <div class="table__cell table__cell--10">
+                                        <form action="" class="table-form">
+                                            <input type="text" class="table-form__input" value="1000">
+                                            <button class="table-form__btn">
+                                                <svg class="icon-svg">
+                                                    <use xlink:href="img/sprites/sprite.svg#icon-card-2"></use>
+                                                </svg>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="table__line">
+                                    <div class="table__cell table__cell--10">
+                                        39446
+                                    </div>
+                                    <div class="table__cell table__cell--45">
+                                        <a href="" class="table__link">
+                                            140.120.61 Фреза концевая DIA D12/NL27/L70/S12140.120.61 Фреза концевая DIA
+                                        </a>
+                                    </div>
+                                    <div class="table__cell table__cell--10">
+                                        112.0271.333
+                                    </div>
+                                    <div class="table__cell table__cell--15">
+                                        <p class="table__text table__text--strike">
+                                            500 190 РУБ
+                                        </p>
+                                        <p class="table__price">
+                                            цена со скидкой <br>
+                                            <strong>500 550</strong> руб.
+                                        </p>
+                                    </div>
+                                    <div class="table__cell table__cell--10">
+                                        Больше 10
+                                    </div>
+                                    <div class="table__cell table__cell--10">
+                                        <form action="" class="table-form">
+                                            <input type="text" class="table-form__input" value="1000">
+                                            <button class="table-form__btn">
+                                                <svg class="icon-svg">
+                                                    <use xlink:href="img/sprites/sprite.svg#icon-card-2"></use>
+                                                </svg>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="table__line">
+                                    <div class="table__cell table__cell--10">
+                                        39446
+                                    </div>
+                                    <div class="table__cell table__cell--45">
+                                        <a href="" class="table__link">
+                                            140.120.61 Фреза концевая DIA D12/NL27/L70/S12140.120.61 Фреза концевая DIA
+                                        </a>
+                                    </div>
+                                    <div class="table__cell table__cell--10">
+                                        112.0271.333
+                                    </div>
+                                    <div class="table__cell table__cell--15">
+                                        <p class="table__text table__text--strike">
+                                            500 190 РУБ
+                                        </p>
+                                        <p class="table__price">
+                                            цена со скидкой <br>
+                                            <strong>500 550</strong> руб.
+                                        </p>
+                                    </div>
+                                    <div class="table__cell table__cell--10">
+                                        Больше 10
+                                    </div>
+                                    <div class="table__cell table__cell--10">
+                                        <form action="" class="table-form">
+                                            <input type="text" class="table-form__input" value="1000">
+                                            <button class="table-form__btn">
+                                                <svg class="icon-svg">
+                                                    <use xlink:href="img/sprites/sprite.svg#icon-card-2"></use>
+                                                </svg>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="table__line">
+                                    <div class="table__cell table__cell--10">
+                                        39446
+                                    </div>
+                                    <div class="table__cell table__cell--45">
+                                        <a href="" class="table__link">
+                                            140.120.61 Фреза концевая DIA D12/NL27/L70/S12140.120.61 Фреза концевая DIA
+                                        </a>
+                                    </div>
+                                    <div class="table__cell table__cell--10">
+                                        112.0271.333
+                                    </div>
+                                    <div class="table__cell table__cell--15">
+                                        <p class="table__text table__text--strike">
+                                            500 190 РУБ
+                                        </p>
+                                        <p class="table__price">
+                                            цена со скидкой <br>
+                                            <strong>500 550</strong> руб.
+                                        </p>
+                                    </div>
+                                    <div class="table__cell table__cell--10">
+                                        Больше 10
+                                    </div>
+                                    <div class="table__cell table__cell--10">
+                                        <form action="" class="table-form">
+                                            <input type="text" class="table-form__input" value="1000">
+                                            <button class="table-form__btn">
+                                                <svg class="icon-svg">
+                                                    <use xlink:href="img/sprites/sprite.svg#icon-card-2"></use>
+                                                </svg>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="table__line">
+                                    <div class="table__cell table__cell--10">
+                                        39446
+                                    </div>
+                                    <div class="table__cell table__cell--45">
+                                        <a href="" class="table__link">
+                                            140.120.61 Фреза концевая DIA D12/NL27/L70/S12140.120.61 Фреза концевая DIA
+                                        </a>
+                                    </div>
+                                    <div class="table__cell table__cell--10">
+                                        112.0271.333
+                                    </div>
+                                    <div class="table__cell table__cell--15">
+                                        <p class="table__text table__text--strike">
+                                            500 190 РУБ
+                                        </p>
+                                        <p class="table__price">
+                                            цена со скидкой <br>
+                                            <strong>500 550</strong> руб.
+                                        </p>
+                                    </div>
+                                    <div class="table__cell table__cell--10">
+                                        Больше 10
+                                    </div>
+                                    <div class="table__cell table__cell--10">
+                                        <form action="" class="table-form">
+                                            <input type="text" class="table-form__input" value="1000">
+                                            <button class="table-form__btn">
+                                                <svg class="icon-svg">
+                                                    <use xlink:href="img/sprites/sprite.svg#icon-card-2"></use>
+                                                </svg>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="table__line">
+                                    <div class="table__cell table__cell--10">
+                                        39446
+                                    </div>
+                                    <div class="table__cell table__cell--45">
+                                        <a href="" class="table__link">
+                                            140.120.61 Фреза концевая DIA D12/NL27/L70/S12140.120.61 Фреза концевая DIA
+                                        </a>
+                                    </div>
+                                    <div class="table__cell table__cell--10">
+                                        112.0271.333
+                                    </div>
+                                    <div class="table__cell table__cell--15">
+                                        <p class="table__text table__text--strike">
+                                            500 190 РУБ
+                                        </p>
+                                        <p class="table__price">
+                                            цена со скидкой <br>
+                                            <strong>500 550</strong> руб.
+                                        </p>
+                                    </div>
+                                    <div class="table__cell table__cell--10">
+                                        Больше 10
+                                    </div>
+                                    <div class="table__cell table__cell--10">
+                                        <form action="" class="table-form">
+                                            <input type="text" class="table-form__input" value="1000">
+                                            <button class="table-form__btn">
+                                                <svg class="icon-svg">
+                                                    <use xlink:href="img/sprites/sprite.svg#icon-card-2"></use>
+                                                </svg>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="table__line">
+                                    <div class="table__cell table__cell--10">
+                                        39446
+                                    </div>
+                                    <div class="table__cell table__cell--45">
+                                        <a href="" class="table__link">
+                                            140.120.61 Фреза концевая DIA D12/NL27/L70/S12140.120.61 Фреза концевая DIA
+                                        </a>
+                                    </div>
+                                    <div class="table__cell table__cell--10">
+                                        112.0271.333
+                                    </div>
+                                    <div class="table__cell table__cell--15">
+                                        <p class="table__text table__text--strike">
+                                            500 190 РУБ
+                                        </p>
+                                        <p class="table__price">
+                                            цена со скидкой <br>
+                                            <strong>500 550</strong> руб.
+                                        </p>
+                                    </div>
+                                    <div class="table__cell table__cell--10">
+                                        Больше 10
+                                    </div>
+                                    <div class="table__cell table__cell--10">
+                                        <form action="" class="table-form">
+                                            <input type="text" class="table-form__input" value="1000">
+                                            <button class="table-form__btn">
+                                                <svg class="icon-svg">
+                                                    <use xlink:href="img/sprites/sprite.svg#icon-card-2"></use>
+                                                </svg>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="table__line">
+                                    <div class="table__cell table__cell--10">
+                                        39446
+                                    </div>
+                                    <div class="table__cell table__cell--45">
+                                        <a href="" class="table__link">
+                                            140.120.61 Фреза концевая DIA D12/NL27/L70/S12140.120.61 Фреза концевая DIA
+                                        </a>
+                                    </div>
+                                    <div class="table__cell table__cell--10">
+                                        112.0271.333
+                                    </div>
+                                    <div class="table__cell table__cell--15">
+                                        <p class="table__text table__text--strike">
+                                            500 190 РУБ
+                                        </p>
+                                        <p class="table__price">
+                                            цена со скидкой <br>
+                                            <strong>500 550</strong> руб.
+                                        </p>
+                                    </div>
+                                    <div class="table__cell table__cell--10">
+                                        Больше 10
+                                    </div>
+                                    <div class="table__cell table__cell--10">
+                                        <form action="" class="table-form">
+                                            <input type="text" class="table-form__input" value="1000">
+                                            <button class="table-form__btn">
+                                                <svg class="icon-svg">
+                                                    <use xlink:href="img/sprites/sprite.svg#icon-card-2"></use>
+                                                </svg>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="table__line">
+                                    <div class="table__cell table__cell--10">
+                                        39446
+                                    </div>
+                                    <div class="table__cell table__cell--45">
+                                        <a href="" class="table__link">
+                                            140.120.61 Фреза концевая DIA D12/NL27/L70/S12140.120.61 Фреза концевая DIA
+                                        </a>
+                                    </div>
+                                    <div class="table__cell table__cell--10">
+                                        112.0271.333
+                                    </div>
+                                    <div class="table__cell table__cell--15">
+                                        <p class="table__text table__text--strike">
+                                            500 190 РУБ
+                                        </p>
+                                        <p class="table__price">
+                                            цена со скидкой <br>
+                                            <strong>500 550</strong> руб.
+                                        </p>
+                                    </div>
+                                    <div class="table__cell table__cell--10">
+                                        Больше 10
+                                    </div>
+                                    <div class="table__cell table__cell--10">
+                                        <form action="" class="table-form">
+                                            <input type="text" class="table-form__input" value="1000">
+                                            <button class="table-form__btn">
+                                                <svg class="icon-svg">
+                                                    <use xlink:href="img/sprites/sprite.svg#icon-card-2"></use>
+                                                </svg>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="table__line">
+                                    <div class="table__cell table__cell--10">
+                                        39446
+                                    </div>
+                                    <div class="table__cell table__cell--45">
+                                        <a href="" class="table__link">
+                                            140.120.61 Фреза концевая DIA D12/NL27/L70/S12140.120.61 Фреза концевая DIA
+                                        </a>
+                                    </div>
+                                    <div class="table__cell table__cell--10">
+                                        112.0271.333
+                                    </div>
+                                    <div class="table__cell table__cell--15">
+                                        <p class="table__text table__text--strike">
+                                            500 190 РУБ
+                                        </p>
+                                        <p class="table__price">
+                                            цена со скидкой <br>
+                                            <strong>500 550</strong> руб.
+                                        </p>
+                                    </div>
+                                    <div class="table__cell table__cell--10">
+                                        Больше 10
+                                    </div>
+                                    <div class="table__cell table__cell--10">
+                                        <form action="" class="table-form">
+                                            <input type="text" class="table-form__input" value="1000">
+                                            <button class="table-form__btn">
+                                                <svg class="icon-svg">
+                                                    <use xlink:href="img/sprites/sprite.svg#icon-card-2"></use>
+                                                </svg>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
         @@include("../blocks/modules/footer/footer.html")
         @@include("../blocks/modules/temp/temp.html")

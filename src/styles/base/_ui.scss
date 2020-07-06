@@ -351,10 +351,9 @@
 	&__cell {
 		padding: 20px 4px;
 		box-sizing: border-box;
-		// min-height: 86px;
 		flex-shrink: 1;
 		&--10 {
-			width: 15%;
+			width: 10%;
 		}
 		&--15 {
 			width: 15%;
@@ -368,11 +367,19 @@
 		&--45 {
 			width: 45%;
 		}
+		&--50 {
+			width: 50%;
+		}
 		&--75 {
 			width: 75%;
 		}
 		&--80 {
 			width: 80%;
+		}
+		&--flex {
+			display: flex;
+			justify-content: center;
+			align-items: center;
 		}
 	}
 	&__light {
@@ -381,7 +388,7 @@
 	&__price {
 		color: $green;
 		font-size: 14px;
-		text-transform: uppercase;
+		// text-transform: uppercase;
 		strong {
 			font-weight: bold;
 			font-size: 30px;
@@ -392,6 +399,49 @@
 		text-decoration: underline;
 		&:hover {
 			text-decoration: none;
+		}
+	}
+	&__text {
+		flex-grow: 1;
+		&--strike {
+			text-decoration: line-through;
+		}
+	}
+	&__control {
+
+	}
+	&__arrow {
+		padding: 4px;
+		cursor: pointer;
+		svg {
+			width: 8px;
+			height: 4px;
+		}
+		&--active {
+			fill: $green !important;
+		}
+	}
+}
+
+.table-form {
+	display: flex;
+	aling-items: center;
+	&__input {
+		box-sizing: border-box;
+		border: 1px solid #E5E5E5;
+		text-align: center;
+		flex-grow: 1;
+		min-width: 0px;
+	}
+	&__btn {
+		background-color: $black;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 5px 4px;
+		svg {
+			width: 30px;
+			height: 30px;
 		}
 	}
 }

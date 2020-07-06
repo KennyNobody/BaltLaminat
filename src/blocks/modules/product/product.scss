@@ -78,6 +78,21 @@
 	background-color: $light;
 	box-shadow: 2px 4px 30px rgba(0, 0, 0, 0.14);
 	padding: 30px 30px 40px 40px;
+	&__title {
+		// margin-bottom: 34px;
+		font-weight: bold;
+		font-size: 20px;
+		line-height: 1.1;
+		max-height: 0px;
+		margin-bottom: 0px;
+		opacity: 0;
+		transition: 0.3s all;
+		&--visible {
+			opacity: 1;
+			margin-bottom: 34px;
+			max-height: 1000px;
+		}
+	}
 	&__price {
 		margin-bottom: 22px;
 		&-title {
