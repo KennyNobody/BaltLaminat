@@ -5,11 +5,24 @@
 	background-image: url('../img/bg-green.svg');
 	background-repeat: no-repeat;
 	background-position: left bottom;
+	@include r(1200) {
+		padding-top: 35px;
+		padding-bottom: 35px;
+	}
 	&__nav {
 		// , column-gap, column-width и column-rule
 		column-count: 4;
 		column-gap: 32px;
 		margin-bottom: 20px;
+		@include r(1700) {
+
+		}
+		@include r(1200) {
+			column-count: 2;
+		}
+		@include r(440) {
+			column-count: 1;
+		}
 	}
 	&__link {
 		font-weight: 500;
@@ -26,14 +39,51 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: flex-end;
+		@include r(1200) {
+			display: block;
+		}
 	}
 	&__column {
 		width: 50%;
+		@include r(1200) {
+			width: 100%;
+			border-bottom: 1px solid $light;
+			&:last-child {
+				border-bottom: none;
+			}
+		}
+	}
+	&__contacts {
+		@include r(1200) {
+			display: flex;
+			align-items: center;
+			padding-top: 16px;
+			padding-bottom: 16px;
+			border-top: 1px solid $light;
+			border-bottom: 1px solid $light;
+			// margin-bottom: 22px;
+		}
+		@include r(440) {
+			display: block;
+		}
 	}
 	&__socials {
 		margin-bottom: 17px;
+		@include r(1200) {
+			display: flex;
+			align-items: center;
+			margin-bottom: 0px;
+			margin-right: 20px;
+		}
+		@include r(440) {
+			margin-bottom: 15px;
+		}
 	}
 	&__text {
+		@include r(1200) {
+			padding-top: 25px;
+			padding-bottom: 25px;
+		}
 		strong {
 			font-weight: bold;
 			color: $light;
@@ -45,12 +95,29 @@
 				text-decoration: underline;
 			}
 		}
+		br {
+			@include r(1200) {
+				display: none;
+			}
+		}
 	}
 	&__btn {
 		width: 303px;
 		margin-bottom: 17px;
 		@include r(1700) {
 			width: 280px;
+			border-radius: 4px;
 		}
+		@include r(1200) {
+			margin-bottom: 0px;
+		}
+	}
+}
+
+.toolbar {
+	&__content {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 	}
 }

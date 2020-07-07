@@ -1,3 +1,10 @@
+@include r(1700) {
+
+}
+@include r(1200) {
+
+}
+
 .case {
 	padding-top: 50px;
 	margin-bottom: 50px;
@@ -8,7 +15,49 @@
 		margin-bottom: 50px;
 		height: 60px;
 		display: flex;
-		align-items: flex-end;
+		// align-items: flex-end;
+	}
+	&__title {
+		font-size: 30px;
+		text-transform: uppercase;
+		font-weight: bold;
+		margin-right: 120px;
+		padding-left: 0px;
+		transition: 0.3s all;
+		height: fit-content;
+		transition: 0.3s all;
+		cursor: pointer;
+		@include r(1700) {
+			margin-right: 80px;
+		}
+		@include r(1200) {
+			
+		}
+
+		&--active {
+			padding-left: 18px;
+			position: relative;
+			&:after {
+				left: 0px;
+				position: absolute;
+				bottom: 12px;
+				height: 4px;
+				width: 100%;
+				background-color: $green;
+				content: "";
+				z-index: 1;
+			}
+			span {
+				position: relative;
+				z-index: 2;
+			}
+		}
+		&:last-child {
+			margin-right: 0px;
+		}
+		&:hover {
+			opacity: 0.7;
+		}
 	}
 	&__content {
 		display: flex;

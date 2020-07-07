@@ -21,14 +21,27 @@
 		margin-bottom: 20px;
 		width: calc(50% - 10px);
 	}
+	@include r(1200) {
+		margin-bottom: 20px;
+		width: 100%;
+		display: block;
+		padding: 20px 15px;
+	}
 	&__column {
 		&--date {
 			padding: 6px 12px 12px 10px;
 			flex-shrink: 0;
+			@include r(1200) {
+				padding: 0px;
+				margin-bottom: 20px;
+			}
 		}
 		&--text {
 			padding: 25px 25px 25px 12px;
 			flex-grow: 1;
+			@include r(1200) {
+				padding: 0px;
+			}
 		}
 	}
 	&__title {

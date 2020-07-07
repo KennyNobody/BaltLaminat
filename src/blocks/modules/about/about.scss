@@ -7,6 +7,9 @@
 	&__columns {
 		display: flex;
 		justify-content: space-between;
+		@include r(1200) {
+			display: block;
+		}
 	}
 	&__column {
 		&--video {
@@ -14,18 +17,29 @@
 			@include r(1700) {
 				width: calc(100% / 12 * 8 - 10px);
 			}
+			@include r(1200) {
+				width: 100%;
+				margin-bottom: 20px;
+			}
 			iframe {
 				height: 570px;
 				width: 100%;
 				@include r(1700) {
 					height: 470px;
 				}
+				@include r(440) {
+					height: 200px;
+				}
+
 			}
 		}
 		&--content {
 			width: calc(100% / 12 * 5 - 16px);
 			@include r(1700) {
 				width: calc(100% / 12 * 4 - 10px);
+			}
+			@include r(1200) {
+				width: 100%;
 			}
 		}
 	}
