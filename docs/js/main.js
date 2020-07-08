@@ -224,6 +224,59 @@ $(document).ready(function () {
 
 /***/ }),
 
+/***/ "./src/blocks/modules/mmenu/mmenu.js":
+/*!*******************************************!*\
+  !*** ./src/blocks/modules/mmenu/mmenu.js ***!
+  \*******************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var mmenu_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mmenu-js */ "./node_modules/mmenu-js/src/mmenu.js");
+ // (function initMmenu(){
+// 	new Mmenu( "#mmenu", {
+// 		"extensions": [
+// 		"pagedim-black"
+// 		],
+// 		"counters": true,
+// 		"navbars": [
+// 		{
+// 			"position": "top",
+// 			"content": [
+// 			"searchfield"
+// 			]
+// 		},
+// 		{
+// 			"position": "bottom",
+// 			"content": [
+// 			"<a class='fa fa-envelope' href='#/'></a>",
+// 			"<a class='fa fa-twitter' href='#/'></a>",
+// 			"<a class='fa fa-facebook' href='#/'></a>"
+// 			]
+// 		}
+// 		],
+// 	});
+// })();
+
+(function initMmenu() {
+  new mmenu_js__WEBPACK_IMPORTED_MODULE_0__["default"]("#mmenu", {
+    "extensions": ["pagedim-black"],
+    "counters": true,
+    "navbars": [{
+      "position": "top",
+      "content": ["searchfield"]
+    }, {
+      "position": "bottom",
+      "content": ["<a class='fa fa-envelope' href='#/'></a>", "<a class='fa fa-twitter' href='#/'></a>", "<a class='fa fa-facebook' href='#/'></a>"]
+    }]
+  }, {
+    "language": "ru"
+  });
+})();
+
+/***/ }),
+
 /***/ "./src/blocks/modules/modal/modal.js":
 /*!*******************************************!*\
   !*** ./src/blocks/modules/modal/modal.js ***!
@@ -366,6 +419,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_slider_slider__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! %modules%/slider/slider */ "./src/blocks/modules/slider/slider.js");
 /* harmony import */ var _modules_case_case__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! %modules%/case/case */ "./src/blocks/modules/case/case.js");
 /* harmony import */ var _modules_case_case__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_modules_case_case__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _modules_mmenu_mmenu__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! %modules%/mmenu/mmenu */ "./src/blocks/modules/mmenu/mmenu.js");
+
 
 
 
@@ -633,6 +688,23 @@ $(document).ready(function () {
 
     function reset(e) {
       console.log(this);
+    }
+  })();
+
+  (function resize() {
+    var resized = document.querySelectorAll('.resized');
+
+    if (resized) {
+      window.addEventListener('resize', function () {
+        for (var i = 0; i < resized.length; i++) {
+          resized[i].setAttribute("style", "height:" + resized[i].offsetWidth + 'px');
+        }
+      });
+      window.addEventListener('load', function () {
+        for (var i = 0; i < resized.length; i++) {
+          resized[i].setAttribute("style", "height:" + resized[i].offsetWidth + 'px');
+        }
+      });
     }
   })();
 });

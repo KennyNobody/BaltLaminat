@@ -247,4 +247,23 @@ $(document).ready(function() {
 
 	})();
 
+	(function resize(){
+		const resized = document.querySelectorAll('.resized');
+
+		if (resized) {
+			window.addEventListener('resize', function(){
+				for (let i = 0; i < resized.length; i++) {
+					resized[i].setAttribute("style","height:" + resized[i].offsetWidth + 'px');
+				}
+			});
+
+			window.addEventListener('load', function(){
+				for (let i = 0; i < resized.length; i++) {
+					resized[i].setAttribute("style","height:" + resized[i].offsetWidth + 'px');
+				}
+			});
+		}
+
+	})();
+
 });

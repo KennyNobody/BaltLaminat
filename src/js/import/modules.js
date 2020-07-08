@@ -9,3 +9,4 @@ import "%modules%/product/product";
 import "%modules%/gallery/gallery";
 import "%modules%/slider/slider";
 import "%modules%/case/case";
+import "%modules%/mmenu/mmenu";

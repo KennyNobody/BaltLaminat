@@ -1,10 +1,36 @@
 .partners {
 	margin-bottom: 150px;
 	padding-top: 50px;
+	@include r(1200) {
+		padding-top: 25px;
+		margin-bottom: 50px;
+	}
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		// margin-bottom: 67px;
+		// @include r(1700) {
+		// 	margin-bottom: 32px;
+		// }
+		@include r(440) {
+			display: block;
+		}
+	}
+	&__link {
+		color: #828282;
+		font-size: 20px;
+		&:hover {
+			text-decoration: none;
+		}
+		@include r(1200) {
+			font-size: 16px;
+		}
+	}
 	&__title {
 		margin-bottom: 67px;
 		@include r(1700) {
-			margin-bottom: 32px;
+			margin-bottom: 45px;
 		}
 	}
 	&__article {
@@ -15,15 +41,25 @@
 .front-partner {
 	text-decoration: none;
 	display: flex;
-	width: 128px;
-	height: 128px;
+	width: calc(100% / 12 - 32px);
 	padding: 10px;
 	background-color: $light;
-	margin-bottom: 20px;
+	margin-bottom: 16px;
+	background-color: green;
 	@include r(1700) {
-		width: 180px;
-		height: 180px;
+		width: calc(100% / 12 - 20px);
+		margin-bottom: 10px;
 	}
+	@include r(1200) {
+		width: calc(100% / 6 - 8px);
+		margin-bottom: 8px;
+	}
+	@include r(440) {
+		width: calc(100% / 3 - 8px);
+	}
+	// @include r(440) {
+	// 	width: 96px;
+	// }
 	&--clear {
 		height: 0px !important;
 		visibility: hidden;

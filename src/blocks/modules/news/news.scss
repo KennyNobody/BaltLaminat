@@ -1,8 +1,15 @@
 .news {
 	padding-top: 50px;
 	margin-bottom: 50px;
+	@include r(1200) {
+		padding-top: 25px;
+		margin-bottom: 25px;
+	}
 	&__title {
 		margin-bottom: 50px;
+		@include r(1200) {
+			margin-bottom: 20px;
+		}
 	}
 }
 
@@ -26,6 +33,7 @@
 		width: 100%;
 		display: block;
 		padding: 20px 15px;
+		border-radius: 4px;
 	}
 	&__column {
 		&--date {

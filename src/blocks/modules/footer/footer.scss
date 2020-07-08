@@ -114,10 +114,42 @@
 	}
 }
 
-.toolbar {
+.footer-toolbar {
+	background-color: #F9F9F9;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	z-index: 3;
+	padding-top: 2px;
+	box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.08);
+	display: none;
+	@include r(1200) {
+		display: block;
+	}
 	&__content {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+	}
+	&__link {
+		width: 25%;
+		text-align: center;
+		text-decoration: none;
+		color: #828282;
+		padding-top: 9px;
+		padding-bottom: 9px;
+		display: block;
+		@include r(440) {
+			font-size: 14px;
+		}
+	}
+	&__icon {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		height: 22px;
+		width: 22px;
+		// margin-bottom: 5px;
 	}
 }
