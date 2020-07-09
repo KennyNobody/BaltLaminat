@@ -6044,6 +6044,7 @@ i {
 
 .filter {
   padding-right: 8px;
+  display: block !important;
 }
 
 .filter__section {
@@ -8503,6 +8504,11 @@ i {
     font-size: 30px;
   }
 
+  .pagination__counter {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
   .accent-line__container {
     align-items: flex-start;
   }
@@ -8846,6 +8852,10 @@ i {
 
   .toolbar__spreader {
     display: none;
+  }
+
+  .sort-type {
+    margin-right: 10px;
   }
 
   .sort-type__btn--filter {

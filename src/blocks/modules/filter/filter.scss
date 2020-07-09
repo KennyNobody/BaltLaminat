@@ -1,5 +1,6 @@
 .filter {
 	padding-right: 8px;
+	display: block !important;
 	@include r(1200) {
 		// background-color: green;
 		// position: fixed;
