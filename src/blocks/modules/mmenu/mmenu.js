@@ -28,7 +28,8 @@ import Mmenu from 'mmenu-js';
 (function initMmenu(){
 	new Mmenu( "#mmenu", {
 		"extensions": [
-		"pagedim-black"
+		"pagedim-black",
+		"fx-menu-slide"
 		],
 		"counters": true,
 		"navbars": [

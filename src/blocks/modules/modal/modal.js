@@ -7,6 +7,14 @@ $( document ).ready(function() {
 		
 	});
 
+	$('[data-fancybox="filter-modal"]').fancybox({
+		// afterShow: function(){
+		// 	$(".fancybox-wrap").css({"top":0, "margin":"100px 0 0"});
+		// }
+		slideClass: "filter-fancybox",
+		hideScrollbar: false,
+	});
+
 	$('[data-fancybox="service-modal"]').fancybox({
 		onActivate: function( instance, current ) {
 			console.info( 'Clicked element:' );

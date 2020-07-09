@@ -12,12 +12,6 @@
 //     node.replaceWith(...node.childNodes);
 // }
 
-
-
-// document.addEventListener('scroll', e => {
-// 	console.log(stickyCard.offsetTop)
-// });
-
 (function () {
 	const stickyCard = document.querySelector('.grid__block--product-card');
 

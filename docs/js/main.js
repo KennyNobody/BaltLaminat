@@ -261,7 +261,7 @@ __webpack_require__.r(__webpack_exports__);
 
 (function initMmenu() {
   new mmenu_js__WEBPACK_IMPORTED_MODULE_0__["default"]("#mmenu", {
-    "extensions": ["pagedim-black"],
+    "extensions": ["pagedim-black", "fx-menu-slide"],
     "counters": true,
     "navbars": [{
       "position": "top",
@@ -294,6 +294,13 @@ __webpack_require__.r(__webpack_exports__);
 
 $(document).ready(function () {
   $('[data-fancybox="modal"]').fancybox({});
+  $('[data-fancybox="filter-modal"]').fancybox({
+    // afterShow: function(){
+    // 	$(".fancybox-wrap").css({"top":0, "margin":"100px 0 0"});
+    // }
+    slideClass: "filter-fancybox",
+    hideScrollbar: false
+  });
   $('[data-fancybox="service-modal"]').fancybox({
     onActivate: function onActivate(instance, current) {
       console.info('Clicked element:');
@@ -329,9 +336,6 @@ $(document).ready(function () {
 // function unwrap(node) {
 //     node.replaceWith(...node.childNodes);
 // }
-// document.addEventListener('scroll', e => {
-// 	console.log(stickyCard.offsetTop)
-// });
 (function () {
   var stickyCard = document.querySelector('.grid__block--product-card');
 
@@ -500,15 +504,6 @@ $(document).ready(function () {
         duplicateItemsAllowed: true,
         delimiter: ',',
         paste: true,
-        // searchEnabled: true,
-        // searchChoices: true,
-        // searchFloor: 1,
-        // searchResultLimit: 4,
-        // searchFields: ['label', 'value'],
-        // position: 'auto',
-        // resetScrollPosition: true,
-        // shouldSort: true,
-        // shouldSortItems: false,
         placeholder: false,
         placeholderValue: null,
         searchPlaceholderValue: null,
@@ -569,15 +564,6 @@ $(document).ready(function () {
         duplicateItemsAllowed: true,
         delimiter: ',',
         paste: true,
-        // searchEnabled: true,
-        // searchChoices: true,
-        // searchFloor: 1,
-        // searchResultLimit: 4,
-        // searchFields: ['label', 'value'],
-        // position: 'auto',
-        // resetScrollPosition: true,
-        // shouldSort: true,
-        // shouldSortItems: false,
         placeholder: false,
         placeholderValue: null,
         searchPlaceholderValue: null,
@@ -706,6 +692,51 @@ $(document).ready(function () {
         }
       });
     }
+  })(); // Кастомный скролл
+
+
+  (function initScrollbars() {
+    var isMobile;
+    var scrollbar1;
+    var scrollbar2;
+    var init = false;
+
+    function checkMobile() {
+      if (document.documentElement.clientWidth > 1200) {
+        isMobile = false;
+        initLibs();
+      } else {
+        isMobile = true;
+        destroyLibs();
+      }
+    }
+
+    function initLibs() {
+      if (init == false && isMobile == false) {
+        scrollbar1 = new simplebar__WEBPACK_IMPORTED_MODULE_1__["default"](document.querySelector('#scrollbar-1'));
+        scrollbar2 = new simplebar__WEBPACK_IMPORTED_MODULE_1__["default"](document.querySelector('#scrollbar-2'));
+        init = true;
+        console.log(scrollbar1);
+        console.log(scrollbar2);
+      }
+    }
+
+    function destroyLibs() {
+      if (init == true && isMobile == true) {
+        scrollbar1.unMount();
+        scrollbar2.unMount();
+        init = false;
+      }
+    }
+
+    checkMobile();
+    initLibs(); // function destroyLibs() {
+    // 	const scrollbars = document.querySelectorAll('.custom-scrollbar');
+    // 	for (let i = 0; i < scrollbars.length; i++) {
+    // 	}
+    // }
+
+    window.addEventListener('resize', checkMobile);
   })();
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))

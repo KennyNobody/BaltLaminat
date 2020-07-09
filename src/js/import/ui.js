@@ -50,15 +50,6 @@ $(document).ready(function() {
 				duplicateItemsAllowed: true,
 				delimiter: ',',
 				paste: true,
-				// searchEnabled: true,
-				// searchChoices: true,
-				// searchFloor: 1,
-				// searchResultLimit: 4,
-				// searchFields: ['label', 'value'],
-				// position: 'auto',
-				// resetScrollPosition: true,
-				// shouldSort: true,
-				// shouldSortItems: false,
 				placeholder: false,
 				placeholderValue: null,
 				searchPlaceholderValue: null,
@@ -99,8 +90,6 @@ $(document).ready(function() {
 				},
 			});
 		}
-
-		
 	})();
 
 	(function () {
@@ -121,15 +110,6 @@ $(document).ready(function() {
 				duplicateItemsAllowed: true,
 				delimiter: ',',
 				paste: true,
-				// searchEnabled: true,
-				// searchChoices: true,
-				// searchFloor: 1,
-				// searchResultLimit: 4,
-				// searchFields: ['label', 'value'],
-				// position: 'auto',
-				// resetScrollPosition: true,
-				// shouldSort: true,
-				// shouldSortItems: false,
 				placeholder: false,
 				placeholderValue: null,
 				searchPlaceholderValue: null,
@@ -170,8 +150,6 @@ $(document).ready(function() {
 				},
 			});
 		}
-
-		
 	})();
 
 	// Выпадашки фильтра
@@ -244,7 +222,6 @@ $(document).ready(function() {
 		function reset(e) {
 			console.log(this)
 		}
-
 	})();
 
 	(function resize(){
@@ -263,7 +240,58 @@ $(document).ready(function() {
 				}
 			});
 		}
-
 	})();
 
+	// Кастомный скролл
+	(function initScrollbars(){
+
+		let isMobile;
+		let scrollbar1;
+		let scrollbar2;
+		let init = false;
+
+
+		function checkMobile() {
+			if (document.documentElement.clientWidth > 1200) {
+				isMobile = false;
+				initLibs();
+			} else {
+				isMobile = true;
+				destroyLibs();
+			}
+		}
+
+		function initLibs() {
+			if (init == false && isMobile == false) {
+				scrollbar1 = new SimpleBar(document.querySelector('#scrollbar-1'));
+				scrollbar2 = new SimpleBar(document.querySelector('#scrollbar-2'));
+				init = true;
+				console.log(scrollbar1);
+				console.log(scrollbar2);
+			}
+		}
+
+		function destroyLibs() {
+			if (init == true && isMobile == true) {
+				scrollbar1.unMount();
+				scrollbar2.unMount();
+				init = false;
+			}
+		}
+
+		checkMobile();
+		initLibs();
+
+		// function destroyLibs() {
+		// 	const scrollbars = document.querySelectorAll('.custom-scrollbar');
+
+		// 	for (let i = 0; i < scrollbars.length; i++) {
+
+		// 	}
+		// }
+
+		window.addEventListener('resize', checkMobile);
+
+		
+	})();
 });

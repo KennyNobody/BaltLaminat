@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <title>2. Новинки</title>
+    <title>4. Каталог</title>
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="theme-color" content="#fff">
@@ -205,7 +205,7 @@
                 <div class="container">
                     <div class="catalog__content">
                         <aside class="catalog__side">
-                            <section class="filter">
+                            <section class="filter" id="filter">
 	<div class="filter__section">
 		<div class="filter__title">
 			<p class="title-small title-small--product">
@@ -214,7 +214,7 @@
 				</span>
 			</p>
 		</div>
-		<div data-simplebar data-simplebar-auto-hide="false" class="filter__content filter__content--scroll" >
+		<div class="filter__content filter__content--scroll" id="scrollbar-1">
 			<div class="filter-drop">
 				<div class="filter-drop__header">
 					<svg class="icon-svg filter-drop__icon">
@@ -9346,7 +9346,7 @@
 	</div>
 
 	<div class="filter__section">
-		<div data-simplebar data-simplebar-auto-hide="false" class="filter__content filter__content--scroll">
+		<div class="filter__content filter__content--scroll" id="scrollbar-2">
 			<div class="filter-drop">
 				<div class="filter-drop__header">
 					<svg class="icon-svg filter-drop__icon">
@@ -9493,6 +9493,13 @@
                             <div class="catalog__header">
                                 <div class="toolbar">
                                     <div class="sort-type">
+
+                                        <a href="#filter" class="sort-type__btn sort-type__btn--filter" data-fancybox="filter-modal">
+                                            <svg class="icon-svg">
+                                                <use xlink:href="img/sprites/sprite.svg#icon-sort"></use>
+                                            </svg>
+                                        </a>
+
                                         <button class="sort-type__btn sort-type__btn--active sort-type__btn--masonry">
                                             <svg class="icon-svg">
                                                 <use xlink:href="img/sprites/sprite.svg#icon-masonry"></use>
@@ -9547,8 +9554,8 @@
                                 </div>
                             </div>
                             <div class="catalog__articles articles">
-                                <article href="" class="card">
-                                    <a href class="card__thumb">
+                                <article class="card">
+                                    <a href class="resized card__thumb">
                                         <div class="card__tags"></div>
                                         <img src="http://placehold.it/900x600" alt="Название товара">
                                     </a>
@@ -9629,8 +9636,8 @@
                                     </button>
                                 </article>
 
-                                <article href="" class="card">
-                                    <a href class="card__thumb">
+                                <article class="card">
+                                    <a href class="resized card__thumb">
                                         <img src="http://placehold.it/900x600" alt="Название товара">
                                         <div class="card__tags">
                                             <span class="card__tag card__tag--blue">
@@ -9715,8 +9722,8 @@
                                     </button>
                                 </article>
 
-                                <article href="" class="card">
-                                    <a href class="card__thumb">
+                                <article class="card">
+                                    <a href class="resized card__thumb">
                                         <img src="http://placehold.it/900x600" alt="Название товара">
                                         <div class="card__tags">
                                             <span class="card__tag card__tag--orange">
@@ -9801,8 +9808,8 @@
                                     </button>
                                 </article>
 
-                                <article href="" class="card">
-                                    <a href class="card__thumb">
+                                <article class="card">
+                                    <a href class="resized card__thumb">
                                         <img src="http://placehold.it/900x600" alt="Название товара">
                                         <div class="card__tags">
                                             <span class="card__tag card__tag--red">
@@ -9887,8 +9894,8 @@
                                     </button>
                                 </article>
 
-                                <article href="" class="card">
-                                    <a href class="card__thumb">
+                                <article class="card">
+                                    <a href class="resized card__thumb">
                                         <img src="http://placehold.it/900x600" alt="Название товара">
                                     </a>
                                     <a href="" class="card__title">
@@ -9968,8 +9975,8 @@
                                     </button>
                                 </article>
 
-                                <article href="" class="card">
-                                    <a href class="card__thumb">
+                                <article class="card">
+                                    <a href class="resized card__thumb">
                                         <img src="http://placehold.it/900x600" alt="Название товара">
                                         <div class="card__tags">
                                             <span class="card__tag card__tag--orange">
@@ -10054,8 +10061,8 @@
                                     </button>
                                 </article>
 
-                                <article href="" class="card">
-                                    <a href class="card__thumb">
+                                <article class="card">
+                                    <a href class="resized card__thumb">
                                         <img src="http://placehold.it/900x600" alt="Название товара">
                                         <div class="card__tags">
                                             <span class="card__tag card__tag--red">
@@ -10317,10 +10324,10 @@
 				</a>
 				<a href="" class="footer-toolbar__link">
 					<svg class="icon-svg footer-toolbar__icon">
-						<use xlink:href="img/sprites/sprite.svg#icon-footer-favorites"></use>
+						<use xlink:href="img/sprites/sprite.svg#icon-footer-profile"></use>
 					</svg>
 					<p class="footer-toolbar__text">
-						Избранное
+						Профиль
 					</p>
 				</a>
 				<a href="" class="footer-toolbar__link">

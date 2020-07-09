@@ -2,13 +2,21 @@
 	padding-top: 40px;
 	padding-bottom: 40px;
 	margin-bottom: 8px;
+	@include r(1200) {
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
 	&__content {
 		display: flex;
 		align-items: center;
+		flex-wrap: wrap;
 	}
 	&__link {
 		text-decoration: none;
 		color: $dark;
+		@include r(1200) {
+			font-size: 12px;
+		}
 		&--static {
 			color: #BDBDBD;
 			pointer-events: none;
@@ -22,5 +30,11 @@
 		height: 12px;
 		margin-left: 16px;
 		margin-right: 16px;
+		@include r(1200) {
+			width: 10px;
+			height: 10px;
+			margin-left: 8px;
+			margin-right: 8px;
+		}
 	}
 }
