@@ -1,5 +1,8 @@
 .slider {
 	margin-bottom: 48px;
+	@include r(1200) {
+		margin-bottom: 30px;
+	}
 }
 
 .slider-top {

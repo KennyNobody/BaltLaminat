@@ -1,16 +1,56 @@
 // Выполнять на мобилке
 
-// const columns = document.querySelectorAll('.grid__column');
+(function(){
+	const columnsGrid = document.querySelectorAll('.grid__column');
+	const columnsService = document.querySelectorAll('.service__column');
 
-// if (columns) {
-// 	for (let i = 0; i < columns.length; i++) {
-// 		unwrap(columns[i]);
-// 	}
-// }
+	let mobile = false;
 
-// function unwrap(node) {
-//     node.replaceWith(...node.childNodes);
-// }
+	function checkMobile() {
+		if (window.innerWidth > 1200) {
+			mobile = false;
+			// console.log('Десктоп');
+		} else {
+			mobile = true;
+			// console.log('Мобилка');
+		}
+	}
+
+	window.addEventListener('resize', checkMobile);
+	window.addEventListener('resize', toggle);
+
+	function toggle() {
+		console.log(window.innerWidth > 1200 );
+		if (window.innerWidth > 1200 && mobile == false) {
+			mobile = false;
+			window.location.reload();
+			console.log('Релоад');
+
+		} else if (window.innerWidth < 1200 && mobile == true) {
+			if (columnsGrid) {
+				for (let i = 0; i < columnsGrid.length; i++) {
+					unwrap(columnsGrid[i]);
+				}
+			}
+
+			if (columnsService) {
+				for (let i = 0; i < columnsService.length; i++) {
+					unwrap(columnsService[i]);
+				}
+			}
+
+			function unwrap(node) {
+				node.replaceWith(...node.childNodes);
+			};
+			console.log('Анврап');
+		} else {
+			console.log('Ничего');
+			return false;
+		}
+	}
+
+	
+})();
 
 (function () {
 	const stickyCard = document.querySelector('.grid__block--product-card');

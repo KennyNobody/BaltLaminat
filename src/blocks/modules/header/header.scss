@@ -11,7 +11,7 @@
 		padding-bottom: 13px;
 	}
 	@include r(1200) {
-
+		display: none;
 	}
 	&__container {
 		display: flex;

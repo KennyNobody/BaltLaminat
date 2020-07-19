@@ -8,9 +8,15 @@
 .product-articles {
 	&__title {
 		margin-bottom: 50px;
+		@include r(1200) {
+			margin-bottom: 26px;
+		}
 	}
 	&__articles {
 		width: calc(100% / 12 * 9 - 16px);
+		@include r(1200) {
+			width: 100%;
+		}
 	}
 }
 
@@ -19,6 +25,10 @@
 	font-weight: bold;
 	font-size: 30px;
 	line-height: 1.2;
+	@include r(1200) {
+		font-size: 20px;
+		margin: 0px;
+	}
 }
 
 .product-params {
@@ -91,6 +101,9 @@
 			opacity: 1;
 			margin-bottom: 34px;
 			max-height: 1000px;
+		}
+		@include r(1200) {
+			display: none !important;
 		}
 	}
 	&__price {
