@@ -1,6 +1,9 @@
 .text {
 	line-height: 1.5;
 	font-size: 16px;
+	@include r(1200) {
+		font-size: 14px;
+	}
 	p {
 		margin-bottom: 1em;
 	}
@@ -44,6 +47,9 @@
 	picture {
 		padding-right: 140px;
 		display: block;
+		@include r(1200) {
+			padding-right: 0px;
+		}
 	}
 	img {
 		display: block;
@@ -58,6 +64,10 @@
 		line-height: 2;
 		font-size: inherit;
 		padding-left: 40px;
+		@include r(1200) {
+			list-style-position: inside;
+			padding-left: 0px;
+		}
 		color: $green;
 		span {
 			color: $dark;
@@ -79,17 +89,29 @@
 .marker-block {
 	display: inline-flex;
 	align-items: center;
+	@include r(1200) {
+		display: flex;
+		margin-bottom: 15px;
+	}
 	svg {
 		flex-shrink: 0;
 		display: block;
 		width: 40px;
 		height: 40px;
 		margin-right: 24px;
+		@include r(1200) {
+			width: 22px;
+			height: 22px;
+			margin-right: 15px;
+		}
 	}
 	span, a {
 		text-decoration: none;
 		color: $dark;
 		font-size: 20px;
+		@include r(1200) {
+			font-size: 16px;
+		}
 	}
 	a {
 		&:hover {

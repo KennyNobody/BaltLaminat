@@ -6,9 +6,17 @@
 		display: flex;
 		padding-right: 20px;
 		margin-bottom: 70px;
+		@include r(1200) {
+			display: block;
+			padding-right: 0px;
+			margin-bottom: 0px;
+		}
 	}
 	&__column {
 		width: calc(100% / 3);
+		@include r(1200) {
+			width: 100%;
+		}
 		&--blue {
 			.contacts__main-title {
 				color: $blue;
@@ -54,5 +62,8 @@
 	}
 	&__map {
 		height: 770px;
+		@include r(1200) {
+			height: 400px;
+		}
 	}
 }

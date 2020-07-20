@@ -52,7 +52,7 @@
 	
 })();
 
-(function () {
+(function toggleCardTitle() {
 	const stickyCard = document.querySelector('.grid__block--product-card');
 
 	if (stickyCard) {
@@ -67,7 +67,6 @@
 				title.classList.remove('product-card__title--visible');
 			}
 		});
-
 	}
 	
 })();
