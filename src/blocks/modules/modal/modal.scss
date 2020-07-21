@@ -82,7 +82,24 @@
 	}
 }
 
-.fancybox-content {
-	width: 100%;
-	padding: 0px;
+.fancybox-container {
+	&--menu {
+		.fancybox-content {
+			width: 100%;
+			padding: 0px;
+		}
+
+		.fancybox-close-small {
+			color: $light !important;
+			height: 54px;
+			width: 54px;
+			transition: 0.3s all;
+			top: 7px;
+			right: 0px;
+			@include r(1700) {
+				top: 15px;
+			}
+		}
+	}
 }
+

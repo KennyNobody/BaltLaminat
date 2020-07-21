@@ -15,15 +15,23 @@ $(document).ready(function() {
 				arrows: false,
 				touch: false,
 				beforeShow : function( instance, current ) {
-					$('.head-nav__link').removeClass('head-nav__link--active');
+					// $('.head-nav__link').removeClass('head-nav__link--active');
 					$('a[href|="' + this.src + '"]').addClass('head-nav__link--active');
 				},
-				btnTpl: { 
-					close: 
-					'<button data-fancybox-close class ="custom fancybox-button fancybox-button - close "title =" {{CLOSE}} ">' +
-					'<svg xmlns = "http://www.w3.org/2000/svg" viewBox = "0 0 24 24"> <path d = "M12 10.6L6.6 5.2 5.2 6.6l5.4 5.4-5.4 5.4 1.4 1.4 5.4-5.4 5.4 5.4 1.4-1.4-5.4-5.4 5.4-5.4-1.4-1.4-5.4 5.4z "/> </ svg> '+ 
-					" </ button> ", 
-				}
+				afterClose : function( ) {
+					$('.head-nav__link').removeClass('head-nav__link--active');
+				},
+				baseTpl:
+				'<div class="fancybox-container fancybox-container--menu" role="dialog" tabindex="-1">' +
+				'<div class="fancybox-bg"></div>' +
+				'<div class="fancybox-inner">' +
+				'<div class="fancybox-infobar"><span data-fancybox-index></span>&nbsp;/&nbsp;<span data-fancybox-count></span></div>' +
+				'<div class="fancybox-toolbar">{{buttons}}</div>' +
+				'<div class="fancybox-navigation">{{arrows}}</div>' +
+				'<div class="fancybox-stage"></div>' +
+				'<div class="fancybox-caption"><div class=""fancybox-caption__body"></div></div>' +
+				'</div>' +
+				'</div>',
 			}
 		});
 		
