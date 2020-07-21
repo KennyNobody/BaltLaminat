@@ -5413,6 +5413,10 @@ i {
   text-transform: uppercase;
 }
 
+.head-nav__link--active {
+  color: #00C25A;
+}
+
 .head-nav__link:hover {
   opacity: 0.7;
 }
@@ -5773,8 +5777,10 @@ i {
 .modal-menu {
   background-color: #ffffff;
   min-height: 120vh;
-  padding-top: 50px;
   padding-bottom: 50px;
+  position: relative;
+  display: block;
+  width: 100%;
 }
 
 .modal-menu__main-title {
@@ -5825,6 +5831,13 @@ i {
   opacity: 0.7;
 }
 
+.modal-menu__nav {
+  background-color: #000000;
+  margin-bottom: 35px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
 .modal-write {
   position: relative;
   padding: 23px 37px;
@@ -5855,6 +5868,11 @@ i {
 
 .modal-service__text {
   width: calc(50% - 16px);
+}
+
+.fancybox-content {
+  width: 100%;
+  padding: 0px;
 }
 
 .breadcrumbs {

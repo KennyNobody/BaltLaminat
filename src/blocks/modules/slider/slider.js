@@ -63,17 +63,18 @@ import Swiper from 'swiper';
 
 (function initCaseSlider(){
 
-	let caseSlider = new Swiper ('.case__slider-container', {
+	let caseSlider = new Swiper ('.case__articles', {
 		slidesPerView: 1,
 		autoHeight: true,
 		pagination: {
-			el: '.slider-top__pagination',
-			type: 'fraction',
-		},
-		navigation: {
-			nextEl: '.slider-top__btn--next',
-			prevEl: '.slider-top__btn--prev',
-			disabledClass: 'slider-top__btn--disabled'
+			el: '.case__header',
+			clickable: true,
+			bulletActiveClass: 'case__title--active',
+			bulletClass: 'case__title',
+			// type: 'fraction',
+			renderBullet: function (index, className) {
+				return '<p class="' + className + '"><span>' + this.slides[index].dataset.name + '</span></p>';
+			},
 		},
 	});
 

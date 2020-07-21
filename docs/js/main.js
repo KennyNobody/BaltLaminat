@@ -250,7 +250,29 @@ __webpack_require__.r(__webpack_exports__);
 
 
 $(document).ready(function () {
-  $('[data-fancybox="modal"]').fancybox();
+  $('[data-modal]').click(function (e) {
+    $.fancybox.close(); // $(this).addClass('head-nav__link--active');
+
+    e.preventDefault();
+    $.fancybox.open({
+      src: this.attributes[0].nodeValue,
+      type: 'inline',
+      opts: {
+        arrows: false,
+        touch: false,
+        beforeShow: function beforeShow(instance, current) {
+          $('.head-nav__link').removeClass('head-nav__link--active');
+          $('a[href|="' + this.src + '"]').addClass('head-nav__link--active');
+        },
+        btnTpl: {
+          close: '<button data-fancybox-close class ="custom fancybox-button fancybox-button - close "title =" {{CLOSE}} ">' + '<svg xmlns = "http://www.w3.org/2000/svg" viewBox = "0 0 24 24"> <path d = "M12 10.6L6.6 5.2 5.2 6.6l5.4 5.4-5.4 5.4 1.4 1.4 5.4-5.4 5.4 5.4 1.4-1.4-5.4-5.4 5.4-5.4-1.4-1.4-5.4 5.4z "/> </ svg> ' + " </ button> "
+        }
+      }
+    });
+  });
+  $('[data-fancybox="modal"]').fancybox({
+    arrows: false
+  });
   $('[data-fancybox="filter-modal"]').fancybox({
     slideClass: "filter-fancybox",
     touch: false
@@ -430,17 +452,18 @@ __webpack_require__.r(__webpack_exports__);
 })();
 
 (function initCaseSlider() {
-  var caseSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.case__slider-container', {
+  var caseSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.case__articles', {
     slidesPerView: 1,
     autoHeight: true,
     pagination: {
-      el: '.slider-top__pagination',
-      type: 'fraction'
-    },
-    navigation: {
-      nextEl: '.slider-top__btn--next',
-      prevEl: '.slider-top__btn--prev',
-      disabledClass: 'slider-top__btn--disabled'
+      el: '.case__header',
+      clickable: true,
+      bulletActiveClass: 'case__title--active',
+      bulletClass: 'case__title',
+      // type: 'fraction',
+      renderBullet: function renderBullet(index, className) {
+        return '<p class="' + className + '"><span>' + this.slides[index].dataset.name + '</span></p>';
+      }
     }
   });
 })();
