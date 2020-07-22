@@ -9,7 +9,18 @@
 
 	(function() {
 
-		window.addEventListener("resize", resizeThrottler);
+		var width = $(window).width();
+		$(window).on('resize', function() {
+			if ($(this).width() !== width) {
+				width = $(this).width();
+				resizeThrottler();
+				console.log('Изменили ширину')
+			}
+		});
+
+
+
+		// window.addEventListener("resize", );
 
 		let resizeTimeout;
 

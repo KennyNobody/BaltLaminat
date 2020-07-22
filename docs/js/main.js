@@ -249,9 +249,9 @@ $(document).ready(function () {
   !*** ./src/blocks/modules/product/product.js ***!
   \***********************************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+/* WEBPACK VAR INJECTION */(function($) {function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
@@ -270,7 +270,15 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
   // });
 
   (function () {
-    window.addEventListener("resize", resizeThrottler);
+    var width = $(window).width();
+    $(window).on('resize', function () {
+      if ($(this).width() !== width) {
+        width = $(this).width();
+        resizeThrottler();
+        console.log('Изменили ширину');
+      }
+    }); // window.addEventListener("resize", );
+
     var resizeTimeout;
 
     function resizeThrottler() {
@@ -333,6 +341,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     });
   }
 })();
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
 
