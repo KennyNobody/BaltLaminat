@@ -7,5 +7,5 @@ import "./ui";
 import "%modules%/modal/modal";
 import "%modules%/product/product"; // Врап/анврап
 import "%modules%/slider/slider";
-import "%modules%/case/case";
+
 import "%modules%/mmenu/mmenu";

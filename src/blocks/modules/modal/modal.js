@@ -6,7 +6,6 @@ $(document).ready(function() {
 
 	$('[data-modal]').click(function(e){
 		$.fancybox.close();
-		// $(this).addClass('head-nav__link--active');
 		e.preventDefault();
 		$.fancybox.open({
 			src  : this.attributes[0].nodeValue,
@@ -15,10 +14,10 @@ $(document).ready(function() {
 				arrows: false,
 				touch: false,
 				beforeShow : function( instance, current ) {
-					// $('.head-nav__link').removeClass('head-nav__link--active');
+					$('.head-nav__link').removeClass('head-nav__link--active');
 					$('a[href|="' + this.src + '"]').addClass('head-nav__link--active');
 				},
-				afterClose : function( ) {
+				beforeClose : function( ) {
 					$('.head-nav__link').removeClass('head-nav__link--active');
 				},
 				baseTpl:
@@ -34,7 +33,6 @@ $(document).ready(function() {
 				'</div>',
 			}
 		});
-		
 	});
 	
 	$('[data-fancybox="modal"]').fancybox({

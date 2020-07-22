@@ -1,54 +1,59 @@
-// Выполнять на мобилке
-
 (function(){
 	const columnsGrid = document.querySelectorAll('.grid__column');
 	const columnsService = document.querySelectorAll('.service__column');
 
-	let mobile = false;
+	window.addEventListener('load', toggle);
+	// window.addEventListener('resize', function(){
+		
+	// });
 
-	function checkMobile() {
-		if (window.innerWidth > 1200) {
-			mobile = false;
-			// console.log('Десктоп');
-		} else {
-			mobile = true;
-			// console.log('Мобилка');
+	(function() {
+
+		window.addEventListener("resize", resizeThrottler);
+
+		let resizeTimeout;
+
+		function resizeThrottler() {
+
+			if ( !resizeTimeout ) {
+				resizeTimeout = setTimeout(function() {
+					resizeTimeout = null;
+					actualResizeHandler();
+				}, 500);
+			}
 		}
-	}
 
-	window.addEventListener('resize', checkMobile);
-	window.addEventListener('resize', toggle);
+		function actualResizeHandler() {
+			document.location.reload(true);
+		}
+
+	}());
 
 	function toggle() {
-		console.log(window.innerWidth > 1200 );
-		if (window.innerWidth > 1200 && mobile == false) {
-			mobile = false;
-			window.location.reload();
-			console.log('Релоад');
-
-		} else if (window.innerWidth < 1200 && mobile == true) {
+		if (window.innerWidth > 1200) {
+			initSlider();
+		} else if (window.innerWidth < 1200) {
 			if (columnsGrid) {
 				for (let i = 0; i < columnsGrid.length; i++) {
 					unwrap(columnsGrid[i]);
+					initSlider();
 				}
 			}
 
 			if (columnsService) {
 				for (let i = 0; i < columnsService.length; i++) {
 					unwrap(columnsService[i]);
+					initSlider();
 				}
 			}
 
 			function unwrap(node) {
 				node.replaceWith(...node.childNodes);
 			};
-			console.log('Анврап');
 		} else {
-			console.log('Ничего');
 			return false;
 		}
 	}
-
 	
 })();
 

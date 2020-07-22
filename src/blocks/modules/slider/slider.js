@@ -1,65 +1,60 @@
 import Swiper from 'swiper';
 
-(function () {
-	function initSlider() {
+window.initSlider = function() {
 
-		const sliderTop = document.querySelectorAll('.slider-top');
-		const sliderBottom = document.querySelectorAll('.slider-bottom');
+	const sliderTop = document.querySelectorAll('.slider-top');
+	const sliderBottom = document.querySelectorAll('.slider-bottom');
 
-		if (window.innerWidth > 1200) {
-			console.log('Декстоп');
-			for (let i = 0; i < sliderTop.length; i++) {
+	if (window.innerWidth > 1200) {
+		for (let i = 0; i < sliderTop.length; i++) {
 
-				let mySwiperThumbs = new Swiper (sliderBottom[i], {
-					slidesPerView: 'auto',
-					spaceBetween: 32,
-					freeMode: true,
-					observer: true,
-					observeParents: true,
-				});
+			let mySwiperThumbs = new Swiper (sliderBottom[i], {
+				slidesPerView: 'auto',
+				spaceBetween: 32,
+				freeMode: true,
+				observer: true,
+				observeParents: true,
+			});
 
-				let mySwiperTop = new Swiper (sliderTop[i], {
-					slidesPerView: 1,
-					observer: true,
-					observeParents: true,
-					navigation: {
-						nextEl: '.slider-bottom__btn--right',
-						prevEl: '.slider-bottom__btn--left',
-					},
-					thumbs: {
-						swiper: mySwiperThumbs,
-						slideThumbActiveClass: 'slider-bottom__slide--active'
-					}
-				});
+			let mySwiperTop = new Swiper (sliderTop[i], {
+				slidesPerView: 1,
+				observer: true,
+				observeParents: true,
+				navigation: {
+					nextEl: '.slider-bottom__btn--right',
+					prevEl: '.slider-bottom__btn--left',
+				},
+				thumbs: {
+					swiper: mySwiperThumbs,
+					slideThumbActiveClass: 'slider-bottom__slide--active'
+				}
+			});
 
-			}
-		} else {
-			console.log('Мобилка');
-			for (let i = 0; i < sliderTop.length; i++) {
-
-				let mySwiperTop = new Swiper (sliderTop[i], {
-					slidesPerView: 1,
-					observer: true,
-					observeParents: true,
-					autoHeight: true,
-					pagination: {
-						el: '.slider-top__pagination',
-						type: 'fraction',
-					},
-					navigation: {
-						nextEl: '.slider-top__btn--next',
-						prevEl: '.slider-top__btn--prev',
-						disabledClass: 'slider-top__btn--disabled'
-					},
-				});
-
-			}
 		}
+	} else {
+		for (let i = 0; i < sliderTop.length; i++) {
 
-	};
+			let mySwiperTop = new Swiper (sliderTop[i], {
+				slidesPerView: 1,
+				observer: true,
+				observeParents: true,
+				autoHeight: true,
+				pagination: {
+					el: '.slider-top__pagination',
+					type: 'fraction',
+				},
+				navigation: {
+					nextEl: '.slider-top__btn--next',
+					prevEl: '.slider-top__btn--prev',
+					disabledClass: 'slider-top__btn--disabled'
+				},
+			});
 
-	window.addEventListener('load', initSlider);
-})();
+		}
+	}
+};
+
+// window.addEventListener('load', initSlider);
 
 (function initCaseSlider(){
 
@@ -80,24 +75,24 @@ import Swiper from 'swiper';
 
 })();
 
-(function() {
+// (function() {
 
-	window.addEventListener("resize", resizeThrottler);
+// 	window.addEventListener("resize", resizeThrottler);
 
-	let resizeTimeout;
+// 	let resizeTimeout;
 
-	function resizeThrottler() {
+// 	function resizeThrottler() {
 
-		if ( !resizeTimeout ) {
-			resizeTimeout = setTimeout(function() {
-				resizeTimeout = null;
-				actualResizeHandler();
-			}, 500);
-		}
-	}
+// 		if ( !resizeTimeout ) {
+// 			resizeTimeout = setTimeout(function() {
+// 				resizeTimeout = null;
+// 				actualResizeHandler();
+// 			}, 500);
+// 		}
+// 	}
 
-	function actualResizeHandler() {
-		console.log('Что-то происходит');
-	}
+// 	function actualResizeHandler() {
+// 		console.log('Что-то происходит');
+// 	}
 
-}());
+// }());
