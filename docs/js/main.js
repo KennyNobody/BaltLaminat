@@ -249,9 +249,9 @@ $(document).ready(function () {
   !*** ./src/blocks/modules/product/product.js ***!
   \***********************************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-/* WEBPACK VAR INJECTION */(function($) {function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
@@ -265,40 +265,36 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 (function () {
   var columnsGrid = document.querySelectorAll('.grid__column');
-  var columnsService = document.querySelectorAll('.service__column');
-  window.addEventListener('load', toggle); // window.addEventListener('resize', function(){
+  var columnsService = document.querySelectorAll('.service__column'); // let minResize = false;
+  // let maxResize = false;
+  // let windowWidth = function (w) {
+  // 	if (w < n && !minResize) {
+  // 		minResize = true;   
+  // 		maxResize = false;
+  // 		console.log("Window width <= " + n);
+  // 	} 
+  // 	if (w >= n && !maxResize) {
+  // 		maxResize = true;
+  // 		minResize = false;
+  // 		console.log("Window width > " + n);
+  // 	}
+  // };
+  // let n = 1200, w = document.body.clientWidth;
+  // windowWidth(w);
+  // window.addEventListener('resize', function(){
+  // 	let w = document.body.clientWidth;
+  // 	windowWidth(w); 
   // });
 
-  (function () {
-    var width = $(window).width();
-    $(window).on('resize', function () {
-      if ($(this).width() !== width) {
-        width = $(this).width();
-        resizeThrottler();
-        console.log('Изменили ширину');
-      }
-    }); // window.addEventListener("resize", );
-
-    var resizeTimeout;
-
-    function resizeThrottler() {
-      if (!resizeTimeout) {
-        resizeTimeout = setTimeout(function () {
-          resizeTimeout = null;
-          actualResizeHandler();
-        }, 500);
-      }
-    }
-
-    function actualResizeHandler() {
-      document.location.reload(true);
-    }
-  })();
+  window.addEventListener('resize', function () {
+    document.location.reload();
+  });
+  window.addEventListener('load', toggle);
 
   function toggle() {
-    if (window.innerWidth > 1200) {
+    if (document.body.clientWidth > 1200) {
       initSlider();
-    } else if (window.innerWidth < 1200) {
+    } else if (document.body.clientWidth < 1200) {
       var unwrap = function unwrap(node) {
         node.replaceWith.apply(node, _toConsumableArray(node.childNodes));
       };
@@ -306,18 +302,17 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       if (columnsGrid) {
         for (var i = 0; i < columnsGrid.length; i++) {
           unwrap(columnsGrid[i]);
-          initSlider();
         }
       }
 
       if (columnsService) {
         for (var _i = 0; _i < columnsService.length; _i++) {
           unwrap(columnsService[_i]);
-          initSlider();
         }
       }
 
       ;
+      initSlider();
     } else {
       return false;
     }
@@ -341,7 +336,6 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     });
   }
 })();
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
 
@@ -403,8 +397,7 @@ window.initSlider = function () {
       });
     }
   }
-}; // window.addEventListener('load', initSlider);
-
+};
 
 (function initCaseSlider() {
   var caseSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.case__articles', {

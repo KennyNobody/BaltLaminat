@@ -2,65 +2,59 @@
 	const columnsGrid = document.querySelectorAll('.grid__column');
 	const columnsService = document.querySelectorAll('.service__column');
 
-	window.addEventListener('load', toggle);
+	// let minResize = false;
+	// let maxResize = false;
+
+	// let windowWidth = function (w) {
+
+	// 	if (w < n && !minResize) {
+	// 		minResize = true;   
+	// 		maxResize = false;
+	// 		console.log("Window width <= " + n);
+	// 	} 
+
+	// 	if (w >= n && !maxResize) {
+	// 		maxResize = true;
+	// 		minResize = false;
+	// 		console.log("Window width > " + n);
+	// 	}
+	// };
+
+	// let n = 1200, w = document.body.clientWidth;
+
+	// windowWidth(w);
+
 	// window.addEventListener('resize', function(){
-		
+	// 	let w = document.body.clientWidth;
+	// 	windowWidth(w); 
 	// });
 
-	(function() {
+	window.addEventListener('resize', function(){
+		document.location.reload();
+	});
 
-		var width = $(window).width();
-		$(window).on('resize', function() {
-			if ($(this).width() !== width) {
-				width = $(this).width();
-				resizeThrottler();
-				console.log('Изменили ширину')
-			}
-		});
-
-
-
-		// window.addEventListener("resize", );
-
-		let resizeTimeout;
-
-		function resizeThrottler() {
-
-			if ( !resizeTimeout ) {
-				resizeTimeout = setTimeout(function() {
-					resizeTimeout = null;
-					actualResizeHandler();
-				}, 500);
-			}
-		}
-
-		function actualResizeHandler() {
-			document.location.reload(true);
-		}
-
-	}());
+	window.addEventListener('load', toggle);
 
 	function toggle() {
-		if (window.innerWidth > 1200) {
+		if (document.body.clientWidth > 1200) {
 			initSlider();
-		} else if (window.innerWidth < 1200) {
+		} else if (document.body.clientWidth < 1200) {
 			if (columnsGrid) {
 				for (let i = 0; i < columnsGrid.length; i++) {
 					unwrap(columnsGrid[i]);
-					initSlider();
 				}
 			}
 
 			if (columnsService) {
 				for (let i = 0; i < columnsService.length; i++) {
 					unwrap(columnsService[i]);
-					initSlider();
 				}
 			}
 
 			function unwrap(node) {
 				node.replaceWith(...node.childNodes);
 			};
+			initSlider();
 		} else {
 			return false;
 		}

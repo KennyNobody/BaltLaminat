@@ -54,7 +54,6 @@ window.initSlider = function() {
 	}
 };
 
-// window.addEventListener('load', initSlider);
 
 (function initCaseSlider(){
 
