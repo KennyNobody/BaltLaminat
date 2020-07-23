@@ -2,36 +2,20 @@
 	const columnsGrid = document.querySelectorAll('.grid__column');
 	const columnsService = document.querySelectorAll('.service__column');
 
-	// let minResize = false;
-	// let maxResize = false;
-
-	// let windowWidth = function (w) {
-
-	// 	if (w < n && !minResize) {
-	// 		minResize = true;   
-	// 		maxResize = false;
-	// 		console.log("Window width <= " + n);
-	// 	} 
-
-	// 	if (w >= n && !maxResize) {
-	// 		maxResize = true;
-	// 		minResize = false;
-	// 		console.log("Window width > " + n);
-	// 	}
-	// };
-
-	// let n = 1200, w = document.body.clientWidth;
-
-	// windowWidth(w);
-
 	// window.addEventListener('resize', function(){
-	// 	let w = document.body.clientWidth;
-	// 	windowWidth(w); 
+	// 	document.location.reload();
 	// });
 
-	window.addEventListener('resize', function(){
-		document.location.reload();
-	});
+	var cachedWidth = $(window).width();
+    $(window).resize(function(){
+        var newWidth = $(window).width();
+        if(newWidth !== cachedWidth){
+            //DO RESIZE HERE
+            document.location.reload();
+            cachedWidth = newWidth;
+        }
+    });
+
 
 	window.addEventListener('load', toggle);
 
@@ -78,5 +62,4 @@
 			}
 		});
 	}
-	
 })();

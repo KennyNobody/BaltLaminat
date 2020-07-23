@@ -249,9 +249,9 @@ $(document).ready(function () {
   !*** ./src/blocks/modules/product/product.js ***!
   \***********************************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+/* WEBPACK VAR INJECTION */(function($) {function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
@@ -265,29 +265,19 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 (function () {
   var columnsGrid = document.querySelectorAll('.grid__column');
-  var columnsService = document.querySelectorAll('.service__column'); // let minResize = false;
-  // let maxResize = false;
-  // let windowWidth = function (w) {
-  // 	if (w < n && !minResize) {
-  // 		minResize = true;   
-  // 		maxResize = false;
-  // 		console.log("Window width <= " + n);
-  // 	} 
-  // 	if (w >= n && !maxResize) {
-  // 		maxResize = true;
-  // 		minResize = false;
-  // 		console.log("Window width > " + n);
-  // 	}
-  // };
-  // let n = 1200, w = document.body.clientWidth;
-  // windowWidth(w);
-  // window.addEventListener('resize', function(){
-  // 	let w = document.body.clientWidth;
-  // 	windowWidth(w); 
+  var columnsService = document.querySelectorAll('.service__column'); // window.addEventListener('resize', function(){
+  // 	document.location.reload();
   // });
 
-  window.addEventListener('resize', function () {
-    document.location.reload();
+  var cachedWidth = $(window).width();
+  $(window).resize(function () {
+    var newWidth = $(window).width();
+
+    if (newWidth !== cachedWidth) {
+      //DO RESIZE HERE
+      document.location.reload();
+      cachedWidth = newWidth;
+    }
   });
   window.addEventListener('load', toggle);
 
@@ -336,6 +326,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     });
   }
 })();
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
 
