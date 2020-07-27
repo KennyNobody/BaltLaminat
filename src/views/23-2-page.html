@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>29-2. Карта арендаторов</title>
+    @@include("../blocks/modules/head/head.html")
+</head>
+<body class="body">
+    <div class="layout">
+        @@include("../blocks/modules/header/header.html")
+        <main class="layout__main">
+            @@include("../blocks/modules/breadcrumbs/breadcrumbs.html")
+            <section class="map">
+                <div class="container map__container">
+                    <div class="map__desktop">
+                        <div class="map__slider">
+                            <div class="map__slides">
+                                <div class="map__slide map__slide--active" data-floor="3">
+                                    <img src="img/map-3.png" alt="3 этаж">
+                                </div>
+                                <div class="map__slide" data-floor="2">
+                                    <img src="img/map-2.png" alt="2 этаж">
+                                </div>
+                                <div class="map__slide" data-floor="1">
+                                    <img src="img/map-1.png" alt="1 этаж">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="map__nav">
+                        	<button class="map__change-floor map__change-floor--1" data-btn-floor="1">
+                        		1
+                        	</button>
+                        	<button class="map__change-floor map__change-floor--2" data-btn-floor="2">
+                        		2
+                        	</button>
+                        	<button class="map__change-floor map__change-floor--3" data-btn-floor="3">
+                        		3
+                        	</button>
+                        </div>
+                    </div>
+                    <div class="map__mobile">
+                        Мобилка
+                    </div>
+                </div>
+            </section>
+        </main>
+        @@include("../blocks/modules/footer/footer.html")
+        @@include("../blocks/modules/temp/temp.html")
+    </div>
+    <div class="hidden">
+        @@include("../blocks/modules/modal/modal.html")
+    </div>
+    <script src="js/vendor.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

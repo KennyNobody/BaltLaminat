@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>42. Оформление заказа</title>
+    @@include("../blocks/modules/head/head.html")
+</head>
+<body class="body">
+    <div class="layout">
+        @@include("../blocks/modules/header/header.html")
+        <main class="layout__main">
+            @@include("../blocks/modules/breadcrumbs/breadcrumbs.html")
+            <section class="single">
+                <div class="container">
+                    <div class="single__content">
+                        <h2 class="title single__title">
+                            Оформление заказа
+                        </h2>
+                        <div class="grid">
+                            <div class="grid__column grid__column--6">
+                                <form action="" class="lk-form">
+                                    <div class="lk-form__section">
+                                        <p class="title-small lk-form__title">
+                                            <span>Данные пользователя</span>
+                                        </p>
+                                        <div class="lk-field">
+                                            <p class="lk-field__title">
+                                                Контактное лицо
+                                            </p>
+                                            <div class="lk-field__wrapper">
+                                                <input type="text" class="lk-input lk-field__input" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="lk-field">
+                                            <p class="lk-field__title">
+                                                Телефон
+                                            </p>
+                                            <div class="lk-field__wrapper">
+                                                <input type="text" class="lk-input lk-field__input" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="lk-field">
+                                            <p class="lk-field__title">
+                                                E-mail
+                                            </p>
+                                            <div class="lk-field__wrapper">
+                                                <input type="email" class="lk-input lk-field__input" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="lk-field">
+                                            <p class="lk-field__title">
+                                                Дополнительное контактное лицо (если нужно)
+                                            </p>
+                                            <div class="lk-field__wrapper">
+                                                <input type="text" class="lk-input lk-field__input" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="lk-field">
+                                            <p class="lk-field__title">
+                                                Дополнительный телефон
+                                            </p>
+                                            <div class="lk-field__wrapper">
+                                                <input type="text" class="lk-input lk-field__input" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="lk-form__section">
+                                        <p class="title-small lk-form__title">
+                                            <span>Способ доставки</span>
+                                        </p>
+                                        <div class="lk-form__grid">
+                                            <label class="ill-check" tabindex="0">
+                                                <input type="checkbox" class="ill-check__input">
+                                                <div class="ill-check__block">
+                                                    <div class="ill-check__icon">
+                                                        <div class="ill-check__forungle">
+                                                            <div class="ill-check__marker"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ill-check__ill">
+                                                        <svg class="icon-svg">
+                                                            <use xlink:href="img/sprites/sprite.svg#icon-check-card"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <p class="ill-check__text">
+                                                        Оплата банковской <br>
+                                                        картой
+                                                    </p>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="lk-form__section">
+                                        <p class="title-small lk-form__title">
+                                            <span>Адрес доставки</span>
+                                        </p>
+                                        <div class="lk-form__grid">
+                                            <div class="lk-field">
+                                                <p class="lk-field__title">
+                                                    Город, поселок
+                                                </p>
+                                                <div class="lk-field__wrapper">
+                                                    <input type="text" class="lk-input lk-field__input" placeholder="">
+                                                </div>
+                                            </div>
+                                            <div class="lk-field lk-field--50">
+                                                <p class="lk-field__title">
+                                                    Индекс
+                                                </p>
+                                                <div class="lk-field__wrapper">
+                                                    <input type="text" class="lk-input lk-field__input" placeholder="">
+                                                </div>
+                                            </div>
+                                            <div class="lk-field lk-field--50">
+                                                <p class="lk-field__title">
+                                                    Улица
+                                                </p>
+                                                <div class="lk-field__wrapper">
+                                                    <input type="text" class="lk-input lk-field__input" placeholder="">
+                                                </div>
+                                            </div>
+                                            <div class="lk-field lk-field--50">
+                                                <p class="lk-field__title">
+                                                    Дом
+                                                </p>
+                                                <div class="lk-field__wrapper">
+                                                    <input type="text" class="lk-input lk-field__input" placeholder="">
+                                                </div>
+                                            </div>
+                                            <div class="lk-field lk-field--50">
+                                                <p class="lk-field__title">
+                                                    Квартира
+                                                </p>
+                                                <div class="lk-field__wrapper">
+                                                    <input type="text" class="lk-input lk-field__input" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="lk-form__section">
+                                        <p class="title-small lk-form__title">
+                                            <span>Способ оплаты</span>
+                                        </p>
+                                        
+                                    </div>
+                                    <button class="btn btn--dark lk-form__btn">
+                                        Продолжить
+                                    </button>
+                                </form>
+                            </div>
+                            <div class="grid__column grid__column--6">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        @@include("../blocks/modules/footer/footer.html")
+        @@include("../blocks/modules/temp/temp.html")
+    </div>
+    <div class="hidden">
+        @@include("../blocks/modules/modal/modal.html")
+    </div>
+    <script src="js/vendor.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,4677 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>36. Заказ обрабатывается</title>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="theme-color" content="#fff">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
+<link rel="icon" sizes="16x16" href="img/favicons/favicon-16x16.png" type="image/png">
+<link rel="icon" sizes="32x32" href="img/favicons/favicon-32x32.png" type="image/png">
+<link rel="apple-touch-icon-precomposed" href="img/favicons/apple-touch-icon-precomposed.png">
+<link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="167x167" href="img/favicons/apple-touch-icon-167x167.png">
+<link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
+<link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/main.css">
+</head>
+<body class="body">
+    <div class="layout">
+        <header class="header">
+	<div class="accent-line">
+		<div class="container accent-line__container">
+			<p class="accent-line__content">С 23 мая в Калининграде работаем в ограниченном режиме ЕЖЕДНЕВНО С 8 ДО 22. Посещение магазинов только в маске и перчатках. Просим соблюдать правила безопасности.</p>
+			<div class="accent-line__close">
+				<svg class="icon-svg">
+					<use xlink:href="img/sprites/sprite.svg#icon-close"></use>
+				</svg>
+			</div>
+		</div>
+	</div>
+	<div class="head-main">
+		<div class="container head-main__container">
+			<div class="head-main__section">
+				<a href="/" class="head-main__logo">
+					<img src="img/logo.png" alt="Логотип Балтламинат">
+				</a>
+			</div>
+			<div class="head-main__section">
+				<div class="right-nav">
+					<div class="right-nav__nav">
+						<a href="" class="right-nav__link">
+							Система скидок
+						</a>
+						<a href="" class="right-nav__link">
+							Доставка
+						</a>
+						<a href="" class="right-nav__link">
+							Оплата
+						</a>
+					</div>
+					<div class="right-nav__toolbar">
+						<a href="" class="right-nav__btn">
+							<span>
+								0 товаров
+							</span>
+							<svg class="icon-svg">
+								<use xlink:href="img/sprites/sprite.svg#icon-card"></use>
+							</svg>
+						</a>
+						<a href="" class="right-nav__btn">
+							<span>
+								войти
+							</span>
+							<svg class="icon-svg">
+								<use xlink:href="img/sprites/sprite.svg#icon-profile"></use>
+							</svg>
+						</a>
+					</div>
+				</div>
+				<div class="right-info">
+					<a href="tel:+74012777001" class="right-info__phone">
+						+7 (4012) 777-001
+					</a>
+					<p class="right-info__text">
+						Балтламинат (1 этаж ТЦ) <strong>ПН-СБ:</strong> 9:00-20:00 <strong>ВС:</strong> 10:00-20:00 <br> Мебель в Балтламинат (2 и 3 этаж ТЦ) <strong>ПН-ВС:</strong> 10:00-20:00
+					</p>
+				</div>
+			</div>
+			<div class="head-main__section">
+				<div class="top-nav">
+					<a href="" class="top-nav__home">
+						<svg class="icon-svg">
+							<use xlink:href="img/sprites/sprite.svg#icon-home"></use>
+						</svg>
+					</a>
+					<a href="" class="top-nav__catalog">
+						<svg class="icon-svg">
+							<use xlink:href="img/sprites/sprite.svg#icon-top-menu"></use>
+						</svg>
+						<span>
+							Каталог
+						</span>
+					</a>
+					<a href="" class="top-nav__link top-nav__link--active">
+						Услуги
+					</a>
+					<a href="" class="top-nav__link">
+						Мебель
+					</a>
+					<a href="" class="top-nav__link">
+						О нас
+					</a>
+					<a href="" class="top-nav__link">
+						Контакты
+					</a>
+				</div>
+			</div>
+			<div class="head-main__section">
+				<form action="post" class="search">
+					<input type="text" class="search__input">
+					<button class="search__btn">
+						<svg class="icon-svg">
+							<use xlink:href="img/sprites/sprite.svg#icon-search"></use>
+						</svg>
+					</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="head-nav">
+		<div class="container">
+			<nav class="head-nav__content">
+				<a href="#modal-menu--1" data-modal class="head-nav__link">
+					Плитные материалы
+				</a>
+				<a href="#modal-menu--2" data-modal class="head-nav__link">
+					Мебельная фурнитура
+				</a>
+				<a href="#modal-menu--3" data-modal class="head-nav__link">
+					Инструменты, расходные материалы
+				</a>
+				<a href="#modal-menu--4" data-modal class="head-nav__link">
+					Кухонная техника
+				</a>
+				<a href="#modal-menu--5" data-modal class="head-nav__link">
+					Напольные покрытия
+				</a>
+				<a href="#modal-menu--6" data-modal class="head-nav__link">
+					Кромка
+				</a>
+				<a href="#modal-menu--7" data-modal class="head-nav__link">
+					Мебель
+				</a>
+				<a href="#modal-menu--8" data-modal class="head-nav__link">
+					Услуги
+				</a>
+				<a href="#modal-menu--9" data-modal class="head-nav__link">
+					Фасады
+				</a>
+				<a href="#modal-menu--10" data-modal class="head-nav__link">
+					Химия, Упаковка, Реставрация
+				</a>
+			</nav>
+		</div>
+	</div>
+	<div class="head-mobile">
+		<div class="container">
+			<div class="head-mobile__content">
+				<form action="" class="head-mobile__search">
+					<input type="text" class="head-mobile__input" style="background-image: url('img/icon-search.svg')">
+				</form>
+				<a href="#mmenu" class="head-mobile__btn">
+					<svg class="icon-svg">
+						<use xlink:href="img/sprites/sprite.svg#icon-mob-menu"></use>
+					</svg>
+				</a>
+			</div>
+		</div>
+	</div>
+</header>
+        <main class="layout__main">
+            <section class="breadcrumbs">
+	<div class="container">
+		<div class="breadcrumbs__content">
+			<a href="" class="breadcrumbs__link">
+				Главная
+			</a>
+			<svg class="icon-svg breadcrumbs__arrow">
+				<use xlink:href="img/sprites/sprite.svg#icon-breadcrumb-arrow"></use>
+			</svg>
+			<a href="" class="breadcrumbs__link">
+				Активная ссылка
+			</a>
+			<svg class="icon-svg breadcrumbs__arrow">
+				<use xlink:href="img/sprites/sprite.svg#icon-breadcrumb-arrow"></use>
+			</svg>
+			<span class="breadcrumbs__link breadcrumbs__link--static">
+				Статичная ссылка
+			</span>
+		</div>
+	</div>
+</section>
+            <section class="single">
+                <div class="container">
+                    <div class="single__content">
+                        <div class="single__columns">
+                            <div class="single__column single__column--2">
+                                <aside class="sidebar">
+                                    <p class="title-small sidebar__title">
+                                        <span>Личный кабинет</span>
+                                    </p>
+                                    <a href="" class="sidebar__link">
+                                        Корзина <strong>(3)</strong>
+                                    </a>
+                                    <a href="" class="sidebar__link">
+                                        Заказы
+                                    </a>
+                                    <a href="" class="sidebar__link">
+                                        Данные пользователя
+                                    </a>
+                                    <a href="" class="sidebar__link">
+                                        Организации
+                                    </a>
+                                    <a href="" class="sidebar__link">
+                                        Избранные товары
+                                    </a>
+                                    <a href="" class="sidebar__link">
+                                        Сообщения
+                                    </a>
+                                </aside>
+                            </div>
+                            <div class="single__column single__column--10">
+                                <h2 class="title single__title">
+                                    Заказ обрабатывается
+                                </h2>
+                                <div class="text single__text">
+                                    <p>
+                                        История «Балтламинат» насчитывает более 19 лет и все это время компания неуклонно идет вперед, постоянно расширяя свои возможности для клиентов и предлагая им самые качественные и современные услуги и товары по направлениям:
+                                    </p>
+                                    <ul>
+                                        <li>
+                                            <span>
+                                                плитный материал;
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>
+                                                кромочный материал;
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>
+                                                мебельная фурнитура «премиум» и «стандарт» класса;
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>
+                                                стулья и кресла для офиса;
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>
+                                                ламинированные полы;
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>
+                                                мебельные фасады;
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>
+                                                изготовление раздвижных дверей системы «купе»;
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>
+                                                услуги по обработке и изготовлению деталей мебели по индивидуальным размерам и эскизам. Выполняется комплекс работ: распил, 
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>
+                                                кромкование. Распил (раскрой) прямолинейных и криволинейных деталей из ЛДСП, столешниц, стеновых панелей, ХДФ.
+                                            </span>
+                                        </li>
+                                    </ul>
+                                    <p>
+                                        Динамично развиваясь все 19 лет компания «Балтламинат» стала лидером на рынке товаров и услуг для производителей корпусной мебели в Калининградской области. 
+                                    </p>
+                                    <p>
+                                        Учитывая потребности производителей и современные тенденции мебельной индустрии, Компания постоянно предлагает клиентам качественные товары ведущих европейских производителей, позволяющие сохранять им лидерство на рынке.
+                                    </p>
+                                    <p>
+                                        Уникальность компании «Балтламинат» отражает наш девиз: «Все для производства мебели». Это означает, что материалы, фурнитура и производственные услуги сосредоточены в одном месте для удобства наших клиентов.
+                                    </p>
+                                    <p>
+                                        Особенностью также является то, что клиент «Балтламинат» может приобрести в компании не только фурнитуру и материалы для производства мебели, но и заказать изготовление отдельных деталей. Работы ведутся квалифицированными специалистами на высокотехнологичном оборудовании с использованием материалов известных мировых брендов.
+                                    </p>
+                                    <p>
+                                        «Балтламинат» специализируется на различных материалах для производства мебели. Компания предоставляет услуги по подготовке мебельных деталей к непосредственной сборке изделия: распил по вашим размерам и оклейка кромкой. Новейшее оборудование из Германии позволяет делать не только стандартные, но и необычные фигурные детали мебели по индивидуальным эскизам заказчика. Принесите размеры задуманного вами предмета интерьера и услуги компании Балтламинат позволят воплотить его в жизнь, а широкий ассортимент и наличие на складе столешниц, готовых фасадов, плитных материалов, кромочной ленты и самой разнообразной мебельной фурнитуры, а также стульев и ламината дают возможность реализовать задуманное в кратчайшие сроки.
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+	<section class="subscribe">
+		<div class="container">
+			<div class="subscribe__content">
+				<p class="subscribe__text">
+					Хотите быть в курсе последних новинок и актуальных акций? Подпишитесь на рассылку
+				</p>
+				<form action="" class="subscribe__form">
+					<input type="text" class="subscribe__input" placeholder="Ваш e-mail">
+					<button class="btn subscribe__btn">
+						Подписаться
+					</button>
+				</form>
+			</div>
+		</div>
+	</section>
+	<section class="bottom">
+		<div class="container">
+			<div class="bottom__content">
+				<nav class="bottom__nav">
+					<a href="" class="bottom__link">
+						Встраиваемая техника
+					</a>
+					<a href="" class="bottom__link">
+						Вытяжки
+					</a>
+					<a href="" class="bottom__link">
+						Зеркала и стекла
+					</a>
+					<a href="" class="bottom__link">
+						Инструмент и электроинcтрумент
+					</a>
+					<a href="" class="bottom__link">
+						Клей
+					</a>
+					<a href="" class="bottom__link">
+						Кроватные системы
+					</a>
+					<a href="" class="bottom__link">
+						Кромочная лента
+					</a>
+					<a href="" class="bottom__link">
+						Кухонные мойки и смесители
+					</a>
+					<a href="" class="bottom__link">
+						Мебельная фурнитура
+					</a>
+					<a href="" class="bottom__link">
+						Напольные покрытия
+					</a>
+					<a href="" class="bottom__link">
+						Обои
+					</a>
+					<a href="" class="bottom__link">
+						Освещение
+					</a>
+					<a href="" class="bottom__link">
+						Офисная мебель
+					</a>
+					<a href="" class="bottom__link">
+						Плитные материалы
+					</a>
+					<a href="" class="bottom__link">
+						Потолки
+					</a>
+					<a href="" class="bottom__link">
+						Профиль МДФ
+					</a>
+				</nav>
+				<div class="bottom__columns">
+					<div class="bottom__column">
+						<div class="bottom__contacts">
+							<div class="bottom__socials">
+								<div class="socials">
+	<a href="" class="socials__link">
+		<svg class="icon-svg">
+			<use xlink:href="img/sprites/sprite.svg#icon-fb"></use>
+		</svg>
+	</a>
+	<a href="" class="socials__link">
+		<svg class="icon-svg">
+			<use xlink:href="img/sprites/sprite.svg#icon-vk"></use>
+		</svg>
+	</a>
+	<a href="" class="socials__link">
+		<svg class="icon-svg">
+			<use xlink:href="img/sprites/sprite.svg#icon-ok"></use>
+		</svg>
+	</a>
+	<a href="" class="socials__link">
+		<svg class="icon-svg">
+			<use xlink:href="img/sprites/sprite.svg#icon-inst"></use>
+		</svg>
+	</a>
+</div>
+							</div>
+							<a href="#modal-write" class="btn btn--light bottom__btn" data-fancybox>
+								Написать директору
+							</a>
+						</div>
+						
+						<div class="bottom__text">
+							<p>
+								236023, г. Калининград, Советский пр.125, <strong>тел.:</strong> +7(4012)777-001 <br>
+								Балтламинат (1 этаж ТЦ) <strong>ПН-СБ:</strong>  9:00-20:00 ВС: 10:00-20:00 <br>
+								Мебель в Балтламинат (2 и 3 этаж ТЦ) <strong>ПН-ВС:</strong> 10:00-20:00 <br>
+								<strong>Тех. день: 29 марта</strong> (воскр.) 1 этаж ТЦ работает с 12:00 
+							</p>
+						</div>
+					</div>
+					<div class="bottom__column">
+						<div class="bottom__text">
+							<p>
+								Вся представленная на сайте информация, касающаяся технических характеристик, наличия на складе, стоимости товаров, носит информационный характер и ни при каких условиях не является публичной офертой, определяемой положениями Статьи 437(2) Гражданского кодекса РФ.
+							</p>
+							<br>
+							<p>
+								© 2013—2020 Балтламинат. Разработано <a href="">#diez technologies</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="footer-toolbar">
+		<div class="container">
+			<div class="footer-toolbar__content">
+				<a href="" class="footer-toolbar__link">
+					<svg class="icon-svg footer-toolbar__icon">
+						<use xlink:href="img/sprites/sprite.svg#icon-footer-home"></use>
+					</svg>
+					<p class="footer-toolbar__text">
+						Главная
+					</p>
+				</a>
+				<a href="" class="footer-toolbar__link">
+					<svg class="icon-svg footer-toolbar__icon">
+						<use xlink:href="img/sprites/sprite.svg#icon-footer-catalog"></use>
+					</svg>
+					<p class="footer-toolbar__text">
+						Каталог
+					</p>
+				</a>
+				<a href="" class="footer-toolbar__link">
+					<svg class="icon-svg footer-toolbar__icon">
+						<use xlink:href="img/sprites/sprite.svg#icon-footer-profile"></use>
+					</svg>
+					<p class="footer-toolbar__text">
+						Профиль
+					</p>
+				</a>
+				<a href="" class="footer-toolbar__link">
+					<svg class="icon-svg footer-toolbar__icon">
+						<use xlink:href="img/sprites/sprite.svg#icon-footer-cart"></use>
+					</svg>
+					<p class="footer-toolbar__text">
+						Корзина
+					</p>
+				</a>
+			</div>
+		</div>
+	</section>
+</footer>
+<nav id="mmenu">
+    <ul>
+        <li><a href="/">Главная</a></li>
+        <li><a href="/work">О нас</a></li>
+        <li><span>Каталог</span>
+            <ul>
+                <li><span>Плитные материалы</span>
+                    <ul>
+                        <li><span>Крепежная фурнитура</span>
+                            <ul>
+                                <li>
+                                    <a href="">
+                                        Винты
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        Гайки, шайбы, муфты
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        Шурупы
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><a href="/contact">Контакты</a></li>
+    </ul>
+</nav>
+        <section class="temp">
+	<div class="container">
+		<div class="temp__content">
+			<a href="index.html" class="temp__link">
+				Главная
+			</a>
+			<a href="2-page.html" class="temp__link">
+				2. Новинки
+			</a>
+			<a href="3-page.html" class="temp__link">
+				3. Каталог
+			</a>
+			<a href="4-page.html" class="temp__link">
+				4. Каталог
+			</a>
+			<a href="5-page.html" class="temp__link">
+				5. Каталог строка
+			</a>
+			<a href="6-page.html" class="temp__link">
+				6. Карточка товара
+			</a>
+			<a href="7-page.html" class="temp__link">
+				7. Услуги
+			</a>
+			<a href="8-page.html" class="temp__link">
+				8. Одна услуга - Сверление
+			</a>
+			<a href="9-page.html" class="temp__link">
+				9 .Одна услуга - изготовление дверей для шкафов-купе
+			</a>
+			<a href="10-page.html" class="temp__link">
+				10. Одна услуга - Оклейка
+			</a>
+			<a href="11-page.html" class="temp__link">
+				11 .Одна услуга - распил
+			</a>
+			<a href="12-page.html" class="temp__link">
+				12. Одна услуга - Доставка
+			</a>
+			<a href="13-page.html" class="temp__link">
+				13. Одна услуга - Заточка инструмента
+			</a>
+			<a href="14-page.html" class="temp__link">
+				14. Одна услуга - Нарезка и обработка стекла/зеркала
+			</a>
+			<a href="15-page.html" class="temp__link">
+				15. Одна услуга - Фрезеровка
+			</a>
+			<a href="16-page.html" class="temp__link">
+				16. Одна услуга - Удаленный заказ
+			</a>
+			<a href="17-page.html" class="temp__link">
+				17. Новости
+			</a>
+			<a href="18-page.html" class="temp__link">
+				18. Одна статья
+			</a>
+			<a href="19-page.html" class="temp__link">
+				19. О нас
+			</a>
+			<a href="20-page.html" class="temp__link">
+				20. Вакансии
+			</a>
+			<a href="21-page.html" class="temp__link">
+				21. Фасады
+			</a>
+			<a href="22-page.html" class="temp__link">
+				22. Одна вакансия
+			</a>
+			<a href="23-page.html" class="temp__link">
+				23. Один арендатор
+			</a>
+			<a href="24-page.html" class="temp__link">
+				24. Партнер
+			</a>
+			<a href="25-page.html" class="temp__link">
+				25. Контакты
+			</a>
+			<a href="26-page.html" class="temp__link">
+				26. Карта скидок
+			</a>
+			<a href="27-page.html" class="temp__link">
+				27. Загрузки
+			</a>
+			<a href="28-page.html" class="temp__link">
+				28. 404
+			</a>
+			<a href="29-page.html" class="temp__link">
+				29. Форма входа
+			</a>
+			<a href="30-page.html" class="temp__link">
+				30. Регистрация
+			</a>
+			<a href="31-page.html" class="temp__link">
+				31. Данные пользователя
+			</a>
+			<a href="32-page.html" class="temp__link">
+				32. ЛК Организации
+			</a>
+			<a href="33-page.html" class="temp__link">
+				33. ЛК общая
+			</a>
+			<a href="34-page.html" class="temp__link">
+				34. Корзина
+			</a>
+			<a href="35-page.html" class="temp__link">
+				35. Заказ обрабатывается 1
+			</a>
+			<a href="36-page.html" class="temp__link">
+				36. Заказ обрабатывается 2
+			</a>
+			<a href="37-page.html" class="temp__link">
+				37. Заказ обрабатывается 3
+			</a>
+			<a href="38-page.html" class="temp__link">
+				нет
+			</a>
+			<a href="39-page.html" class="temp__link">
+				39. ЛК все заказы
+			</a>
+			<a href="40-page.html" class="temp__link">
+				40. ЛК один заказ
+			</a>
+			<a href="41-page.html" class="temp__link">
+				41. ЛК один заказ
+			</a>
+			<a href="42-page.html" class="temp__link">
+				42. Оформление неавторизован
+			</a>
+			<a href="43-page.html" class="temp__link">
+				43. Оформление авторизован
+			</a>
+			<a href="44-page.html" class="temp__link">
+				
+			</a>
+			<a href="45-page.html" class="temp__link">
+				
+			</a>
+			<a href="46-page.html" class="temp__link">
+				
+			</a>
+			<a href="47-page.html" class="temp__link">
+				
+			</a>
+			<a href="48-page.html" class="temp__link">
+				
+			</a>
+			<a href="49-page.html" class="temp__link">
+				
+			</a>
+			
+		</div>
+	</div>
+</section>
+    </div>
+    <div class="hidden">
+        <section id="modal-menu--1" class="modal-menu" style="display: none;">
+	<div class="modal-menu__nav">
+		<div class="container modal-menu__container">
+			<nav class="head-nav__content">
+				<a href="#modal-menu--1" data-modal class="head-nav__link">
+					Плитные материалы
+				</a>
+				<a href="#modal-menu--2" data-modal class="head-nav__link">
+					Мебельная фурнитура
+				</a>
+				<a href="#modal-menu--3" data-modal class="head-nav__link">
+					Инструменты, расходные материалы
+				</a>
+				<a href="#modal-menu--4" data-modal class="head-nav__link">
+					Кухонная техника
+				</a>
+				<a href="#modal-menu--5" data-modal class="head-nav__link">
+					Напольные покрытия
+				</a>
+				<a href="#modal-menu--6" data-modal class="head-nav__link">
+					Кромка
+				</a>
+				<a href="#modal-menu--7" data-modal class="head-nav__link">
+					Мебель
+				</a>
+				<a href="#modal-menu--8" data-modal class="head-nav__link">
+					Услуги
+				</a>
+				<a href="#modal-menu--9" data-modal class="head-nav__link">
+					Фасады
+				</a>
+				<a href="#modal-menu--10" data-modal class="head-nav__link">
+					Химия, Упаковка, Реставрация
+				</a>
+			</nav>
+		</div>
+	</div>
+
+	<div class="container modal-menu__container">
+		<div class="modal-menu__content">
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						01
+					</p>
+					<p class="modal-menu__title-text">
+						Крепежная фурнитура
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Винты
+				</a>
+				<a href="" class="modal-menu__link">
+					Гайки, шайбы, муфты
+				</a>
+				<a href="" class="modal-menu__link">
+					Саморезы (шурупы)
+				</a>
+				<a href="" class="modal-menu__link">
+					Дюбеля и гвозди
+				</a>
+				<a href="" class="modal-menu__link">
+					Стяжки
+				</a>
+				<a href="" class="modal-menu__link">
+					Конфирматы
+				</a>
+				<a href="" class="modal-menu__link">
+					Уголки мебельные
+				</a>
+				<a href="" class="modal-menu__link">
+					Шины и Навесы кухонные
+				</a>
+				<a href="" class="modal-menu__link">
+					Шканты
+				</a>
+				<a href="" class="modal-menu__link">
+					Механизмы трансформации
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						02
+					</p>
+					<p class="modal-menu__title-text">
+						Замки, магниты, шпингалеты
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						03
+					</p>
+					<p class="modal-menu__title-text">
+						Ножки, ролики, опоры
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Ножки
+				</a>
+				<a href="" class="modal-menu__link">
+					Ролики
+				</a>
+				<a href="" class="modal-menu__link">
+					Опоры
+				</a>
+				<a href="" class="modal-menu__link">
+					Подпятники
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						04
+					</p>
+					<p class="modal-menu__title-text">
+						Петли и аксессуары
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Петли
+				</a>
+				<a href="" class="modal-menu__link">
+					Аксессуары
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						05
+					</p>
+					<p class="modal-menu__title-text">
+						Выдвижные механизмы
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Направляющие
+				</a>
+				<a href="" class="modal-menu__link">
+					Метабоксы
+				</a>
+				<a href="" class="modal-menu__link">
+					Ящики
+				</a>
+				<a href="" class="modal-menu__link">
+					Аксессуары для ящиков
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						06
+					</p>
+					<p class="modal-menu__title-text">
+						Освещение для мебели
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Светильники
+				</a>
+				<a href="" class="modal-menu__link">
+					Светодиодная лента
+				</a>
+				<a href="" class="modal-menu__link">
+					Профиль для светодиодной ленты
+				</a>
+				<a href="" class="modal-menu__link">
+					Электротовары
+				</a>
+				<a href="" class="modal-menu__link">
+					Батарейки
+				</a>
+				<a href="" class="modal-menu__link">
+					Выключатели
+				</a>
+				<a href="" class="modal-menu__link">
+					Розетки
+				</a>
+				<a href="" class="modal-menu__link">
+					Лампочки
+				</a>
+				<a href="" class="modal-menu__link">
+					Трансформаторы
+				</a>
+				<a href="" class="modal-menu__link">
+					Заглушки для проводов
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						07
+					</p>
+					<p class="modal-menu__title-text">
+						Плинтусы кухонные и цоколи
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Плинтусы кухонные и комплектующие
+				</a>
+				<a href="" class="modal-menu__link">
+					Цоколи и комплектующие
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						08
+					</p>
+					<p class="modal-menu__title-text">
+						Наполнение для шкафа-купе
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Гардеробная система
+				</a>
+				<a href="" class="modal-menu__link">
+					Корзины для белья
+				</a>
+				<a href="" class="modal-menu__link">
+					Корзины для обуви
+				</a>
+				<a href="" class="modal-menu__link">
+					Штанги и пантографы
+				</a>
+				<a href="" class="modal-menu__link">
+					Вешалки и держатели
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						09
+					</p>
+					<p class="modal-menu__title-text">
+						Барные трубы и аксессуары
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						10
+					</p>
+					<p class="modal-menu__title-text">
+						Трубы и Система Joker
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						11
+					</p>
+					<p class="modal-menu__title-text">
+						Каркасная система
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						12
+					</p>
+					<p class="modal-menu__title-text">
+						Кухонные комплектующие
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Корзины
+				</a>
+				<a href="" class="modal-menu__link">
+					Мусорные ведра
+				</a>
+				<a href="" class="modal-menu__link">
+					Планки для столешниц
+				</a>
+				<a href="" class="modal-menu__link">
+					Сушки и поддоны
+				</a>
+				<a href="" class="modal-menu__link">
+					Лотки для столовых приборов
+				</a>
+				<a href="" class="modal-menu__link">
+					Подъемные механизмы и газовые амортизаторы
+				</a>
+				<a href="" class="modal-menu__link">
+					Решетки вентиляционные
+				</a>
+				<a href="" class="modal-menu__link">
+					Ограничители
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						13
+					</p>
+					<p class="modal-menu__title-text">
+						Сопутствующая мебельная фурнитура
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Номера для квартир
+				</a>
+				<a href="" class="modal-menu__link">
+					Товары детской безопасности
+				</a>
+				<a href="" class="modal-menu__link">
+					Панели и подставки для ПК/ТВ
+				</a>
+				<a href="" class="modal-menu__link">
+					Настенная система
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						14
+					</p>
+					<p class="modal-menu__title-text">
+						Ручки и крючки
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Крючки мебельные
+				</a>
+				<a href="" class="modal-menu__link">
+					Ручки мебельные
+				</a>
+				<a href="" class="modal-menu__link">
+					Система профилей GOLA
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						15
+					</p>
+					<p class="modal-menu__title-text">
+						Релинги и комплектующие
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						16
+					</p>
+					<p class="modal-menu__title-text">
+						Полкодержатели
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						17.
+					</p>
+					<p class="modal-menu__title-text">
+						Системы раздвиженых и складных дверей
+					</p>
+				</a>
+			</div>
+		</div>
+
+	</div>
+</section>
+
+<section id="modal-menu--2" class="modal-menu" style="display: none;">
+	<div class="modal-menu__nav">
+		<div class="container modal-menu__container">
+			<nav class="head-nav__content">
+				<a href="#modal-menu--1" data-modal class="head-nav__link">
+					Плитные материалы
+				</a>
+				<a href="#modal-menu--2" data-modal class="head-nav__link">
+					Мебельная фурнитура
+				</a>
+				<a href="#modal-menu--3" data-modal class="head-nav__link">
+					Инструменты, расходные материалы
+				</a>
+				<a href="#modal-menu--4" data-modal class="head-nav__link">
+					Кухонная техника
+				</a>
+				<a href="#modal-menu--5" data-modal class="head-nav__link">
+					Напольные покрытия
+				</a>
+				<a href="#modal-menu--6" data-modal class="head-nav__link">
+					Кромка
+				</a>
+				<a href="#modal-menu--7" data-modal class="head-nav__link">
+					Мебель
+				</a>
+				<a href="#modal-menu--8" data-modal class="head-nav__link">
+					Услуги
+				</a>
+				<a href="#modal-menu--9" data-modal class="head-nav__link">
+					Фасады
+				</a>
+				<a href="#modal-menu--10" data-modal class="head-nav__link">
+					Химия, Упаковка, Реставрация
+				</a>
+			</nav>
+		</div>
+	</div>
+
+	<div class="container modal-menu__container">
+		<div class="modal-menu__content">
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						01
+					</p>
+					<p class="modal-menu__title-text">
+						Крепежная фурнитура
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Винты
+				</a>
+				<a href="" class="modal-menu__link">
+					Гайки, шайбы, муфты
+				</a>
+				<a href="" class="modal-menu__link">
+					Саморезы (шурупы)
+				</a>
+				<a href="" class="modal-menu__link">
+					Дюбеля и гвозди
+				</a>
+				<a href="" class="modal-menu__link">
+					Стяжки
+				</a>
+				<a href="" class="modal-menu__link">
+					Конфирматы
+				</a>
+				<a href="" class="modal-menu__link">
+					Уголки мебельные
+				</a>
+				<a href="" class="modal-menu__link">
+					Шины и Навесы кухонные
+				</a>
+				<a href="" class="modal-menu__link">
+					Шканты
+				</a>
+				<a href="" class="modal-menu__link">
+					Механизмы трансформации
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						02
+					</p>
+					<p class="modal-menu__title-text">
+						Замки, магниты, шпингалеты
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						03
+					</p>
+					<p class="modal-menu__title-text">
+						Ножки, ролики, опоры
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Ножки
+				</a>
+				<a href="" class="modal-menu__link">
+					Ролики
+				</a>
+				<a href="" class="modal-menu__link">
+					Опоры
+				</a>
+				<a href="" class="modal-menu__link">
+					Подпятники
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						04
+					</p>
+					<p class="modal-menu__title-text">
+						Петли и аксессуары
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Петли
+				</a>
+				<a href="" class="modal-menu__link">
+					Аксессуары
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						05
+					</p>
+					<p class="modal-menu__title-text">
+						Выдвижные механизмы
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Направляющие
+				</a>
+				<a href="" class="modal-menu__link">
+					Метабоксы
+				</a>
+				<a href="" class="modal-menu__link">
+					Ящики
+				</a>
+				<a href="" class="modal-menu__link">
+					Аксессуары для ящиков
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						06
+					</p>
+					<p class="modal-menu__title-text">
+						Освещение для мебели
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Светильники
+				</a>
+				<a href="" class="modal-menu__link">
+					Светодиодная лента
+				</a>
+				<a href="" class="modal-menu__link">
+					Профиль для светодиодной ленты
+				</a>
+				<a href="" class="modal-menu__link">
+					Электротовары
+				</a>
+				<a href="" class="modal-menu__link">
+					Батарейки
+				</a>
+				<a href="" class="modal-menu__link">
+					Выключатели
+				</a>
+				<a href="" class="modal-menu__link">
+					Розетки
+				</a>
+				<a href="" class="modal-menu__link">
+					Лампочки
+				</a>
+				<a href="" class="modal-menu__link">
+					Трансформаторы
+				</a>
+				<a href="" class="modal-menu__link">
+					Заглушки для проводов
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						07
+					</p>
+					<p class="modal-menu__title-text">
+						Плинтусы кухонные и цоколи
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Плинтусы кухонные и комплектующие
+				</a>
+				<a href="" class="modal-menu__link">
+					Цоколи и комплектующие
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						08
+					</p>
+					<p class="modal-menu__title-text">
+						Наполнение для шкафа-купе
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Гардеробная система
+				</a>
+				<a href="" class="modal-menu__link">
+					Корзины для белья
+				</a>
+				<a href="" class="modal-menu__link">
+					Корзины для обуви
+				</a>
+				<a href="" class="modal-menu__link">
+					Штанги и пантографы
+				</a>
+				<a href="" class="modal-menu__link">
+					Вешалки и держатели
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						09
+					</p>
+					<p class="modal-menu__title-text">
+						Барные трубы и аксессуары
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						10
+					</p>
+					<p class="modal-menu__title-text">
+						Трубы и Система Joker
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						11
+					</p>
+					<p class="modal-menu__title-text">
+						Каркасная система
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						12
+					</p>
+					<p class="modal-menu__title-text">
+						Кухонные комплектующие
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Корзины
+				</a>
+				<a href="" class="modal-menu__link">
+					Мусорные ведра
+				</a>
+				<a href="" class="modal-menu__link">
+					Планки для столешниц
+				</a>
+				<a href="" class="modal-menu__link">
+					Сушки и поддоны
+				</a>
+				<a href="" class="modal-menu__link">
+					Лотки для столовых приборов
+				</a>
+				<a href="" class="modal-menu__link">
+					Подъемные механизмы и газовые амортизаторы
+				</a>
+				<a href="" class="modal-menu__link">
+					Решетки вентиляционные
+				</a>
+				<a href="" class="modal-menu__link">
+					Ограничители
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						13
+					</p>
+					<p class="modal-menu__title-text">
+						Сопутствующая мебельная фурнитура
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Номера для квартир
+				</a>
+				<a href="" class="modal-menu__link">
+					Товары детской безопасности
+				</a>
+				<a href="" class="modal-menu__link">
+					Панели и подставки для ПК/ТВ
+				</a>
+				<a href="" class="modal-menu__link">
+					Настенная система
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						14
+					</p>
+					<p class="modal-menu__title-text">
+						Ручки и крючки
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Крючки мебельные
+				</a>
+				<a href="" class="modal-menu__link">
+					Ручки мебельные
+				</a>
+				<a href="" class="modal-menu__link">
+					Система профилей GOLA
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						15
+					</p>
+					<p class="modal-menu__title-text">
+						Релинги и комплектующие
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						16
+					</p>
+					<p class="modal-menu__title-text">
+						Полкодержатели
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						17
+					</p>
+					<p class="modal-menu__title-text">
+						Системы раздвиженых и складных дверей
+					</p>
+				</a>
+			</div>
+		</div>
+
+	</div>
+</section>
+
+<section id="modal-menu--3" class="modal-menu" style="display: none;">
+	<div class="modal-menu__nav">
+		<div class="container modal-menu__container">
+			<nav class="head-nav__content">
+				<a href="#modal-menu--1" data-modal class="head-nav__link">
+					Плитные материалы
+				</a>
+				<a href="#modal-menu--2" data-modal class="head-nav__link">
+					Мебельная фурнитура
+				</a>
+				<a href="#modal-menu--3" data-modal class="head-nav__link">
+					Инструменты, расходные материалы
+				</a>
+				<a href="#modal-menu--4" data-modal class="head-nav__link">
+					Кухонная техника
+				</a>
+				<a href="#modal-menu--5" data-modal class="head-nav__link">
+					Напольные покрытия
+				</a>
+				<a href="#modal-menu--6" data-modal class="head-nav__link">
+					Кромка
+				</a>
+				<a href="#modal-menu--7" data-modal class="head-nav__link">
+					Мебель
+				</a>
+				<a href="#modal-menu--8" data-modal class="head-nav__link">
+					Услуги
+				</a>
+				<a href="#modal-menu--9" data-modal class="head-nav__link">
+					Фасады
+				</a>
+				<a href="#modal-menu--10" data-modal class="head-nav__link">
+					Химия, Упаковка, Реставрация
+				</a>
+			</nav>
+		</div>
+	</div>
+
+	<div class="container modal-menu__container">
+		<div class="modal-menu__content">
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						01
+					</p>
+					<p class="modal-menu__title-text">
+						Крепежная фурнитура
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Винты
+				</a>
+				<a href="" class="modal-menu__link">
+					Гайки, шайбы, муфты
+				</a>
+				<a href="" class="modal-menu__link">
+					Саморезы (шурупы)
+				</a>
+				<a href="" class="modal-menu__link">
+					Дюбеля и гвозди
+				</a>
+				<a href="" class="modal-menu__link">
+					Стяжки
+				</a>
+				<a href="" class="modal-menu__link">
+					Конфирматы
+				</a>
+				<a href="" class="modal-menu__link">
+					Уголки мебельные
+				</a>
+				<a href="" class="modal-menu__link">
+					Шины и Навесы кухонные
+				</a>
+				<a href="" class="modal-menu__link">
+					Шканты
+				</a>
+				<a href="" class="modal-menu__link">
+					Механизмы трансформации
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						02
+					</p>
+					<p class="modal-menu__title-text">
+						Замки, магниты, шпингалеты
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						03
+					</p>
+					<p class="modal-menu__title-text">
+						Ножки, ролики, опоры
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Ножки
+				</a>
+				<a href="" class="modal-menu__link">
+					Ролики
+				</a>
+				<a href="" class="modal-menu__link">
+					Опоры
+				</a>
+				<a href="" class="modal-menu__link">
+					Подпятники
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						04
+					</p>
+					<p class="modal-menu__title-text">
+						Петли и аксессуары
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Петли
+				</a>
+				<a href="" class="modal-menu__link">
+					Аксессуары
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						05
+					</p>
+					<p class="modal-menu__title-text">
+						Выдвижные механизмы
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Направляющие
+				</a>
+				<a href="" class="modal-menu__link">
+					Метабоксы
+				</a>
+				<a href="" class="modal-menu__link">
+					Ящики
+				</a>
+				<a href="" class="modal-menu__link">
+					Аксессуары для ящиков
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						06
+					</p>
+					<p class="modal-menu__title-text">
+						Освещение для мебели
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Светильники
+				</a>
+				<a href="" class="modal-menu__link">
+					Светодиодная лента
+				</a>
+				<a href="" class="modal-menu__link">
+					Профиль для светодиодной ленты
+				</a>
+				<a href="" class="modal-menu__link">
+					Электротовары
+				</a>
+				<a href="" class="modal-menu__link">
+					Батарейки
+				</a>
+				<a href="" class="modal-menu__link">
+					Выключатели
+				</a>
+				<a href="" class="modal-menu__link">
+					Розетки
+				</a>
+				<a href="" class="modal-menu__link">
+					Лампочки
+				</a>
+				<a href="" class="modal-menu__link">
+					Трансформаторы
+				</a>
+				<a href="" class="modal-menu__link">
+					Заглушки для проводов
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						07
+					</p>
+					<p class="modal-menu__title-text">
+						Плинтусы кухонные и цоколи
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Плинтусы кухонные и комплектующие
+				</a>
+				<a href="" class="modal-menu__link">
+					Цоколи и комплектующие
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						08
+					</p>
+					<p class="modal-menu__title-text">
+						Наполнение для шкафа-купе
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Гардеробная система
+				</a>
+				<a href="" class="modal-menu__link">
+					Корзины для белья
+				</a>
+				<a href="" class="modal-menu__link">
+					Корзины для обуви
+				</a>
+				<a href="" class="modal-menu__link">
+					Штанги и пантографы
+				</a>
+				<a href="" class="modal-menu__link">
+					Вешалки и держатели
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						09
+					</p>
+					<p class="modal-menu__title-text">
+						Барные трубы и аксессуары
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						10
+					</p>
+					<p class="modal-menu__title-text">
+						Трубы и Система Joker
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						11
+					</p>
+					<p class="modal-menu__title-text">
+						Каркасная система
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						12
+					</p>
+					<p class="modal-menu__title-text">
+						Кухонные комплектующие
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Корзины
+				</a>
+				<a href="" class="modal-menu__link">
+					Мусорные ведра
+				</a>
+				<a href="" class="modal-menu__link">
+					Планки для столешниц
+				</a>
+				<a href="" class="modal-menu__link">
+					Сушки и поддоны
+				</a>
+				<a href="" class="modal-menu__link">
+					Лотки для столовых приборов
+				</a>
+				<a href="" class="modal-menu__link">
+					Подъемные механизмы и газовые амортизаторы
+				</a>
+				<a href="" class="modal-menu__link">
+					Решетки вентиляционные
+				</a>
+				<a href="" class="modal-menu__link">
+					Ограничители
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						13
+					</p>
+					<p class="modal-menu__title-text">
+						Сопутствующая мебельная фурнитура
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Номера для квартир
+				</a>
+				<a href="" class="modal-menu__link">
+					Товары детской безопасности
+				</a>
+				<a href="" class="modal-menu__link">
+					Панели и подставки для ПК/ТВ
+				</a>
+				<a href="" class="modal-menu__link">
+					Настенная система
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						14
+					</p>
+					<p class="modal-menu__title-text">
+						Ручки и крючки
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Крючки мебельные
+				</a>
+				<a href="" class="modal-menu__link">
+					Ручки мебельные
+				</a>
+				<a href="" class="modal-menu__link">
+					Система профилей GOLA
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						15
+					</p>
+					<p class="modal-menu__title-text">
+						Релинги и комплектующие
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						16
+					</p>
+					<p class="modal-menu__title-text">
+						Полкодержатели
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						17
+					</p>
+					<p class="modal-menu__title-text">
+						Системы раздвиженых и складных дверей
+					</p>
+				</a>
+			</div>
+		</div>
+
+	</div>
+</section>
+
+<section id="modal-menu--4" class="modal-menu" style="display: none;">
+	<div class="modal-menu__nav">
+		<div class="container modal-menu__container">
+			<nav class="head-nav__content">
+				<a href="#modal-menu--1" data-modal class="head-nav__link">
+					Плитные материалы
+				</a>
+				<a href="#modal-menu--2" data-modal class="head-nav__link">
+					Мебельная фурнитура
+				</a>
+				<a href="#modal-menu--3" data-modal class="head-nav__link">
+					Инструменты, расходные материалы
+				</a>
+				<a href="#modal-menu--4" data-modal class="head-nav__link">
+					Кухонная техника
+				</a>
+				<a href="#modal-menu--5" data-modal class="head-nav__link">
+					Напольные покрытия
+				</a>
+				<a href="#modal-menu--6" data-modal class="head-nav__link">
+					Кромка
+				</a>
+				<a href="#modal-menu--7" data-modal class="head-nav__link">
+					Мебель
+				</a>
+				<a href="#modal-menu--8" data-modal class="head-nav__link">
+					Услуги
+				</a>
+				<a href="#modal-menu--9" data-modal class="head-nav__link">
+					Фасады
+				</a>
+				<a href="#modal-menu--10" data-modal class="head-nav__link">
+					Химия, Упаковка, Реставрация
+				</a>
+			</nav>
+		</div>
+	</div>
+
+	<div class="container modal-menu__container">
+		<div class="modal-menu__content">
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						01
+					</p>
+					<p class="modal-menu__title-text">
+						Крепежная фурнитура
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Винты
+				</a>
+				<a href="" class="modal-menu__link">
+					Гайки, шайбы, муфты
+				</a>
+				<a href="" class="modal-menu__link">
+					Саморезы (шурупы)
+				</a>
+				<a href="" class="modal-menu__link">
+					Дюбеля и гвозди
+				</a>
+				<a href="" class="modal-menu__link">
+					Стяжки
+				</a>
+				<a href="" class="modal-menu__link">
+					Конфирматы
+				</a>
+				<a href="" class="modal-menu__link">
+					Уголки мебельные
+				</a>
+				<a href="" class="modal-menu__link">
+					Шины и Навесы кухонные
+				</a>
+				<a href="" class="modal-menu__link">
+					Шканты
+				</a>
+				<a href="" class="modal-menu__link">
+					Механизмы трансформации
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						02
+					</p>
+					<p class="modal-menu__title-text">
+						Замки, магниты, шпингалеты
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						03
+					</p>
+					<p class="modal-menu__title-text">
+						Ножки, ролики, опоры
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Ножки
+				</a>
+				<a href="" class="modal-menu__link">
+					Ролики
+				</a>
+				<a href="" class="modal-menu__link">
+					Опоры
+				</a>
+				<a href="" class="modal-menu__link">
+					Подпятники
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						04
+					</p>
+					<p class="modal-menu__title-text">
+						Петли и аксессуары
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Петли
+				</a>
+				<a href="" class="modal-menu__link">
+					Аксессуары
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						05
+					</p>
+					<p class="modal-menu__title-text">
+						Выдвижные механизмы
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Направляющие
+				</a>
+				<a href="" class="modal-menu__link">
+					Метабоксы
+				</a>
+				<a href="" class="modal-menu__link">
+					Ящики
+				</a>
+				<a href="" class="modal-menu__link">
+					Аксессуары для ящиков
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						06
+					</p>
+					<p class="modal-menu__title-text">
+						Освещение для мебели
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Светильники
+				</a>
+				<a href="" class="modal-menu__link">
+					Светодиодная лента
+				</a>
+				<a href="" class="modal-menu__link">
+					Профиль для светодиодной ленты
+				</a>
+				<a href="" class="modal-menu__link">
+					Электротовары
+				</a>
+				<a href="" class="modal-menu__link">
+					Батарейки
+				</a>
+				<a href="" class="modal-menu__link">
+					Выключатели
+				</a>
+				<a href="" class="modal-menu__link">
+					Розетки
+				</a>
+				<a href="" class="modal-menu__link">
+					Лампочки
+				</a>
+				<a href="" class="modal-menu__link">
+					Трансформаторы
+				</a>
+				<a href="" class="modal-menu__link">
+					Заглушки для проводов
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						07
+					</p>
+					<p class="modal-menu__title-text">
+						Плинтусы кухонные и цоколи
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Плинтусы кухонные и комплектующие
+				</a>
+				<a href="" class="modal-menu__link">
+					Цоколи и комплектующие
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						08
+					</p>
+					<p class="modal-menu__title-text">
+						Наполнение для шкафа-купе
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Гардеробная система
+				</a>
+				<a href="" class="modal-menu__link">
+					Корзины для белья
+				</a>
+				<a href="" class="modal-menu__link">
+					Корзины для обуви
+				</a>
+				<a href="" class="modal-menu__link">
+					Штанги и пантографы
+				</a>
+				<a href="" class="modal-menu__link">
+					Вешалки и держатели
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						09
+					</p>
+					<p class="modal-menu__title-text">
+						Барные трубы и аксессуары
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						10
+					</p>
+					<p class="modal-menu__title-text">
+						Трубы и Система Joker
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						11
+					</p>
+					<p class="modal-menu__title-text">
+						Каркасная система
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						12
+					</p>
+					<p class="modal-menu__title-text">
+						Кухонные комплектующие
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Корзины
+				</a>
+				<a href="" class="modal-menu__link">
+					Мусорные ведра
+				</a>
+				<a href="" class="modal-menu__link">
+					Планки для столешниц
+				</a>
+				<a href="" class="modal-menu__link">
+					Сушки и поддоны
+				</a>
+				<a href="" class="modal-menu__link">
+					Лотки для столовых приборов
+				</a>
+				<a href="" class="modal-menu__link">
+					Подъемные механизмы и газовые амортизаторы
+				</a>
+				<a href="" class="modal-menu__link">
+					Решетки вентиляционные
+				</a>
+				<a href="" class="modal-menu__link">
+					Ограничители
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						13
+					</p>
+					<p class="modal-menu__title-text">
+						Сопутствующая мебельная фурнитура
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Номера для квартир
+				</a>
+				<a href="" class="modal-menu__link">
+					Товары детской безопасности
+				</a>
+				<a href="" class="modal-menu__link">
+					Панели и подставки для ПК/ТВ
+				</a>
+				<a href="" class="modal-menu__link">
+					Настенная система
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						14
+					</p>
+					<p class="modal-menu__title-text">
+						Ручки и крючки
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Крючки мебельные
+				</a>
+				<a href="" class="modal-menu__link">
+					Ручки мебельные
+				</a>
+				<a href="" class="modal-menu__link">
+					Система профилей GOLA
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						15
+					</p>
+					<p class="modal-menu__title-text">
+						Релинги и комплектующие
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						16
+					</p>
+					<p class="modal-menu__title-text">
+						Полкодержатели
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						17
+					</p>
+					<p class="modal-menu__title-text">
+						Системы раздвиженых и складных дверей
+					</p>
+				</a>
+			</div>
+		</div>
+
+	</div>
+</section>
+
+<section id="modal-menu--5" class="modal-menu" style="display: none;">
+	<div class="modal-menu__nav">
+		<div class="container modal-menu__container">
+			<nav class="head-nav__content">
+				<a href="#modal-menu--1" data-modal class="head-nav__link">
+					Плитные материалы
+				</a>
+				<a href="#modal-menu--2" data-modal class="head-nav__link">
+					Мебельная фурнитура
+				</a>
+				<a href="#modal-menu--3" data-modal class="head-nav__link">
+					Инструменты, расходные материалы
+				</a>
+				<a href="#modal-menu--4" data-modal class="head-nav__link">
+					Кухонная техника
+				</a>
+				<a href="#modal-menu--5" data-modal class="head-nav__link">
+					Напольные покрытия
+				</a>
+				<a href="#modal-menu--6" data-modal class="head-nav__link">
+					Кромка
+				</a>
+				<a href="#modal-menu--7" data-modal class="head-nav__link">
+					Мебель
+				</a>
+				<a href="#modal-menu--8" data-modal class="head-nav__link">
+					Услуги
+				</a>
+				<a href="#modal-menu--9" data-modal class="head-nav__link">
+					Фасады
+				</a>
+				<a href="#modal-menu--10" data-modal class="head-nav__link">
+					Химия, Упаковка, Реставрация
+				</a>
+			</nav>
+		</div>
+	</div>
+
+	<div class="container modal-menu__container">
+		<div class="modal-menu__content">
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						01
+					</p>
+					<p class="modal-menu__title-text">
+						Крепежная фурнитура
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Винты
+				</a>
+				<a href="" class="modal-menu__link">
+					Гайки, шайбы, муфты
+				</a>
+				<a href="" class="modal-menu__link">
+					Саморезы (шурупы)
+				</a>
+				<a href="" class="modal-menu__link">
+					Дюбеля и гвозди
+				</a>
+				<a href="" class="modal-menu__link">
+					Стяжки
+				</a>
+				<a href="" class="modal-menu__link">
+					Конфирматы
+				</a>
+				<a href="" class="modal-menu__link">
+					Уголки мебельные
+				</a>
+				<a href="" class="modal-menu__link">
+					Шины и Навесы кухонные
+				</a>
+				<a href="" class="modal-menu__link">
+					Шканты
+				</a>
+				<a href="" class="modal-menu__link">
+					Механизмы трансформации
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						02
+					</p>
+					<p class="modal-menu__title-text">
+						Замки, магниты, шпингалеты
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						03
+					</p>
+					<p class="modal-menu__title-text">
+						Ножки, ролики, опоры
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Ножки
+				</a>
+				<a href="" class="modal-menu__link">
+					Ролики
+				</a>
+				<a href="" class="modal-menu__link">
+					Опоры
+				</a>
+				<a href="" class="modal-menu__link">
+					Подпятники
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						04
+					</p>
+					<p class="modal-menu__title-text">
+						Петли и аксессуары
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Петли
+				</a>
+				<a href="" class="modal-menu__link">
+					Аксессуары
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						05
+					</p>
+					<p class="modal-menu__title-text">
+						Выдвижные механизмы
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Направляющие
+				</a>
+				<a href="" class="modal-menu__link">
+					Метабоксы
+				</a>
+				<a href="" class="modal-menu__link">
+					Ящики
+				</a>
+				<a href="" class="modal-menu__link">
+					Аксессуары для ящиков
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						06
+					</p>
+					<p class="modal-menu__title-text">
+						Освещение для мебели
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Светильники
+				</a>
+				<a href="" class="modal-menu__link">
+					Светодиодная лента
+				</a>
+				<a href="" class="modal-menu__link">
+					Профиль для светодиодной ленты
+				</a>
+				<a href="" class="modal-menu__link">
+					Электротовары
+				</a>
+				<a href="" class="modal-menu__link">
+					Батарейки
+				</a>
+				<a href="" class="modal-menu__link">
+					Выключатели
+				</a>
+				<a href="" class="modal-menu__link">
+					Розетки
+				</a>
+				<a href="" class="modal-menu__link">
+					Лампочки
+				</a>
+				<a href="" class="modal-menu__link">
+					Трансформаторы
+				</a>
+				<a href="" class="modal-menu__link">
+					Заглушки для проводов
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						07
+					</p>
+					<p class="modal-menu__title-text">
+						Плинтусы кухонные и цоколи
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Плинтусы кухонные и комплектующие
+				</a>
+				<a href="" class="modal-menu__link">
+					Цоколи и комплектующие
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						08
+					</p>
+					<p class="modal-menu__title-text">
+						Наполнение для шкафа-купе
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Гардеробная система
+				</a>
+				<a href="" class="modal-menu__link">
+					Корзины для белья
+				</a>
+				<a href="" class="modal-menu__link">
+					Корзины для обуви
+				</a>
+				<a href="" class="modal-menu__link">
+					Штанги и пантографы
+				</a>
+				<a href="" class="modal-menu__link">
+					Вешалки и держатели
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						09
+					</p>
+					<p class="modal-menu__title-text">
+						Барные трубы и аксессуары
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						10
+					</p>
+					<p class="modal-menu__title-text">
+						Трубы и Система Joker
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						11
+					</p>
+					<p class="modal-menu__title-text">
+						Каркасная система
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						12
+					</p>
+					<p class="modal-menu__title-text">
+						Кухонные комплектующие
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Корзины
+				</a>
+				<a href="" class="modal-menu__link">
+					Мусорные ведра
+				</a>
+				<a href="" class="modal-menu__link">
+					Планки для столешниц
+				</a>
+				<a href="" class="modal-menu__link">
+					Сушки и поддоны
+				</a>
+				<a href="" class="modal-menu__link">
+					Лотки для столовых приборов
+				</a>
+				<a href="" class="modal-menu__link">
+					Подъемные механизмы и газовые амортизаторы
+				</a>
+				<a href="" class="modal-menu__link">
+					Решетки вентиляционные
+				</a>
+				<a href="" class="modal-menu__link">
+					Ограничители
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						13
+					</p>
+					<p class="modal-menu__title-text">
+						Сопутствующая мебельная фурнитура
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Номера для квартир
+				</a>
+				<a href="" class="modal-menu__link">
+					Товары детской безопасности
+				</a>
+				<a href="" class="modal-menu__link">
+					Панели и подставки для ПК/ТВ
+				</a>
+				<a href="" class="modal-menu__link">
+					Настенная система
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						14
+					</p>
+					<p class="modal-menu__title-text">
+						Ручки и крючки
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Крючки мебельные
+				</a>
+				<a href="" class="modal-menu__link">
+					Ручки мебельные
+				</a>
+				<a href="" class="modal-menu__link">
+					Система профилей GOLA
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						15
+					</p>
+					<p class="modal-menu__title-text">
+						Релинги и комплектующие
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						16
+					</p>
+					<p class="modal-menu__title-text">
+						Полкодержатели
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						17
+					</p>
+					<p class="modal-menu__title-text">
+						Системы раздвиженых и складных дверей
+					</p>
+				</a>
+			</div>
+		</div>
+
+	</div>
+</section>
+
+<section id="modal-menu--6" class="modal-menu" style="display: none;">
+	<div class="modal-menu__nav">
+		<div class="container modal-menu__container">
+			<nav class="head-nav__content">
+				<a href="#modal-menu--1" data-modal class="head-nav__link">
+					Плитные материалы
+				</a>
+				<a href="#modal-menu--2" data-modal class="head-nav__link">
+					Мебельная фурнитура
+				</a>
+				<a href="#modal-menu--3" data-modal class="head-nav__link">
+					Инструменты, расходные материалы
+				</a>
+				<a href="#modal-menu--4" data-modal class="head-nav__link">
+					Кухонная техника
+				</a>
+				<a href="#modal-menu--5" data-modal class="head-nav__link">
+					Напольные покрытия
+				</a>
+				<a href="#modal-menu--6" data-modal class="head-nav__link">
+					Кромка
+				</a>
+				<a href="#modal-menu--7" data-modal class="head-nav__link">
+					Мебель
+				</a>
+				<a href="#modal-menu--8" data-modal class="head-nav__link">
+					Услуги
+				</a>
+				<a href="#modal-menu--9" data-modal class="head-nav__link">
+					Фасады
+				</a>
+				<a href="#modal-menu--10" data-modal class="head-nav__link">
+					Химия, Упаковка, Реставрация
+				</a>
+			</nav>
+		</div>
+	</div>
+
+	<div class="container modal-menu__container">
+		<div class="modal-menu__content">
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						01
+					</p>
+					<p class="modal-menu__title-text">
+						Крепежная фурнитура
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Винты
+				</a>
+				<a href="" class="modal-menu__link">
+					Гайки, шайбы, муфты
+				</a>
+				<a href="" class="modal-menu__link">
+					Саморезы (шурупы)
+				</a>
+				<a href="" class="modal-menu__link">
+					Дюбеля и гвозди
+				</a>
+				<a href="" class="modal-menu__link">
+					Стяжки
+				</a>
+				<a href="" class="modal-menu__link">
+					Конфирматы
+				</a>
+				<a href="" class="modal-menu__link">
+					Уголки мебельные
+				</a>
+				<a href="" class="modal-menu__link">
+					Шины и Навесы кухонные
+				</a>
+				<a href="" class="modal-menu__link">
+					Шканты
+				</a>
+				<a href="" class="modal-menu__link">
+					Механизмы трансформации
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						02
+					</p>
+					<p class="modal-menu__title-text">
+						Замки, магниты, шпингалеты
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						03
+					</p>
+					<p class="modal-menu__title-text">
+						Ножки, ролики, опоры
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Ножки
+				</a>
+				<a href="" class="modal-menu__link">
+					Ролики
+				</a>
+				<a href="" class="modal-menu__link">
+					Опоры
+				</a>
+				<a href="" class="modal-menu__link">
+					Подпятники
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						04
+					</p>
+					<p class="modal-menu__title-text">
+						Петли и аксессуары
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Петли
+				</a>
+				<a href="" class="modal-menu__link">
+					Аксессуары
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						05
+					</p>
+					<p class="modal-menu__title-text">
+						Выдвижные механизмы
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Направляющие
+				</a>
+				<a href="" class="modal-menu__link">
+					Метабоксы
+				</a>
+				<a href="" class="modal-menu__link">
+					Ящики
+				</a>
+				<a href="" class="modal-menu__link">
+					Аксессуары для ящиков
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						06
+					</p>
+					<p class="modal-menu__title-text">
+						Освещение для мебели
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Светильники
+				</a>
+				<a href="" class="modal-menu__link">
+					Светодиодная лента
+				</a>
+				<a href="" class="modal-menu__link">
+					Профиль для светодиодной ленты
+				</a>
+				<a href="" class="modal-menu__link">
+					Электротовары
+				</a>
+				<a href="" class="modal-menu__link">
+					Батарейки
+				</a>
+				<a href="" class="modal-menu__link">
+					Выключатели
+				</a>
+				<a href="" class="modal-menu__link">
+					Розетки
+				</a>
+				<a href="" class="modal-menu__link">
+					Лампочки
+				</a>
+				<a href="" class="modal-menu__link">
+					Трансформаторы
+				</a>
+				<a href="" class="modal-menu__link">
+					Заглушки для проводов
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						07
+					</p>
+					<p class="modal-menu__title-text">
+						Плинтусы кухонные и цоколи
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Плинтусы кухонные и комплектующие
+				</a>
+				<a href="" class="modal-menu__link">
+					Цоколи и комплектующие
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						08
+					</p>
+					<p class="modal-menu__title-text">
+						Наполнение для шкафа-купе
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Гардеробная система
+				</a>
+				<a href="" class="modal-menu__link">
+					Корзины для белья
+				</a>
+				<a href="" class="modal-menu__link">
+					Корзины для обуви
+				</a>
+				<a href="" class="modal-menu__link">
+					Штанги и пантографы
+				</a>
+				<a href="" class="modal-menu__link">
+					Вешалки и держатели
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						09
+					</p>
+					<p class="modal-menu__title-text">
+						Барные трубы и аксессуары
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						10
+					</p>
+					<p class="modal-menu__title-text">
+						Трубы и Система Joker
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						11
+					</p>
+					<p class="modal-menu__title-text">
+						Каркасная система
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						12
+					</p>
+					<p class="modal-menu__title-text">
+						Кухонные комплектующие
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Корзины
+				</a>
+				<a href="" class="modal-menu__link">
+					Мусорные ведра
+				</a>
+				<a href="" class="modal-menu__link">
+					Планки для столешниц
+				</a>
+				<a href="" class="modal-menu__link">
+					Сушки и поддоны
+				</a>
+				<a href="" class="modal-menu__link">
+					Лотки для столовых приборов
+				</a>
+				<a href="" class="modal-menu__link">
+					Подъемные механизмы и газовые амортизаторы
+				</a>
+				<a href="" class="modal-menu__link">
+					Решетки вентиляционные
+				</a>
+				<a href="" class="modal-menu__link">
+					Ограничители
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						13
+					</p>
+					<p class="modal-menu__title-text">
+						Сопутствующая мебельная фурнитура
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Номера для квартир
+				</a>
+				<a href="" class="modal-menu__link">
+					Товары детской безопасности
+				</a>
+				<a href="" class="modal-menu__link">
+					Панели и подставки для ПК/ТВ
+				</a>
+				<a href="" class="modal-menu__link">
+					Настенная система
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						14
+					</p>
+					<p class="modal-menu__title-text">
+						Ручки и крючки
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Крючки мебельные
+				</a>
+				<a href="" class="modal-menu__link">
+					Ручки мебельные
+				</a>
+				<a href="" class="modal-menu__link">
+					Система профилей GOLA
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						15
+					</p>
+					<p class="modal-menu__title-text">
+						Релинги и комплектующие
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						16
+					</p>
+					<p class="modal-menu__title-text">
+						Полкодержатели
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						17
+					</p>
+					<p class="modal-menu__title-text">
+						Системы раздвиженых и складных дверей
+					</p>
+				</a>
+			</div>
+		</div>
+
+	</div>
+</section>
+
+<section id="modal-menu--7" class="modal-menu" style="display: none;">
+	<div class="modal-menu__nav">
+		<div class="container modal-menu__container">
+			<nav class="head-nav__content">
+				<a href="#modal-menu--1" data-modal class="head-nav__link">
+					Плитные материалы
+				</a>
+				<a href="#modal-menu--2" data-modal class="head-nav__link">
+					Мебельная фурнитура
+				</a>
+				<a href="#modal-menu--3" data-modal class="head-nav__link">
+					Инструменты, расходные материалы
+				</a>
+				<a href="#modal-menu--4" data-modal class="head-nav__link">
+					Кухонная техника
+				</a>
+				<a href="#modal-menu--5" data-modal class="head-nav__link">
+					Напольные покрытия
+				</a>
+				<a href="#modal-menu--6" data-modal class="head-nav__link">
+					Кромка
+				</a>
+				<a href="#modal-menu--7" data-modal class="head-nav__link">
+					Мебель
+				</a>
+				<a href="#modal-menu--8" data-modal class="head-nav__link">
+					Услуги
+				</a>
+				<a href="#modal-menu--9" data-modal class="head-nav__link">
+					Фасады
+				</a>
+				<a href="#modal-menu--10" data-modal class="head-nav__link">
+					Химия, Упаковка, Реставрация
+				</a>
+			</nav>
+		</div>
+	</div>
+
+	<div class="container modal-menu__container">
+		<div class="modal-menu__content">
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						01
+					</p>
+					<p class="modal-menu__title-text">
+						Крепежная фурнитура
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Винты
+				</a>
+				<a href="" class="modal-menu__link">
+					Гайки, шайбы, муфты
+				</a>
+				<a href="" class="modal-menu__link">
+					Саморезы (шурупы)
+				</a>
+				<a href="" class="modal-menu__link">
+					Дюбеля и гвозди
+				</a>
+				<a href="" class="modal-menu__link">
+					Стяжки
+				</a>
+				<a href="" class="modal-menu__link">
+					Конфирматы
+				</a>
+				<a href="" class="modal-menu__link">
+					Уголки мебельные
+				</a>
+				<a href="" class="modal-menu__link">
+					Шины и Навесы кухонные
+				</a>
+				<a href="" class="modal-menu__link">
+					Шканты
+				</a>
+				<a href="" class="modal-menu__link">
+					Механизмы трансформации
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						02
+					</p>
+					<p class="modal-menu__title-text">
+						Замки, магниты, шпингалеты
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						03
+					</p>
+					<p class="modal-menu__title-text">
+						Ножки, ролики, опоры
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Ножки
+				</a>
+				<a href="" class="modal-menu__link">
+					Ролики
+				</a>
+				<a href="" class="modal-menu__link">
+					Опоры
+				</a>
+				<a href="" class="modal-menu__link">
+					Подпятники
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						04
+					</p>
+					<p class="modal-menu__title-text">
+						Петли и аксессуары
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Петли
+				</a>
+				<a href="" class="modal-menu__link">
+					Аксессуары
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						05
+					</p>
+					<p class="modal-menu__title-text">
+						Выдвижные механизмы
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Направляющие
+				</a>
+				<a href="" class="modal-menu__link">
+					Метабоксы
+				</a>
+				<a href="" class="modal-menu__link">
+					Ящики
+				</a>
+				<a href="" class="modal-menu__link">
+					Аксессуары для ящиков
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						06
+					</p>
+					<p class="modal-menu__title-text">
+						Освещение для мебели
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Светильники
+				</a>
+				<a href="" class="modal-menu__link">
+					Светодиодная лента
+				</a>
+				<a href="" class="modal-menu__link">
+					Профиль для светодиодной ленты
+				</a>
+				<a href="" class="modal-menu__link">
+					Электротовары
+				</a>
+				<a href="" class="modal-menu__link">
+					Батарейки
+				</a>
+				<a href="" class="modal-menu__link">
+					Выключатели
+				</a>
+				<a href="" class="modal-menu__link">
+					Розетки
+				</a>
+				<a href="" class="modal-menu__link">
+					Лампочки
+				</a>
+				<a href="" class="modal-menu__link">
+					Трансформаторы
+				</a>
+				<a href="" class="modal-menu__link">
+					Заглушки для проводов
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						07
+					</p>
+					<p class="modal-menu__title-text">
+						Плинтусы кухонные и цоколи
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Плинтусы кухонные и комплектующие
+				</a>
+				<a href="" class="modal-menu__link">
+					Цоколи и комплектующие
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						08
+					</p>
+					<p class="modal-menu__title-text">
+						Наполнение для шкафа-купе
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Гардеробная система
+				</a>
+				<a href="" class="modal-menu__link">
+					Корзины для белья
+				</a>
+				<a href="" class="modal-menu__link">
+					Корзины для обуви
+				</a>
+				<a href="" class="modal-menu__link">
+					Штанги и пантографы
+				</a>
+				<a href="" class="modal-menu__link">
+					Вешалки и держатели
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						09
+					</p>
+					<p class="modal-menu__title-text">
+						Барные трубы и аксессуары
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						10
+					</p>
+					<p class="modal-menu__title-text">
+						Трубы и Система Joker
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						11
+					</p>
+					<p class="modal-menu__title-text">
+						Каркасная система
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						12
+					</p>
+					<p class="modal-menu__title-text">
+						Кухонные комплектующие
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Корзины
+				</a>
+				<a href="" class="modal-menu__link">
+					Мусорные ведра
+				</a>
+				<a href="" class="modal-menu__link">
+					Планки для столешниц
+				</a>
+				<a href="" class="modal-menu__link">
+					Сушки и поддоны
+				</a>
+				<a href="" class="modal-menu__link">
+					Лотки для столовых приборов
+				</a>
+				<a href="" class="modal-menu__link">
+					Подъемные механизмы и газовые амортизаторы
+				</a>
+				<a href="" class="modal-menu__link">
+					Решетки вентиляционные
+				</a>
+				<a href="" class="modal-menu__link">
+					Ограничители
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						13
+					</p>
+					<p class="modal-menu__title-text">
+						Сопутствующая мебельная фурнитура
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Номера для квартир
+				</a>
+				<a href="" class="modal-menu__link">
+					Товары детской безопасности
+				</a>
+				<a href="" class="modal-menu__link">
+					Панели и подставки для ПК/ТВ
+				</a>
+				<a href="" class="modal-menu__link">
+					Настенная система
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						14
+					</p>
+					<p class="modal-menu__title-text">
+						Ручки и крючки
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Крючки мебельные
+				</a>
+				<a href="" class="modal-menu__link">
+					Ручки мебельные
+				</a>
+				<a href="" class="modal-menu__link">
+					Система профилей GOLA
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						15
+					</p>
+					<p class="modal-menu__title-text">
+						Релинги и комплектующие
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						16
+					</p>
+					<p class="modal-menu__title-text">
+						Полкодержатели
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						17
+					</p>
+					<p class="modal-menu__title-text">
+						Системы раздвиженых и складных дверей
+					</p>
+				</a>
+			</div>
+		</div>
+
+	</div>
+</section>
+
+<section id="modal-menu--8" class="modal-menu" style="display: none;">
+	<div class="modal-menu__nav">
+		<div class="container modal-menu__container">
+			<nav class="head-nav__content">
+				<a href="#modal-menu--1" data-modal class="head-nav__link">
+					Плитные материалы
+				</a>
+				<a href="#modal-menu--2" data-modal class="head-nav__link">
+					Мебельная фурнитура
+				</a>
+				<a href="#modal-menu--3" data-modal class="head-nav__link">
+					Инструменты, расходные материалы
+				</a>
+				<a href="#modal-menu--4" data-modal class="head-nav__link">
+					Кухонная техника
+				</a>
+				<a href="#modal-menu--5" data-modal class="head-nav__link">
+					Напольные покрытия
+				</a>
+				<a href="#modal-menu--6" data-modal class="head-nav__link">
+					Кромка
+				</a>
+				<a href="#modal-menu--7" data-modal class="head-nav__link">
+					Мебель
+				</a>
+				<a href="#modal-menu--8" data-modal class="head-nav__link">
+					Услуги
+				</a>
+				<a href="#modal-menu--9" data-modal class="head-nav__link">
+					Фасады
+				</a>
+				<a href="#modal-menu--10" data-modal class="head-nav__link">
+					Химия, Упаковка, Реставрация
+				</a>
+			</nav>
+		</div>
+	</div>
+
+	<div class="container modal-menu__container">
+		<div class="modal-menu__content">
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						01
+					</p>
+					<p class="modal-menu__title-text">
+						Крепежная фурнитура
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Винты
+				</a>
+				<a href="" class="modal-menu__link">
+					Гайки, шайбы, муфты
+				</a>
+				<a href="" class="modal-menu__link">
+					Саморезы (шурупы)
+				</a>
+				<a href="" class="modal-menu__link">
+					Дюбеля и гвозди
+				</a>
+				<a href="" class="modal-menu__link">
+					Стяжки
+				</a>
+				<a href="" class="modal-menu__link">
+					Конфирматы
+				</a>
+				<a href="" class="modal-menu__link">
+					Уголки мебельные
+				</a>
+				<a href="" class="modal-menu__link">
+					Шины и Навесы кухонные
+				</a>
+				<a href="" class="modal-menu__link">
+					Шканты
+				</a>
+				<a href="" class="modal-menu__link">
+					Механизмы трансформации
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						02
+					</p>
+					<p class="modal-menu__title-text">
+						Замки, магниты, шпингалеты
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						03
+					</p>
+					<p class="modal-menu__title-text">
+						Ножки, ролики, опоры
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Ножки
+				</a>
+				<a href="" class="modal-menu__link">
+					Ролики
+				</a>
+				<a href="" class="modal-menu__link">
+					Опоры
+				</a>
+				<a href="" class="modal-menu__link">
+					Подпятники
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						04
+					</p>
+					<p class="modal-menu__title-text">
+						Петли и аксессуары
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Петли
+				</a>
+				<a href="" class="modal-menu__link">
+					Аксессуары
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						05
+					</p>
+					<p class="modal-menu__title-text">
+						Выдвижные механизмы
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Направляющие
+				</a>
+				<a href="" class="modal-menu__link">
+					Метабоксы
+				</a>
+				<a href="" class="modal-menu__link">
+					Ящики
+				</a>
+				<a href="" class="modal-menu__link">
+					Аксессуары для ящиков
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						06
+					</p>
+					<p class="modal-menu__title-text">
+						Освещение для мебели
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Светильники
+				</a>
+				<a href="" class="modal-menu__link">
+					Светодиодная лента
+				</a>
+				<a href="" class="modal-menu__link">
+					Профиль для светодиодной ленты
+				</a>
+				<a href="" class="modal-menu__link">
+					Электротовары
+				</a>
+				<a href="" class="modal-menu__link">
+					Батарейки
+				</a>
+				<a href="" class="modal-menu__link">
+					Выключатели
+				</a>
+				<a href="" class="modal-menu__link">
+					Розетки
+				</a>
+				<a href="" class="modal-menu__link">
+					Лампочки
+				</a>
+				<a href="" class="modal-menu__link">
+					Трансформаторы
+				</a>
+				<a href="" class="modal-menu__link">
+					Заглушки для проводов
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						07
+					</p>
+					<p class="modal-menu__title-text">
+						Плинтусы кухонные и цоколи
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Плинтусы кухонные и комплектующие
+				</a>
+				<a href="" class="modal-menu__link">
+					Цоколи и комплектующие
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						08
+					</p>
+					<p class="modal-menu__title-text">
+						Наполнение для шкафа-купе
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Гардеробная система
+				</a>
+				<a href="" class="modal-menu__link">
+					Корзины для белья
+				</a>
+				<a href="" class="modal-menu__link">
+					Корзины для обуви
+				</a>
+				<a href="" class="modal-menu__link">
+					Штанги и пантографы
+				</a>
+				<a href="" class="modal-menu__link">
+					Вешалки и держатели
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						09
+					</p>
+					<p class="modal-menu__title-text">
+						Барные трубы и аксессуары
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						10
+					</p>
+					<p class="modal-menu__title-text">
+						Трубы и Система Joker
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						11
+					</p>
+					<p class="modal-menu__title-text">
+						Каркасная система
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						12
+					</p>
+					<p class="modal-menu__title-text">
+						Кухонные комплектующие
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Корзины
+				</a>
+				<a href="" class="modal-menu__link">
+					Мусорные ведра
+				</a>
+				<a href="" class="modal-menu__link">
+					Планки для столешниц
+				</a>
+				<a href="" class="modal-menu__link">
+					Сушки и поддоны
+				</a>
+				<a href="" class="modal-menu__link">
+					Лотки для столовых приборов
+				</a>
+				<a href="" class="modal-menu__link">
+					Подъемные механизмы и газовые амортизаторы
+				</a>
+				<a href="" class="modal-menu__link">
+					Решетки вентиляционные
+				</a>
+				<a href="" class="modal-menu__link">
+					Ограничители
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						13
+					</p>
+					<p class="modal-menu__title-text">
+						Сопутствующая мебельная фурнитура
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Номера для квартир
+				</a>
+				<a href="" class="modal-menu__link">
+					Товары детской безопасности
+				</a>
+				<a href="" class="modal-menu__link">
+					Панели и подставки для ПК/ТВ
+				</a>
+				<a href="" class="modal-menu__link">
+					Настенная система
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						14
+					</p>
+					<p class="modal-menu__title-text">
+						Ручки и крючки
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Крючки мебельные
+				</a>
+				<a href="" class="modal-menu__link">
+					Ручки мебельные
+				</a>
+				<a href="" class="modal-menu__link">
+					Система профилей GOLA
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						15
+					</p>
+					<p class="modal-menu__title-text">
+						Релинги и комплектующие
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						16
+					</p>
+					<p class="modal-menu__title-text">
+						Полкодержатели
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						17
+					</p>
+					<p class="modal-menu__title-text">
+						Системы раздвиженых и складных дверей
+					</p>
+				</a>
+			</div>
+		</div>
+
+	</div>
+</section>
+
+<section id="modal-menu--9" class="modal-menu" style="display: none;">
+	<div class="modal-menu__nav">
+		<div class="container modal-menu__container">
+			<nav class="head-nav__content">
+				<a href="#modal-menu--1" data-modal class="head-nav__link">
+					Плитные материалы
+				</a>
+				<a href="#modal-menu--2" data-modal class="head-nav__link">
+					Мебельная фурнитура
+				</a>
+				<a href="#modal-menu--3" data-modal class="head-nav__link">
+					Инструменты, расходные материалы
+				</a>
+				<a href="#modal-menu--4" data-modal class="head-nav__link">
+					Кухонная техника
+				</a>
+				<a href="#modal-menu--5" data-modal class="head-nav__link">
+					Напольные покрытия
+				</a>
+				<a href="#modal-menu--6" data-modal class="head-nav__link">
+					Кромка
+				</a>
+				<a href="#modal-menu--7" data-modal class="head-nav__link">
+					Мебель
+				</a>
+				<a href="#modal-menu--8" data-modal class="head-nav__link">
+					Услуги
+				</a>
+				<a href="#modal-menu--9" data-modal class="head-nav__link">
+					Фасады
+				</a>
+				<a href="#modal-menu--10" data-modal class="head-nav__link">
+					Химия, Упаковка, Реставрация
+				</a>
+			</nav>
+		</div>
+	</div>
+
+	<div class="container modal-menu__container">
+		<div class="modal-menu__content">
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						01
+					</p>
+					<p class="modal-menu__title-text">
+						Крепежная фурнитура
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Винты
+				</a>
+				<a href="" class="modal-menu__link">
+					Гайки, шайбы, муфты
+				</a>
+				<a href="" class="modal-menu__link">
+					Саморезы (шурупы)
+				</a>
+				<a href="" class="modal-menu__link">
+					Дюбеля и гвозди
+				</a>
+				<a href="" class="modal-menu__link">
+					Стяжки
+				</a>
+				<a href="" class="modal-menu__link">
+					Конфирматы
+				</a>
+				<a href="" class="modal-menu__link">
+					Уголки мебельные
+				</a>
+				<a href="" class="modal-menu__link">
+					Шины и Навесы кухонные
+				</a>
+				<a href="" class="modal-menu__link">
+					Шканты
+				</a>
+				<a href="" class="modal-menu__link">
+					Механизмы трансформации
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						02
+					</p>
+					<p class="modal-menu__title-text">
+						Замки, магниты, шпингалеты
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						03
+					</p>
+					<p class="modal-menu__title-text">
+						Ножки, ролики, опоры
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Ножки
+				</a>
+				<a href="" class="modal-menu__link">
+					Ролики
+				</a>
+				<a href="" class="modal-menu__link">
+					Опоры
+				</a>
+				<a href="" class="modal-menu__link">
+					Подпятники
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						04
+					</p>
+					<p class="modal-menu__title-text">
+						Петли и аксессуары
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Петли
+				</a>
+				<a href="" class="modal-menu__link">
+					Аксессуары
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						05
+					</p>
+					<p class="modal-menu__title-text">
+						Выдвижные механизмы
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Направляющие
+				</a>
+				<a href="" class="modal-menu__link">
+					Метабоксы
+				</a>
+				<a href="" class="modal-menu__link">
+					Ящики
+				</a>
+				<a href="" class="modal-menu__link">
+					Аксессуары для ящиков
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						06
+					</p>
+					<p class="modal-menu__title-text">
+						Освещение для мебели
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Светильники
+				</a>
+				<a href="" class="modal-menu__link">
+					Светодиодная лента
+				</a>
+				<a href="" class="modal-menu__link">
+					Профиль для светодиодной ленты
+				</a>
+				<a href="" class="modal-menu__link">
+					Электротовары
+				</a>
+				<a href="" class="modal-menu__link">
+					Батарейки
+				</a>
+				<a href="" class="modal-menu__link">
+					Выключатели
+				</a>
+				<a href="" class="modal-menu__link">
+					Розетки
+				</a>
+				<a href="" class="modal-menu__link">
+					Лампочки
+				</a>
+				<a href="" class="modal-menu__link">
+					Трансформаторы
+				</a>
+				<a href="" class="modal-menu__link">
+					Заглушки для проводов
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						07
+					</p>
+					<p class="modal-menu__title-text">
+						Плинтусы кухонные и цоколи
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Плинтусы кухонные и комплектующие
+				</a>
+				<a href="" class="modal-menu__link">
+					Цоколи и комплектующие
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						08
+					</p>
+					<p class="modal-menu__title-text">
+						Наполнение для шкафа-купе
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Гардеробная система
+				</a>
+				<a href="" class="modal-menu__link">
+					Корзины для белья
+				</a>
+				<a href="" class="modal-menu__link">
+					Корзины для обуви
+				</a>
+				<a href="" class="modal-menu__link">
+					Штанги и пантографы
+				</a>
+				<a href="" class="modal-menu__link">
+					Вешалки и держатели
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						09
+					</p>
+					<p class="modal-menu__title-text">
+						Барные трубы и аксессуары
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						10
+					</p>
+					<p class="modal-menu__title-text">
+						Трубы и Система Joker
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						11
+					</p>
+					<p class="modal-menu__title-text">
+						Каркасная система
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						12
+					</p>
+					<p class="modal-menu__title-text">
+						Кухонные комплектующие
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Корзины
+				</a>
+				<a href="" class="modal-menu__link">
+					Мусорные ведра
+				</a>
+				<a href="" class="modal-menu__link">
+					Планки для столешниц
+				</a>
+				<a href="" class="modal-menu__link">
+					Сушки и поддоны
+				</a>
+				<a href="" class="modal-menu__link">
+					Лотки для столовых приборов
+				</a>
+				<a href="" class="modal-menu__link">
+					Подъемные механизмы и газовые амортизаторы
+				</a>
+				<a href="" class="modal-menu__link">
+					Решетки вентиляционные
+				</a>
+				<a href="" class="modal-menu__link">
+					Ограничители
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						13
+					</p>
+					<p class="modal-menu__title-text">
+						Сопутствующая мебельная фурнитура
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Номера для квартир
+				</a>
+				<a href="" class="modal-menu__link">
+					Товары детской безопасности
+				</a>
+				<a href="" class="modal-menu__link">
+					Панели и подставки для ПК/ТВ
+				</a>
+				<a href="" class="modal-menu__link">
+					Настенная система
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						14
+					</p>
+					<p class="modal-menu__title-text">
+						Ручки и крючки
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Крючки мебельные
+				</a>
+				<a href="" class="modal-menu__link">
+					Ручки мебельные
+				</a>
+				<a href="" class="modal-menu__link">
+					Система профилей GOLA
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						15
+					</p>
+					<p class="modal-menu__title-text">
+						Релинги и комплектующие
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						16
+					</p>
+					<p class="modal-menu__title-text">
+						Полкодержатели
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						17
+					</p>
+					<p class="modal-menu__title-text">
+						Системы раздвиженых и складных дверей
+					</p>
+				</a>
+			</div>
+		</div>
+
+	</div>
+</section>
+
+<section id="modal-menu--10" class="modal-menu" style="display: none;">
+	<div class="modal-menu__nav">
+		<div class="container modal-menu__container">
+			<nav class="head-nav__content">
+				<a href="#modal-menu--1" data-modal class="head-nav__link">
+					Плитные материалы
+				</a>
+				<a href="#modal-menu--2" data-modal class="head-nav__link">
+					Мебельная фурнитура
+				</a>
+				<a href="#modal-menu--3" data-modal class="head-nav__link">
+					Инструменты, расходные материалы
+				</a>
+				<a href="#modal-menu--4" data-modal class="head-nav__link">
+					Кухонная техника
+				</a>
+				<a href="#modal-menu--5" data-modal class="head-nav__link">
+					Напольные покрытия
+				</a>
+				<a href="#modal-menu--6" data-modal class="head-nav__link">
+					Кромка
+				</a>
+				<a href="#modal-menu--7" data-modal class="head-nav__link">
+					Мебель
+				</a>
+				<a href="#modal-menu--8" data-modal class="head-nav__link">
+					Услуги
+				</a>
+				<a href="#modal-menu--9" data-modal class="head-nav__link">
+					Фасады
+				</a>
+				<a href="#modal-menu--10" data-modal class="head-nav__link">
+					Химия, Упаковка, Реставрация
+				</a>
+			</nav>
+		</div>
+	</div>
+
+	<div class="container modal-menu__container">
+		<div class="modal-menu__content">
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						01
+					</p>
+					<p class="modal-menu__title-text">
+						Крепежная фурнитура
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Винты
+				</a>
+				<a href="" class="modal-menu__link">
+					Гайки, шайбы, муфты
+				</a>
+				<a href="" class="modal-menu__link">
+					Саморезы (шурупы)
+				</a>
+				<a href="" class="modal-menu__link">
+					Дюбеля и гвозди
+				</a>
+				<a href="" class="modal-menu__link">
+					Стяжки
+				</a>
+				<a href="" class="modal-menu__link">
+					Конфирматы
+				</a>
+				<a href="" class="modal-menu__link">
+					Уголки мебельные
+				</a>
+				<a href="" class="modal-menu__link">
+					Шины и Навесы кухонные
+				</a>
+				<a href="" class="modal-menu__link">
+					Шканты
+				</a>
+				<a href="" class="modal-menu__link">
+					Механизмы трансформации
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						02
+					</p>
+					<p class="modal-menu__title-text">
+						Замки, магниты, шпингалеты
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						03
+					</p>
+					<p class="modal-menu__title-text">
+						Ножки, ролики, опоры
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Ножки
+				</a>
+				<a href="" class="modal-menu__link">
+					Ролики
+				</a>
+				<a href="" class="modal-menu__link">
+					Опоры
+				</a>
+				<a href="" class="modal-menu__link">
+					Подпятники
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						04
+					</p>
+					<p class="modal-menu__title-text">
+						Петли и аксессуары
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Петли
+				</a>
+				<a href="" class="modal-menu__link">
+					Аксессуары
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						05
+					</p>
+					<p class="modal-menu__title-text">
+						Выдвижные механизмы
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Направляющие
+				</a>
+				<a href="" class="modal-menu__link">
+					Метабоксы
+				</a>
+				<a href="" class="modal-menu__link">
+					Ящики
+				</a>
+				<a href="" class="modal-menu__link">
+					Аксессуары для ящиков
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						06
+					</p>
+					<p class="modal-menu__title-text">
+						Освещение для мебели
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Светильники
+				</a>
+				<a href="" class="modal-menu__link">
+					Светодиодная лента
+				</a>
+				<a href="" class="modal-menu__link">
+					Профиль для светодиодной ленты
+				</a>
+				<a href="" class="modal-menu__link">
+					Электротовары
+				</a>
+				<a href="" class="modal-menu__link">
+					Батарейки
+				</a>
+				<a href="" class="modal-menu__link">
+					Выключатели
+				</a>
+				<a href="" class="modal-menu__link">
+					Розетки
+				</a>
+				<a href="" class="modal-menu__link">
+					Лампочки
+				</a>
+				<a href="" class="modal-menu__link">
+					Трансформаторы
+				</a>
+				<a href="" class="modal-menu__link">
+					Заглушки для проводов
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						07
+					</p>
+					<p class="modal-menu__title-text">
+						Плинтусы кухонные и цоколи
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Плинтусы кухонные и комплектующие
+				</a>
+				<a href="" class="modal-menu__link">
+					Цоколи и комплектующие
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						08
+					</p>
+					<p class="modal-menu__title-text">
+						Наполнение для шкафа-купе
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Гардеробная система
+				</a>
+				<a href="" class="modal-menu__link">
+					Корзины для белья
+				</a>
+				<a href="" class="modal-menu__link">
+					Корзины для обуви
+				</a>
+				<a href="" class="modal-menu__link">
+					Штанги и пантографы
+				</a>
+				<a href="" class="modal-menu__link">
+					Вешалки и держатели
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						09
+					</p>
+					<p class="modal-menu__title-text">
+						Барные трубы и аксессуары
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						10
+					</p>
+					<p class="modal-menu__title-text">
+						Трубы и Система Joker
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						11
+					</p>
+					<p class="modal-menu__title-text">
+						Каркасная система
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						12
+					</p>
+					<p class="modal-menu__title-text">
+						Кухонные комплектующие
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Корзины
+				</a>
+				<a href="" class="modal-menu__link">
+					Мусорные ведра
+				</a>
+				<a href="" class="modal-menu__link">
+					Планки для столешниц
+				</a>
+				<a href="" class="modal-menu__link">
+					Сушки и поддоны
+				</a>
+				<a href="" class="modal-menu__link">
+					Лотки для столовых приборов
+				</a>
+				<a href="" class="modal-menu__link">
+					Подъемные механизмы и газовые амортизаторы
+				</a>
+				<a href="" class="modal-menu__link">
+					Решетки вентиляционные
+				</a>
+				<a href="" class="modal-menu__link">
+					Ограничители
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						13
+					</p>
+					<p class="modal-menu__title-text">
+						Сопутствующая мебельная фурнитура
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Номера для квартир
+				</a>
+				<a href="" class="modal-menu__link">
+					Товары детской безопасности
+				</a>
+				<a href="" class="modal-menu__link">
+					Панели и подставки для ПК/ТВ
+				</a>
+				<a href="" class="modal-menu__link">
+					Настенная система
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						14
+					</p>
+					<p class="modal-menu__title-text">
+						Ручки и крючки
+					</p>
+				</a>
+				<a href="" class="modal-menu__link">
+					Крючки мебельные
+				</a>
+				<a href="" class="modal-menu__link">
+					Ручки мебельные
+				</a>
+				<a href="" class="modal-menu__link">
+					Система профилей GOLA
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						15
+					</p>
+					<p class="modal-menu__title-text">
+						Релинги и комплектующие
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						16
+					</p>
+					<p class="modal-menu__title-text">
+						Полкодержатели
+					</p>
+				</a>
+			</div>
+
+			<div class="modal-menu__block">
+				<a href="" class="modal-menu__title">
+					<p class="modal-menu__number">
+						17
+					</p>
+					<p class="modal-menu__title-text">
+						Системы раздвиженых и складных дверей
+					</p>
+				</a>
+			</div>
+		</div>
+
+	</div>
+</section>
+
+<section class="modal-service" id="modal-service" style="display: none;">
+	<div class="container">
+		<div class="modal-service__content">
+			<div class="modal-service__slider">
+				<div class="slider">
+	<div class="swiper-container slider-top">
+		<div class="swiper-wrapper slider-top__wrapper">
+			<div class="swiper-slide slider-top__slide">
+				<img src="http://placehold.it/900x600" alt="Фото товара">
+			</div>
+			<div class="swiper-slide slider-top__slide">
+				<img src="http://placehold.it/1900x600" alt="Фото товара">
+			</div>
+			<div class="swiper-slide slider-top__slide">
+				<img src="http://placehold.it/900x600" alt="Фото товара">
+			</div>
+			<div class="swiper-slide slider-top__slide">
+				<img src="http://placehold.it/1900x600" alt="Фото товара">
+			</div>
+			<div class="swiper-slide slider-top__slide">
+				<img src="http://placehold.it/900x600" alt="Фото товара">
+			</div>
+			<div class="swiper-slide slider-top__slide">
+				<img src="http://placehold.it/1900x600" alt="Фото товара">
+			</div>
+		</div>
+		<div class="slider-top__pagination">
+			-/-
+		</div>
+		<div class="swiper-button-prev slider-top__btn slider-top__btn--prev"></div>
+		<div class="swiper-button-next slider-top__btn slider-top__btn--next"></div>
+	</div>
+	<div class="swiper-container slider-bottom">
+		<div class="swiper-wrapper slider-bottom__wrapper">
+			<div class="swiper-slide slider-bottom__slide">
+				<img src="http://placehold.it/1900x600" alt="Фото товара">
+			</div>
+			<div class="swiper-slide slider-bottom__slide">
+				<img src="http://placehold.it/900x600" alt="Фото товара">
+			</div>
+			<div class="swiper-slide slider-bottom__slide">
+				<img src="http://placehold.it/1900x600" alt="Фото товара">
+			</div>
+			<div class="swiper-slide slider-bottom__slide">
+				<img src="http://placehold.it/900x600" alt="Фото товара">
+			</div>
+			<div class="swiper-slide slider-bottom__slide">
+				<img src="http://placehold.it/1900x600" alt="Фото товара">
+			</div>
+			<div class="swiper-slide slider-bottom__slide">
+				<img src="http://placehold.it/900x600" alt="Фото товара">
+			</div>
+		</div>
+		<button class="slider-bottom__btn slider-bottom__btn--left">
+			<svg class="icon-svg">
+				<use xlink:href="img/sprites/sprite.svg#icon-slider-arrow"></use>
+			</svg>
+		</button>
+		<button class="slider-bottom__btn slider-bottom__btn--right">
+			<svg class="icon-svg">
+				<use xlink:href="img/sprites/sprite.svg#icon-slider-arrow"></use>
+			</svg>
+		</button>
+	</div>
+</div>
+			</div>
+			<div class="text modal-service__text">
+				<p>
+					<strong>Возможны диаметры сверления:</strong>
+					- глухие: 3, 5, 8, 10, 15, 20, 25, 35мм <br>
+					- сквозные сверления: 5, 8, 10мм <br>
+					- торцевые сверление глухие: 5 и 8мм!
+				</p>
+				<p>
+					<strong>Ограничения оказания услуги сверления:</strong>
+					- сверление осуществляется только при оказании услуги распила
+					полноформатных листов ДСП/МДФ на пиленом центре с ЧПУ (Holzma) компании Балтламинат! <br>
+					- услуга предоставляется при предоставлении схем сверления (это может
+					быть как чертёж от руки, так и изображение или схема в электронном виде,
+					главное требование - читабельность) <br>
+					- минимальный размер детали: 200 х 70 х 12 мм <br>
+					- максимальный размер детали: 4000 х 1050 х 40 мм <br>
+					- максимальная глубина сверления - 35мм.
+				</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<form id="modal-write" class="modal-write" style="display: none;">
+	<h2 class="title modal-write__title">
+		Написать директору
+	</h2>
+	<label class="input">
+		<p class="input__title">
+			Имя: 
+		</p>
+		<input type="text" class="input__input" placeholder="Как к вам обращаться?">
+	</label>
+
+	<label class="input">
+		<p class="input__title">
+			E-mail или телефон: 
+		</p>
+		<input type="text" class="input__input" placeholder="Как к вам обращаться?">
+	</label>
+
+	<label class="input">
+		<p class="input__title">
+			Ваше сообщение:
+		</p>
+		<textarea class="input__textarea" placeholder="Ваш вопрос, пожелание или жалоба"></textarea>
+	</label>
+
+	<script>
+		// Указываем путь для выполняемого скрипта
+		var pathToScript = '/file/post';
+
+		// Максимальный размер файла (мегабайт)
+		var maxFilesize = 8
+	</script>
+
+	<div class="modal-write__toolbar">
+		<div class="dropfile">
+			<svg class="icon-svg dropfile__icon">
+				<use xlink:href="img/sprites/sprite.svg#icon-upload"></use>
+			</svg>
+			<p class="dropfile__text">
+				Перетащите сюда файл *.pdf, *.jpg или *.png <br>
+				или кликните внутри поля для выбора файлов
+			</p>
+		</div>
+	</div>
+
+	<button class="btn btn--green modal-write__btn">
+		Отправить
+	</button>
+</form>
+    </div>
+    <script src="js/vendor.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

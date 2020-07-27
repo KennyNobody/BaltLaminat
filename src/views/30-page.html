@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>30. Регистрация</title>
+    @@include("../blocks/modules/head/head.html")
+</head>
+<body class="body">
+    <div class="layout">
+        @@include("../blocks/modules/header/header.html")
+        <main class="layout__main">
+            @@include("../blocks/modules/breadcrumbs/breadcrumbs.html")
+            <section class="single">
+                <div class="container">
+                    <div class="single__content">
+                        <h2 class="title single__title">
+                            Регистрация
+                        </h2>
+                        <div class="grid">
+                            <div class="grid__column grid__column--6">
+                                <form action="" class="lk-form">
+                                    <div class="lk-field">
+                                        <p class="lk-field__title">
+                                            Имя
+                                        </p>
+                                        <div class="lk-field__wrapper lk-field__wrapper--50">
+                                            <input type="text" class="lk-input lk-field__input" placeholder="">
+                                        </div>
+                                        <p class="lk-field__discript lk-field__discript--50">
+                                            Пожалуйста, укажите ваше имя
+                                        </p>
+                                    </div>
+                                    <div class="lk-field">
+                                        <p class="lk-field__title">
+                                            Фамилия
+                                        </p>
+                                        <div class="lk-field__wrapper lk-field__wrapper--50">
+                                            <input type="text" class="lk-input lk-field__input" placeholder="">
+                                        </div>
+                                        <p class="lk-field__discript lk-field__discript--50">
+                                            Здесь укажите вашу фамилию
+                                        </p>
+                                    </div>
+                                    <div class="lk-field">
+                                        <p class="lk-field__title">
+                                            Телефон
+                                        </p>
+                                        <div class="lk-field__wrapper lk-field__wrapper--50">
+                                            <input type="text" class="lk-input lk-field__input" placeholder="">
+                                        </div>
+                                        <p class="lk-field__discript lk-field__discript--50">
+                                            Укажите телефон, к которому следует
+                                            привязать аккуант
+                                        </p>
+                                    </div>
+                                    <div class="lk-field">
+                                        <p class="lk-field__title">
+                                            E-mail
+                                        </p>
+                                        <div class="lk-field__wrapper lk-field__wrapper--50">
+                                            <input type="text" class="lk-input lk-field__input" placeholder="">
+                                        </div>
+                                        <p class="lk-field__discript lk-field__discript--50">
+                                            Укажите e-mail адрес, к которому
+                                            следует привязать аккаунт
+                                        </p>
+                                    </div>
+                                    <div class="lk-field">
+                                        <p class="lk-field__title">
+                                            Номер карты
+                                        </p>
+                                        <div class="lk-field__wrapper lk-field__wrapper--50">
+                                            <input type="text" class="lk-input lk-field__input" placeholder="" disabled>
+                                        </div>
+                                        <p class="lk-field__discript lk-field__discript--50">
+                                            Если у вас есть карта, то её номер
+                                            автоматически подгрузится
+                                        </p>
+                                    </div>
+                                    <div class="lk-field">
+                                        <p class="lk-field__title">
+                                            Пароль
+                                        </p>
+                                        <div class="lk-field__wrapper lk-field__wrapper--50">
+                                            <input type="password" class="lk-input lk-field__input" placeholder="">
+                                            <button class="lk-field__toggle lk-field__toggle--visible">
+                                                <svg class="icon-svg lk-field__icon-visible">
+                                                    <use xlink:href="img/sprites/sprite.svg#icon-visible"></use>
+                                                </svg>
+                                                <svg class="icon-svg lk-field__icon-unvisible">
+                                                    <use xlink:href="img/sprites/sprite.svg#icon-unvisible"></use>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                        <p class="lk-field__discript lk-field__discript--50">
+                                            Придумайте пароль, в котором будут содержаться
+                                            буквы и цифры
+                                        </p>
+                                    </div>
+                                    <div class="lk-field">
+                                        <p class="lk-field__title">
+                                            Повторите пароль
+                                        </p>
+                                        <div class="lk-field__wrapper lk-field__wrapper--50">
+                                            <input type="password" class="lk-input lk-field__input" placeholder="">
+                                        </div>
+                                        <p class="lk-field__discript lk-field__discript--50">
+                                            Введите придуманный пароль ещё раз
+                                        </p>
+                                    </div>
+                                    <div class="capcha lk-form__capcha">
+                                        Тут будет капча
+                                    </div>
+                                    <label class="checkbox">
+                                        <input type="checkbox" class="checkbox__input">
+                                        <div class="checkbox__icon">
+                                            <svg class="icon-svg lk-field__icon-unvisible">
+                                                <use xlink:href="img/sprites/sprite.svg#icon-check"></use>
+                                            </svg>
+                                        </div>
+                                        <p class="checkbox__name">
+                                            Я соглашаюсь с <a href="">Правилами использования сайта и на обработку своих персональных данных</a>
+                                        </p>
+                                    </label>
+                                    <button class="btn btn--dark lk-form__btn">
+                                        Продолжить
+                                    </button>
+                                </form>
+                            </div>
+                            <div class="grid__column grid__column--6">
+                                <div class="text text--center">
+                                    <img src="img/discont-small.png" alt="Скидочная карта">
+                                    <p>
+                                        Ищите, находите, сравнивайте, выбирайте, <br>добавляйте в избранное, покупайте товары с <br>личным кабинетом в Балтламинат на всех <br>устройствах и платформах.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        @@include("../blocks/modules/footer/footer.html")
+        @@include("../blocks/modules/temp/temp.html")
+    </div>
+    <div class="hidden">
+        @@include("../blocks/modules/modal/modal.html")
+    </div>
+    <script src="js/vendor.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

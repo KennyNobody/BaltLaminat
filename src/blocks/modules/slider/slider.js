@@ -73,25 +73,3 @@ window.initSlider = function() {
 	});
 
 })();
-
-// (function() {
-
-// 	window.addEventListener("resize", resizeThrottler);
-
-// 	let resizeTimeout;
-
-// 	function resizeThrottler() {
-
-// 		if ( !resizeTimeout ) {
-// 			resizeTimeout = setTimeout(function() {
-// 				resizeTimeout = null;
-// 				actualResizeHandler();
-// 			}, 500);
-// 		}
-// 	}
-
-// 	function actualResizeHandler() {
-// 		console.log('Что-то происходит');
-// 	}
-
-// }());

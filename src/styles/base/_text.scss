@@ -4,6 +4,13 @@
 	@include r(1200) {
 		font-size: 14px;
 	}
+	&--center {
+		text-align: center;
+		img {
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
 	p {
 		margin-bottom: 1em;
 	}

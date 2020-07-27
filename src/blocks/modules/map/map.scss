@@ -1,0 +1,61 @@
+.map {
+	margin-bottom: 100px;
+	&__desktop {
+		display: block;
+		@include r(1200) {
+			display: none;
+		}
+	}
+	&__mobile {
+		display: none;
+		@include r(1200) {
+			display: block;
+		}
+	}
+	&__slider {
+		height: 780px;
+		margin-bottom: 100px;
+	}
+	&__slide {
+		margin-bottom: -560px;
+		position: relative;
+		// max-height: 1000px;
+		// overflow: hidden;
+		position: relative;
+		transition: 0.3s all;
+		&:nth-child(1) {
+			z-index: 3;
+		}
+		&:nth-child(2) {
+			z-index: 2;
+		}
+		&:nth-child(3) {
+			z-index: 1;
+		}
+		img {
+			opacity: 0.3;
+			transition: 0.3s all;
+		}
+		&--active {
+			img {
+				opacity: 1;
+			}
+		}
+		&--hide {
+			opacity: 0;
+			// max-height: 0px;
+		}
+	}
+	&__change-floor {
+		height: 40px;
+		width: 100px;
+		text-align: center;
+		color: $light;
+		cursor: pointer;
+		transition: 0.3s all;
+		background-color: $dark;
+		&:hover {
+			opacity: 0.7;
+		}
+	}
+}

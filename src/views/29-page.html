@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>29. Форма входа</title>
+    @@include("../blocks/modules/head/head.html")
+</head>
+<body class="body">
+    <div class="layout">
+        @@include("../blocks/modules/header/header.html")
+        <main class="layout__main">
+            @@include("../blocks/modules/breadcrumbs/breadcrumbs.html")
+            <section class="lk-auth">
+                <div class="container">
+                    <div class="lk-auth__content">
+                        <div class="lk-auth__column lk-auth__column--left">
+                            <form action="" class="lk-auth-form">
+                                <h2 class="lk-auth-form__title">
+                                    Вход
+                                </h2>
+                                <label class="lk-auth-form__label">
+                                    <p class="lk-auth-form__discript">
+                                        e-mail / телефон
+                                    </p>
+                                    <input type="text" class="lk-auth-form__input">
+                                </label>
+                                <label class="lk-auth-form__label">
+                                    <p class="lk-auth-form__discript">
+                                        пароль
+                                    </p>
+                                    <input type="password" class="lk-auth-form__input">
+                                </label>
+                                <div class="lk-auth-form__toolbar">
+                                    <label class="checkbox lk-auth-form__checkbox">
+                                        <input type="checkbox" class="checkbox__input">
+                                        <div class="checkbox__icon">
+                                            <svg class="icon-svg">
+                                                <use xlink:href="img/sprites/sprite.svg#icon-check"></use>
+                                            </svg>
+                                        </div>
+                                        <p class="checkbox__name">
+                                            Запомнить меня
+                                        </p>
+                                    </label>
+                                    <button class="btn btn--dark lk-auth-form__btn">
+                                        Войти
+                                    </button>
+                                    <a href="" class="lk-auth-form__link">
+                                        Забыли пароль?
+                                    </a>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="lk-auth__column lk-auth__column--right" style="background-image: url('img/lk-auth__bg.jpg')">
+                            <h1 class="lk-auth__title">
+                                Ещё нет личного кабинета?
+                            </h1>
+                            <a href="" class="btn btn--light lk-auth__btn">
+                                Зарегистрироваться
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        @@include("../blocks/modules/footer/footer.html")
+        @@include("../blocks/modules/temp/temp.html")
+    </div>
+    <div class="hidden">
+        @@include("../blocks/modules/modal/modal.html")
+    </div>
+    <script src="js/vendor.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

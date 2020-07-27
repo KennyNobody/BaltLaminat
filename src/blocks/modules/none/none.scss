@@ -1,0 +1,40 @@
+.none {
+	display: flex;
+	justify-content: space-between;
+	@include r(1200) {
+		flex-direction: column;
+	}
+	&__column {
+		width: 50%;
+		@include r(1200) {
+			width: 100%;
+		}
+		&--left {
+			img {
+				display: block;
+				width: 100%;
+			}
+		}
+		&--right {
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			padding-left: 150px;
+			@include r(1200) {
+				display: block;
+				order: -1;
+				// text-align: center;
+				padding-left: 0px;
+				margin-bottom: 40px;
+			}
+		}
+	}
+	&__text {
+		margin-bottom: 23px;
+	}
+	&__link {
+		width: fit-content;
+		padding-left: 55px;
+		padding-right: 55px;
+	}
+}

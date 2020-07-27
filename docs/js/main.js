@@ -155,6 +155,78 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/blocks/modules/lk-auth/lk-auth.js":
+/*!***********************************************!*\
+  !*** ./src/blocks/modules/lk-auth/lk-auth.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function toggleAuthName() {
+  var input = document.querySelectorAll('.lk-auth-form__input');
+
+  for (var i = 0; i < input.length; i++) {
+    input[i].addEventListener('focusin', function () {
+      this.parentNode.classList.add('lk-auth-form__label--focus');
+    });
+    input[i].addEventListener('focusout', function () {
+      if (this.value == false) {
+        this.parentNode.classList.remove('lk-auth-form__label--focus');
+      }
+    });
+  }
+})();
+
+/***/ }),
+
+/***/ "./src/blocks/modules/map/map.js":
+/*!***************************************!*\
+  !*** ./src/blocks/modules/map/map.js ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function initMapSlider() {
+  var button = document.querySelectorAll('.map__change-floor');
+  var layers = document.querySelectorAll('[data-floor]');
+
+  for (var i = 0; i < button.length; i++) {
+    button[i].addEventListener('click', toggleFloor);
+  }
+
+  function toggleFloor() {
+    var activeFloor = +this.getAttribute('data-btn-floor');
+    console.log(activeFloor);
+    toggleActiveClass(activeFloor);
+    hidePreviousFloors(activeFloor);
+  }
+
+  function toggleActiveClass(number) {
+    // for (let i = 0; i < layers.length; i++) {
+    // 	layers[i].classList.remove('map__slide--active');
+    // }
+    for (var _i = 0; _i < layers.length; _i++) {
+      if (layers[_i].getAttribute('data-floor') == number) {
+        layers[_i].classList.add('map__slide--active');
+      } else {
+        layers[_i].classList.remove('map__slide--active');
+      }
+    }
+  }
+
+  function hidePreviousFloors(number) {
+    for (var _i2 = 0; _i2 < layers.length; _i2++) {
+      if (layers[_i2].getAttribute('data-floor') > number) {
+        layers[_i2].classList.add('map__slide--hide');
+      } else {
+        layers[_i2].classList.remove('map__slide--hide');
+      }
+    }
+  }
+})();
+
+/***/ }),
+
 /***/ "./src/blocks/modules/mmenu/mmenu.js":
 /*!*******************************************!*\
   !*** ./src/blocks/modules/mmenu/mmenu.js ***!
@@ -405,21 +477,7 @@ window.initSlider = function () {
       }
     }
   });
-})(); // (function() {
-// 	window.addEventListener("resize", resizeThrottler);
-// 	let resizeTimeout;
-// 	function resizeThrottler() {
-// 		if ( !resizeTimeout ) {
-// 			resizeTimeout = setTimeout(function() {
-// 				resizeTimeout = null;
-// 				actualResizeHandler();
-// 			}, 500);
-// 		}
-// 	}
-// 	function actualResizeHandler() {
-// 		console.log('Что-то происходит');
-// 	}
-// }());
+})();
 
 /***/ }),
 
@@ -439,13 +497,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_product_product__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! %modules%/product/product */ "./src/blocks/modules/product/product.js");
 /* harmony import */ var _modules_product_product__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_modules_product_product__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _modules_slider_slider__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! %modules%/slider/slider */ "./src/blocks/modules/slider/slider.js");
-/* harmony import */ var _modules_mmenu_mmenu__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! %modules%/mmenu/mmenu */ "./src/blocks/modules/mmenu/mmenu.js");
+/* harmony import */ var _modules_map_map__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! %modules%/map/map */ "./src/blocks/modules/map/map.js");
+/* harmony import */ var _modules_map_map__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_modules_map_map__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _modules_mmenu_mmenu__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! %modules%/mmenu/mmenu */ "./src/blocks/modules/mmenu/mmenu.js");
+/* harmony import */ var _modules_lk_auth_lk_auth__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! %modules%/lk-auth/lk-auth */ "./src/blocks/modules/lk-auth/lk-auth.js");
+/* harmony import */ var _modules_lk_auth_lk_auth__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_modules_lk_auth_lk_auth__WEBPACK_IMPORTED_MODULE_7__);
 
  // import "%modules%/header/header";
 // import "%modules%/footer/footer";
 
 
  // Врап/анврап
+
+
 
 
 
