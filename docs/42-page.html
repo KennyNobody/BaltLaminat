@@ -259,9 +259,9 @@
                                         <p class="title-small lk-form__title">
                                             <span>Способ доставки</span>
                                         </p>
-                                        <div class="lk-form__grid">
+                                        <div class="lk-form__grid lk-form__grid--start">
                                             <label class="ill-check" tabindex="0">
-                                                <input type="checkbox" class="ill-check__input">
+                                                <input type="radio" name="shipping" class="ill-check__input">
                                                 <div class="ill-check__block">
                                                     <div class="ill-check__icon">
                                                         <div class="ill-check__forungle">
@@ -270,84 +270,139 @@
                                                     </div>
                                                     <div class="ill-check__ill">
                                                         <svg class="icon-svg">
-                                                            <use xlink:href="img/sprites/sprite.svg#icon-check-card"></use>
+                                                            <use xlink:href="img/sprites/sprite.svg#icon-check-shipping"></use>
                                                         </svg>
                                                     </div>
                                                     <p class="ill-check__text">
-                                                        Оплата банковской <br>
-                                                        картой
+                                                        Самовывоз
                                                     </p>
                                                 </div>
                                             </label>
-                                        </div>
-                                    </div>
-                                    <div class="lk-form__section">
-                                        <p class="title-small lk-form__title">
-                                            <span>Адрес доставки</span>
-                                        </p>
-                                        <div class="lk-form__grid">
-                                            <div class="lk-field">
-                                                <p class="lk-field__title">
-                                                    Город, поселок
-                                                </p>
-                                                <div class="lk-field__wrapper">
-                                                    <input type="text" class="lk-input lk-field__input" placeholder="">
+                                            <label class="ill-check" tabindex="0">
+                                                <input type="radio" name="shipping" class="ill-check__input">
+                                                <div class="ill-check__block">
+                                                    <div class="ill-check__icon">
+                                                        <div class="ill-check__forungle">
+                                                            <div class="ill-check__marker"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ill-check__ill">
+                                                        <svg class="icon-svg">
+                                                            <use xlink:href="img/sprites/sprite.svg#icon-check-shipping-2"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <p class="ill-check__text">
+                                                        Доставка
+                                                    </p>
                                                 </div>
-                                            </div>
-                                            <div class="lk-field lk-field--50">
-                                                <p class="lk-field__title">
-                                                    Индекс
-                                                </p>
-                                                <div class="lk-field__wrapper">
-                                                    <input type="text" class="lk-input lk-field__input" placeholder="">
-                                                </div>
-                                            </div>
-                                            <div class="lk-field lk-field--50">
-                                                <p class="lk-field__title">
-                                                    Улица
-                                                </p>
-                                                <div class="lk-field__wrapper">
-                                                    <input type="text" class="lk-input lk-field__input" placeholder="">
-                                                </div>
-                                            </div>
-                                            <div class="lk-field lk-field--50">
-                                                <p class="lk-field__title">
-                                                    Дом
-                                                </p>
-                                                <div class="lk-field__wrapper">
-                                                    <input type="text" class="lk-input lk-field__input" placeholder="">
-                                                </div>
-                                            </div>
-                                            <div class="lk-field lk-field--50">
-                                                <p class="lk-field__title">
-                                                    Квартира
-                                                </p>
-                                                <div class="lk-field__wrapper">
-                                                    <input type="text" class="lk-input lk-field__input" placeholder="">
-                                                </div>
+                                            </label>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="lk-form__section">
-                                        <p class="title-small lk-form__title">
-                                            <span>Способ оплаты</span>
-                                        </p>
-                                        
-                                    </div>
-                                    <button class="btn btn--dark lk-form__btn">
-                                        Продолжить
-                                    </button>
-                                </form>
-                            </div>
-                            <div class="grid__column grid__column--6">
+                                        <div class="lk-form__section">
+                                            <p class="title-small lk-form__title">
+                                                <span>Адрес доставки</span>
+                                            </p>
+                                            <div class="lk-form__grid">
+                                                <div class="lk-field">
+                                                    <p class="lk-field__title">
+                                                        Город, поселок
+                                                    </p>
+                                                    <div class="lk-field__wrapper">
+                                                        <input type="text" class="lk-input lk-field__input" placeholder="">
+                                                    </div>
+                                                </div>
+                                                <div class="lk-field lk-field--50">
+                                                    <p class="lk-field__title">
+                                                        Индекс
+                                                    </p>
+                                                    <div class="lk-field__wrapper">
+                                                        <input type="text" class="lk-input lk-field__input" placeholder="">
+                                                    </div>
+                                                </div>
+                                                <div class="lk-field lk-field--50">
+                                                    <p class="lk-field__title">
+                                                        Улица
+                                                    </p>
+                                                    <div class="lk-field__wrapper">
+                                                        <input type="text" class="lk-input lk-field__input" placeholder="">
+                                                    </div>
+                                                </div>
+                                                <div class="lk-field lk-field--50">
+                                                    <p class="lk-field__title">
+                                                        Дом
+                                                    </p>
+                                                    <div class="lk-field__wrapper">
+                                                        <input type="text" class="lk-input lk-field__input" placeholder="">
+                                                    </div>
+                                                </div>
+                                                <div class="lk-field lk-field--50">
+                                                    <p class="lk-field__title">
+                                                        Квартира
+                                                    </p>
+                                                    <div class="lk-field__wrapper">
+                                                        <input type="text" class="lk-input lk-field__input" placeholder="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="lk-form__section">
+                                            <p class="title-small lk-form__title">
+                                                <span>Способ оплаты</span>
+                                            </p>
+                                            <div class="lk-form__grid lk-form__grid--start">
+                                                <label class="ill-check" tabindex="0">
+                                                    <input type="radio" name="payment" class="ill-check__input">
+                                                    <div class="ill-check__block">
+                                                        <div class="ill-check__icon">
+                                                            <div class="ill-check__forungle">
+                                                                <div class="ill-check__marker"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="ill-check__ill">
+                                                            <svg class="icon-svg">
+                                                                <use xlink:href="img/sprites/sprite.svg#icon-check-card"></use>
+                                                            </svg>
+                                                        </div>
+                                                        <p class="ill-check__text">
+                                                            Оплата банковской <br>
+                                                            картой
+                                                        </p>
+                                                    </div>
+                                                </label>
+                                                <label class="ill-check">
+                                                    <input type="radio" name="payment" class="ill-check__input" disabled>
+                                                    <div class="ill-check__block">
+                                                        <div class="ill-check__icon">
+                                                            <div class="ill-check__forungle">
+                                                                <div class="ill-check__marker"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="ill-check__ill">
+                                                            <svg class="icon-svg">
+                                                                <use xlink:href="img/sprites/sprite.svg#icon-check-paper"></use>
+                                                            </svg>
+                                                        </div>
+                                                        <p class="ill-check__text">
+                                                            Выставить счёт
+                                                        </p>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn--dark lk-form__btn">
+                                            Продолжить
+                                        </button>
+                                    </form>
+                                </div>
+                                <div class="grid__column grid__column--6">
 
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
-        </main>
-        <footer class="footer">
+                </section>
+            </main>
+            <footer class="footer">
 	<section class="subscribe">
 		<div class="container">
 			<div class="subscribe__content">
@@ -545,7 +600,7 @@
         <li><a href="/contact">Контакты</a></li>
     </ul>
 </nav>
-        <section class="temp">
+            <section class="temp">
 	<div class="container">
 		<div class="temp__content">
 			<a href="index.html" class="temp__link">
@@ -699,9 +754,9 @@
 		</div>
 	</div>
 </section>
-    </div>
-    <div class="hidden">
-        <section id="modal-menu--1" class="modal-menu" style="display: none;">
+        </div>
+        <div class="hidden">
+            <section id="modal-menu--1" class="modal-menu" style="display: none;">
 	<div class="modal-menu__nav">
 		<div class="container modal-menu__container">
 			<nav class="head-nav__content">
@@ -4709,8 +4764,8 @@
 		Отправить
 	</button>
 </form>
-    </div>
-    <script src="js/vendor.js"></script>
-    <script src="js/main.js"></script>
-</body>
-</html>
+        </div>
+        <script src="js/vendor.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+    </html>

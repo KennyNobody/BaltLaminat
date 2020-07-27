@@ -5314,6 +5314,10 @@ i {
   flex-wrap: wrap;
 }
 
+.lk-form__grid--start {
+  justify-content: flex-start;
+}
+
 .lk-input {
   border: 1px solid #2E2E2E;
   height: 42px;
@@ -5431,6 +5435,9 @@ i {
 
 .ill-check {
   cursor: pointer;
+  display: inline-flex;
+  margin-right: 32px;
+  margin-bottom: 32px;
 }
 
 .ill-check__input {
@@ -5443,6 +5450,22 @@ i {
 
 .ill-check__input:checked + .ill-check__block .ill-check__marker {
   opacity: 1;
+}
+
+.ill-check__input:disabled + .ill-check__block {
+  border-color: #E5E5E5;
+}
+
+.ill-check__input:disabled + .ill-check__block .ill-check__ill svg {
+  fill: #E5E5E5;
+}
+
+.ill-check__input:disabled + .ill-check__block .ill-check__text {
+  color: #E5E5E5;
+}
+
+.ill-check__input:disabled + .ill-check__block .ill-check__forungle {
+  border-color: #E5E5E5;
 }
 
 .ill-check__block {

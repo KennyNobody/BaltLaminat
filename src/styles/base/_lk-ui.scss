@@ -22,6 +22,9 @@
 		display: flex;
 		justify-content: space-between;
 		flex-wrap: wrap;
+		&--start {
+			justify-content: flex-start;
+		}
 	}
 }
 
@@ -127,6 +130,9 @@
 
 .ill-check {
 	cursor: pointer;
+	display: inline-flex;
+	margin-right: 32px;
+	margin-bottom: 32px;
 	&__input {
 		display: none;
 		&:checked {
@@ -138,6 +144,22 @@
 				}
 				.ill-check__marker {
 					opacity: 1;
+				}
+			}
+		}
+		&:disabled {
+			& + .ill-check__block {
+				border-color: #E5E5E5;
+				.ill-check__ill {
+					svg {
+						fill: #E5E5E5;
+					}
+				}
+				.ill-check__text {
+					color: #E5E5E5;
+				}
+				.ill-check__forungle {
+					border-color: #E5E5E5;
 				}
 			}
 		}
