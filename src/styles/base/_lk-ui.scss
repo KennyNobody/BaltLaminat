@@ -14,6 +14,11 @@
 	&__btn {
 		padding-left: 63px;
 		padding-right: 63px;
+		margin-right: 32px;
+		margin-bottom: 32px;
+		&:last-of-type {
+			margin-right: 0px;
+		}
 	}
 	&__section {
 		margin-bottom: 48px;
@@ -222,5 +227,57 @@
 		height: 8px;
 		transition: 0.3s all;
 		opacity: 0;
+	}
+}
+
+.final-price {
+	background-color: $light;
+	padding: 28px 30px 42px 30px;
+	box-shadow: 2px 4px 30px rgba(0, 0, 0, 0.14);
+	&__title {
+		font-weight: bold;
+		font-size: 20px;
+		margin-bottom: 37px;
+	}
+	&__section {
+		border-bottom: 1px solid $dark;
+		margin-bottom: 10px;
+		&:last-of-type {
+			border-bottom: none;
+			margin-bottom: 35px;
+		}
+	}
+	&__text {
+		display: flex;
+		justify-content: space-between;
+		align-items: baseline;
+		margin-bottom: 22px;
+		strong {
+			font-weight: bold;
+			font-size: 30px;
+		}
+	}
+	&__btn {
+		padding-left: 53px;
+		padding-right: 53px;
+	}
+}
+
+.lk-info-line {
+	font-weight: bold;
+	margin-bottom: 20px;
+	&__head {
+		font-weight: normal;
+		color: #828282;
+		display: inline-block;
+		margin-right: 20px;
+	}
+	a {
+		color: $green;
+		text-decoration: underline;
+		font-weight: normal;
+		&:hover {
+			text-decoration: none;
+		}
 	}
 }
