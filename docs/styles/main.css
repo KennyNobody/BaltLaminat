@@ -4741,6 +4741,121 @@ i {
   width: calc(100% / 10 * 9 - 12px);
 }
 
+.text {
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+.text--center {
+  text-align: center;
+}
+
+.text--center img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text p {
+  margin-bottom: 1em;
+}
+
+.text h5 {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.text h6 {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.text strong,
+.text b {
+  font-weight: bold;
+}
+
+.text a {
+  color: #00C25A;
+}
+
+.text a:hover {
+  text-decoration: none;
+}
+
+.text i {
+  font-style: italic;
+}
+
+.text iframe {
+  display: block;
+  max-width: 948px;
+  width: 100%;
+  margin-bottom: 2rem;
+  height: 570px;
+  margin-top: 2rem;
+}
+
+.text picture {
+  padding-right: 140px;
+  display: block;
+}
+
+.text img {
+  display: block;
+  max-width: 100%;
+  width: auto;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.text ul {
+  list-style-type: square;
+  margin-bottom: 1em;
+  line-height: 2;
+  font-size: inherit;
+  padding-left: 40px;
+  color: #00C25A;
+}
+
+.text ul span {
+  color: #2E2E2E;
+}
+
+.text .btn {
+  color: #ffffff;
+  padding-left: 53px;
+  padding-right: 53px;
+  margin-bottom: 1em;
+}
+
+.text-green {
+  color: #00C25A;
+}
+
+.marker-block {
+  display: inline-flex;
+  align-items: center;
+}
+
+.marker-block svg {
+  flex-shrink: 0;
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin-right: 24px;
+}
+
+.marker-block span,
+.marker-block a {
+  text-decoration: none;
+  color: #2E2E2E;
+  font-size: 20px;
+}
+
+.marker-block a:hover {
+  text-decoration: underline;
+}
+
 .search {
   position: relative;
 }
@@ -5654,114 +5769,6 @@ i {
 
 .lk-info-line a:hover {
   text-decoration: none;
-}
-
-.text {
-  line-height: 1.5;
-  font-size: 16px;
-}
-
-.text--center {
-  text-align: center;
-}
-
-.text--center img {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.text p {
-  margin-bottom: 1em;
-}
-
-.text h5 {
-  font-weight: bold;
-  font-size: 20px;
-}
-
-.text h6 {
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-
-.text strong,
-.text b {
-  font-weight: bold;
-}
-
-.text a {
-  color: #00C25A;
-}
-
-.text a:hover {
-  text-decoration: none;
-}
-
-.text i {
-  font-style: italic;
-}
-
-.text iframe {
-  display: block;
-  max-width: 948px;
-  width: 100%;
-  margin-bottom: 2rem;
-  height: 570px;
-  margin-top: 2rem;
-}
-
-.text picture {
-  padding-right: 140px;
-  display: block;
-}
-
-.text img {
-  display: block;
-  max-width: 100%;
-  width: auto;
-  margin-bottom: 2rem;
-  margin-top: 2rem;
-}
-
-.text ul {
-  list-style-type: square;
-  margin-bottom: 1em;
-  line-height: 2;
-  font-size: inherit;
-  padding-left: 40px;
-  color: #00C25A;
-}
-
-.text ul span {
-  color: #2E2E2E;
-}
-
-.text-green {
-  color: #00C25A;
-}
-
-.marker-block {
-  display: inline-flex;
-  align-items: center;
-}
-
-.marker-block svg {
-  flex-shrink: 0;
-  display: block;
-  width: 40px;
-  height: 40px;
-  margin-right: 24px;
-}
-
-.marker-block span,
-.marker-block a {
-  text-decoration: none;
-  color: #2E2E2E;
-  font-size: 20px;
-}
-
-.marker-block a:hover {
-  text-decoration: underline;
 }
 
 .accent-line {
@@ -9057,12 +9064,12 @@ i {
     padding-right: 8px;
   }
 
-  .table__line {
-    font-size: 14px;
-  }
-
   .text iframe {
     height: 480px;
+  }
+
+  .table__line {
+    font-size: 14px;
   }
 
   .accent-line {
@@ -9320,6 +9327,35 @@ i {
     order: -2;
   }
 
+  .text {
+    font-size: 14px;
+  }
+
+  .text picture {
+    padding-right: 0px;
+  }
+
+  .text ul {
+    list-style-position: inside;
+    padding-left: 0px;
+  }
+
+  .marker-block {
+    display: flex;
+    margin-bottom: 15px;
+  }
+
+  .marker-block svg {
+    width: 22px;
+    height: 22px;
+    margin-right: 15px;
+  }
+
+  .marker-block span,
+  .marker-block a {
+    font-size: 16px;
+  }
+
   .btn {
     font-size: 16px;
   }
@@ -9419,35 +9455,6 @@ i {
 
   .table-form {
     max-width: 320px;
-  }
-
-  .text {
-    font-size: 14px;
-  }
-
-  .text picture {
-    padding-right: 0px;
-  }
-
-  .text ul {
-    list-style-position: inside;
-    padding-left: 0px;
-  }
-
-  .marker-block {
-    display: flex;
-    margin-bottom: 15px;
-  }
-
-  .marker-block svg {
-    width: 22px;
-    height: 22px;
-    margin-right: 15px;
-  }
-
-  .marker-block span,
-  .marker-block a {
-    font-size: 16px;
   }
 
   .accent-line {
