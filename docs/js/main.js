@@ -189,37 +189,63 @@
 (function initMapSlider() {
   var button = document.querySelectorAll('.map__change-floor');
   var layers = document.querySelectorAll('[data-floor]');
+  var checkbox = document.querySelectorAll('[data-type]');
+  var fields = document.querySelectorAll('.map__room');
+  var floorNavs = document.querySelectorAll('[data-floorNavs]');
 
   for (var i = 0; i < button.length; i++) {
     button[i].addEventListener('click', toggleFloor);
   }
 
+  for (var _i = 0; _i < checkbox.length; _i++) {
+    checkbox[_i].addEventListener('click', toggleTypeField);
+  }
+
   function toggleFloor() {
     var activeFloor = +this.getAttribute('data-btn-floor');
-    console.log(activeFloor);
     toggleActiveClass(activeFloor);
     hidePreviousFloors(activeFloor);
+    toggleNavs(activeFloor);
   }
 
   function toggleActiveClass(number) {
-    // for (let i = 0; i < layers.length; i++) {
-    // 	layers[i].classList.remove('map__slide--active');
-    // }
-    for (var _i = 0; _i < layers.length; _i++) {
-      if (layers[_i].getAttribute('data-floor') == number) {
-        layers[_i].classList.add('map__slide--active');
+    for (var _i2 = 0; _i2 < layers.length; _i2++) {
+      if (layers[_i2].getAttribute('data-floor') == number) {
+        layers[_i2].classList.add('map__slide--active');
       } else {
-        layers[_i].classList.remove('map__slide--active');
+        layers[_i2].classList.remove('map__slide--active');
+      }
+    }
+  }
+
+  function toggleNavs(number) {
+    for (var _i3 = 0; _i3 < floorNavs.length; _i3++) {
+      if (floorNavs[_i3].getAttribute('data-floorNavs') == number) {
+        floorNavs[_i3].classList.remove('map-hidden');
+      } else {
+        floorNavs[_i3].classList.add('map-hidden');
       }
     }
   }
 
   function hidePreviousFloors(number) {
-    for (var _i2 = 0; _i2 < layers.length; _i2++) {
-      if (layers[_i2].getAttribute('data-floor') > number) {
-        layers[_i2].classList.add('map__slide--hide');
+    for (var _i4 = 0; _i4 < layers.length; _i4++) {
+      if (layers[_i4].getAttribute('data-floor') > number) {
+        layers[_i4].classList.add('map__slide--hide');
       } else {
-        layers[_i2].classList.remove('map__slide--hide');
+        layers[_i4].classList.remove('map__slide--hide');
+      }
+    }
+  }
+
+  function toggleTypeField(number) {
+    var activeType = +this.getAttribute('data-type');
+
+    for (var _i5 = 0; _i5 < fields.length; _i5++) {
+      if (fields[_i5].getAttribute('data-map-field') == activeType) {
+        fields[_i5].classList.add('map__room--active');
+      } else {
+        fields[_i5].classList.remove('map__room--active');
       }
     }
   }

@@ -23,6 +23,7 @@
 	h5 {
 		font-weight: bold;
 		font-size: 20px;
+		margin-bottom: 1rem;
 	}
 	h6 {
 		font-weight: bold;
@@ -68,7 +69,7 @@
 	ul {
 		list-style-type: square;
 		margin-bottom: 1em;
-		line-height: 2;
+		// line-height: 2;
 		font-size: inherit;
 		padding-left: 40px;
 		@include r(1200) {
@@ -79,6 +80,9 @@
 		span {
 			color: $dark;
 		}
+	}
+	li {
+		margin-bottom: 1rem;
 	}
 	// ol {
 	// 	list-style-type: decimal;

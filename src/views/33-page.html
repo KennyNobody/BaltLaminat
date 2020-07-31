@@ -12,18 +12,605 @@
             <section class="single">
                 <div class="container">
                     <div class="single__content">
-                        <h2 class="title single__title">
-                            Восстановление доступа
-                        </h2>
-                        <div class="grid">
-                            <div class="grid__column grid__column--4">
-                                <form action="" class="lk-access">
-                                    <input type="text" class="lk-input lk-input--large lk-access__input" placeholder="Новый пароль">
-                                    <input type="text" class="lk-input lk-input--large lk-access__input" placeholder="Повторите пароль">
-                                    <button class="btn btn--dark lk-access__btn">
-                                        Сохранить
-                                    </button>
-                                </form>
+                        <div class="single__columns">
+                            <div class="single__column single__column--2">
+                                <aside class="sidebar">
+                                    <p class="title-small sidebar__title">
+                                        <span>Личный кабинет</span>
+                                    </p>
+                                    <a href="" class="sidebar__link">
+                                        Корзина <strong>(3)</strong>
+                                    </a>
+                                    <a href="" class="sidebar__link">
+                                        Заказы
+                                    </a>
+                                    <a href="" class="sidebar__link sidebar__link--active">
+                                        Данные пользователя
+                                    </a>
+                                    <a href="" class="sidebar__link">
+                                        Организации
+                                    </a>
+                                    <a href="" class="sidebar__link">
+                                        Избранные товары
+                                    </a>
+                                    <a href="" class="sidebar__link">
+                                        Сообщения
+                                    </a>
+                                </aside>
+                            </div>
+                            <div class="single__column single__column--10">
+                                <div class="subgrid">
+                                    <div class="subgrid__column subgrid__column--6">
+                                        <h2 class="title single__title">
+                                            Здравствуйте, Дмитрий!
+                                        </h2>
+                                        <div class="lk-progress">
+                                            <p class="lk-progress__title">
+                                                Ваша скидка <strong>0%</strong>
+                                            </p>
+                                            <p class="lk-progress__text">
+                                                У вас нет карты, оформите её при следующем заказе в магазине.
+                                            </p>
+                                            <!-- В зависимости от размера скидка подставляем соответствующую картинку:
+                                            discont-0.svg
+                                            discont-5.svg
+                                            discont-10.svg
+                                            discont-15.svg
+                                            discont-20.svg -->
+                                            <img src="img/discont-0.svg" alt="скидка 0%" class="lk-progress__img">
+                                        </div>
+                                        <form action="" class="lk-form">
+                                            <div class="lk-form__section">
+                                                <p class="title-small lk-form__title">
+                                                    <span>У вас есть неоплаченный заказ:</span>
+                                                </p>
+                                                <p class="lk-info-line">
+                                                    <span class="lk-info-line__head">
+                                                        Номер 
+                                                    </span>
+                                                    <a href="">
+                                                        452214
+                                                    </a>
+                                                </p>
+                                                <p class="lk-info-line">
+                                                    <span class="lk-info-line__head">
+                                                        Сумма
+                                                    </span>
+                                                    <strong>16 550</strong>
+                                                    руб.
+                                                </p>
+                                                <p class="lk-info-line">
+                                                    <span class="lk-info-line__head">
+                                                        Статус
+                                                    </span>
+                                                    Зарезервирован
+                                                </p>
+                                            </div>
+                                            <a href="" class="btn btn--gray lk-form__btn">
+                                                Отменить заказ
+                                            </a>
+                                            <a href="" class="btn btn--green lk-form__btn">
+                                                Оплатить
+                                            </a>
+                                        </form>
+                                    </div>
+                                    <div class="subgrid__column subgrid__column--4">
+                                        <div class="grid__block grid__block--sticky">
+                                            <form action="" class="lk-question">
+                                                <p class="lk-question__title">
+                                                    Как Вы оцениваете качество услуг распила/оклейки компании Балтламинат?*
+                                                </p>
+                                                <div class="lk-question__list">
+                                                    <label class="checkbox">
+                                                        <input type="radio" name="question" class="checkbox__input">
+                                                        <div class="checkbox__icon">
+                                                            <svg class="icon-svg lk-field__icon-unvisible">
+                                                                <use xlink:href="img/sprites/sprite.svg#icon-check"></use>
+                                                            </svg>
+                                                        </div>
+                                                        <p class="checkbox__name">
+                                                            Отлично
+                                                        </p>
+                                                    </label>
+                                                    <label class="checkbox">
+                                                        <input type="radio" name="question" class="checkbox__input">
+                                                        <div class="checkbox__icon">
+                                                            <svg class="icon-svg lk-field__icon-unvisible">
+                                                                <use xlink:href="img/sprites/sprite.svg#icon-check"></use>
+                                                            </svg>
+                                                        </div>
+                                                        <p class="checkbox__name">
+                                                            Хорошо
+                                                        </p>
+                                                    </label>
+                                                    <label class="checkbox">
+                                                        <input type="radio" name="question" class="checkbox__input">
+                                                        <div class="checkbox__icon">
+                                                            <svg class="icon-svg lk-field__icon-unvisible">
+                                                                <use xlink:href="img/sprites/sprite.svg#icon-check"></use>
+                                                            </svg>
+                                                        </div>
+                                                        <p class="checkbox__name">
+                                                            Удовлетворительно
+                                                        </p>
+                                                    </label>
+                                                    <label class="checkbox">
+                                                        <input type="radio" name="question" class="checkbox__input">
+                                                        <div class="checkbox__icon">
+                                                            <svg class="icon-svg lk-field__icon-unvisible">
+                                                                <use xlink:href="img/sprites/sprite.svg#icon-check"></use>
+                                                            </svg>
+                                                        </div>
+                                                        <p class="checkbox__name">
+                                                            Плохо
+                                                        </p>
+                                                    </label>
+                                                    <label class="checkbox">
+                                                        <input type="radio" name="question" class="checkbox__input">
+                                                        <div class="checkbox__icon">
+                                                            <svg class="icon-svg lk-field__icon-unvisible">
+                                                                <use xlink:href="img/sprites/sprite.svg#icon-check"></use>
+                                                            </svg>
+                                                        </div>
+                                                        <p class="checkbox__name">
+                                                            Очень плохо
+                                                        </p>
+                                                    </label>
+                                                    <label class="checkbox">
+                                                        <input type="radio" name="question" class="checkbox__input">
+                                                        <div class="checkbox__icon">
+                                                            <svg class="icon-svg lk-field__icon-unvisible">
+                                                                <use xlink:href="img/sprites/sprite.svg#icon-check"></use>
+                                                            </svg>
+                                                        </div>
+                                                        <p class="checkbox__name">
+                                                            Не пользуюсь услугами
+                                                        </p>
+                                                    </label>
+                                                </div>
+                                                <button class="btn btn--dark lk-question__btn">
+                                                    Проголосовать
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lk-catalog">
+                                    <p class="title-small lk-form__title">
+                                        <span>Вы смотрели:</span>
+                                    </p>
+                                    <div class="lk-catalog__grid">
+                                        <article class="card">
+                                            <a href class="resized card__thumb">
+                                                <img src="http://placehold.it/900x600" alt="Название товара">
+                                                <div class="card__tags">
+                                                    <span class="card__tag card__tag--blue">
+                                                        Новинка
+                                                    </span>
+                                                </div>
+                                            </a>
+                                            <a href="" class="card__title">
+                                                140.120.61 Фреза концевая DIA D12/NL27/L70/S12
+                                            </a>
+                                            <div class="card__content">
+                                                <div class="card__grid">
+                                                    <div class="card__grid-column">
+                                                        <div class="card__grid-item">
+                                                            <p class="card__grid-head">
+                                                                артикул
+                                                            </p>
+                                                            <p class="card__grid-text">
+                                                                45645
+                                                            </p>
+                                                        </div>
+                                                        <div class="card__grid-item">
+                                                            <p class="card__grid-head">
+                                                                наличие
+                                                            </p>
+                                                            <p class="card__grid-text">
+                                                                В НАЛИЧИИ
+                                                            </p>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="card__grid-column">
+                                                        <div class="card__grid-item">
+                                                            <p class="card__grid-head">
+                                                                розничная цена
+                                                            </p>
+                                                            <p class="card__grid-text">
+                                                                5 550 РУБ.
+                                                            </p>
+                                                        </div>
+                                                        <div class="card__grid-item">
+                                                            <p class="card__grid-head">
+                                                                цена со скидкой
+                                                            </p>
+                                                            <p class="card__grid-text card__grid-text--price card__grid-text--blue">
+                                                                <strong>5 190</strong> РУБ.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="card__toolbar">
+                                                <div class="counter card__counter">
+                                                    <button class="counter__btn counter__btn--minus">
+                                                        <svg class="icon-svg">
+                                                            <use xlink:href="img/sprites/sprite.svg#icon-minus"></use>
+                                                        </svg>
+                                                    </button>
+
+                                                    <div class="counter__input">
+                                                        <input type="number" class="counter__input" value="10" min="0">
+                                                        <p class="counter__type">
+                                                            шт.
+                                                        </p>
+                                                    </div>
+
+                                                    <button class="counter__btn counter__btn--plus">
+                                                        <svg class="icon-svg">
+                                                            <use xlink:href="img/sprites/sprite.svg#icon-plus"></use>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <button class="card__btn card__btn--blue">
+                                                <svg class="icon-svg">
+                                                    <use xlink:href="img/sprites/sprite.svg#icon-add-card"></use>
+                                                </svg>
+                                                <span>
+                                                    В корзину
+                                                </span>
+                                            </button>
+                                        </article>
+
+                                        <article class="card">
+                                            <a href class="resized card__thumb">
+                                                <img src="http://placehold.it/900x600" alt="Название товара">
+                                                <div class="card__tags">
+                                                    <span class="card__tag card__tag--orange">
+                                                        Акция
+                                                    </span>
+                                                </div>
+                                            </a>
+                                            <a href="" class="card__title">
+                                                140.120.61 Фреза концевая DIA D12/NL27/L70/S12
+                                            </a>
+                                            <div class="card__content">
+                                                <div class="card__grid">
+                                                    <div class="card__grid-column">
+                                                        <div class="card__grid-item">
+                                                            <p class="card__grid-head">
+                                                                артикул
+                                                            </p>
+                                                            <p class="card__grid-text">
+                                                                45645
+                                                            </p>
+                                                        </div>
+                                                        <div class="card__grid-item">
+                                                            <p class="card__grid-head">
+                                                                наличие
+                                                            </p>
+                                                            <p class="card__grid-text">
+                                                                В НАЛИЧИИ
+                                                            </p>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="card__grid-column">
+                                                        <div class="card__grid-item">
+                                                            <p class="card__grid-head">
+                                                                розничная цена
+                                                            </p>
+                                                            <p class="card__grid-text">
+                                                                5 550 РУБ.
+                                                            </p>
+                                                        </div>
+                                                        <div class="card__grid-item">
+                                                            <p class="card__grid-head">
+                                                                цена со скидкой
+                                                            </p>
+                                                            <p class="card__grid-text card__grid-text--price card__grid-text--orange">
+                                                                <strong>5 190</strong> РУБ.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="card__toolbar">
+                                                <div class="counter card__counter">
+                                                    <button class="counter__btn counter__btn--minus">
+                                                        <svg class="icon-svg">
+                                                            <use xlink:href="img/sprites/sprite.svg#icon-minus"></use>
+                                                        </svg>
+                                                    </button>
+
+                                                    <div class="counter__input">
+                                                        <input type="number" class="counter__input" value="10" min="0">
+                                                        <p class="counter__type">
+                                                            шт.
+                                                        </p>
+                                                    </div>
+
+                                                    <button class="counter__btn counter__btn--plus">
+                                                        <svg class="icon-svg">
+                                                            <use xlink:href="img/sprites/sprite.svg#icon-plus"></use>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <button class="card__btn card__btn--orange">
+                                                <svg class="icon-svg">
+                                                    <use xlink:href="img/sprites/sprite.svg#icon-add-card"></use>
+                                                </svg>
+                                                <span>
+                                                    В корзину
+                                                </span>
+                                            </button>
+                                        </article>
+
+                                        <article class="card">
+                                            <a href class="resized card__thumb">
+                                                <img src="http://placehold.it/900x600" alt="Название товара">
+                                                <div class="card__tags">
+                                                    <span class="card__tag card__tag--red">
+                                                        Распродажа
+                                                    </span>
+                                                </div>
+                                            </a>
+                                            <a href="" class="card__title">
+                                                140.120.61 Фреза концевая DIA D12/NL27/L70/S12
+                                            </a>
+                                            <div class="card__content">
+                                                <div class="card__grid">
+                                                    <div class="card__grid-column">
+                                                        <div class="card__grid-item">
+                                                            <p class="card__grid-head">
+                                                                артикул
+                                                            </p>
+                                                            <p class="card__grid-text">
+                                                                45645
+                                                            </p>
+                                                        </div>
+                                                        <div class="card__grid-item">
+                                                            <p class="card__grid-head">
+                                                                наличие
+                                                            </p>
+                                                            <p class="card__grid-text">
+                                                                В НАЛИЧИИ
+                                                            </p>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="card__grid-column">
+                                                        <div class="card__grid-item">
+                                                            <p class="card__grid-head">
+                                                                розничная цена
+                                                            </p>
+                                                            <p class="card__grid-text">
+                                                                5 550 РУБ.
+                                                            </p>
+                                                        </div>
+                                                        <div class="card__grid-item">
+                                                            <p class="card__grid-head">
+                                                                цена со скидкой
+                                                            </p>
+                                                            <p class="card__grid-text card__grid-text--price card__grid-text--red">
+                                                                <strong>5 190</strong> РУБ.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="card__toolbar">
+                                                <div class="counter card__counter">
+                                                    <button class="counter__btn counter__btn--minus">
+                                                        <svg class="icon-svg">
+                                                            <use xlink:href="img/sprites/sprite.svg#icon-minus"></use>
+                                                        </svg>
+                                                    </button>
+
+                                                    <div class="counter__input">
+                                                        <input type="number" class="counter__input" value="10" min="0">
+                                                        <p class="counter__type">
+                                                            шт.
+                                                        </p>
+                                                    </div>
+
+                                                    <button class="counter__btn counter__btn--plus">
+                                                        <svg class="icon-svg">
+                                                            <use xlink:href="img/sprites/sprite.svg#icon-plus"></use>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <button class="card__btn card__btn--red">
+                                                <svg class="icon-svg">
+                                                    <use xlink:href="img/sprites/sprite.svg#icon-add-card"></use>
+                                                </svg>
+                                                <span>
+                                                    В корзину
+                                                </span>
+                                            </button>
+                                        </article>
+
+                                        <article class="card">
+                                            <a href class="resized card__thumb">
+                                                <img src="http://placehold.it/900x600" alt="Название товара">
+                                            </a>
+                                            <a href="" class="card__title">
+                                                140.120.61 Фреза концевая DIA D12/NL27/L70/S12
+                                            </a>
+                                            <div class="card__content">
+                                                <div class="card__grid">
+                                                    <div class="card__grid-column">
+                                                        <div class="card__grid-item">
+                                                            <p class="card__grid-head">
+                                                                артикул
+                                                            </p>
+                                                            <p class="card__grid-text">
+                                                                45645
+                                                            </p>
+                                                        </div>
+                                                        <div class="card__grid-item">
+                                                            <p class="card__grid-head">
+                                                                наличие
+                                                            </p>
+                                                            <p class="card__grid-text">
+                                                                В НАЛИЧИИ
+                                                            </p>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="card__grid-column">
+                                                        <div class="card__grid-item">
+                                                            <p class="card__grid-head">
+                                                                розничная цена
+                                                            </p>
+                                                            <p class="card__grid-text">
+                                                                5 550 РУБ.
+                                                            </p>
+                                                        </div>
+                                                        <div class="card__grid-item">
+                                                            <p class="card__grid-head">
+                                                                цена со скидкой
+                                                            </p>
+                                                            <p class="card__grid-text card__grid-text--price">
+                                                                <strong>5 190</strong> РУБ.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="card__toolbar">
+                                                <div class="counter card__counter">
+                                                    <button class="counter__btn counter__btn--minus">
+                                                        <svg class="icon-svg">
+                                                            <use xlink:href="img/sprites/sprite.svg#icon-minus"></use>
+                                                        </svg>
+                                                    </button>
+
+                                                    <div class="counter__input">
+                                                        <input type="number" class="counter__input" value="10" min="0">
+                                                        <p class="counter__type">
+                                                            шт.
+                                                        </p>
+                                                    </div>
+
+                                                    <button class="counter__btn counter__btn--plus">
+                                                        <svg class="icon-svg">
+                                                            <use xlink:href="img/sprites/sprite.svg#icon-plus"></use>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <button class="card__btn">
+                                                <svg class="icon-svg">
+                                                    <use xlink:href="img/sprites/sprite.svg#icon-add-card"></use>
+                                                </svg>
+                                                <span>
+                                                    В корзину
+                                                </span>
+                                            </button>
+                                        </article>
+
+                                        <article class="card">
+                                            <a href class="resized card__thumb">
+                                                <img src="http://placehold.it/900x600" alt="Название товара">
+                                                <div class="card__tags">
+                                                    <span class="card__tag card__tag--orange">
+                                                        Акция
+                                                    </span>
+                                                </div>
+                                            </a>
+                                            <a href="" class="card__title">
+                                                140.120.61 Фреза концевая DIA D12/NL27/L70/S12
+                                            </a>
+                                            <div class="card__content">
+                                                <div class="card__grid">
+                                                    <div class="card__grid-column">
+                                                        <div class="card__grid-item">
+                                                            <p class="card__grid-head">
+                                                                артикул
+                                                            </p>
+                                                            <p class="card__grid-text">
+                                                                45645
+                                                            </p>
+                                                        </div>
+                                                        <div class="card__grid-item">
+                                                            <p class="card__grid-head">
+                                                                наличие
+                                                            </p>
+                                                            <p class="card__grid-text">
+                                                                В НАЛИЧИИ
+                                                            </p>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="card__grid-column">
+                                                        <div class="card__grid-item">
+                                                            <p class="card__grid-head">
+                                                                розничная цена
+                                                            </p>
+                                                            <p class="card__grid-text">
+                                                                5 550 РУБ.
+                                                            </p>
+                                                        </div>
+                                                        <div class="card__grid-item">
+                                                            <p class="card__grid-head">
+                                                                цена со скидкой
+                                                            </p>
+                                                            <p class="card__grid-text card__grid-text--price card__grid-text--orange">
+                                                                <strong>5 190</strong> РУБ.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="card__toolbar">
+                                                <div class="counter card__counter">
+                                                    <button class="counter__btn counter__btn--minus">
+                                                        <svg class="icon-svg">
+                                                            <use xlink:href="img/sprites/sprite.svg#icon-minus"></use>
+                                                        </svg>
+                                                    </button>
+
+                                                    <div class="counter__input">
+                                                        <input type="number" class="counter__input" value="10" min="0">
+                                                        <p class="counter__type">
+                                                            шт.
+                                                        </p>
+                                                    </div>
+
+                                                    <button class="counter__btn counter__btn--plus">
+                                                        <svg class="icon-svg">
+                                                            <use xlink:href="img/sprites/sprite.svg#icon-plus"></use>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <button class="card__btn card__btn--orange">
+                                                <svg class="icon-svg">
+                                                    <use xlink:href="img/sprites/sprite.svg#icon-add-card"></use>
+                                                </svg>
+                                                <span>
+                                                    В корзину
+                                                </span>
+                                            </button>
+                                        </article>
+
+                                        <div class="card card--clear"></div>
+                                        <div class="card card--clear"></div>
+                                        <div class="card card--clear"></div>
+                                        <div class="card card--clear"></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
