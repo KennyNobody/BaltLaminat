@@ -69,6 +69,7 @@
     },
     "dependencies": {
         "@fancyapps/fancybox": "^3.5.7",
+        "air-datepicker": "^2.2.3",
         "choices.js": "^9.0.1",
         "dropzone": "^5.7.1",
         "jquery": "^3.5.1",

@@ -562,13 +562,16 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var choices_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! choices.js */ "./node_modules/choices.js/public/assets/scripts/choices.js");
+/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var choices_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! choices.js */ "./node_modules/choices.js/public/assets/scripts/choices.js");
 /* harmony import */ var choices_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(choices_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var simplebar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! simplebar */ "./node_modules/simplebar/dist/simplebar.esm.js");
 /* harmony import */ var nouislider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! nouislider */ "./node_modules/nouislider/distribute/nouislider.js");
 /* harmony import */ var nouislider__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(nouislider__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var wnumb__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! wnumb */ "./node_modules/wnumb/wNumb.js");
 /* harmony import */ var wnumb__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(wnumb__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var air_datepicker__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! air-datepicker */ "./node_modules/air-datepicker/src/js/air-datepicker.js");
+/* harmony import */ var air_datepicker__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(air_datepicker__WEBPACK_IMPORTED_MODULE_4__);
+
 
 
 
@@ -655,6 +658,66 @@ __webpack_require__.r(__webpack_exports__);
           selectedState: 'sort-price__item--is-selected',
           flippedState: 'sort-price__dropdown--is-flipped',
           loadingState: 'sort-price__dropdown--is-loading',
+          noResults: 'has-no-results',
+          noChoices: 'has-no-choices'
+        }
+      });
+    }
+  })();
+
+  (function initLkDropdown() {
+    var elements = document.querySelectorAll('.lk-dropdown');
+
+    for (var n = 0; n < elements.length; n++) {
+      var choices = new choices_js__WEBPACK_IMPORTED_MODULE_0___default.a(elements[n], {
+        silent: false,
+        items: [],
+        choices: [],
+        renderChoiceLimit: -1,
+        maxItemCount: -1,
+        addItems: true,
+        addItemFilter: null,
+        removeItems: false,
+        removeItemButton: false,
+        editItems: false,
+        duplicateItemsAllowed: true,
+        delimiter: ',',
+        paste: true,
+        placeholder: false,
+        placeholderValue: null,
+        searchPlaceholderValue: null,
+        prependValue: null,
+        appendValue: null,
+        renderSelectedChoices: 'auto',
+        loadingText: 'Загрузка...',
+        noResultsText: 'No results found',
+        noChoicesText: 'No choices to choose from',
+        itemSelectText: '123',
+        classNames: {
+          containerOuter: 'lk-dropdown__dropdown',
+          containerInner: 'lk-dropdown__inner',
+          input: 'lk-dropdown__input',
+          inputCloned: 'lk-dropdown__input--cloned',
+          list: 'lk-dropdown__list',
+          listItems: 'lk-dropdown__list--multiple',
+          listSingle: 'lk-dropdown__list--single',
+          listDropdown: 'lk-dropdown__list--dropdown',
+          item: 'lk-dropdown__item',
+          itemSelectable: 'lk-dropdown__item--selectable',
+          itemDisabled: 'lk-dropdown__item--disabled',
+          itemChoice: 'lk-dropdown__item--choice',
+          placeholder: 'lk-dropdown__placeholder',
+          group: 'lk-dropdown__group',
+          groupHeading: 'lk-dropdown__heading',
+          button: 'lk-dropdown__button',
+          activeState: 'lk-dropdown__list--is-active',
+          focusState: 'lk-dropdown__dropdown--is-focused',
+          openState: 'lk-dropdown__dropdown--is-open',
+          disabledState: 'lk-dropdown__dropdown--is-disabled',
+          highlightedState: 'lk-dropdown__item--is-highlighted',
+          selectedState: 'lk-dropdown__item--is-selected',
+          flippedState: 'lk-dropdown__dropdown--is-flipped',
+          loadingState: 'lk-dropdown__dropdown--is-loading',
           noResults: 'has-no-results',
           noChoices: 'has-no-choices'
         }
@@ -844,7 +907,15 @@ __webpack_require__.r(__webpack_exports__);
     initLibs();
     window.addEventListener('resize', checkMobile);
   })();
+
+  (function initDatePicker() {
+    $('.lk-filter__datepicker').datepicker({
+      range: true
+    });
+    console.log(air_datepicker__WEBPACK_IMPORTED_MODULE_4___default.a);
+  })();
 })();
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
 

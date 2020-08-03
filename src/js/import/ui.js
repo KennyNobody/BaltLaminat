@@ -2,6 +2,7 @@ import Choices from 'choices.js';
 import SimpleBar from 'simplebar';
 import noUiSlider from 'nouislider';
 import wNumb from 'wnumb';
+import datepicker from 'air-datepicker';
 
 (function() {
 
@@ -82,6 +83,66 @@ import wNumb from 'wnumb';
 					selectedState: 'sort-price__item--is-selected',
 					flippedState: 'sort-price__dropdown--is-flipped',
 					loadingState: 'sort-price__dropdown--is-loading',
+					noResults: 'has-no-results',
+					noChoices: 'has-no-choices'
+				},
+			});
+		}
+	})();
+
+	(function initLkDropdown() {
+		const elements = document.querySelectorAll('.lk-dropdown');
+
+		for (let n = 0; n < elements.length; n++) {
+			const choices = new Choices(elements[n], {
+				silent: false,
+				items: [],
+				choices: [],
+				renderChoiceLimit: -1,
+				maxItemCount: -1,
+				addItems: true,
+				addItemFilter: null,
+				removeItems: false,
+				removeItemButton: false,
+				editItems: false,
+				duplicateItemsAllowed: true,
+				delimiter: ',',
+				paste: true,
+				placeholder: false,
+				placeholderValue: null,
+				searchPlaceholderValue: null,
+				prependValue: null,
+				appendValue: null,
+				renderSelectedChoices: 'auto',
+				loadingText: 'Загрузка...',
+				noResultsText: 'No results found',
+				noChoicesText: 'No choices to choose from',
+				itemSelectText: '123',
+				classNames: {
+					containerOuter: 'lk-dropdown__dropdown',
+					containerInner: 'lk-dropdown__inner',
+					input: 'lk-dropdown__input',
+					inputCloned: 'lk-dropdown__input--cloned',
+					list: 'lk-dropdown__list',
+					listItems: 'lk-dropdown__list--multiple',
+					listSingle: 'lk-dropdown__list--single',
+					listDropdown: 'lk-dropdown__list--dropdown',
+					item: 'lk-dropdown__item',
+					itemSelectable: 'lk-dropdown__item--selectable',
+					itemDisabled: 'lk-dropdown__item--disabled',
+					itemChoice: 'lk-dropdown__item--choice',
+					placeholder: 'lk-dropdown__placeholder',
+					group: 'lk-dropdown__group',
+					groupHeading: 'lk-dropdown__heading',
+					button: 'lk-dropdown__button',
+					activeState: 'lk-dropdown__list--is-active',
+					focusState: 'lk-dropdown__dropdown--is-focused',
+					openState: 'lk-dropdown__dropdown--is-open',
+					disabledState: 'lk-dropdown__dropdown--is-disabled',
+					highlightedState: 'lk-dropdown__item--is-highlighted',
+					selectedState: 'lk-dropdown__item--is-selected',
+					flippedState: 'lk-dropdown__dropdown--is-flipped',
+					loadingState: 'lk-dropdown__dropdown--is-loading',
 					noResults: 'has-no-results',
 					noChoices: 'has-no-choices'
 				},
@@ -268,5 +329,13 @@ import wNumb from 'wnumb';
 		initLibs();
 
 		window.addEventListener('resize', checkMobile);
+	})();
+
+	(function initDatePicker(){
+		$('.lk-filter__datepicker').datepicker({
+			range: true
+		});
+
+		console.log(datepicker)
 	})();
 })();
