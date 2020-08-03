@@ -5708,7 +5708,7 @@ i {
   font-weight: bold;
   transition: 0.3s all;
   cursor: pointer;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 .btn--dark {
@@ -7181,6 +7181,12 @@ i {
   margin-right: 32px;
 }
 
+.lk-filter__btn {
+  height: 40px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
 .accent-line {
   background-color: #FF3131;
   color: #ffffff;
@@ -7238,6 +7244,11 @@ i {
   width: 100%;
   height: auto;
   margin-bottom: 26px;
+}
+
+.head-main__logo img {
+  display: block;
+  width: 100%;
 }
 
 .head-nav {
@@ -7505,7 +7516,6 @@ i {
   width: 248px;
   height: 50px;
   background-color: #00C25A;
-  text-transform: uppercase;
 }
 
 .bottom {
@@ -9827,6 +9837,7 @@ i {
 .lk-dropdown__dropdown {
   position: relative;
   width: 260px;
+  margin-right: 32px;
 }
 
 .lk-dropdown__dropdown:focus {
