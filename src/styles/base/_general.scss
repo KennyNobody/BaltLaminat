@@ -24,7 +24,7 @@ i {
 	background-color: $light;
 	color: $dark;
 	-webkit-font-smoothing: antialiased!important;
-    text-rendering: optimizeLegibility!important;
+	text-rendering: optimizeLegibility!important;
 	background: url(../img/bg-svg.svg) 0px 140px no-repeat, 
 	url(../img/bg-svg.svg) 0px 1640px no-repeat,
 	url(../img/bg-svg.svg) 0px 3140px no-repeat,
@@ -36,6 +36,6 @@ i {
 
 	}
 	@include r(1200) {
-
+		background: none;
 	}
 }

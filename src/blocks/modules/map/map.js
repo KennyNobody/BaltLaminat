@@ -1,3 +1,5 @@
+import tippy from 'tippy.js';
+
 (function initMapSlider() {
 	const button = document.querySelectorAll('.map__change-floor');
 	const layers = document.querySelectorAll('[data-floor]');
@@ -11,6 +13,13 @@
 
 	for (let i = 0; i < checkbox.length; i++) {
 		checkbox[i].addEventListener('click', toggleTypeField);
+	}
+
+	for (let i = 0; i < fields.length; i++) {
+		tippy(fields[i], {
+			content: 'My tooltip!',
+			trigger: 'click',
+		});
 	}
 
 	function toggleFloor () {
@@ -60,5 +69,7 @@
 			}
 		}
 	}
+
+
 
 })();

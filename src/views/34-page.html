@@ -48,8 +48,8 @@
                                     </h3>
                                     <div class="lk-table-section__table">
                                         <div class="lk-table">
-                                            <div class="lk-table__line lk-table__line--head">
-                                                <div class="lk-table__btn">
+                                            <div class="lk-table-toolbar lk-table-toolbar--head">
+                                                <div class="lk-table-toolbar__col lk-table-toolbar__col--checkbox">
                                                     <label class="lk-checkbox">
                                                         <input type="checkbox" name="question" class="lk-checkbox__input">
                                                         <div class="lk-checkbox__icon">
@@ -59,19 +59,485 @@
                                                         </div>
                                                     </label>
                                                 </div>
-                                                <button class="lk-table__btn">
-                                                    2
-                                                </button>
-                                                <button class="lk-table__btn">
-                                                    3
-                                                </button>
-                                            </div>
-                                            <div class="lk-table__line">
+                                                <div class="lk-table-toolbar__col lk-table-toolbar__col--all">
+                                                    <button class="select-all">
+                                                        Выбрать все
+                                                    </button>
+                                                </div>
+                                                <div class="lk-table-toolbar__col lk-table-toolbar__col--grow">
+                                                    <button class="remove-all">
+                                                        <svg class="icon-svg remove-all__icon">
+                                                            <use xlink:href="img/sprites/sprite.svg#icon-remove-all"></use>
+                                                        </svg>
+                                                        <p class="remove-all__text">
+                                                            Удалить выбранные
+                                                        </p>
+                                                    </button>
+                                                </div>
+                                                <div class="lk-table-toolbar__col lk-table-toolbar__col--removed">
 
+                                                    <!-- Даже если нет сообщения, div-родитель (lk-table-toolbar__col--removed) все равно не удаляй, просто оставь его пустым -->
+
+                                                    <p class="lk-item__text">
+                                                        <strong>Удалено: 1 позиция</strong>
+                                                    </p>
+                                                </div>
+                                                <div class="lk-table-toolbar__col lk-table-toolbar__col--repair">
+
+                                                    <!-- Даже если нет кнопки, div-родитель (lk-table-toolbar__col--repair) все равно не удаляй, просто оставь его пустым -->
+
+                                                    <button class="lk-table-toolbar__repair-btn">
+                                                        Восстановить все
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <article class="lk-item">
+                                                <div class="lk-item__col lk-item__col--checkbox">
+                                                    <label class="lk-checkbox">
+                                                        <input type="checkbox" name="question" class="lk-checkbox__input">
+                                                        <div class="lk-checkbox__icon">
+                                                            <svg class="icon-svg lk-field__icon-unvisible">
+                                                                <use xlink:href="img/sprites/sprite.svg#icon-check"></use>
+                                                            </svg>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="lk-item__col lk-item__col--number">
+                                                    1
+                                                </div>
+                                                <div class="lk-item__col lk-item__col--thumb">
+                                                    <div class="lk-item__thumb">
+                                                        <img src="https://via.placeholder.com/106x106" alt="Название товара">
+                                                    </div>
+                                                </div>
+                                                <div class="lk-item__col lk-item__col--content">
+                                                    <p class="lk-item__text">
+                                                        <a href="" target="_blank">
+                                                            140.120.61 Очень длинное название несомненно очень важной и не менее несомненно очень большой и дорогой штуки, чье предназначение непонятно простому смертному
+                                                        </a>
+                                                    </p>
+                                                    <p class="lk-item__text">
+                                                        <strong>Артикул:</strong> 45645
+                                                    </p>
+                                                    <p class="lk-item__text">
+                                                        <strong>Декор:</strong> 112.0271.333
+                                                    </p>
+                                                </div>
+                                                <div class="lk-item__col lk-item__col--count">
+                                                    <p class="lk-item__count">
+                                                        <span>
+                                                            22 шт.
+                                                        </span>
+                                                        <span>
+                                                            х
+                                                        </span>
+                                                        <span>
+                                                            <b>211 660</b> руб.
+                                                        </span>
+                                                    </p>
+                                                </div>
+                                                <div class="lk-item__col lk-item__col--result">
+                                                    <p class="lk-item__text">
+                                                        <b>25 320</b> руб.
+                                                    </p>
+                                                    <p class="lk-item__text">
+                                                        <s>
+                                                            25 320 руб.
+                                                        </s>
+                                                    </p>
+                                                    <p class="lk-item__text lk-item__text--accent">
+                                                        скидка
+                                                    </p>
+                                                </div>
+                                            </article>
+                                            <article class="lk-item">
+                                                <div class="lk-item__col lk-item__col--checkbox">
+                                                    <label class="lk-checkbox">
+                                                        <input type="checkbox" name="question" class="lk-checkbox__input">
+                                                        <div class="lk-checkbox__icon">
+                                                            <svg class="icon-svg lk-field__icon-unvisible">
+                                                                <use xlink:href="img/sprites/sprite.svg#icon-check"></use>
+                                                            </svg>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="lk-item__col lk-item__col--number">
+                                                    2
+                                                </div>
+                                                <div class="lk-item__col lk-item__col--thumb">
+                                                    <div class="lk-item__thumb">
+                                                        <img src="https://via.placeholder.com/106x106" alt="Название товара">
+                                                    </div>
+                                                </div>
+                                                <div class="lk-item__col lk-item__col--content">
+                                                    <p class="lk-item__text">
+                                                        <a href="" target="_blank">
+                                                            140.120.61 Фреза концевая DIA D12/NL27/L70/S12
+                                                        </a>
+                                                    </p>
+                                                    <p class="lk-item__text">
+                                                        <strong>Артикул:</strong> 45645
+                                                    </p>
+                                                    <p class="lk-item__text">
+                                                        <strong>Декор:</strong> 112.0271.333
+                                                    </p>
+                                                </div>
+                                                <div class="lk-item__col lk-item__col--count">
+                                                    <p class="lk-item__count">
+                                                        <span>
+                                                            2 шт.
+                                                        </span>
+                                                        <span>
+                                                            х
+                                                        </span>
+                                                        <span>
+                                                            <b>12 660</b> руб.
+                                                        </span>
+                                                    </p>
+                                                </div>
+                                                <div class="lk-item__col lk-item__col--result">
+                                                    <p class="lk-item__text">
+                                                        <b>25 320</b> руб.
+                                                    </p>
+                                                    <p class="lk-item__text">
+                                                        <s>
+                                                            25 320 руб.
+                                                        </s>
+                                                    </p>
+                                                    <p class="lk-item__text lk-item__text--accent">
+                                                        скидка
+                                                    </p>
+                                                </div>
+                                            </article>
+                                            <article class="lk-item">
+                                                <div class="lk-item__col lk-item__col--checkbox">
+                                                    <label class="lk-checkbox">
+                                                        <input type="checkbox" name="question" class="lk-checkbox__input">
+                                                        <div class="lk-checkbox__icon">
+                                                            <svg class="icon-svg lk-field__icon-unvisible">
+                                                                <use xlink:href="img/sprites/sprite.svg#icon-check"></use>
+                                                            </svg>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="lk-item__col lk-item__col--number">
+                                                    3
+                                                </div>
+                                                <div class="lk-item__col lk-item__col--thumb">
+                                                    <div class="lk-item__thumb">
+                                                        <img src="https://via.placeholder.com/106x106" alt="Название товара">
+                                                    </div>
+                                                </div>
+                                                <div class="lk-item__col lk-item__col--content">
+                                                    <p class="lk-item__text">
+                                                        <a href="" target="_blank">
+                                                            140.120.61 Фреза концевая DIA D12/NL27/L70/S12
+                                                        </a>
+                                                    </p>
+                                                    <p class="lk-item__text">
+                                                        <strong>Артикул:</strong> 45645
+                                                    </p>
+                                                    <p class="lk-item__text">
+                                                        <strong>Декор:</strong> 112.0271.333
+                                                    </p>
+                                                </div>
+                                                <div class="lk-item__col lk-item__col--count">
+                                                    <p class="lk-item__count">
+                                                        <span>
+                                                            2 шт.
+                                                        </span>
+                                                        <span>
+                                                            х
+                                                        </span>
+                                                        <span>
+                                                            <b>12 660</b> руб.
+                                                        </span>
+                                                    </p>
+                                                </div>
+                                                <div class="lk-item__col lk-item__col--result">
+                                                    <p class="lk-item__text">
+                                                        <b>25 320</b> руб.
+                                                    </p>
+                                                    <p class="lk-item__text">
+                                                        <s>
+                                                            25 320 руб.
+                                                        </s>
+                                                    </p>
+                                                    <p class="lk-item__text lk-item__text--accent">
+                                                        скидка
+                                                    </p>
+                                                </div>
+                                            </article>
+                                            <div class="lk-table-toolbar lk-table-toolbar--footer">
+                                                <div class="lk-table-toolbar__col lk-table-toolbar__col--footer-grow">
+                                                    <p class="lk-table-toolbar__text">
+                                                        Итого
+                                                    </p>
+                                                </div>
+                                                <div class="lk-table-toolbar__col lk-table-toolbar__col--result">
+                                                    <p class="lk-table-toolbar__text">
+                                                        <strong>16 550</strong> РУБ.
+                                                    </p>
+                                                    <p class="lk-table-toolbar__text lk-table-toolbar__text--accent">
+                                                        скидка -1260 руб.
+                                                    </p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="lk-table-section__toolbar">
+                                    <div class="lk-table-section__toolbar lk-table-section__toolbar--right">
+                                        <a href="" class="btn btn--gray lk-form__btn">
+                                            Очистить корзину
+                                        </a>
+                                        <a href="" class="btn btn--green lk-form__btn">
+                                            Оформить заказ
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="lk-table-section">
+                                    <h3 class="lk-table-section__title">
+                                        Под заказ
+                                    </h3>
+                                    <div class="lk-table-section__table">
+                                        <div class="lk-table">
+                                            <div class="lk-table-toolbar lk-table-toolbar--head">
+                                                <div class="lk-table-toolbar__col lk-table-toolbar__col--checkbox">
+                                                    <label class="lk-checkbox">
+                                                        <input type="checkbox" name="question" class="lk-checkbox__input">
+                                                        <div class="lk-checkbox__icon">
+                                                            <svg class="icon-svg lk-field__icon-unvisible">
+                                                                <use xlink:href="img/sprites/sprite.svg#icon-check"></use>
+                                                            </svg>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="lk-table-toolbar__col lk-table-toolbar__col--all">
+                                                    <button class="select-all">
+                                                        Выбрать все
+                                                    </button>
+                                                </div>
+                                                <div class="lk-table-toolbar__col lk-table-toolbar__col--grow">
+                                                    <button class="remove-all">
+                                                        <svg class="icon-svg remove-all__icon">
+                                                            <use xlink:href="img/sprites/sprite.svg#icon-remove-all"></use>
+                                                        </svg>
+                                                        <p class="remove-all__text">
+                                                            Удалить выбранные
+                                                        </p>
+                                                    </button>
+                                                </div>
+                                                <div class="lk-table-toolbar__col lk-table-toolbar__col--removed">
+
+                                                    <!-- Даже если нет сообщения, div-родитель (lk-table-toolbar__col--removed) все равно не удаляй, просто оставь его пустым -->
+
+                                                    <p class="lk-item__text">
+                                                        <strong>Удалено: 1 позиция</strong>
+                                                    </p>
+                                                </div>
+                                                <div class="lk-table-toolbar__col lk-table-toolbar__col--repair">
+
+                                                    <!-- Даже если нет кнопки, div-родитель (lk-table-toolbar__col--repair) все равно не удаляй, просто оставь его пустым -->
+
+                                                    <button class="lk-table-toolbar__repair-btn">
+                                                        Восстановить все
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <article class="lk-item">
+                                                <div class="lk-item__col lk-item__col--checkbox">
+                                                    <label class="lk-checkbox">
+                                                        <input type="checkbox" name="question" class="lk-checkbox__input">
+                                                        <div class="lk-checkbox__icon">
+                                                            <svg class="icon-svg lk-field__icon-unvisible">
+                                                                <use xlink:href="img/sprites/sprite.svg#icon-check"></use>
+                                                            </svg>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="lk-item__col lk-item__col--number">
+                                                    1
+                                                </div>
+                                                <div class="lk-item__col lk-item__col--thumb">
+                                                    <div class="lk-item__thumb">
+                                                        <img src="https://via.placeholder.com/106x106" alt="Название товара">
+                                                    </div>
+                                                </div>
+                                                <div class="lk-item__col lk-item__col--content">
+                                                    <p class="lk-item__text">
+                                                        <a href="" target="_blank">
+                                                            140.120.61 Очень длинное название несомненно очень важной и не менее несомненно очень большой и дорогой штуки, чье предназначение непонятно простому смертному
+                                                        </a>
+                                                    </p>
+                                                    <p class="lk-item__text">
+                                                        <strong>Артикул:</strong> 45645
+                                                    </p>
+                                                    <p class="lk-item__text">
+                                                        <strong>Декор:</strong> 112.0271.333
+                                                    </p>
+                                                </div>
+                                                <div class="lk-item__col lk-item__col--count">
+                                                    <p class="lk-item__count">
+                                                        <span>
+                                                            22 шт.
+                                                        </span>
+                                                        <span>
+                                                            х
+                                                        </span>
+                                                        <span>
+                                                            <b>211 660</b> руб.
+                                                        </span>
+                                                    </p>
+                                                </div>
+                                                <div class="lk-item__col lk-item__col--result">
+                                                    <p class="lk-item__text">
+                                                        <b>25 320</b> руб.
+                                                    </p>
+                                                    <p class="lk-item__text">
+                                                        <s>
+                                                            25 320 руб.
+                                                        </s>
+                                                    </p>
+                                                    <p class="lk-item__text lk-item__text--accent">
+                                                        скидка
+                                                    </p>
+                                                </div>
+                                            </article>
+                                            <article class="lk-item">
+                                                <div class="lk-item__col lk-item__col--checkbox">
+                                                    <label class="lk-checkbox">
+                                                        <input type="checkbox" name="question" class="lk-checkbox__input">
+                                                        <div class="lk-checkbox__icon">
+                                                            <svg class="icon-svg lk-field__icon-unvisible">
+                                                                <use xlink:href="img/sprites/sprite.svg#icon-check"></use>
+                                                            </svg>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="lk-item__col lk-item__col--number">
+                                                    2
+                                                </div>
+                                                <div class="lk-item__col lk-item__col--thumb">
+                                                    <div class="lk-item__thumb">
+                                                        <img src="https://via.placeholder.com/106x106" alt="Название товара">
+                                                    </div>
+                                                </div>
+                                                <div class="lk-item__col lk-item__col--content">
+                                                    <p class="lk-item__text">
+                                                        <a href="" target="_blank">
+                                                            140.120.61 Фреза концевая DIA D12/NL27/L70/S12
+                                                        </a>
+                                                    </p>
+                                                    <p class="lk-item__text">
+                                                        <strong>Артикул:</strong> 45645
+                                                    </p>
+                                                    <p class="lk-item__text">
+                                                        <strong>Декор:</strong> 112.0271.333
+                                                    </p>
+                                                </div>
+                                                <div class="lk-item__col lk-item__col--count">
+                                                    <p class="lk-item__count">
+                                                        <span>
+                                                            2 шт.
+                                                        </span>
+                                                        <span>
+                                                            х
+                                                        </span>
+                                                        <span>
+                                                            <b>12 660</b> руб.
+                                                        </span>
+                                                    </p>
+                                                </div>
+                                                <div class="lk-item__col lk-item__col--result">
+                                                    <p class="lk-item__text">
+                                                        <b>25 320</b> руб.
+                                                    </p>
+                                                    <p class="lk-item__text">
+                                                        <s>
+                                                            25 320 руб.
+                                                        </s>
+                                                    </p>
+                                                    <p class="lk-item__text lk-item__text--accent">
+                                                        скидка
+                                                    </p>
+                                                </div>
+                                            </article>
+                                            <article class="lk-item">
+                                                <div class="lk-item__col lk-item__col--checkbox">
+                                                    <label class="lk-checkbox">
+                                                        <input type="checkbox" name="question" class="lk-checkbox__input">
+                                                        <div class="lk-checkbox__icon">
+                                                            <svg class="icon-svg lk-field__icon-unvisible">
+                                                                <use xlink:href="img/sprites/sprite.svg#icon-check"></use>
+                                                            </svg>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="lk-item__col lk-item__col--number">
+                                                    3
+                                                </div>
+                                                <div class="lk-item__col lk-item__col--thumb">
+                                                    <div class="lk-item__thumb">
+                                                        <img src="https://via.placeholder.com/106x106" alt="Название товара">
+                                                    </div>
+                                                </div>
+                                                <div class="lk-item__col lk-item__col--content">
+                                                    <p class="lk-item__text">
+                                                        <a href="" target="_blank">
+                                                            140.120.61 Фреза концевая DIA D12/NL27/L70/S12
+                                                        </a>
+                                                    </p>
+                                                    <p class="lk-item__text">
+                                                        <strong>Артикул:</strong> 45645
+                                                    </p>
+                                                    <p class="lk-item__text">
+                                                        <strong>Декор:</strong> 112.0271.333
+                                                    </p>
+                                                </div>
+                                                <div class="lk-item__col lk-item__col--count">
+                                                    <p class="lk-item__count">
+                                                        <span>
+                                                            2 шт.
+                                                        </span>
+                                                        <span>
+                                                            х
+                                                        </span>
+                                                        <span>
+                                                            <b>12 660</b> руб.
+                                                        </span>
+                                                    </p>
+                                                </div>
+                                                <div class="lk-item__col lk-item__col--result">
+                                                    <p class="lk-item__text">
+                                                        <b>25 320</b> руб.
+                                                    </p>
+                                                    <p class="lk-item__text">
+                                                        <s>
+                                                            25 320 руб.
+                                                        </s>
+                                                    </p>
+                                                    <p class="lk-item__text lk-item__text--accent">
+                                                        скидка
+                                                    </p>
+                                                </div>
+                                            </article>
+                                            <div class="lk-table-toolbar lk-table-toolbar--footer">
+                                                <div class="lk-table-toolbar__col lk-table-toolbar__col--footer-grow">
+                                                    <p class="lk-table-toolbar__text">
+                                                        Итого
+                                                    </p>
+                                                </div>
+                                                <div class="lk-table-toolbar__col lk-table-toolbar__col--result">
+                                                    <p class="lk-table-toolbar__text">
+                                                        <strong>16 550</strong> РУБ.
+                                                    </p>
+                                                    <p class="lk-table-toolbar__text lk-table-toolbar__text--accent">
+                                                        скидка -1260 руб.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="lk-table-section__toolbar lk-table-section__toolbar--right">
                                         <a href="" class="btn btn--gray lk-form__btn">
                                             Очистить корзину
                                         </a>

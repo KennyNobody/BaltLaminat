@@ -183,8 +183,13 @@
 /*!***************************************!*\
   !*** ./src/blocks/modules/map/map.js ***!
   \***************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var tippy_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tippy.js */ "./node_modules/tippy.js/dist/tippy.esm.js");
+
 
 (function initMapSlider() {
   var button = document.querySelectorAll('.map__change-floor');
@@ -201,6 +206,13 @@
     checkbox[_i].addEventListener('click', toggleTypeField);
   }
 
+  for (var _i2 = 0; _i2 < fields.length; _i2++) {
+    Object(tippy_js__WEBPACK_IMPORTED_MODULE_0__["default"])(fields[_i2], {
+      content: 'My tooltip!',
+      trigger: 'click'
+    });
+  }
+
   function toggleFloor() {
     var activeFloor = +this.getAttribute('data-btn-floor');
     toggleActiveClass(activeFloor);
@@ -209,31 +221,31 @@
   }
 
   function toggleActiveClass(number) {
-    for (var _i2 = 0; _i2 < layers.length; _i2++) {
-      if (layers[_i2].getAttribute('data-floor') == number) {
-        layers[_i2].classList.add('map__slide--active');
+    for (var _i3 = 0; _i3 < layers.length; _i3++) {
+      if (layers[_i3].getAttribute('data-floor') == number) {
+        layers[_i3].classList.add('map__slide--active');
       } else {
-        layers[_i2].classList.remove('map__slide--active');
+        layers[_i3].classList.remove('map__slide--active');
       }
     }
   }
 
   function toggleNavs(number) {
-    for (var _i3 = 0; _i3 < floorNavs.length; _i3++) {
-      if (floorNavs[_i3].getAttribute('data-floorNavs') == number) {
-        floorNavs[_i3].classList.remove('map-hidden');
+    for (var _i4 = 0; _i4 < floorNavs.length; _i4++) {
+      if (floorNavs[_i4].getAttribute('data-floorNavs') == number) {
+        floorNavs[_i4].classList.remove('map-hidden');
       } else {
-        floorNavs[_i3].classList.add('map-hidden');
+        floorNavs[_i4].classList.add('map-hidden');
       }
     }
   }
 
   function hidePreviousFloors(number) {
-    for (var _i4 = 0; _i4 < layers.length; _i4++) {
-      if (layers[_i4].getAttribute('data-floor') > number) {
-        layers[_i4].classList.add('map__slide--hide');
+    for (var _i5 = 0; _i5 < layers.length; _i5++) {
+      if (layers[_i5].getAttribute('data-floor') > number) {
+        layers[_i5].classList.add('map__slide--hide');
       } else {
-        layers[_i4].classList.remove('map__slide--hide');
+        layers[_i5].classList.remove('map__slide--hide');
       }
     }
   }
@@ -241,11 +253,11 @@
   function toggleTypeField(number) {
     var activeType = +this.getAttribute('data-type');
 
-    for (var _i5 = 0; _i5 < fields.length; _i5++) {
-      if (fields[_i5].getAttribute('data-map-field') == activeType) {
-        fields[_i5].classList.add('map__room--active');
+    for (var _i6 = 0; _i6 < fields.length; _i6++) {
+      if (fields[_i6].getAttribute('data-map-field') == activeType) {
+        fields[_i6].classList.add('map__room--active');
       } else {
-        fields[_i5].classList.remove('map__room--active');
+        fields[_i6].classList.remove('map__room--active');
       }
     }
   }
@@ -524,7 +536,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_product_product__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_modules_product_product__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _modules_slider_slider__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! %modules%/slider/slider */ "./src/blocks/modules/slider/slider.js");
 /* harmony import */ var _modules_map_map__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! %modules%/map/map */ "./src/blocks/modules/map/map.js");
-/* harmony import */ var _modules_map_map__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_modules_map_map__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _modules_mmenu_mmenu__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! %modules%/mmenu/mmenu */ "./src/blocks/modules/mmenu/mmenu.js");
 /* harmony import */ var _modules_lk_auth_lk_auth__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! %modules%/lk-auth/lk-auth */ "./src/blocks/modules/lk-auth/lk-auth.js");
 /* harmony import */ var _modules_lk_auth_lk_auth__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_modules_lk_auth_lk_auth__WEBPACK_IMPORTED_MODULE_7__);
