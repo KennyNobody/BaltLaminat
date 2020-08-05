@@ -44,9 +44,13 @@ $(document).ready(function() {
 		touch: false,
 	});
 
+	$('[data-fancybox="lk-menu-modal"]').fancybox({
+		slideClass: "lk-menu-fancybox",
+		touch: false,
+	});
+
 	$('[data-fancybox="service-modal"]').fancybox({
 		onActivate: function( instance, current ) {
-			console.info( 'Clicked element:' );
 			console.info( current.opts.$orig );
 		}
 	});

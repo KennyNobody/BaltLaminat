@@ -264,23 +264,23 @@ import datepicker from 'air-datepicker';
 		}
 	})();
 
-	(function resize(){
-		const resized = document.querySelectorAll('.resized');
+	// (function resize(){
+	// 	const resized = document.querySelectorAll('.resized');
 
-		if (resized) {
-			window.addEventListener('resize', function(){
-				for (let i = 0; i < resized.length; i++) {
-					resized[i].setAttribute("style","height:" + resized[i].offsetWidth + 'px');
-				}
-			});
+	// 	if (resized) {
+	// 		window.addEventListener('resize', function(){
+	// 			for (let i = 0; i < resized.length; i++) {
+	// 				resized[i].setAttribute("style","height:" + resized[i].offsetWidth + 'px');
+	// 			}
+	// 		});
 
-			window.addEventListener('load', function(){
-				for (let i = 0; i < resized.length; i++) {
-					resized[i].setAttribute("style","height:" + resized[i].offsetWidth + 'px');
-				}
-			});
-		}
-	})();
+	// 		window.addEventListener('load', function(){
+	// 			for (let i = 0; i < resized.length; i++) {
+	// 				resized[i].setAttribute("style","height:" + resized[i].offsetWidth + 'px');
+	// 			}
+	// 		});
+	// 	}
+	// })();
 
 	(function initScrollbars(){
 

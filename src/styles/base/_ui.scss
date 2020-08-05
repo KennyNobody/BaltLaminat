@@ -36,7 +36,6 @@
 	font-weight: bold;
 	transition: 0.3s all;
 	cursor: pointer;
-	// text-transform: uppercase;
 	text-transform: capitalize;
 	@include r(1700) {
 
@@ -47,7 +46,6 @@
 	&--dark {
 		background-color: $dark;
 		color: $light;
-		text-transform: uppercase;
 	}
 	&--green {
 		background-color: $green;

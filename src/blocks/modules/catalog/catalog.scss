@@ -665,7 +665,7 @@
 }
 .lk-dropdown__inner {
 	display: flex;
-    align-items: center;
+	align-items: center;
 	vertical-align: top;
 	width: 100%;
 	background-color: $light;
@@ -902,7 +902,7 @@
 		overflow: hidden;
 	}
 	&__thumb {
-		height: 248px;
+		// height: 248px;
 		margin-bottom: 10px;
 		text-decoration: none;
 		display: block;
@@ -1047,6 +1047,9 @@
 				strong {
 					font-weight: bold;
 					font-size: 20px;
+					@include r(1200) {
+						font-size: inherit;
+					}
 				}
 			}
 		}

@@ -23,7 +23,11 @@ import tippy from 'tippy.js';
 	}
 
 	function toggleFloor () {
+		for(let i = 0; i < button.length; i++) {
+			button[i].classList.remove('map__change-floor--active');
+		}
 		let activeFloor = +this.getAttribute('data-btn-floor');
+		this.classList.add('map__change-floor--active');
 		toggleActiveClass(activeFloor);
 		hidePreviousFloors(activeFloor);
 		toggleNavs(activeFloor);

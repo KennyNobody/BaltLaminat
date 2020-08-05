@@ -24,3 +24,10 @@
 		}
 	}
 }
+
+.lk-side {
+	@include r(1200) {
+		display: none;
+	}
+}
+

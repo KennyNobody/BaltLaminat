@@ -214,38 +214,43 @@ __webpack_require__.r(__webpack_exports__);
   }
 
   function toggleFloor() {
+    for (var _i3 = 0; _i3 < button.length; _i3++) {
+      button[_i3].classList.remove('map__change-floor--active');
+    }
+
     var activeFloor = +this.getAttribute('data-btn-floor');
+    this.classList.add('map__change-floor--active');
     toggleActiveClass(activeFloor);
     hidePreviousFloors(activeFloor);
     toggleNavs(activeFloor);
   }
 
   function toggleActiveClass(number) {
-    for (var _i3 = 0; _i3 < layers.length; _i3++) {
-      if (layers[_i3].getAttribute('data-floor') == number) {
-        layers[_i3].classList.add('map__slide--active');
+    for (var _i4 = 0; _i4 < layers.length; _i4++) {
+      if (layers[_i4].getAttribute('data-floor') == number) {
+        layers[_i4].classList.add('map__slide--active');
       } else {
-        layers[_i3].classList.remove('map__slide--active');
+        layers[_i4].classList.remove('map__slide--active');
       }
     }
   }
 
   function toggleNavs(number) {
-    for (var _i4 = 0; _i4 < floorNavs.length; _i4++) {
-      if (floorNavs[_i4].getAttribute('data-floorNavs') == number) {
-        floorNavs[_i4].classList.remove('map-hidden');
+    for (var _i5 = 0; _i5 < floorNavs.length; _i5++) {
+      if (floorNavs[_i5].getAttribute('data-floorNavs') == number) {
+        floorNavs[_i5].classList.remove('map-hidden');
       } else {
-        floorNavs[_i4].classList.add('map-hidden');
+        floorNavs[_i5].classList.add('map-hidden');
       }
     }
   }
 
   function hidePreviousFloors(number) {
-    for (var _i5 = 0; _i5 < layers.length; _i5++) {
-      if (layers[_i5].getAttribute('data-floor') > number) {
-        layers[_i5].classList.add('map__slide--hide');
+    for (var _i6 = 0; _i6 < layers.length; _i6++) {
+      if (layers[_i6].getAttribute('data-floor') > number) {
+        layers[_i6].classList.add('map__slide--hide');
       } else {
-        layers[_i5].classList.remove('map__slide--hide');
+        layers[_i6].classList.remove('map__slide--hide');
       }
     }
   }
@@ -253,11 +258,11 @@ __webpack_require__.r(__webpack_exports__);
   function toggleTypeField(number) {
     var activeType = +this.getAttribute('data-type');
 
-    for (var _i6 = 0; _i6 < fields.length; _i6++) {
-      if (fields[_i6].getAttribute('data-map-field') == activeType) {
-        fields[_i6].classList.add('map__room--active');
+    for (var _i7 = 0; _i7 < fields.length; _i7++) {
+      if (fields[_i7].getAttribute('data-map-field') == activeType) {
+        fields[_i7].classList.add('map__room--active');
       } else {
-        fields[_i6].classList.remove('map__room--active');
+        fields[_i7].classList.remove('map__room--active');
       }
     }
   }
@@ -338,9 +343,12 @@ $(document).ready(function () {
     slideClass: "filter-fancybox",
     touch: false
   });
+  $('[data-fancybox="lk-menu-modal"]').fancybox({
+    slideClass: "lk-menu-fancybox",
+    touch: false
+  });
   $('[data-fancybox="service-modal"]').fancybox({
     onActivate: function onActivate(instance, current) {
-      console.info('Clicked element:');
       console.info(current.opts.$orig);
     }
   });
@@ -840,24 +848,22 @@ __webpack_require__.r(__webpack_exports__);
     function reset(e) {
       console.log(this);
     }
-  })();
+  })(); // (function resize(){
+  // 	const resized = document.querySelectorAll('.resized');
+  // 	if (resized) {
+  // 		window.addEventListener('resize', function(){
+  // 			for (let i = 0; i < resized.length; i++) {
+  // 				resized[i].setAttribute("style","height:" + resized[i].offsetWidth + 'px');
+  // 			}
+  // 		});
+  // 		window.addEventListener('load', function(){
+  // 			for (let i = 0; i < resized.length; i++) {
+  // 				resized[i].setAttribute("style","height:" + resized[i].offsetWidth + 'px');
+  // 			}
+  // 		});
+  // 	}
+  // })();
 
-  (function resize() {
-    var resized = document.querySelectorAll('.resized');
-
-    if (resized) {
-      window.addEventListener('resize', function () {
-        for (var i = 0; i < resized.length; i++) {
-          resized[i].setAttribute("style", "height:" + resized[i].offsetWidth + 'px');
-        }
-      });
-      window.addEventListener('load', function () {
-        for (var i = 0; i < resized.length; i++) {
-          resized[i].setAttribute("style", "height:" + resized[i].offsetWidth + 'px');
-        }
-      });
-    }
-  })();
 
   (function initScrollbars() {
     var isMobile;
