@@ -29,6 +29,10 @@
 		&:last-of-type {
 			margin-right: 0px;
 		}
+		@include r(1200) {
+			margin-right: 12px;
+			margin-bottom: 12px;
+		}
 	}
 	&__section {
 		margin-bottom: 48px;
@@ -40,9 +44,9 @@
 		display: flex;
 		justify-content: space-between;
 		flex-wrap: wrap;
-		&--start {
-			justify-content: flex-start;
-		}
+		// &--start {
+		// 	justify-content: flex-start;
+		// }
 	}
 }
 
@@ -166,9 +170,17 @@
 
 .ill-check {
 	cursor: pointer;
-	display: inline-flex;
-	margin-right: 32px;
+	display: flex;
+	width: calc(100% / 3 - 16px);
 	margin-bottom: 32px;
+	@include r(1200) {
+		width: 100%;
+	}
+	&--clear {
+		height: 0px;
+		visibility: hidden;
+		margin-bottom: 0px;
+	}
 	&__input {
 		display: none;
 		&:checked {
@@ -201,7 +213,7 @@
 		}
 	}
 	&__block {
-		width: 240px;
+		width: 100%;
 		height: 132px;
 		display: flex;
 		position: relative;
@@ -265,10 +277,16 @@
 	background-color: $light;
 	padding: 28px 30px 42px 30px;
 	box-shadow: 2px 4px 30px rgba(0, 0, 0, 0.14);
+	@include r(1700) {
+		padding: 20px;
+	}
 	&__title {
 		font-weight: bold;
 		font-size: 20px;
 		margin-bottom: 37px;
+		@include r(1700) {
+			margin-bottom: 8px;
+		}
 	}
 	&__section {
 		border-bottom: 1px solid $dark;
@@ -283,6 +301,13 @@
 		justify-content: space-between;
 		align-items: baseline;
 		margin-bottom: 22px;
+		@include r(1700) {
+			display: block;
+			margin-bottom: 8px;
+			span {
+				display: block;
+			}
+		}
 		strong {
 			font-weight: bold;
 			font-size: 30px;
@@ -327,6 +352,12 @@
 		line-height: 1.2;
 		padding: 13px 16px;
 		margin-bottom: 32px;
+		@include r(1200) {
+			margin-bottom: 16px;
+			font-size: 20px;
+			padding: 0px;
+			background-color: inherit;
+		}
 	}
 	&__grid {
 		display: flex;
@@ -335,18 +366,27 @@
 	&__column {
 		width: calc(100% / 3);
 		margin-bottom: 48px;
+		@include r(1200) {
+			width: 100%;
+			margin-bottom: 20px;
+		}
 	}
 	&__title {
 		margin-bottom: 40px;
+		@include r(1200) {
+			margin-bottom: 16px;
+			font-weight: bold;
+			font-size: 16px;
+		}
 	}
 	&__info-block {
 		margin-bottom: 16px;
+		@include r(1200) {
+			margin-bottom: 10px;
+		}
 	}
 	&__name {
 		color: #828282;
-	}
-	&__text {
-
 	}
 }
 
@@ -354,12 +394,21 @@
 	background-color: $light;
 	box-shadow: 2px 4px 30px rgba(0, 0, 0, 0.14);
 	padding: 27px 34px;
+	@include r(1200) {
+		padding: 20px;
+	}
 	&__title {
 		margin-bottom: 34px;
 		font-weight: 500;
+		@include r(1200) {
+			margin-bottom: 16px;
+		}
 	}
 	&__list {
 		margin-bottom: 28px;
+		@include r(1200) {
+			margin-bottom: 16px;
+		}
 	}
 	&__btn {
 		padding-left: 38px;
@@ -371,22 +420,35 @@
 	background-color: $green;
 	padding: 20px 29px 34px 29px;
 	margin-bottom: 48px;
+	@include r(1200) {
+		margin-bottom: 32px;
+		padding: 20px;
+	}
 	&__title {
 		text-transform: uppercase;
 		font-weight: bold;
 		margin-bottom: 23px;
 		font-size: 20px;
+		@include r(1200) {
+			margin-bottom: 8px;
+		}
 		strong {
 			color: $light;
 		}
 	}
 	&__text {
 		margin-bottom: 48px;
+		@include r(1200) {
+			margin-bottom: 0px;
+		}
 	}
 	&__img {
 		display: block;
 		width: 100%;
 		height: auto;
+		@include r(1200) {
+			display: none;
+		}
 	}
 }
 
@@ -414,8 +476,12 @@
 	}
 	&__toolbar {
 		display: flex;
+		flex-wrap: wrap;
 		&--right {
 			justify-content: flex-end;
+			@include r(1200) {
+				justify-content: flex-start;
+			}
 		}
 	}
 }
@@ -507,10 +573,10 @@
 		width: 40px;
 		height: 40px;
 		flex-shrink: 0;
-		margin-right: 15px;
 	}
 	&__text {
 		flex-shrink: 0;
+		margin-left: 15px;
 	}
 }
 
@@ -520,8 +586,24 @@
 	align-items: stretch;
 	background-color: $light;
 	border-bottom: 1px solid #E5E5E5;
+	position: relative;
+	
+	@include r(1200) {
+		flex-wrap: wrap;
+		padding: 20px;
+	}
 	&__col {
 		flex-shrink: 0;
+		&--remove {
+			display: none;
+			@include r(1200) {
+				display: block;
+				height: 40px;
+				width: 40px;
+				position: absolute;
+				z-index: 2;
+			}
+		}
 		&--checkbox {
 			width: 60px;
 			display: flex;
@@ -530,6 +612,9 @@
 			border-right: 1px solid #E5E5E5;
 			@include r(1700) {
 				width: 40px;
+			}
+			@include r(1200) {
+				display: none;
 			}
 		}
 		&--number {
@@ -540,10 +625,18 @@
 			@include r(1700) {
 				width: 45px;
 			}
+			@include r(1200) {
+				display: none;
+			}
 		}
 		&--thumb {
 			display: flex;
 			align-items: center;
+			@include r(1200) {
+				margin-left: auto;
+				margin-right: auto;
+				margin-bottom: 16px;
+			}
 		}
 		&--content {
 			min-width: 0px;
@@ -552,6 +645,11 @@
 			flex-shrink: 1;
 			@include r(1700) {
 				padding: 16px 16px;
+			}
+			@include r(1200) {
+				padding: 0px;
+				margin-bottom: 16px;
+				width: 100%;
 			}
 		}
 		&--count {
@@ -564,6 +662,11 @@
 				padding: 16px 16px;
 				width: 220px;
 			}
+			@include r(1200) {
+				max-width: 100%;
+				padding: 0px;
+				margin-bottom: 16px;
+			}
 		}
 		&--result {
 			width: 220px;
@@ -575,12 +678,22 @@
 				padding: 16px 16px;
 				width: 200px;
 			}
+			@include r(1200) {
+				width: 100%;
+				padding: 0px;
+				flex-direction: column-reverse;
+			}
 		}
 	}
 	&__thumb {
 		width: 106px;
 		height: 106px;
 		flex-shrink: 0;
+		@include r(1200) {
+			width: 220px;
+			height: 220px;
+			max-width: 100%;
+		}
 		img {
 			object-fit: cover;
 			height: 100%;
@@ -589,6 +702,9 @@
 		}
 	}
 	&__text {
+		@include r(1200) {
+			margin-bottom: 5px;
+		}
 		&--accent {
 			color: $green;
 		}
@@ -639,6 +755,9 @@
 			padding-top: 10px;
 			padding-bottom: 10px;
 		}
+		@include r(1200) {
+			display: none;
+		}
 	}
 	&--footer {
 		background-color: $light;
@@ -648,6 +767,10 @@
 		@include r(1700) {
 			padding-top: 10px;
 			padding-bottom: 10px;
+		}
+		@include r(1200) {
+			display: block;
+			padding: 20px;
 		}
 	}
 	&__col {
@@ -687,6 +810,10 @@
 			@include r(1700) {
 				padding: 16px;
 			}
+			@include r(1200) {
+				display: block;
+				padding: 0px;
+			}
 		}
 		&--repair {
 			padding: 16px 32px;
@@ -710,8 +837,8 @@
 			padding: 16px 32px;
 			width: 220px;
 			display: block;
-			@include r(1700) {
-				padding: 16px;
+			@include r(1200) {
+				padding: 0px;
 				width: 200px;
 			}
 		}

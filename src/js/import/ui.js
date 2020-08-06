@@ -282,6 +282,27 @@ import datepicker from 'air-datepicker';
 	// 	}
 	// })();
 
+	(function toggleInputEyes(){
+		const all = document.querySelectorAll('.lk-field--password');
+
+		for (let i = 0; i < all.length; i++) {
+			let button = all[i].querySelector('.lk-field__toggle');
+			let input = all[i].querySelector('.lk-field__input');
+			button.addEventListener('click', function(e){
+				e.preventDefault();
+				if (this.classList.contains('lk-field__toggle--visible')) {
+					input.type = 'password';
+					this.classList.remove('lk-field__toggle--visible');
+					this.classList.add('lk-field__toggle--unvisible');
+				} else {
+					this.classList.add('lk-field__toggle--visible');
+					this.classList.remove('lk-field__toggle--unvisible');
+					input.type = 'text';
+				}
+			});
+		}
+	})();
+
 	(function initScrollbars(){
 
 		let isMobile;
@@ -306,7 +327,7 @@ import datepicker from 'air-datepicker';
 					scrollbar1 = new SimpleBar(document.querySelector('#scrollbar-1'));
 				}
 				if (document.querySelector('#scrollbar-2')) {
-					scrollbar1 = new SimpleBar(document.querySelector('#scrollbar-2'));
+					scrollbar2 = new SimpleBar(document.querySelector('#scrollbar-2'));
 				}
 				init = true;
 			}
@@ -335,7 +356,5 @@ import datepicker from 'air-datepicker';
 		$('.lk-filter__datepicker').datepicker({
 			range: true
 		});
-
-		console.log(datepicker)
 	})();
 })();

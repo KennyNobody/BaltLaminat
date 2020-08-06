@@ -286,3 +286,42 @@ path{
 		transition: 0.3s all;
 	}
 }
+
+.map-tippy {
+	&__logo {
+		display: block;
+		max-width: 100%;
+		width: fit-content;
+		margin-bottom: 18px;
+	}
+	&__title {
+		margin-bottom: 3px;
+		font-weight: bold;
+		font-size: 20px;
+	}
+	&__content {
+		margin-bottom: 18px;
+	}
+	&__btn {
+		padding-left: 20px;
+		padding-right: 20px;
+		pointer-events: auto;
+	}
+}
+
+.tippy-box {
+	background-color: $light;
+	box-shadow: 0px 0px 10px rgba(24, 26, 29, 0.1);
+	padding: 27px 16px 20px 16px;
+	color: $dark;
+	border-radius: 0px;
+	.tippy-content {
+		padding: 0px;
+	}
+	.tippy-arrow {
+		&:before {
+			border-top-color: $light !important;
+			border-bottom-color: $light !important;
+		}
+	}
+}

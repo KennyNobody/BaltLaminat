@@ -167,14 +167,17 @@
 	<div class="head-mobile">
 		<div class="container">
 			<div class="head-mobile__content">
-				<form action="" class="head-mobile__search">
-					<input type="text" class="head-mobile__input" style="background-image: url('img/icon-search.svg')">
-				</form>
+				<a href="/" class="head-mobile__logo">
+					<img src="img/logo.svg" alt="Логотип Балтламинат">
+				</a>
 				<a href="#mmenu" class="head-mobile__btn">
 					<svg class="icon-svg">
 						<use xlink:href="img/sprites/sprite.svg#icon-mob-menu"></use>
 					</svg>
 				</a>
+				<form action="" class="head-mobile__search">
+					<input type="text" class="head-mobile__input" style="background-image: url('img/icon-search.svg')">
+				</form>
 			</div>
 		</div>
 	</div>
@@ -268,13 +271,13 @@
                                             автоматически подгрузится
                                         </p>
                                     </div>
-                                    <div class="lk-field">
+                                    <div class="lk-field lk-field--password">
                                         <p class="lk-field__title">
                                             Пароль
                                         </p>
                                         <div class="lk-field__wrapper lk-field__wrapper--50">
                                             <input type="password" class="lk-input lk-field__input" placeholder="">
-                                            <button class="lk-field__toggle lk-field__toggle--visible">
+                                            <button class="lk-field__toggle lk-field__toggle--unvisible">
                                                 <svg class="icon-svg lk-field__icon-visible">
                                                     <use xlink:href="img/sprites/sprite.svg#icon-visible"></use>
                                                 </svg>
@@ -288,12 +291,20 @@
                                             буквы и цифры
                                         </p>
                                     </div>
-                                    <div class="lk-field">
+                                    <div class="lk-field lk-field--password">
                                         <p class="lk-field__title">
                                             Повторите пароль
                                         </p>
                                         <div class="lk-field__wrapper lk-field__wrapper--50">
                                             <input type="password" class="lk-input lk-field__input" placeholder="">
+                                            <button class="lk-field__toggle lk-field__toggle--unvisible">
+                                                <svg class="icon-svg lk-field__icon-visible">
+                                                    <use xlink:href="img/sprites/sprite.svg#icon-visible"></use>
+                                                </svg>
+                                                <svg class="icon-svg lk-field__icon-unvisible">
+                                                    <use xlink:href="img/sprites/sprite.svg#icon-unvisible"></use>
+                                                </svg>
+                                            </button>
                                         </div>
                                         <p class="lk-field__discript lk-field__discript--50">
                                             Введите придуманный пароль ещё раз

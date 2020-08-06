@@ -1,6 +1,9 @@
 .single {
 	&__content {
 		margin-bottom: 100px;
+		@include r(1200) {
+			margin-bottom: 50px;
+		}
 	}
 	&__title {
 		margin-bottom: 32px;

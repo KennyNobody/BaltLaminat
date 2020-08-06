@@ -5406,6 +5406,10 @@ a {
   transition: 0.3s all;
 }
 
+* {
+  outline-color: #007b39;
+}
+
 svg,
 img {
   display: block;
@@ -5699,7 +5703,7 @@ i {
 }
 
 .btn {
-  height: 50px;
+  min-height: 50px;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -5708,7 +5712,10 @@ i {
   font-weight: bold;
   transition: 0.3s all;
   cursor: pointer;
-  text-transform: capitalize;
+  text-transform: none;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .btn--dark {
@@ -6331,10 +6338,6 @@ i {
   flex-wrap: wrap;
 }
 
-.lk-form__grid--start {
-  justify-content: flex-start;
-}
-
 .lk-input {
   border: 1px solid #2E2E2E;
   height: 42px;
@@ -6452,9 +6455,15 @@ i {
 
 .ill-check {
   cursor: pointer;
-  display: inline-flex;
-  margin-right: 32px;
+  display: flex;
+  width: calc(100% / 3 - 16px);
   margin-bottom: 32px;
+}
+
+.ill-check--clear {
+  height: 0px;
+  visibility: hidden;
+  margin-bottom: 0px;
 }
 
 .ill-check__input {
@@ -6486,7 +6495,7 @@ i {
 }
 
 .ill-check__block {
-  width: 240px;
+  width: 100%;
   height: 132px;
   display: flex;
   position: relative;
@@ -6720,6 +6729,7 @@ i {
 
 .lk-table-section__toolbar {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .lk-table-section__toolbar--right {
@@ -6823,11 +6833,11 @@ i {
   width: 40px;
   height: 40px;
   flex-shrink: 0;
-  margin-right: 15px;
 }
 
 .remove-all__text {
   flex-shrink: 0;
+  margin-left: 15px;
 }
 
 .lk-item {
@@ -6836,10 +6846,15 @@ i {
   align-items: stretch;
   background-color: #ffffff;
   border-bottom: 1px solid #E5E5E5;
+  position: relative;
 }
 
 .lk-item__col {
   flex-shrink: 0;
+}
+
+.lk-item__col--remove {
+  display: none;
 }
 
 .lk-item__col--checkbox {
@@ -7289,13 +7304,23 @@ i {
 
 .head-mobile__content {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 }
 
+.head-mobile__logo {
+  display: block;
+  max-width: 200px;
+}
+
+.head-mobile__logo img {
+  width: 100%;
+}
+
 .head-mobile__search {
   flex-grow: 1;
-  margin-right: 10px;
+  margin-top: 20px;
 }
 
 .head-mobile__input {
@@ -10951,6 +10976,46 @@ path {
   transition: 0.3s all;
 }
 
+.map-tippy__logo {
+  display: block;
+  max-width: 100%;
+  width: fit-content;
+  margin-bottom: 18px;
+}
+
+.map-tippy__title {
+  margin-bottom: 3px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.map-tippy__content {
+  margin-bottom: 18px;
+}
+
+.map-tippy__btn {
+  padding-left: 20px;
+  padding-right: 20px;
+  pointer-events: auto;
+}
+
+.tippy-box {
+  background-color: #ffffff;
+  box-shadow: 0px 0px 10px rgba(24, 26, 29, 0.1);
+  padding: 27px 16px 20px 16px;
+  color: #2E2E2E;
+  border-radius: 0px;
+}
+
+.tippy-box .tippy-content {
+  padding: 0px;
+}
+
+.tippy-box .tippy-arrow:before {
+  border-top-color: #ffffff !important;
+  border-bottom-color: #ffffff !important;
+}
+
 .lk-auth {
   margin-bottom: 50px;
 }
@@ -11339,6 +11404,23 @@ path {
     font-size: 14px;
   }
 
+  .final-price {
+    padding: 20px;
+  }
+
+  .final-price__title {
+    margin-bottom: 8px;
+  }
+
+  .final-price__text {
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .final-price__text span {
+    display: block;
+  }
+
   .lk-item__col--checkbox {
     width: 40px;
   }
@@ -11404,11 +11486,6 @@ path {
   .lk-table-toolbar__col--removed {
     width: 220px;
     padding: 16px;
-  }
-
-  .lk-table-toolbar__col--result {
-    padding: 16px;
-    width: 200px;
   }
 
   .lk-table-toolbar__text strong {
@@ -11644,7 +11721,7 @@ path {
   }
 
   .grid__column {
-    margin-bottom: 0px;
+    margin-bottom: 30px;
     width: 100%;
   }
 
@@ -11841,6 +11918,11 @@ path {
     font-size: 16px;
   }
 
+  .lk-form__btn {
+    margin-right: 12px;
+    margin-bottom: 12px;
+  }
+
   .lk-form__section {
     margin-bottom: 32px;
   }
@@ -11866,12 +11948,145 @@ path {
     width: 100%;
   }
 
+  .ill-check {
+    width: 100%;
+  }
+
   .lk-info-line {
     margin-bottom: 10px;
   }
 
   .lk-info-line__head {
     display: block;
+  }
+
+  .lk-company__header {
+    margin-bottom: 16px;
+    font-size: 20px;
+    padding: 0px;
+    background-color: inherit;
+  }
+
+  .lk-company__column {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .lk-company__title {
+    margin-bottom: 16px;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  .lk-company__info-block {
+    margin-bottom: 10px;
+  }
+
+  .lk-question {
+    padding: 20px;
+  }
+
+  .lk-question__title {
+    margin-bottom: 16px;
+  }
+
+  .lk-question__list {
+    margin-bottom: 16px;
+  }
+
+  .lk-progress {
+    margin-bottom: 32px;
+    padding: 20px;
+  }
+
+  .lk-progress__title {
+    margin-bottom: 8px;
+  }
+
+  .lk-progress__text {
+    margin-bottom: 0px;
+  }
+
+  .lk-progress__img {
+    display: none;
+  }
+
+  .lk-table-section__toolbar--right {
+    justify-content: flex-start;
+  }
+
+  .lk-item {
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+
+  .lk-item__col--remove {
+    display: block;
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    z-index: 2;
+  }
+
+  .lk-item__col--checkbox {
+    display: none;
+  }
+
+  .lk-item__col--number {
+    display: none;
+  }
+
+  .lk-item__col--thumb {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 16px;
+  }
+
+  .lk-item__col--content {
+    padding: 0px;
+    margin-bottom: 16px;
+    width: 100%;
+  }
+
+  .lk-item__col--count {
+    max-width: 100%;
+    padding: 0px;
+    margin-bottom: 16px;
+  }
+
+  .lk-item__col--result {
+    width: 100%;
+    padding: 0px;
+    flex-direction: column-reverse;
+  }
+
+  .lk-item__thumb {
+    width: 220px;
+    height: 220px;
+    max-width: 100%;
+  }
+
+  .lk-item__text {
+    margin-bottom: 5px;
+  }
+
+  .lk-table-toolbar--head {
+    display: none;
+  }
+
+  .lk-table-toolbar--footer {
+    display: block;
+    padding: 20px;
+  }
+
+  .lk-table-toolbar__col--footer-grow {
+    display: block;
+    padding: 0px;
+  }
+
+  .lk-table-toolbar__col--result {
+    padding: 0px;
+    width: 200px;
   }
 
   .accent-line {
@@ -11991,6 +12206,14 @@ path {
 
   .footer-toolbar {
     display: block;
+  }
+
+  .modal-write {
+    padding: 20px;
+  }
+
+  .modal-write__title {
+    margin-bottom: 20px;
   }
 
   .breadcrumbs {
@@ -12274,6 +12497,10 @@ path {
   .partner {
     width: calc(20% - 12px);
     margin-bottom: 12px;
+  }
+
+  .single__content {
+    margin-bottom: 50px;
   }
 
   .single__columns {

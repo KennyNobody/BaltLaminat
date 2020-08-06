@@ -43,7 +43,7 @@
 	&__column {
 		margin-bottom: 50px;
 		@include r(1200) {
-			margin-bottom: 0px;
+			margin-bottom: 30px;
 			width: 100%;
 		}
 		&--1 {

@@ -15,10 +15,12 @@ import tippy from 'tippy.js';
 		checkbox[i].addEventListener('click', toggleTypeField);
 	}
 
-	for (let i = 0; i < fields.length; i++) {
-		tippy(fields[i], {
-			content: 'My tooltip!',
+	initTippy();
+
+	function initTippy() {
+		tippy(fields, {
 			trigger: 'click',
+			allowHTML: true,
 		});
 	}
 
@@ -73,7 +75,5 @@ import tippy from 'tippy.js';
 			}
 		}
 	}
-
-
 
 })();

@@ -206,16 +206,18 @@ __webpack_require__.r(__webpack_exports__);
     checkbox[_i].addEventListener('click', toggleTypeField);
   }
 
-  for (var _i2 = 0; _i2 < fields.length; _i2++) {
-    Object(tippy_js__WEBPACK_IMPORTED_MODULE_0__["default"])(fields[_i2], {
-      content: 'My tooltip!',
-      trigger: 'click'
+  initTippy();
+
+  function initTippy() {
+    Object(tippy_js__WEBPACK_IMPORTED_MODULE_0__["default"])(fields, {
+      trigger: 'click',
+      allowHTML: true
     });
   }
 
   function toggleFloor() {
-    for (var _i3 = 0; _i3 < button.length; _i3++) {
-      button[_i3].classList.remove('map__change-floor--active');
+    for (var _i2 = 0; _i2 < button.length; _i2++) {
+      button[_i2].classList.remove('map__change-floor--active');
     }
 
     var activeFloor = +this.getAttribute('data-btn-floor');
@@ -226,31 +228,31 @@ __webpack_require__.r(__webpack_exports__);
   }
 
   function toggleActiveClass(number) {
-    for (var _i4 = 0; _i4 < layers.length; _i4++) {
-      if (layers[_i4].getAttribute('data-floor') == number) {
-        layers[_i4].classList.add('map__slide--active');
+    for (var _i3 = 0; _i3 < layers.length; _i3++) {
+      if (layers[_i3].getAttribute('data-floor') == number) {
+        layers[_i3].classList.add('map__slide--active');
       } else {
-        layers[_i4].classList.remove('map__slide--active');
+        layers[_i3].classList.remove('map__slide--active');
       }
     }
   }
 
   function toggleNavs(number) {
-    for (var _i5 = 0; _i5 < floorNavs.length; _i5++) {
-      if (floorNavs[_i5].getAttribute('data-floorNavs') == number) {
-        floorNavs[_i5].classList.remove('map-hidden');
+    for (var _i4 = 0; _i4 < floorNavs.length; _i4++) {
+      if (floorNavs[_i4].getAttribute('data-floorNavs') == number) {
+        floorNavs[_i4].classList.remove('map-hidden');
       } else {
-        floorNavs[_i5].classList.add('map-hidden');
+        floorNavs[_i4].classList.add('map-hidden');
       }
     }
   }
 
   function hidePreviousFloors(number) {
-    for (var _i6 = 0; _i6 < layers.length; _i6++) {
-      if (layers[_i6].getAttribute('data-floor') > number) {
-        layers[_i6].classList.add('map__slide--hide');
+    for (var _i5 = 0; _i5 < layers.length; _i5++) {
+      if (layers[_i5].getAttribute('data-floor') > number) {
+        layers[_i5].classList.add('map__slide--hide');
       } else {
-        layers[_i6].classList.remove('map__slide--hide');
+        layers[_i5].classList.remove('map__slide--hide');
       }
     }
   }
@@ -258,11 +260,11 @@ __webpack_require__.r(__webpack_exports__);
   function toggleTypeField(number) {
     var activeType = +this.getAttribute('data-type');
 
-    for (var _i7 = 0; _i7 < fields.length; _i7++) {
-      if (fields[_i7].getAttribute('data-map-field') == activeType) {
-        fields[_i7].classList.add('map__room--active');
+    for (var _i6 = 0; _i6 < fields.length; _i6++) {
+      if (fields[_i6].getAttribute('data-map-field') == activeType) {
+        fields[_i6].classList.add('map__room--active');
       } else {
-        fields[_i7].classList.remove('map__room--active');
+        fields[_i6].classList.remove('map__room--active');
       }
     }
   }
@@ -382,8 +384,8 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToAr
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
 (function () {
-  var columnsGrid = document.querySelectorAll('.grid__column');
-  var columnsService = document.querySelectorAll('.service__column'); // window.addEventListener('resize', function(){
+  var columnsGrid = document.querySelectorAll('.grid__column--editable');
+  var columnsService = document.querySelectorAll('.service__column--editable'); // window.addEventListener('resize', function(){
   // 	document.location.reload();
   // });
 
@@ -865,6 +867,32 @@ __webpack_require__.r(__webpack_exports__);
   // })();
 
 
+  (function toggleInputEyes() {
+    var all = document.querySelectorAll('.lk-field--password');
+
+    var _loop3 = function _loop3(i) {
+      var button = all[i].querySelector('.lk-field__toggle');
+      var input = all[i].querySelector('.lk-field__input');
+      button.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        if (this.classList.contains('lk-field__toggle--visible')) {
+          input.type = 'password';
+          this.classList.remove('lk-field__toggle--visible');
+          this.classList.add('lk-field__toggle--unvisible');
+        } else {
+          this.classList.add('lk-field__toggle--visible');
+          this.classList.remove('lk-field__toggle--unvisible');
+          input.type = 'text';
+        }
+      });
+    };
+
+    for (var i = 0; i < all.length; i++) {
+      _loop3(i);
+    }
+  })();
+
   (function initScrollbars() {
     var isMobile;
     var scrollbar1;
@@ -888,7 +916,7 @@ __webpack_require__.r(__webpack_exports__);
         }
 
         if (document.querySelector('#scrollbar-2')) {
-          scrollbar1 = new simplebar__WEBPACK_IMPORTED_MODULE_1__["default"](document.querySelector('#scrollbar-2'));
+          scrollbar2 = new simplebar__WEBPACK_IMPORTED_MODULE_1__["default"](document.querySelector('#scrollbar-2'));
         }
 
         init = true;
@@ -918,7 +946,6 @@ __webpack_require__.r(__webpack_exports__);
     $('.lk-filter__datepicker').datepicker({
       range: true
     });
-    console.log(air_datepicker__WEBPACK_IMPORTED_MODULE_4___default.a);
   })();
 })();
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))

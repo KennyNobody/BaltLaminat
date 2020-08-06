@@ -56,8 +56,14 @@
 .modal-write {
 	position: relative;
 	padding: 23px 37px;
+	@include r(1200) {
+		padding: 20px;
+	}
 	&__title {
 		margin-bottom: 48px;
+		@include r(1200) {
+			margin-bottom: 20px;
+		}
 	}
 	&__btn {
 		width: 248px;

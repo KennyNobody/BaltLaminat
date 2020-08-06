@@ -27,7 +27,7 @@
 }
 
 .btn {
-	height: 50px;
+	min-height: 50px;
 	display: inline-flex;
 	justify-content: center;
 	align-items:center;
@@ -36,7 +36,10 @@
 	font-weight: bold;
 	transition: 0.3s all;
 	cursor: pointer;
-	text-transform: capitalize;
+	text-transform: none;
+	text-align: center;
+	padding-top: 5px;
+	padding-bottom: 5px;
 	@include r(1700) {
 
 	}
