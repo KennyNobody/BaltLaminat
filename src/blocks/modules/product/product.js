@@ -2,10 +2,6 @@
 	const columnsGrid = document.querySelectorAll('.grid__column--editable');
 	const columnsService = document.querySelectorAll('.service__column--editable');
 
-	// window.addEventListener('resize', function(){
-	// 	document.location.reload();
-	// });
-
 	var cachedWidth = $(window).width();
     $(window).resize(function(){
         var newWidth = $(window).width();
@@ -15,7 +11,6 @@
             cachedWidth = newWidth;
         }
     });
-
 
 	window.addEventListener('load', toggle);
 

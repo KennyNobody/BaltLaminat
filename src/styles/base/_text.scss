@@ -116,6 +116,11 @@
 		width: 40px;
 		height: 40px;
 		margin-right: 24px;
+		@include r(1700) {
+			margin-right: 12px;
+			width: 26px;
+			height: 26px;
+		}
 		@include r(1200) {
 			width: 22px;
 			height: 22px;
@@ -126,6 +131,9 @@
 		text-decoration: none;
 		color: $dark;
 		font-size: 20px;
+		@include r(1700) {
+			font-size: 16px;
+		}
 		@include r(1200) {
 			font-size: 16px;
 		}

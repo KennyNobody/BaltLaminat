@@ -435,6 +435,9 @@
 		&:hover {
 			text-decoration: underline;
 		}
+		@include r(1200) {
+			text-decoration: underline;
+		}
 	}
 	&__line {
 		display: flex;
@@ -476,7 +479,7 @@
 		}
 	}
 	&__cell {
-		padding: 20px 4px;
+		padding: 10px 4px;
 		box-sizing: border-box;
 		flex-shrink: 1;
 		@include r(1200) {

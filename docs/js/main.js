@@ -385,10 +385,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 (function () {
   var columnsGrid = document.querySelectorAll('.grid__column--editable');
-  var columnsService = document.querySelectorAll('.service__column--editable'); // window.addEventListener('resize', function(){
-  // 	document.location.reload();
-  // });
-
+  var columnsService = document.querySelectorAll('.service__column--editable');
   var cachedWidth = $(window).width();
   $(window).resize(function () {
     var newWidth = $(window).width();
@@ -850,22 +847,24 @@ __webpack_require__.r(__webpack_exports__);
     function reset(e) {
       console.log(this);
     }
-  })(); // (function resize(){
-  // 	const resized = document.querySelectorAll('.resized');
-  // 	if (resized) {
-  // 		window.addEventListener('resize', function(){
-  // 			for (let i = 0; i < resized.length; i++) {
-  // 				resized[i].setAttribute("style","height:" + resized[i].offsetWidth + 'px');
-  // 			}
-  // 		});
-  // 		window.addEventListener('load', function(){
-  // 			for (let i = 0; i < resized.length; i++) {
-  // 				resized[i].setAttribute("style","height:" + resized[i].offsetWidth + 'px');
-  // 			}
-  // 		});
-  // 	}
-  // })();
+  })();
 
+  (function resize() {
+    var resized = document.querySelectorAll('.resized');
+
+    if (resized) {
+      window.addEventListener('resize', function () {
+        for (var i = 0; i < resized.length; i++) {
+          resized[i].setAttribute("style", "height:" + resized[i].offsetWidth + 'px');
+        }
+      });
+      window.addEventListener('load', function () {
+        for (var i = 0; i < resized.length; i++) {
+          resized[i].setAttribute("style", "height:" + resized[i].offsetWidth + 'px');
+        }
+      });
+    }
+  })();
 
   (function toggleInputEyes() {
     var all = document.querySelectorAll('.lk-field--password');
