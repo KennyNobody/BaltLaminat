@@ -39,6 +39,10 @@ $(document).ready(function() {
 		arrows: false,
 	});
 
+	$('[data-fancybox="swiper-gallery"]').fancybox({
+		
+	});
+
 	$('[data-fancybox="filter-modal"]').fancybox({
 		slideClass: "filter-fancybox",
 		touch: false,

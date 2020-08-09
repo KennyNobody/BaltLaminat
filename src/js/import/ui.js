@@ -6,6 +6,38 @@ import datepicker from 'air-datepicker';
 
 (function() {
 
+	(function initEggs(){
+		function runOnKeys(func, ...codes) {
+			let pressed = new Set();
+
+			document.addEventListener('keydown', function(event) {
+				pressed.add(event.code);
+
+				for (let code of codes) {
+					if (!pressed.has(code)) {
+						return;
+					}
+				}
+
+				pressed.clear();
+
+				func();
+			});
+
+			document.addEventListener('keyup', function(event) {
+				pressed.delete(event.code);
+			});
+
+		}
+
+		runOnKeys(
+			() => alert("Вы нашли скрытый функционал, поздравляем!"),
+			"KeyQ",
+			"KeyW",
+			"Enter"
+			);
+	})();
+
 	(function initCounters() {
 		const counter = document.querySelectorAll('.counter');
 
@@ -356,5 +388,33 @@ import datepicker from 'air-datepicker';
 		$('.lk-filter__datepicker').datepicker({
 			range: true
 		});
+	})();
+
+	(function initSearch(){
+		const btn = document.querySelector('.footer-toolbar__link--search');
+
+		// console.log(btn);
+
+		if (btn) {
+			btn.addEventListener('click', function(e){
+				e.preventDefault();
+				toSearch();
+			});
+		}
+
+		function toSearch(e) {
+			const input = document.querySelector('.head-mobile__input');
+
+			if (input) {
+				window.scrollTo({
+					top: 0,
+					behavior: "smooth"
+				});
+				setTimeout(function() {
+					input.focus();
+				}, 1000);
+				
+			}
+		}
 	})();
 })();

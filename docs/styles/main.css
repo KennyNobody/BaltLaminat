@@ -5442,6 +5442,7 @@ i {
   flex-direction: column;
   justify-content: space-between;
   display: flex;
+  overflow-y: hidden;
 }
 
 .layout__main {
@@ -6579,7 +6580,7 @@ i {
 
 .final-price__section:last-of-type {
   border-bottom: none;
-  margin-bottom: 35px;
+  margin-bottom: 0px;
 }
 
 .final-price__text {
@@ -7322,6 +7323,7 @@ i {
 .head-mobile__search {
   flex-grow: 1;
   margin-top: 20px;
+  width: 100%;
 }
 
 .head-mobile__input {
@@ -7359,50 +7361,23 @@ i {
   align-items: center;
 }
 
-.top-nav__home {
-  display: block;
-  margin-right: 26px;
-  padding: 9px;
-}
-
-.top-nav__home:hover {
-  opacity: 0.7;
-}
-
-.top-nav__home svg {
-  width: 18px;
-  height: 18px;
-}
-
-.top-nav__catalog {
-  display: flex;
-  align-items: center;
-  padding: 9px 13px;
-  cursor: pointer;
-  transition: 0.3s all;
-  text-transform: uppercase;
-  background: none;
-  margin-right: 24px;
-  color: #2E2E2E;
-  text-decoration: none;
-}
-
-.top-nav__catalog:hover {
-  opacity: 0.7;
-}
-
-.top-nav__catalog svg {
-  margin-right: 14px;
-  width: 18px;
-  height: 12px;
-}
-
 .top-nav__link {
   padding: 9px 13px;
   margin-right: 24px;
   text-transform: uppercase;
   color: #2E2E2E;
   text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.top-nav__link svg {
+  margin-right: 15px;
+}
+
+.top-nav__link span {
+  position: relative;
+  top: 1px;
 }
 
 .top-nav__link--active {
@@ -7895,18 +7870,32 @@ i {
   overflow: hidden;
 }
 
+.slider-top__icon {
+  position: absolute;
+  z-index: 2;
+  right: 10px;
+  bottom: 10px;
+}
+
+.slider-top__icon svg {
+  width: 50px;
+  height: 50px;
+}
+
 .slider-top__slide {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 528px;
+  outline: none;
+  position: relative;
 }
 
 .slider-top__slide img {
   height: 100%;
   width: 100%;
   display: block;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .slider-top__pagination {
@@ -7943,7 +7932,7 @@ i {
   height: 100%;
   width: 100%;
   display: block;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .slider-bottom__slide:hover {
@@ -10854,6 +10843,13 @@ i {
 
 .map__list-item {
   font-size: 20px;
+  display: block;
+  text-decoration: none;
+  color: #2E2E2E;
+}
+
+.map__list-item:hover {
+  opacity: 0.6;
 }
 
 .map__list-item strong {
@@ -11516,14 +11512,6 @@ path {
     font-size: 14px;
     margin-right: 42px;
     width: -webkit-fill-available;
-  }
-
-  .top-nav__home {
-    margin-right: 19px;
-  }
-
-  .top-nav__catalog {
-    margin-right: 0px;
   }
 
   .top-nav__link {

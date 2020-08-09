@@ -3,6 +3,11 @@
 	@include r(1200) {
 		margin-bottom: 0px;
 	}
+	// &--modal {
+	// 	.slider-top__wrapper {
+
+	// 	}
+	// }
 }
 
 .slider-top {
@@ -12,12 +17,24 @@
 	@include r(1200) {
 		margin-bottom: 0px;
 	}
+	&__icon {
+		position: absolute;
+		z-index: 2;
+		right: 10px;
+		bottom: 10px;
+		svg {
+			width: 50px;
+			height: 50px;
+		}
+	}
 	&__slide {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		// height: 100%;
 		height: 528px;
+		outline: none;
+		position: relative;
 		@include r(1200) {
 			height: 100%;
 		}
@@ -25,7 +42,7 @@
 			height: 100%;
 			width: 100%;
 			display: block;
-			object-fit: cover;
+			object-fit: contain;
 		}
 	}
 	&__pagination {
@@ -70,7 +87,7 @@
 			height: 100%;
 			width: 100%;
 			display: block;
-			object-fit: cover;
+			object-fit: contain;
 		}
 		&:hover {
 			opacity: 0.8;

@@ -179,6 +179,12 @@
 	}
 	&__list-item {
 		font-size: 20px;
+		display: block;
+		text-decoration: none;
+		color: $dark;
+		&:hover {
+			opacity: 0.6;
+		}
 		strong {
 			color: $green;
 			font-weight: bold;

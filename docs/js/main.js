@@ -341,6 +341,7 @@ $(document).ready(function () {
   $('[data-fancybox="modal"]').fancybox({
     arrows: false
   });
+  $('[data-fancybox="swiper-gallery"]').fancybox({});
   $('[data-fancybox="filter-modal"]').fancybox({
     slideClass: "filter-fancybox",
     touch: false
@@ -476,6 +477,8 @@ window.initSlider = function () {
         slidesPerView: 1,
         observer: true,
         observeParents: true,
+        loop: false,
+        loopAdditionalSlides: 0,
         navigation: {
           nextEl: '.slider-bottom__btn--right',
           prevEl: '.slider-bottom__btn--left'
@@ -578,6 +581,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var wnumb__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(wnumb__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var air_datepicker__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! air-datepicker */ "./node_modules/air-datepicker/src/js/air-datepicker.js");
 /* harmony import */ var air_datepicker__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(air_datepicker__WEBPACK_IMPORTED_MODULE_4__);
+function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 
 
 
@@ -585,6 +594,46 @@ __webpack_require__.r(__webpack_exports__);
 
 
 (function () {
+  (function initEggs() {
+    function runOnKeys(func) {
+      for (var _len = arguments.length, codes = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+        codes[_key - 1] = arguments[_key];
+      }
+
+      var pressed = new Set();
+      document.addEventListener('keydown', function (event) {
+        pressed.add(event.code);
+
+        var _iterator = _createForOfIteratorHelper(codes),
+            _step;
+
+        try {
+          for (_iterator.s(); !(_step = _iterator.n()).done;) {
+            var code = _step.value;
+
+            if (!pressed.has(code)) {
+              return;
+            }
+          }
+        } catch (err) {
+          _iterator.e(err);
+        } finally {
+          _iterator.f();
+        }
+
+        pressed.clear();
+        func();
+      });
+      document.addEventListener('keyup', function (event) {
+        pressed["delete"](event.code);
+      });
+    }
+
+    runOnKeys(function () {
+      return alert("Вы нашли скрытый функционал, поздравляем!");
+    }, "KeyQ", "KeyW", "Enter");
+  })();
+
   (function initCounters() {
     var counter = document.querySelectorAll('.counter');
 
@@ -945,6 +994,31 @@ __webpack_require__.r(__webpack_exports__);
     $('.lk-filter__datepicker').datepicker({
       range: true
     });
+  })();
+
+  (function initSearch() {
+    var btn = document.querySelector('.footer-toolbar__link--search'); // console.log(btn);
+
+    if (btn) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        toSearch();
+      });
+    }
+
+    function toSearch(e) {
+      var input = document.querySelector('.head-mobile__input');
+
+      if (input) {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+        setTimeout(function () {
+          input.focus();
+        }, 1000);
+      }
+    }
   })();
 })();
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))

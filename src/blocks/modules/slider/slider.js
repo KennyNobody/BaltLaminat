@@ -20,6 +20,8 @@ window.initSlider = function() {
 				slidesPerView: 1,
 				observer: true,
 				observeParents: true,
+				loop: false,
+				loopAdditionalSlides: 0,
 				navigation: {
 					nextEl: '.slider-bottom__btn--right',
 					prevEl: '.slider-bottom__btn--left',
