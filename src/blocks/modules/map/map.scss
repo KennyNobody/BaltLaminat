@@ -182,8 +182,31 @@
 		display: block;
 		text-decoration: none;
 		color: $dark;
+		position: relative;
+		p {
+			position: relative;
+			z-index: 2;
+		}
 		&:hover {
 			opacity: 0.6;
+		}
+		&:after {
+			content: "";
+			display: block;
+			position: absolute;
+			height: 4px;
+			bottom: 18px;
+			left: 0px;
+			width: 0%;
+			background-color: $green;
+			transition: 0.3s all;
+			z-index: 1;
+		}
+		&--active {
+			pointer-events: none;
+			&:after {
+				width: 100%;
+			}
 		}
 		strong {
 			color: $green;

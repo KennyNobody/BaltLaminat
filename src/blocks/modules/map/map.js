@@ -4,6 +4,7 @@ import tippy from 'tippy.js';
 	const button = document.querySelectorAll('.map__change-floor');
 	const layers = document.querySelectorAll('[data-floor]');
 	const checkbox = document.querySelectorAll('[data-type]');
+	const partner = document.querySelectorAll('[data-partner-type]');
 	const fields = document.querySelectorAll('.map__room');
 	const floorNavs = document.querySelectorAll('[data-floorNavs]');
 
@@ -74,6 +75,15 @@ import tippy from 'tippy.js';
 				fields[i].classList.remove('map__room--active');
 			}
 		}
+
+		for (let i = 0; i < partner.length; i++) {
+			if (partner[i].getAttribute('data-partner-type') == activeType) {
+				partner[i].classList.add('map__list-item--active');
+			} else {
+				partner[i].classList.remove('map__list-item--active');
+			}
+		}
+		// partner
 	}
 
 })();

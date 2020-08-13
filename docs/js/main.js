@@ -195,6 +195,7 @@ __webpack_require__.r(__webpack_exports__);
   var button = document.querySelectorAll('.map__change-floor');
   var layers = document.querySelectorAll('[data-floor]');
   var checkbox = document.querySelectorAll('[data-type]');
+  var partner = document.querySelectorAll('[data-partner-type]');
   var fields = document.querySelectorAll('.map__room');
   var floorNavs = document.querySelectorAll('[data-floorNavs]');
 
@@ -267,6 +268,15 @@ __webpack_require__.r(__webpack_exports__);
         fields[_i6].classList.remove('map__room--active');
       }
     }
+
+    for (var _i7 = 0; _i7 < partner.length; _i7++) {
+      if (partner[_i7].getAttribute('data-partner-type') == activeType) {
+        partner[_i7].classList.add('map__list-item--active');
+      } else {
+        partner[_i7].classList.remove('map__list-item--active');
+      }
+    } // partner
+
   }
 })();
 
@@ -285,6 +295,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 (function initMmenu() {
+  var menuArray = mobileLinks || null;
   new mmenu_js__WEBPACK_IMPORTED_MODULE_0__["default"]("#mmenu", {
     "extensions": ["pagedim-black", "fx-menu-slide"],
     "counters": true,
@@ -293,7 +304,10 @@ __webpack_require__.r(__webpack_exports__);
       "content": ["searchfield"]
     }, {
       "position": "bottom",
-      "content": ["<a class='fa fa-envelope' href='#/'></a>", "<a class='fa fa-twitter' href='#/'></a>", "<a class='fa fa-facebook' href='#/'></a>"]
+      "content": mobileContacts
+    }, {
+      "position": "bottom",
+      "content": mobileLinks
     }]
   }, {
     "language": "ru"
@@ -524,6 +538,41 @@ window.initSlider = function () {
         return '<p class="' + className + '"><span>' + this.slides[index].dataset.name + '</span></p>';
       }
     }
+  });
+})();
+
+(function partnersSlider() {
+  var caseSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.partners__slider-container', {
+    slidesPerView: 2,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false
+    },
+    breakpoints: {
+      480: {
+        slidesPerView: 2,
+        spaceBetween: 30
+      },
+      640: {
+        slidesPerView: 4,
+        spaceBetween: 30
+      },
+      980: {
+        slidesPerView: 6,
+        spaceBetween: 30
+      },
+      1200: {
+        slidesPerView: 8,
+        spaceBetween: 30
+      }
+    } // autoHeight: true,
+    // pagination: {
+    // 	el: '.case__header',
+    // 	clickable: true,
+    // 	bulletActiveClass: 'case__title--active',
+    // 	bulletClass: 'case__title',
+    // },
+
   });
 })();
 

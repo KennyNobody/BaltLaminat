@@ -685,53 +685,47 @@
 		<h2 class="title partners__title">
 			Наши партнеры
 		</h2>
-		<!-- <div class="partners__header">
-			<h2 class="title partners__title">
-				Наши партнеры
-			</h2>
-			<a href="" class="partners__link">
-				Все партнеры
-			</a>
-		</div> -->
-		
-		<div class="articles partners__article">
-			<a href="" class="front-partner resized">
-				<img src="img/partner-1.png" alt="" class="front-partner__img">
-			</a>
-			<a href="" class="front-partner resized">
-				<img src="img/partner-2.png" alt="" class="front-partner__img">
-			</a>
-			<a href="" class="front-partner resized">
-				<img src="img/partner-3.png" alt="" class="front-partner__img">
-			</a>
-			<a href="" class="front-partner resized">
-				<img src="img/partner-4.png" alt="" class="front-partner__img">
-			</a>
-			<a href="" class="front-partner resized">
-				<img src="img/partner-5.png" alt="" class="front-partner__img">
-			</a>
-			<a href="" class="front-partner resized">
-				<img src="img/partner-6.png" alt="" class="front-partner__img">
-			</a>
-			<a href="" class="front-partner resized">
-				<img src="img/partner-1.png" alt="" class="front-partner__img">
-			</a>
-			<a href="" class="front-partner resized">
-				<img src="img/partner-2.png" alt="" class="front-partner__img">
-			</a>
-			<a href="" class="front-partner resized">
-				<img src="img/partner-3.png" alt="" class="front-partner__img">
-			</a>
-			<a href="" class="front-partner resized">
-				<img src="img/partner-4.png" alt="" class="front-partner__img">
-			</a>
-			<a href="" class="front-partner resized">
-				<img src="img/partner-5.png" alt="" class="front-partner__img">
-			</a>
-			<a href="" class="front-partner resized">
-				<img src="img/partner-6.png" alt="" class="front-partner__img">
-			</a>
+		<div class="swiper-container partners__slider-container">
+			<div class="swiper-wrapper partners__slider-wrapper">
+				<a href="" class="swiper-slide front-partner">
+					<img src="img/partner-1.png" alt="" class="swiper-slide front-partner__img">
+				</a>
+				<a href="" class="swiper-slide front-partner">
+					<img src="img/partner-2.png" alt="" class="swiper-slide front-partner__img">
+				</a>
+				<a href="" class="swiper-slide front-partner">
+					<img src="img/partner-3.png" alt="" class="swiper-slide front-partner__img">
+				</a>
+				<a href="" class="swiper-slide front-partner">
+					<img src="img/partner-4.png" alt="" class="swiper-slide front-partner__img">
+				</a>
+				<a href="" class="swiper-slide front-partner">
+					<img src="img/partner-5.png" alt="" class="swiper-slide front-partner__img">
+				</a>
+				<a href="" class="swiper-slide front-partner">
+					<img src="img/partner-6.png" alt="" class="swiper-slide front-partner__img">
+				</a>
+				<a href="" class="swiper-slide front-partner">
+					<img src="img/partner-1.png" alt="" class="swiper-slide front-partner__img">
+				</a>
+				<a href="" class="swiper-slide front-partner">
+					<img src="img/partner-2.png" alt="" class="swiper-slide front-partner__img">
+				</a>
+				<a href="" class="swiper-slide front-partner">
+					<img src="img/partner-3.png" alt="" class="swiper-slide front-partner__img">
+				</a>
+				<a href="" class="swiper-slide front-partner">
+					<img src="img/partner-4.png" alt="" class="swiper-slide front-partner__img">
+				</a>
+				<a href="" class="swiper-slide front-partner">
+					<img src="img/partner-5.png" alt="" class="swiper-slide front-partner__img">
+				</a>
+				<a href="" class="swiper-slide front-partner">
+					<img src="img/partner-6.png" alt="" class="swiper-slide front-partner__img">
+				</a>
+			</div>
 		</div>
+		
 	</div>
 </section>
         </main>
@@ -907,6 +901,19 @@
 		</div>
 	</section>
 </footer>
+<script>
+    // Вынес сюда ссылки для мобильного меню, чтобы было проще
+    let mobileLinks = [
+    '<a href="" class="menu-link"><svg class="icon-svg none-image"><use xlink:href="img/sprites/sprite.svg#icon-fb-2"></use></svg></a>',
+    '<a href="" class="menu-link"><svg class="icon-svg none-image"><use xlink:href="img/sprites/sprite.svg#icon-in"></use></svg></a>',
+    '<a href="" class="menu-link"><svg class="icon-svg none-image"><use xlink:href="img/sprites/sprite.svg#icon-vk-2"></use></svg></a>',
+    '<a href="" class="menu-link"><svg class="icon-svg none-image"><use xlink:href="img/sprites/sprite.svg#icon-ok-2"></use></svg></a>'
+    ];
+
+    let mobileContacts = [
+    '<p class="menu-phone"><a href="tel:+74012777001">+7 (4012) 777-001</a></p>'
+    ];
+</script>
 <nav id="mmenu">
     <ul>
         <li><a href="/">Главная</a></li>

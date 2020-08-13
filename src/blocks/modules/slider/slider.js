@@ -75,3 +75,40 @@ window.initSlider = function() {
 	});
 
 })();
+
+(function partnersSlider(){
+
+	let caseSlider = new Swiper ('.partners__slider-container', {
+		slidesPerView: 2,
+		autoplay: {
+			delay: 2500,
+			disableOnInteraction: false,
+		},
+		breakpoints: {
+			480: {
+				slidesPerView: 2,
+				spaceBetween: 30
+			},
+			640: {
+				slidesPerView: 4,
+				spaceBetween: 30
+			},
+			980: {
+				slidesPerView: 6,
+				spaceBetween: 30
+			},
+			1200: {
+				slidesPerView: 8,
+				spaceBetween: 30
+			}
+		}
+		// autoHeight: true,
+		// pagination: {
+		// 	el: '.case__header',
+		// 	clickable: true,
+		// 	bulletActiveClass: 'case__title--active',
+		// 	bulletClass: 'case__title',
+		// },
+	});
+
+})();

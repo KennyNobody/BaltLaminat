@@ -40,11 +40,14 @@
 
 .front-partner {
 	text-decoration: none;
-	display: flex;
-	width: calc(100% / 12 - 32px);
 	padding: 10px;
 	background-color: $light;
 	margin-bottom: 16px;
+	height: 130px;
+    width: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 	@include r(1700) {
 		width: calc(100% / 12 - 20px);
 		margin-bottom: 10px;
@@ -52,32 +55,10 @@
 	@include r(1200) {
 		width: calc(100% / 6 - 8px);
 		margin-bottom: 8px;
-		display: none;
-		&:nth-child(1) {
-			display: flex;
-		}
-		&:nth-child(2) {
-			display: flex;
-		}
-		&:nth-child(3) {
-			display: flex;
-		}
-		&:nth-child(4) {
-			display: flex;
-		}
-		&:nth-child(5) {
-			display: flex;
-		}
-		&:nth-child(6) {
-			display: flex;
-		}
 	}
 	@include r(440) {
 		width: calc(100% / 3 - 8px);
 	}
-	// @include r(440) {
-	// 	width: 96px;
-	// }
 	&--clear {
 		height: 0px !important;
 		visibility: hidden;

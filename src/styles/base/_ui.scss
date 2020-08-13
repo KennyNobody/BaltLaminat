@@ -665,3 +665,11 @@
 		display: none;
 	}
 }
+
+.datepicker--cell+.-current- {
+	color: $green;
+}
+
+.datepicker--day-name {
+	color: #F2994A;
+}

@@ -1,6 +1,8 @@
 import Mmenu from 'mmenu-js';
 
 (function initMmenu(){
+	let menuArray = mobileLinks || null;
+
 	new Mmenu( "#mmenu", {
 		"extensions": [
 		"pagedim-black",
@@ -16,16 +18,14 @@ import Mmenu from 'mmenu-js';
 		},
 		{
 			"position": "bottom",
-			"content": [
-			"<a class='fa fa-envelope' href='#/'></a>",
-			"<a class='fa fa-twitter' href='#/'></a>",
-			"<a class='fa fa-facebook' href='#/'></a>"
-			]
+			"content": mobileContacts
+		},
+		{
+			"position": "bottom",
+			"content": mobileLinks
 		}
 		],
 	}, {
 		"language": "ru"
 	});
 })();
-
-
