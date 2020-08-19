@@ -10,10 +10,9 @@
 		padding-bottom: 35px;
 	}
 	&__nav {
-		// , column-gap, column-width и column-rule
 		column-count: 4;
 		column-gap: 32px;
-		margin-bottom: 20px;
+		margin-bottom: 40px;
 		@include r(1700) {
 
 		}
@@ -47,7 +46,7 @@
 		width: 50%;
 		@include r(1200) {
 			width: 100%;
-			border-bottom: 1px solid $light;
+			// border-bottom: 1px solid $light;
 			&:last-child {
 				border-bottom: none;
 			}
@@ -61,7 +60,7 @@
 			padding-bottom: 16px;
 			border-top: 1px solid $light;
 			border-bottom: 1px solid $light;
-			// margin-bottom: 22px;
+			margin-bottom: 22px;
 		}
 		@include r(440) {
 			display: block;
@@ -76,7 +75,8 @@
 			margin-right: 20px;
 		}
 		@include r(440) {
-			margin-bottom: 15px;
+			margin-right: 0px;
+			margin-bottom: 0px;
 		}
 	}
 	&__text {
@@ -151,5 +151,28 @@
 		height: 22px;
 		width: 22px;
 		// margin-bottom: 5px;
+	}
+}
+
+.bottom-link {
+	display: flex;
+	align-items: center;
+	color: $dark;
+	text-decoration: none;
+	margin-bottom: 10px;
+	&:last-of-type {
+		margin-bottom: 29px;
+	}
+	&__icon {
+		margin-right: 13px;
+		svg {
+			height: 22px;
+			width: 22px;
+		}
+	}
+	&--a {
+		&:hover {
+			opacity: 0.7;
+		}
 	}
 }

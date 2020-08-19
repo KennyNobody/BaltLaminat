@@ -183,33 +183,39 @@
 		text-decoration: none;
 		color: $dark;
 		position: relative;
+		opacity: 0.6;
+		transition: 0.3s all;
 		p {
 			position: relative;
 			z-index: 2;
 		}
 		&:hover {
-			opacity: 0.6;
+			opacity: 1;
 		}
-		&:after {
-			content: "";
-			display: block;
-			position: absolute;
-			height: 4px;
-			bottom: 18px;
-			left: 0px;
-			width: 0%;
-			background-color: $green;
-			transition: 0.3s all;
-			z-index: 1;
-		}
+		// &:after {
+		// 	content: "";
+		// 	display: block;
+		// 	position: absolute;
+		// 	height: 4px;
+		// 	bottom: 18px;
+		// 	left: 0px;
+		// 	width: 0%;
+		// 	background-color: $green;
+		// 	transition: 0.3s all;
+		// 	z-index: 1;
+		// }
 		&--active {
 			pointer-events: none;
-			&:after {
-				width: 100%;
+			// &:after {
+			// 	width: 100%;
+			// }
+			opacity: 1;
+			strong {
+				color: $green !important;
 			}
 		}
 		strong {
-			color: $green;
+			color: #BDBDBD;
 			font-weight: bold;
 			font-size: 50px;
 		}

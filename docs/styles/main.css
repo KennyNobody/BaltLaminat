@@ -7539,7 +7539,7 @@ i {
 .bottom__nav {
   column-count: 4;
   column-gap: 32px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .bottom__link {
@@ -7622,6 +7622,31 @@ i {
   margin-right: auto;
   height: 22px;
   width: 22px;
+}
+
+.bottom-link {
+  display: flex;
+  align-items: center;
+  color: #2E2E2E;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+.bottom-link:last-of-type {
+  margin-bottom: 29px;
+}
+
+.bottom-link__icon {
+  margin-right: 13px;
+}
+
+.bottom-link__icon svg {
+  height: 22px;
+  width: 22px;
+}
+
+.bottom-link--a:hover {
+  opacity: 0.7;
 }
 
 .temp {
@@ -10869,6 +10894,8 @@ i {
   text-decoration: none;
   color: #2E2E2E;
   position: relative;
+  opacity: 0.6;
+  transition: 0.3s all;
 }
 
 .map__list-item p {
@@ -10877,32 +10904,20 @@ i {
 }
 
 .map__list-item:hover {
-  opacity: 0.6;
-}
-
-.map__list-item:after {
-  content: "";
-  display: block;
-  position: absolute;
-  height: 4px;
-  bottom: 18px;
-  left: 0px;
-  width: 0%;
-  background-color: #00C25A;
-  transition: 0.3s all;
-  z-index: 1;
+  opacity: 1;
 }
 
 .map__list-item--active {
   pointer-events: none;
+  opacity: 1;
 }
 
-.map__list-item--active:after {
-  width: 100%;
+.map__list-item--active strong {
+  color: #00C25A !important;
 }
 
 .map__list-item strong {
-  color: #00C25A;
+  color: #BDBDBD;
   font-weight: bold;
   font-size: 50px;
 }
@@ -12283,7 +12298,6 @@ path {
 
   .bottom__column {
     width: 100%;
-    border-bottom: 1px solid #ffffff;
   }
 
   .bottom__column:last-child {
@@ -12297,6 +12311,7 @@ path {
     padding-bottom: 16px;
     border-top: 1px solid #ffffff;
     border-bottom: 1px solid #ffffff;
+    margin-bottom: 22px;
   }
 
   .bottom__socials {
@@ -13169,7 +13184,8 @@ path {
   }
 
   .bottom__socials {
-    margin-bottom: 15px;
+    margin-right: 0px;
+    margin-bottom: 0px;
   }
 
   .footer-toolbar__link {
