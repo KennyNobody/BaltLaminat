@@ -11212,7 +11212,6 @@ path {
   padding-top: 10px;
   padding-bottom: 10px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
@@ -11222,6 +11221,7 @@ path {
 
 .side-head__icon {
   display: block;
+  margin-right: 15px;
 }
 
 .side-head:before {
