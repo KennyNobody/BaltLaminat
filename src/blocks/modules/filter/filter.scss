@@ -29,25 +29,34 @@
 		&--scroll {
 			max-height: 280px;
 			height: auto;
+			overflow-y: scroll;
 			@include r(1200) {
-				max-height: 10000px !important;
+				max-height: none;
+				overflow-y: hidden;
 			}
-			.simplebar-vertical {
+			&::-webkit-scrollbar {
 				width: 4px;
 				background-color: #F2F2F2;
-				// @include r(1200) {
-				// 	display: none;
-				// }
 			}
-			.simplebar-scrollbar {
+			&::-webkit-scrollbar-thumb  {
 				background-color: #BDBDBD;
-				// @include r(1200) {
-				// 	display: none;
-				// }
-				&:before {
-					display: none;
-				}
-			} 
+			}
+			// .simplebar-vertical {
+			// 	width: 4px;
+			// 	background-color: #F2F2F2;
+			// 	// @include r(1200) {
+			// 	// 	display: none;
+			// 	// }
+			// }
+			// .simplebar-scrollbar {
+			// 	background-color: #BDBDBD;
+			// 	// @include r(1200) {
+			// 	// 	display: none;
+			// 	// }
+			// 	&:before {
+			// 		display: none;
+			// 	}
+			// } 
 		}
 	}
 	&__btn {

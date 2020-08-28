@@ -5897,6 +5897,7 @@ i {
   width: 100%;
   min-height: 270px;
   font-size: 16px;
+  resize: none;
 }
 
 .input__textarea::placeholder {
@@ -7725,6 +7726,11 @@ i {
   justify-content: space-between;
 }
 
+.modal-service--hidden {
+  max-width: 620px;
+  width: 100%;
+}
+
 .modal-service__content {
   display: flex;
   justify-content: space-between;
@@ -8027,19 +8033,16 @@ i {
 .filter__content--scroll {
   max-height: 280px;
   height: auto;
+  overflow-y: scroll;
 }
 
-.filter__content--scroll .simplebar-vertical {
+.filter__content--scroll::-webkit-scrollbar {
   width: 4px;
   background-color: #F2F2F2;
 }
 
-.filter__content--scroll .simplebar-scrollbar {
+.filter__content--scroll::-webkit-scrollbar-thumb {
   background-color: #BDBDBD;
-}
-
-.filter__content--scroll .simplebar-scrollbar:before {
-  display: none;
 }
 
 .filter__btn {
@@ -11960,6 +11963,12 @@ path {
     max-width: 320px;
   }
 
+  .dz-preview {
+    width: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
   .lk-form__title {
     margin-bottom: 20px;
   }
@@ -12392,7 +12401,8 @@ path {
   }
 
   .filter__content--scroll {
-    max-height: 10000px !important;
+    max-height: none;
+    overflow-y: hidden;
   }
 
   .intro__columns {

@@ -329,6 +329,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var dropzone__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(dropzone__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _fancyapps_fancybox__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fancyapps/fancybox */ "./node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js");
 /* harmony import */ var _fancyapps_fancybox__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_fancyapps_fancybox__WEBPACK_IMPORTED_MODULE_1__);
+function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 
 
 $(document).ready(function () {
@@ -374,6 +380,57 @@ $(document).ready(function () {
     url: pathToScript
   });
   dropzone__WEBPACK_IMPORTED_MODULE_0___default.a.clickable = true;
+
+  (function initEggs() {
+    function runOnKeys(func) {
+      for (var _len = arguments.length, codes = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+        codes[_key - 1] = arguments[_key];
+      }
+
+      var pressed = new Set();
+      document.addEventListener('keydown', function (event) {
+        pressed.add(event.code);
+
+        var _iterator = _createForOfIteratorHelper(codes),
+            _step;
+
+        try {
+          for (_iterator.s(); !(_step = _iterator.n()).done;) {
+            var code = _step.value;
+
+            if (!pressed.has(code)) {
+              return;
+            }
+          }
+        } catch (err) {
+          _iterator.e(err);
+        } finally {
+          _iterator.f();
+        }
+
+        pressed.clear();
+        func();
+      });
+      document.addEventListener('keyup', function (event) {
+        pressed["delete"](event.code);
+      });
+    }
+
+    runOnKeys(function () {
+      return openHideModal();
+    }, "KeyQ", "KeyW", "Enter");
+  })();
+
+  function openHideModal() {
+    $.fancybox.open({
+      src: '#modal-accent',
+      opts: {
+        afterShow: function afterShow(instance, current) {
+          console.info('done!');
+        }
+      }
+    });
+  }
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
@@ -623,66 +680,18 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var choices_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! choices.js */ "./node_modules/choices.js/public/assets/scripts/choices.js");
 /* harmony import */ var choices_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(choices_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var simplebar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! simplebar */ "./node_modules/simplebar/dist/simplebar.esm.js");
-/* harmony import */ var nouislider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! nouislider */ "./node_modules/nouislider/distribute/nouislider.js");
-/* harmony import */ var nouislider__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(nouislider__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var wnumb__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! wnumb */ "./node_modules/wnumb/wNumb.js");
-/* harmony import */ var wnumb__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(wnumb__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var air_datepicker__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! air-datepicker */ "./node_modules/air-datepicker/src/js/air-datepicker.js");
-/* harmony import */ var air_datepicker__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(air_datepicker__WEBPACK_IMPORTED_MODULE_4__);
-function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-
+/* harmony import */ var nouislider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! nouislider */ "./node_modules/nouislider/distribute/nouislider.js");
+/* harmony import */ var nouislider__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(nouislider__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var wnumb__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! wnumb */ "./node_modules/wnumb/wNumb.js");
+/* harmony import */ var wnumb__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(wnumb__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var air_datepicker__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! air-datepicker */ "./node_modules/air-datepicker/src/js/air-datepicker.js");
+/* harmony import */ var air_datepicker__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(air_datepicker__WEBPACK_IMPORTED_MODULE_3__);
 
 
 
 
 
 (function () {
-  (function initEggs() {
-    function runOnKeys(func) {
-      for (var _len = arguments.length, codes = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-        codes[_key - 1] = arguments[_key];
-      }
-
-      var pressed = new Set();
-      document.addEventListener('keydown', function (event) {
-        pressed.add(event.code);
-
-        var _iterator = _createForOfIteratorHelper(codes),
-            _step;
-
-        try {
-          for (_iterator.s(); !(_step = _iterator.n()).done;) {
-            var code = _step.value;
-
-            if (!pressed.has(code)) {
-              return;
-            }
-          }
-        } catch (err) {
-          _iterator.e(err);
-        } finally {
-          _iterator.f();
-        }
-
-        pressed.clear();
-        func();
-      });
-      document.addEventListener('keyup', function (event) {
-        pressed["delete"](event.code);
-      });
-    }
-
-    runOnKeys(function () {
-      return alert("Вы нашли скрытый функционал, поздравляем!");
-    }, "KeyQ", "KeyW", "Enter");
-  })();
-
   (function initCounters() {
     var counter = document.querySelectorAll('.counter');
 
@@ -906,12 +915,28 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     }
   })();
 
+  (function toggleFilterDrop() {
+    var drops = document.querySelectorAll('.filter-subdrop__header');
+
+    if (drops) {
+      for (var i = 0; i < drops.length; i++) {
+        drops[i].addEventListener('click', toggle);
+      }
+    }
+
+    function toggle(event) {
+      if (event.target.tagName !== 'BUTTON') {
+        this.parentNode.classList.toggle('filter-subdrop--opened');
+      }
+    }
+  })();
+
   (function initRangeSlider() {
     var slider = document.querySelectorAll('.range-slider');
 
     if (slider) {
       var _loop2 = function _loop2(i) {
-        nouislider__WEBPACK_IMPORTED_MODULE_2___default.a.create(slider[i], {
+        nouislider__WEBPACK_IMPORTED_MODULE_1___default.a.create(slider[i], {
           start: [minPrice, maxPrice],
           connect: true,
           step: 1,
@@ -919,7 +944,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
             'min': minPrice,
             'max': maxPrice
           },
-          format: wnumb__WEBPACK_IMPORTED_MODULE_3___default()({
+          format: wnumb__WEBPACK_IMPORTED_MODULE_2___default()({
             decimals: 0
           })
         });
@@ -988,56 +1013,47 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     for (var i = 0; i < all.length; i++) {
       _loop3(i);
     }
-  })();
+  })(); // (function initScrollbars(){
+  // 	let isMobile;
+  // 	let scrollbar1;
+  // 	let scrollbar2;
+  // 	let init = false;
+  // 	function checkMobile() {
+  // 		if (document.documentElement.clientWidth > 1200) {
+  // 			isMobile = false;
+  // 			initLibs();
+  // 		} else {
+  // 			isMobile = true;
+  // 			destroyLibs();
+  // 		}
+  // 	}
+  // 	function initLibs() {
+  // 		if (init == false && isMobile == false) {
+  // 			if (document.querySelector('#scrollbar-1')) {
+  // 				scrollbar1 = new SimpleBar(document.querySelector('#scrollbar-1'));
+  // 			}
+  // 			if (document.querySelector('#scrollbar-2')) {
+  // 				scrollbar2 = new SimpleBar(document.querySelector('#scrollbar-2'));
+  // 			}
+  // 			init = true;
+  // 		}
+  // 	}
+  // 	function destroyLibs() {
+  // 		if (init == true && isMobile == true) {
+  // 			if (scrollbar1) {
+  // 				scrollbar1.unMount();
+  // 			}
+  // 			if (scrollbar2) {
+  // 				scrollbar2.unMount();
+  // 			}
+  // 			init = false;
+  // 		}
+  // 	}
+  // 	checkMobile();
+  // 	initLibs();
+  // 	window.addEventListener('resize', checkMobile);
+  // })();
 
-  (function initScrollbars() {
-    var isMobile;
-    var scrollbar1;
-    var scrollbar2;
-    var init = false;
-
-    function checkMobile() {
-      if (document.documentElement.clientWidth > 1200) {
-        isMobile = false;
-        initLibs();
-      } else {
-        isMobile = true;
-        destroyLibs();
-      }
-    }
-
-    function initLibs() {
-      if (init == false && isMobile == false) {
-        if (document.querySelector('#scrollbar-1')) {
-          scrollbar1 = new simplebar__WEBPACK_IMPORTED_MODULE_1__["default"](document.querySelector('#scrollbar-1'));
-        }
-
-        if (document.querySelector('#scrollbar-2')) {
-          scrollbar2 = new simplebar__WEBPACK_IMPORTED_MODULE_1__["default"](document.querySelector('#scrollbar-2'));
-        }
-
-        init = true;
-      }
-    }
-
-    function destroyLibs() {
-      if (init == true && isMobile == true) {
-        if (scrollbar1) {
-          scrollbar1.unMount();
-        }
-
-        if (scrollbar2) {
-          scrollbar2.unMount();
-        }
-
-        init = false;
-      }
-    }
-
-    checkMobile();
-    initLibs();
-    window.addEventListener('resize', checkMobile);
-  })();
 
   (function initDatePicker() {
     $('.lk-filter__datepicker').datepicker({

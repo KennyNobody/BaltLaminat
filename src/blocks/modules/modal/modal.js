@@ -65,5 +65,48 @@ $(document).ready(function() {
 		url: pathToScript,
 	});
 	Dropzone.clickable = true;
+
+	(function initEggs(){
+		function runOnKeys(func, ...codes) {
+			let pressed = new Set();
+
+			document.addEventListener('keydown', function(event) {
+				pressed.add(event.code);
+
+				for (let code of codes) {
+					if (!pressed.has(code)) {
+						return;
+					}
+				}
+
+				pressed.clear();
+
+				func();
+			});
+
+			document.addEventListener('keyup', function(event) {
+				pressed.delete(event.code);
+			});
+
+		}
+
+		runOnKeys(
+			() => openHideModal(),
+			"KeyQ",
+			"KeyW",
+			"Enter"
+			);
+	})();
+
+	function openHideModal(){
+		$.fancybox.open({
+			src  : '#modal-accent',
+			opts : {
+				afterShow : function( instance, current ) {
+					console.info( 'done!' );
+				}
+			}
+		});
+	}
 });
 
