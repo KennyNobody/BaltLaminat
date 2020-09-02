@@ -172,7 +172,7 @@
 
   btn.addEventListener('click', function () {
     sessionStorage.setItem('accentLineHidden', 'true');
-    block.classList.remove('accent-line--hidden');
+    block.classList.add('accent-line--hidden');
   });
 })();
 
@@ -362,8 +362,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 $(document).ready(function () {
   $('[data-head-link]').click(function (e) {
-    // $.fancybox.close();
-    // e.preventDefault();
+    e.preventDefault();
     var linkNum = $(this).attr('data-head-link');
     var headerLinkArray = document.querySelectorAll('a[data-head-link]');
     var modalLinkArray = document.querySelectorAll('a[data-modal-link]');
@@ -371,10 +370,10 @@ $(document).ready(function () {
     $.fancybox.open({
       src: this.attributes[0].nodeValue,
       type: 'inline',
+      hash: false,
       opts: {
         arrows: false,
         touch: false,
-        hash: false,
         beforeShow: function beforeShow(instance, current) {
           toggleActiveLink(linkNum);
           toggleTabs(linkNum);

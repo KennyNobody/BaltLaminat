@@ -8,6 +8,6 @@
 
 	btn.addEventListener('click', function(){
 		sessionStorage.setItem('accentLineHidden', 'true');
-		block.classList.remove('accent-line--hidden');
+		block.classList.add('accent-line--hidden');
 	});
 })();

@@ -5,8 +5,7 @@ import fancybox from '@fancyapps/fancybox';
 $(document).ready(function() {
 
 	$('[data-head-link]').click(function(e){
-		// $.fancybox.close();
-		// e.preventDefault();
+		e.preventDefault();
 		let linkNum = $(this).attr('data-head-link');
 
 		let headerLinkArray = document.querySelectorAll('a[data-head-link]');
@@ -16,10 +15,10 @@ $(document).ready(function() {
 		$.fancybox.open({
 			src  : this.attributes[0].nodeValue,
 			type : 'inline',
+			hash : false,
 			opts : {
 				arrows: false,
 				touch: false,
-				hash : false,
 				beforeShow : function( instance, current ) {
 					toggleActiveLink(linkNum);
 					toggleTabs(linkNum);
