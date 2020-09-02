@@ -251,6 +251,7 @@
 		width: 100%;
 		min-height: 270px;
 		font-size: 16px;
+		resize: none;
 		&::placeholder {
 			font-family: $font-main;
 			color: #BDBDBD;
@@ -672,4 +673,12 @@
 
 .datepicker--day-name {
 	color: #F2994A;
+}
+
+.dz-preview {
+	@include r(1200) {
+		width: 100%;
+		padding-left: 0px;
+		padding-right: 0px;
+	}
 }

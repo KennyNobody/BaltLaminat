@@ -5,6 +5,9 @@
 	padding-bottom: 15px;
 	font-weight: 500;
 	font-size: 18px;
+	&--hidden {
+		display: none;
+	}
 	@include r(1700) {
 		font-size: 16px;
 		padding-top: 13px;

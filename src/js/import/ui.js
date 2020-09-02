@@ -1,42 +1,10 @@
 import Choices from 'choices.js';
-import SimpleBar from 'simplebar';
 import noUiSlider from 'nouislider';
 import wNumb from 'wnumb';
 import datepicker from 'air-datepicker';
 
 (function() {
 
-	(function initEggs(){
-		function runOnKeys(func, ...codes) {
-			let pressed = new Set();
-
-			document.addEventListener('keydown', function(event) {
-				pressed.add(event.code);
-
-				for (let code of codes) {
-					if (!pressed.has(code)) {
-						return;
-					}
-				}
-
-				pressed.clear();
-
-				func();
-			});
-
-			document.addEventListener('keyup', function(event) {
-				pressed.delete(event.code);
-			});
-
-		}
-
-		runOnKeys(
-			() => alert("Вы нашли скрытый функционал, поздравляем!"),
-			"KeyQ",
-			"KeyW",
-			"Enter"
-			);
-	})();
 
 	(function initCounters() {
 		const counter = document.querySelectorAll('.counter');
@@ -258,6 +226,22 @@ import datepicker from 'air-datepicker';
 		}
 	})();
 
+	(function toggleFilterDrop(){
+		const drops = document.querySelectorAll('.filter-subdrop__header');
+
+		if (drops) {
+			for (let i = 0; i < drops.length; i++) {
+				drops[i].addEventListener('click', toggle);
+			}
+		}
+
+		function toggle(event) {
+			if (event.target.tagName !== 'BUTTON') {
+				this.parentNode.classList.toggle('filter-subdrop--opened');
+			}
+		}
+	})();
+
 	(function initRangeSlider(){
 		let slider = document.querySelectorAll('.range-slider');
 
@@ -335,54 +319,54 @@ import datepicker from 'air-datepicker';
 		}
 	})();
 
-	(function initScrollbars(){
+	// (function initScrollbars(){
 
-		let isMobile;
-		let scrollbar1;
-		let scrollbar2;
-		let init = false;
+	// 	let isMobile;
+	// 	let scrollbar1;
+	// 	let scrollbar2;
+	// 	let init = false;
 
 
-		function checkMobile() {
-			if (document.documentElement.clientWidth > 1200) {
-				isMobile = false;
-				initLibs();
-			} else {
-				isMobile = true;
-				destroyLibs();
-			}
-		}
+	// 	function checkMobile() {
+	// 		if (document.documentElement.clientWidth > 1200) {
+	// 			isMobile = false;
+	// 			initLibs();
+	// 		} else {
+	// 			isMobile = true;
+	// 			destroyLibs();
+	// 		}
+	// 	}
 
-		function initLibs() {
-			if (init == false && isMobile == false) {
-				if (document.querySelector('#scrollbar-1')) {
-					scrollbar1 = new SimpleBar(document.querySelector('#scrollbar-1'));
-				}
-				if (document.querySelector('#scrollbar-2')) {
-					scrollbar2 = new SimpleBar(document.querySelector('#scrollbar-2'));
-				}
-				init = true;
-			}
-		}
+	// 	function initLibs() {
+	// 		if (init == false && isMobile == false) {
+	// 			if (document.querySelector('#scrollbar-1')) {
+	// 				scrollbar1 = new SimpleBar(document.querySelector('#scrollbar-1'));
+	// 			}
+	// 			if (document.querySelector('#scrollbar-2')) {
+	// 				scrollbar2 = new SimpleBar(document.querySelector('#scrollbar-2'));
+	// 			}
+	// 			init = true;
+	// 		}
+	// 	}
 
-		function destroyLibs() {
-			if (init == true && isMobile == true) {
-				if (scrollbar1) {
-					scrollbar1.unMount();
-				}
+	// 	function destroyLibs() {
+	// 		if (init == true && isMobile == true) {
+	// 			if (scrollbar1) {
+	// 				scrollbar1.unMount();
+	// 			}
 
-				if (scrollbar2) {
-					scrollbar2.unMount();
-				}
-				init = false;
-			}
-		}
+	// 			if (scrollbar2) {
+	// 				scrollbar2.unMount();
+	// 			}
+	// 			init = false;
+	// 		}
+	// 	}
 
-		checkMobile();
-		initLibs();
+	// 	checkMobile();
+	// 	initLibs();
 
-		window.addEventListener('resize', checkMobile);
-	})();
+	// 	window.addEventListener('resize', checkMobile);
+	// })();
 
 	(function initDatePicker(){
 		$('.lk-filter__datepicker').datepicker({
@@ -417,4 +401,6 @@ import datepicker from 'air-datepicker';
 			}
 		}
 	})();
+
+
 })();
