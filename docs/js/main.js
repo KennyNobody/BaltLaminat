@@ -155,6 +155,30 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/blocks/modules/filter/filter.js":
+/*!*********************************************!*\
+  !*** ./src/blocks/modules/filter/filter.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function toggleDropdownLink() {
+  var dropdown = document.querySelectorAll('.select-sort');
+
+  for (var i = 0; i < dropdown.length; i++) {
+    dropdown[i].addEventListener('change', function () {
+      toggleLink(this);
+    });
+  }
+
+  function toggleLink(item) {
+    var selected = item.options[item.selectedIndex].value;
+    window.location.href = selected;
+  }
+})();
+
+/***/ }),
+
 /***/ "./src/blocks/modules/header/header.js":
 /*!*********************************************!*\
   !*** ./src/blocks/modules/header/header.js ***!
@@ -726,15 +750,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_product_product__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_modules_product_product__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _modules_slider_slider__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! %modules%/slider/slider */ "./src/blocks/modules/slider/slider.js");
 /* harmony import */ var _modules_map_map__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! %modules%/map/map */ "./src/blocks/modules/map/map.js");
-/* harmony import */ var _modules_mmenu_mmenu__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! %modules%/mmenu/mmenu */ "./src/blocks/modules/mmenu/mmenu.js");
-/* harmony import */ var _modules_lk_auth_lk_auth__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! %modules%/lk-auth/lk-auth */ "./src/blocks/modules/lk-auth/lk-auth.js");
-/* harmony import */ var _modules_lk_auth_lk_auth__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_modules_lk_auth_lk_auth__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _modules_filter_filter__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! %modules%/filter/filter */ "./src/blocks/modules/filter/filter.js");
+/* harmony import */ var _modules_filter_filter__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_modules_filter_filter__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _modules_mmenu_mmenu__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! %modules%/mmenu/mmenu */ "./src/blocks/modules/mmenu/mmenu.js");
+/* harmony import */ var _modules_lk_auth_lk_auth__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! %modules%/lk-auth/lk-auth */ "./src/blocks/modules/lk-auth/lk-auth.js");
+/* harmony import */ var _modules_lk_auth_lk_auth__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_modules_lk_auth_lk_auth__WEBPACK_IMPORTED_MODULE_9__);
 
 
  // import "%modules%/footer/footer";
 
 
  // Врап/анврап
+
 
 
 

@@ -8,6 +8,7 @@ import "%modules%/modal/modal";
 import "%modules%/product/product"; // Врап/анврап
 import "%modules%/slider/slider";
 import "%modules%/map/map";
+import "%modules%/filter/filter";
 
 import "%modules%/mmenu/mmenu";
 
