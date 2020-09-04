@@ -556,11 +556,21 @@
 		padding: 4px;
 		cursor: pointer;
 		svg {
-			width: 8px;
-			height: 4px;
+			width: 10px;
+			height: 6px;
+			stroke: #828282;
 		}
-		&--active {
-			fill: $green !important;
+		// &--active {
+		// 	fill: $green !important;
+		// }
+		&-input {
+			display: none;
+			&:checked {
+				& + svg {
+					fill: $green !important;
+					stroke: $green !important;
+				}
+			}
 		}
 	}
 	&__mob-discript {

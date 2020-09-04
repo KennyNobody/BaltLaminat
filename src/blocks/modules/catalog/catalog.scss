@@ -76,6 +76,21 @@
 	@include r(1200) {
 		margin-right: 10px;
 	}
+	&__input {
+		display: none;
+		&:checked {
+			&+.sort-type__btn-content {
+				pointer-events: none;
+				svg {
+					fill: $green !important;
+				}
+				span {
+					color: $green;
+				}
+			}
+		}
+
+	}
 	&__btn {
 		padding: 10px;
 		flex-shrink: 0;
@@ -85,6 +100,7 @@
 		color: #BDBDBD;
 		cursor: pointer;
 		transition: 0.3s all;
+		cursor: pointer;
 		&:hover {
 			opacity: 0.7;
 		}
@@ -92,18 +108,22 @@
 			margin-right: 13px;
 			fill: #BDBDBD !important;
 		}
+		&-content {
+			display: flex;
+			align-items: center;
+		}
 		&--type {
 			margin-right: 32px;
 		}
-		&--active {
-			pointer-events: none;
-			svg {
-				fill: $green !important;
-			}
-			span {
-				color: $green;
-			}
-		}
+		// &--active {
+		// 	pointer-events: none;
+		// 	svg {
+		// 		fill: $green !important;
+		// 	}
+		// 	span {
+		// 		color: $green;
+		// 	}
+		// }
 		&--filter {
 			display: none;
 			@include r(1200) {
@@ -489,6 +509,14 @@
 	@include r(1200) {
 		display: none;
 	}
+	&__input {
+		display: none;
+		&:checked {
+			&+span {
+				color: $green;
+			}
+		}
+	}
 	&__title {
 		margin-right: 24px;
 		@include r(1700) {
@@ -501,11 +529,11 @@
 		background: none;
 		color: #BDBDBD;
 		transition: 0.3s all;
-		&--active {
-			color: $green;
-			text-decoration: underline;
-			pointer-events: none;
-		}
+		// &--active {
+		// 	color: $green;
+		// 	text-decoration: underline;
+		// 	pointer-events: none;
+		// }
 		&:last-child {
 			margin-right: 0px;
 		}

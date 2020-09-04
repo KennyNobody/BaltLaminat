@@ -9529,23 +9529,29 @@
                                             </svg>
                                         </a>
 
-                                        <button class="sort-type__btn sort-type__btn--active sort-type__btn--masonry">
-                                            <svg class="icon-svg">
-                                                <use xlink:href="img/sprites/sprite.svg#icon-masonry"></use>
-                                            </svg>
-                                            <span>
-                                                Плитка
-                                            </span>
-                                        </button>
+                                        <label type="radio" class="sort-type__btn sort-type__btn--masonry">
+                                            <input class="sort-type__input" checked type="radio" name="layout">
+                                            <div class="sort-type__btn-content">
+                                                <svg class="icon-svg">
+                                                    <use xlink:href="img/sprites/sprite.svg#icon-masonry"></use>
+                                                </svg>
+                                                <span>
+                                                    Плитка
+                                                </span>
+                                            </div>
+                                        </label>
 
-                                        <button class="sort-type__btn sort-type__btn--list">
-                                            <svg class="icon-svg">
-                                                <use xlink:href="img/sprites/sprite.svg#icon-list"></use>
-                                            </svg>
-                                            <span>
-                                                Список
-                                            </span>
-                                        </button>
+                                        <label type="radio" class="sort-type__btn sort-type__btn--list">
+                                            <input class="sort-type__input" type="radio" name="layout">
+                                            <div class="sort-type__btn-content">
+                                                <svg class="icon-svg">
+                                                    <use xlink:href="img/sprites/sprite.svg#icon-list"></use>
+                                                </svg>
+                                                <span>
+                                                    Список
+                                                </span>
+                                            </div>
+                                        </label>
                                     </div>
 
                                     <div class="toolbar__spreader"></div>
@@ -9567,18 +9573,22 @@
                                         <p class="sort-quanity__title">
                                             Показывать по:
                                         </p>
-                                        <button class="sort-quanity__btn sort-quanity__btn--active">
-                                            20
-                                        </button>
-                                        <button class="sort-quanity__btn">
-                                            40
-                                        </button>
-                                        <button class="sort-quanity__btn">
-                                            100
-                                        </button>
-                                        <button class="sort-quanity__btn">
-                                            Все
-                                        </button>
+                                        <label class="sort-quanity__btn">
+                                            <input class="sort-quanity__input" checked type="radio" name="item-quality">
+                                            <span>20</span>
+                                        </label>
+                                        <label class="sort-quanity__btn">
+                                            <input class="sort-quanity__input" type="radio" name="item-quality">
+                                            <span>40</span>
+                                        </label>
+                                        <label class="sort-quanity__btn">
+                                            <input class="sort-quanity__input" type="radio" name="item-quality">
+                                            <span>100</span>
+                                        </label>
+                                        <label class="sort-quanity__btn">
+                                            <input class="sort-quanity__input" type="radio" name="item-quality">
+                                            <span>Все</span>
+                                        </label>
                                     </div>
                                 </div>
                             </div>
@@ -9633,7 +9643,7 @@
                                             </div>
                                         </div>
                                         <div class="card__mob-toolbar">
-                                            
+
                                         </div>
                                     </div>
                                     <div class="card__toolbar">

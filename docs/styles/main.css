@@ -6191,12 +6191,18 @@ i {
 }
 
 .table__arrow svg {
-  width: 8px;
-  height: 4px;
+  width: 10px;
+  height: 6px;
+  stroke: #828282;
 }
 
-.table__arrow--active {
+.table__arrow-input {
+  display: none;
+}
+
+.table__arrow-input:checked + svg {
   fill: #00C25A !important;
+  stroke: #00C25A !important;
 }
 
 .table__mob-discript {
@@ -9638,6 +9644,22 @@ i {
   align-items: center;
 }
 
+.sort-type__input {
+  display: none;
+}
+
+.sort-type__input:checked + .sort-type__btn-content {
+  pointer-events: none;
+}
+
+.sort-type__input:checked + .sort-type__btn-content svg {
+  fill: #00C25A !important;
+}
+
+.sort-type__input:checked + .sort-type__btn-content span {
+  color: #00C25A;
+}
+
 .sort-type__btn {
   padding: 10px;
   flex-shrink: 0;
@@ -9647,6 +9669,7 @@ i {
   color: #BDBDBD;
   cursor: pointer;
   transition: 0.3s all;
+  cursor: pointer;
 }
 
 .sort-type__btn:hover {
@@ -9658,20 +9681,13 @@ i {
   fill: #BDBDBD !important;
 }
 
+.sort-type__btn-content {
+  display: flex;
+  align-items: center;
+}
+
 .sort-type__btn--type {
   margin-right: 32px;
-}
-
-.sort-type__btn--active {
-  pointer-events: none;
-}
-
-.sort-type__btn--active svg {
-  fill: #00C25A !important;
-}
-
-.sort-type__btn--active span {
-  color: #00C25A;
 }
 
 .sort-type__btn--filter {
@@ -10040,6 +10056,14 @@ i {
   align-items: center;
 }
 
+.sort-quanity__input {
+  display: none;
+}
+
+.sort-quanity__input:checked + span {
+  color: #00C25A;
+}
+
 .sort-quanity__title {
   margin-right: 24px;
 }
@@ -10050,12 +10074,6 @@ i {
   background: none;
   color: #BDBDBD;
   transition: 0.3s all;
-}
-
-.sort-quanity__btn--active {
-  color: #00C25A;
-  text-decoration: underline;
-  pointer-events: none;
 }
 
 .sort-quanity__btn:last-child {

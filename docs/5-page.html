@@ -9522,29 +9522,36 @@
                             <div class="catalog__header">
                                 <div class="toolbar">
                                     <div class="sort-type">
+
                                         <a href="#filter" class="sort-type__btn sort-type__btn--filter" data-fancybox="filter-modal">
                                             <svg class="icon-svg">
                                                 <use xlink:href="img/sprites/sprite.svg#icon-sort"></use>
                                             </svg>
                                         </a>
-                                        
-                                        <button class="sort-type__btn sort-type__btn--active sort-type__btn--masonry">
-                                            <svg class="icon-svg">
-                                                <use xlink:href="img/sprites/sprite.svg#icon-masonry"></use>
-                                            </svg>
-                                            <span>
-                                                Плитка
-                                            </span>
-                                        </button>
 
-                                        <button class="sort-type__btn sort-type__btn--list">
-                                            <svg class="icon-svg">
-                                                <use xlink:href="img/sprites/sprite.svg#icon-list"></use>
-                                            </svg>
-                                            <span>
-                                                Список
-                                            </span>
-                                        </button>
+                                        <label type="radio" class="sort-type__btn sort-type__btn--masonry">
+                                            <input class="sort-type__input" checked type="radio" name="layout">
+                                            <div class="sort-type__btn-content">
+                                                <svg class="icon-svg">
+                                                    <use xlink:href="img/sprites/sprite.svg#icon-masonry"></use>
+                                                </svg>
+                                                <span>
+                                                    Плитка
+                                                </span>
+                                            </div>
+                                        </label>
+
+                                        <label type="radio" class="sort-type__btn sort-type__btn--list">
+                                            <input class="sort-type__input" type="radio" name="layout">
+                                            <div class="sort-type__btn-content">
+                                                <svg class="icon-svg">
+                                                    <use xlink:href="img/sprites/sprite.svg#icon-list"></use>
+                                                </svg>
+                                                <span>
+                                                    Список
+                                                </span>
+                                            </div>
+                                        </label>
                                     </div>
 
                                     <div class="toolbar__spreader"></div>
@@ -9566,18 +9573,22 @@
                                         <p class="sort-quanity__title">
                                             Показывать по:
                                         </p>
-                                        <button class="sort-quanity__btn sort-quanity__btn--active">
-                                            20
-                                        </button>
-                                        <button class="sort-quanity__btn">
-                                            40
-                                        </button>
-                                        <button class="sort-quanity__btn">
-                                            100
-                                        </button>
-                                        <button class="sort-quanity__btn">
-                                            Все
-                                        </button>
+                                        <label class="sort-quanity__btn">
+                                            <input class="sort-quanity__input" checked type="radio" name="item-quality">
+                                            <span>20</span>
+                                        </label>
+                                        <label class="sort-quanity__btn">
+                                            <input class="sort-quanity__input" type="radio" name="item-quality">
+                                            <span>40</span>
+                                        </label>
+                                        <label class="sort-quanity__btn">
+                                            <input class="sort-quanity__input" type="radio" name="item-quality">
+                                            <span>100</span>
+                                        </label>
+                                        <label class="sort-quanity__btn">
+                                            <input class="sort-quanity__input" type="radio" name="item-quality">
+                                            <span>Все</span>
+                                        </label>
                                     </div>
                                 </div>
                             </div>
@@ -9588,16 +9599,18 @@
                                             Артикул
                                         </p>
                                         <div class="table__control">
-                                            <div class="table__arrow table__arrow--top table__arrow--active">
+                                            <label class="table__arrow table__arrow--top">
+                                                <input type="radio" name="sort-1" class="table__arrow-input">
                                                 <svg class="icon-svg">
                                                     <use xlink:href="img/sprites/sprite.svg#icon-arrow-top"></use>
                                                 </svg>
-                                            </div>
-                                            <div class="table__arrow table__arrow--bottom">
+                                            </label>
+                                            <label class="table__arrow table__arrow--bottom">
+                                                <input type="radio" name="sort-1" class="table__arrow-input">
                                                 <svg class="icon-svg">
                                                     <use xlink:href="img/sprites/sprite.svg#icon-arrow-bottom"></use>
                                                 </svg>
-                                            </div>
+                                            </label>
                                         </div>
                                     </div>
                                     <div class="table__cell table__cell--flex table__cell--35">
@@ -9605,16 +9618,18 @@
                                             Наименование 
                                         </p>
                                         <div class="table__control">
-                                            <div class="table__arrow table__arrow--top">
+                                            <label class="table__arrow table__arrow--top">
+                                                <input type="radio" name="sort-1" class="table__arrow-input">
                                                 <svg class="icon-svg">
                                                     <use xlink:href="img/sprites/sprite.svg#icon-arrow-top"></use>
                                                 </svg>
-                                            </div>
-                                            <div class="table__arrow table__arrow--bottom">
+                                            </label>
+                                            <label class="table__arrow table__arrow--bottom">
+                                                <input type="radio" name="sort-1" class="table__arrow-input">
                                                 <svg class="icon-svg">
                                                     <use xlink:href="img/sprites/sprite.svg#icon-arrow-bottom"></use>
                                                 </svg>
-                                            </div>
+                                            </label>
                                         </div>
                                     </div>
                                     <div class="table__cell table__cell--flex table__cell--10">
@@ -9622,16 +9637,18 @@
                                             Декор
                                         </p>
                                         <div class="table__control">
-                                            <div class="table__arrow table__arrow--top">
+                                            <label class="table__arrow table__arrow--top">
+                                                <input type="radio" name="sort-1" class="table__arrow-input">
                                                 <svg class="icon-svg">
                                                     <use xlink:href="img/sprites/sprite.svg#icon-arrow-top"></use>
                                                 </svg>
-                                            </div>
-                                            <div class="table__arrow table__arrow--bottom">
+                                            </label>
+                                            <label class="table__arrow table__arrow--bottom">
+                                                <input type="radio" name="sort-1" class="table__arrow-input">
                                                 <svg class="icon-svg">
                                                     <use xlink:href="img/sprites/sprite.svg#icon-arrow-bottom"></use>
                                                 </svg>
-                                            </div>
+                                            </label>
                                         </div>
                                     </div>
                                     <div class="table__cell table__cell--flex table__cell--15">
@@ -9639,16 +9656,18 @@
                                             Цена
                                         </p>
                                         <div class="table__control">
-                                            <div class="table__arrow table__arrow--top">
+                                            <label class="table__arrow table__arrow--top">
+                                                <input type="radio" name="sort-1" class="table__arrow-input">
                                                 <svg class="icon-svg">
                                                     <use xlink:href="img/sprites/sprite.svg#icon-arrow-top"></use>
                                                 </svg>
-                                            </div>
-                                            <div class="table__arrow table__arrow--bottom">
+                                            </label>
+                                            <label class="table__arrow table__arrow--bottom">
+                                                <input type="radio" name="sort-1" class="table__arrow-input">
                                                 <svg class="icon-svg">
                                                     <use xlink:href="img/sprites/sprite.svg#icon-arrow-bottom"></use>
                                                 </svg>
-                                            </div>
+                                            </label>
                                         </div>
                                     </div>
                                     <div class="table__cell table__cell--flex table__cell--10">
@@ -9656,16 +9675,18 @@
                                             Наличие
                                         </p>
                                         <div class="table__control">
-                                            <div class="table__arrow table__arrow--top">
+                                            <label class="table__arrow table__arrow--top">
+                                                <input type="radio" name="sort-1" class="table__arrow-input">
                                                 <svg class="icon-svg">
                                                     <use xlink:href="img/sprites/sprite.svg#icon-arrow-top"></use>
                                                 </svg>
-                                            </div>
-                                            <div class="table__arrow table__arrow--bottom">
+                                            </label>
+                                            <label class="table__arrow table__arrow--bottom">
+                                                <input type="radio" name="sort-1" class="table__arrow-input">
                                                 <svg class="icon-svg">
                                                     <use xlink:href="img/sprites/sprite.svg#icon-arrow-bottom"></use>
                                                 </svg>
-                                            </div>
+                                            </label>
                                         </div>
                                     </div>
                                     <div class="table__cell table__cell--flex table__cell--10">
@@ -9673,16 +9694,18 @@
                                             Добавить в корзину
                                         </p>
                                         <div class="table__control">
-                                            <div class="table__arrow table__arrow--top">
+                                            <label class="table__arrow table__arrow--top">
+                                                <input type="radio" name="sort-1" class="table__arrow-input">
                                                 <svg class="icon-svg">
                                                     <use xlink:href="img/sprites/sprite.svg#icon-arrow-top"></use>
                                                 </svg>
-                                            </div>
-                                            <div class="table__arrow table__arrow--bottom">
+                                            </label>
+                                            <label class="table__arrow table__arrow--bottom">
+                                                <input type="radio" name="sort-1" class="table__arrow-input">
                                                 <svg class="icon-svg">
                                                     <use xlink:href="img/sprites/sprite.svg#icon-arrow-bottom"></use>
                                                 </svg>
-                                            </div>
+                                            </label>
                                         </div>
                                     </div>
                                 </div>
