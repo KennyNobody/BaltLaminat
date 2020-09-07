@@ -2,6 +2,8 @@ import Dropzone from 'dropzone';
 
 import fancybox from '@fancyapps/fancybox';
 
+window.$ = $;
+
 $(document).ready(function() {
 
 	$('[data-head-link]').click(function(e){
