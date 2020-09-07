@@ -1,5 +1,7 @@
 import $ from "jquery";
 
+window.$ = $;
+
 import "./ui";
 
 import "%modules%/header/header";
