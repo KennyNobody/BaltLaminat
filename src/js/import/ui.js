@@ -14,6 +14,7 @@ import datepicker from 'air-datepicker';
 				let btnPrev = counter[i].querySelector('.counter__btn--minus');
 				let btnNext = counter[i].querySelector('.counter__btn--plus');
 				let input = counter[i].querySelector('.counter__input input');
+				let maxValue = counter[i].querySelector('.counter__input input').max || +Infinity;
 
 				btnPrev.addEventListener('click', function(e){
 					e.preventDefault();
@@ -24,7 +25,9 @@ import datepicker from 'air-datepicker';
 
 				btnNext.addEventListener('click', function(e){
 					e.preventDefault();
-					input.value = +input.value + 1;
+					if (input.value < +maxValue) {
+						input.value = +input.value + 1;
+					}
 				})
 			}
 		}

@@ -141,6 +141,13 @@
 		flex-grow: 1;
 		font-weight: bold;
 		line-height: 1.2;
+		a {
+			color: $dark;
+			text-decoration: none;
+			&:hover {
+				opacity: 0.7;
+			}
+		}
 	}
 	&__close {
 		font-weight: bold;

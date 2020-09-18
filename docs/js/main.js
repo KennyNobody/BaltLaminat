@@ -802,6 +802,7 @@ __webpack_require__.r(__webpack_exports__);
         var btnPrev = counter[i].querySelector('.counter__btn--minus');
         var btnNext = counter[i].querySelector('.counter__btn--plus');
         var input = counter[i].querySelector('.counter__input input');
+        var maxValue = counter[i].querySelector('.counter__input input').max || +Infinity;
         btnPrev.addEventListener('click', function (e) {
           e.preventDefault();
 
@@ -811,7 +812,10 @@ __webpack_require__.r(__webpack_exports__);
         });
         btnNext.addEventListener('click', function (e) {
           e.preventDefault();
-          input.value = +input.value + 1;
+
+          if (input.value < +maxValue) {
+            input.value = +input.value + 1;
+          }
         });
       };
 

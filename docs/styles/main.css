@@ -5442,7 +5442,6 @@ i {
   flex-direction: column;
   justify-content: space-between;
   display: flex;
-  overflow-y: hidden;
   background-color: #ffffff;
 }
 
@@ -8177,6 +8176,15 @@ i {
   flex-grow: 1;
   font-weight: bold;
   line-height: 1.2;
+}
+
+.filter-drop__title a {
+  color: #2E2E2E;
+  text-decoration: none;
+}
+
+.filter-drop__title a:hover {
+  opacity: 0.7;
 }
 
 .filter-drop__close {
