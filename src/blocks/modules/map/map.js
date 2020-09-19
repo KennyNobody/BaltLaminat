@@ -83,7 +83,6 @@ import tippy from 'tippy.js';
 				partner[i].classList.remove('map__list-item--active');
 			}
 		}
-		// partner
 	}
 
 })();

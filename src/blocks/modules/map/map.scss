@@ -281,7 +281,7 @@ path{
 	align-items: center;
 	cursor: pointer;
 	&__input {
-		display: none;
+		// display: none;
 		&:checked {
 			& + .nav-check__content {
 				.nav-check__icon-marker {

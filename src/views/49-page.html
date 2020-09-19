@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>49. Восстановление доступа</title>
+    @@include("../blocks/modules/head/head.html")
+</head>
+<body class="body">
+    <div class="layout">
+        @@include("../blocks/modules/header/header.html")
+        <main class="layout__main">
+            @@include("../blocks/modules/breadcrumbs/breadcrumbs.html")
+            <section class="single">
+                <div class="container">
+                    <div class="single__content">
+                        <h2 class="title single__title">
+                            Восстановление доступа
+                        </h2>
+                        <form class="lk-access">
+                            <div class="lk-access__content">
+                                <input type="text" class="lk-access__input" placeholder="введите ваш e-mail">
+                                <p class="lk-access__text">
+                                    Мы отправим вам письмо со ссылкой для сброса пароля.
+                                </p>
+                                <button class="btn btn--50 btn--dark lk-access__btn">
+                                    <span>
+                                        Отправить
+                                    </span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+        @@include("../blocks/modules/footer/footer.html")
+        @@include("../blocks/modules/temp/temp.html")
+    </div>
+    <div class="hidden">
+        @@include("../blocks/modules/modal/modal.html")
+    </div>
+    <script src="js/vendor.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

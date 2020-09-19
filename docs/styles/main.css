@@ -11032,10 +11032,6 @@ path {
   cursor: pointer;
 }
 
-.nav-check__input {
-  display: none;
-}
-
 .nav-check__input:checked + .nav-check__content .nav-check__icon-marker {
   opacity: 1;
 }
@@ -11234,9 +11230,24 @@ path {
   text-decoration: none;
 }
 
+.lk-access__content {
+  width: calc(100% / 12 * 5 - 10px);
+}
+
 .lk-access__input {
+  display: block;
   width: 100%;
   margin-bottom: 30px;
+  border: 1px solid #2E2E2E;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 69px;
+  font-size: 20px;
+}
+
+.lk-access__input:placeholder {
+  font-size: 20px;
+  color: #828282;
 }
 
 .lk-access__text {
@@ -13055,6 +13066,31 @@ path {
     padding-left: 46px;
     padding-right: 46px;
     margin-bottom: 15px;
+  }
+
+  .lk-access__content {
+    width: 100%;
+  }
+
+  .lk-access__input {
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 50px;
+    font-size: 18px;
+  }
+
+  .lk-access__input:placeholder {
+    font-size: 18px;
+  }
+
+  .lk-access__text {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+
+  .lk-access__btn {
+    padding-left: 38px;
+    padding-right: 38px;
   }
 
   .side-head {

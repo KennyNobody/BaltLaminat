@@ -162,19 +162,51 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-(function toggleDropdownLink() {
-  var dropdown = document.querySelectorAll('.select-sort');
+(function () {
+  (function toggleDropdownLink() {
+    var dropdown = document.querySelectorAll('.select-sort');
 
-  for (var i = 0; i < dropdown.length; i++) {
-    dropdown[i].addEventListener('change', function () {
-      toggleLink(this);
-    });
-  }
+    for (var i = 0; i < dropdown.length; i++) {
+      dropdown[i].addEventListener('change', function () {
+        toggleLink(this);
+      });
+    }
 
-  function toggleLink(item) {
-    var selected = item.options[item.selectedIndex].value;
-    window.location.href = selected;
-  }
+    function toggleLink(item) {
+      var selected = item.options[item.selectedIndex].value;
+      window.location.href = selected;
+    }
+  })();
+
+  (function selectAll() {
+    var btns = document.querySelectorAll('.filter__btn-all');
+
+    if (btns) {
+      for (var i = 0; i < btns.length; i++) {
+        initSection(btns[i]);
+      }
+    }
+
+    function initSection(item) {
+      var checked = false;
+      var inputArray = item.parentNode.parentNode.querySelectorAll('.filter-checkbox__input');
+      item.addEventListener('click', function () {
+        if (checked == false) {
+          for (var _i = 0; _i < inputArray.length; _i++) {
+            inputArray[_i].checked = true;
+          }
+
+          checked = true;
+        } else {
+          for (var _i2 = 0; _i2 < inputArray.length; _i2++) {
+            inputArray[_i2].checked = false;
+          }
+
+          checked = false;
+        }
+      });
+    }
+  })();
 })();
 
 /***/ }),
@@ -322,8 +354,7 @@ __webpack_require__.r(__webpack_exports__);
       } else {
         partner[_i7].classList.remove('map__list-item--active');
       }
-    } // partner
-
+    }
   }
 })();
 
@@ -1119,47 +1150,7 @@ __webpack_require__.r(__webpack_exports__);
     for (var i = 0; i < all.length; i++) {
       _loop3(i);
     }
-  })(); // (function initScrollbars(){
-  // 	let isMobile;
-  // 	let scrollbar1;
-  // 	let scrollbar2;
-  // 	let init = false;
-  // 	function checkMobile() {
-  // 		if (document.documentElement.clientWidth > 1200) {
-  // 			isMobile = false;
-  // 			initLibs();
-  // 		} else {
-  // 			isMobile = true;
-  // 			destroyLibs();
-  // 		}
-  // 	}
-  // 	function initLibs() {
-  // 		if (init == false && isMobile == false) {
-  // 			if (document.querySelector('#scrollbar-1')) {
-  // 				scrollbar1 = new SimpleBar(document.querySelector('#scrollbar-1'));
-  // 			}
-  // 			if (document.querySelector('#scrollbar-2')) {
-  // 				scrollbar2 = new SimpleBar(document.querySelector('#scrollbar-2'));
-  // 			}
-  // 			init = true;
-  // 		}
-  // 	}
-  // 	function destroyLibs() {
-  // 		if (init == true && isMobile == true) {
-  // 			if (scrollbar1) {
-  // 				scrollbar1.unMount();
-  // 			}
-  // 			if (scrollbar2) {
-  // 				scrollbar2.unMount();
-  // 			}
-  // 			init = false;
-  // 		}
-  // 	}
-  // 	checkMobile();
-  // 	initLibs();
-  // 	window.addEventListener('resize', checkMobile);
-  // })();
-
+  })();
 
   (function initDatePicker() {
     $('.lk-filter__datepicker').datepicker({
@@ -1168,7 +1159,7 @@ __webpack_require__.r(__webpack_exports__);
   })();
 
   (function initSearch() {
-    var btn = document.querySelector('.footer-toolbar__link--search'); // console.log(btn);
+    var btn = document.querySelector('.footer-toolbar__link--search');
 
     if (btn) {
       btn.addEventListener('click', function (e) {
@@ -1188,6 +1179,46 @@ __webpack_require__.r(__webpack_exports__);
         setTimeout(function () {
           input.focus();
         }, 1000);
+      }
+    }
+  })();
+
+  (function selectAllCart() {
+    var btn = document.querySelector('.select-all');
+    var table;
+    var flag;
+    var itemsArray;
+
+    if (btn) {
+      table = btn.parentNode.parentNode.parentNode;
+      itemsArray = table.querySelectorAll('.lk-checkbox__input');
+      flag = table.querySelector('.lk-table-toolbar--head .lk-table-toolbar__col--checkbox .lk-checkbox__input');
+      btn.addEventListener('click', function () {
+        toggleFlag();
+        selectAll(flag, itemsArray);
+      });
+      flag.addEventListener('change', function () {
+        selectAll(flag, itemsArray);
+      });
+    }
+
+    function toggleFlag() {
+      if (flag.checked == true) {
+        flag.checked = false;
+      } else {
+        flag.checked = true;
+      }
+    }
+
+    function selectAll(flag, itemsArray) {
+      if (flag.checked == true) {
+        for (var i = 0; i < itemsArray.length; i++) {
+          itemsArray[i].checked = true;
+        }
+      } else {
+        for (var _i = 0; _i < itemsArray.length; _i++) {
+          itemsArray[_i].checked = false;
+        }
       }
     }
   })();

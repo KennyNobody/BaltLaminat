@@ -322,55 +322,6 @@ import datepicker from 'air-datepicker';
 		}
 	})();
 
-	// (function initScrollbars(){
-
-	// 	let isMobile;
-	// 	let scrollbar1;
-	// 	let scrollbar2;
-	// 	let init = false;
-
-
-	// 	function checkMobile() {
-	// 		if (document.documentElement.clientWidth > 1200) {
-	// 			isMobile = false;
-	// 			initLibs();
-	// 		} else {
-	// 			isMobile = true;
-	// 			destroyLibs();
-	// 		}
-	// 	}
-
-	// 	function initLibs() {
-	// 		if (init == false && isMobile == false) {
-	// 			if (document.querySelector('#scrollbar-1')) {
-	// 				scrollbar1 = new SimpleBar(document.querySelector('#scrollbar-1'));
-	// 			}
-	// 			if (document.querySelector('#scrollbar-2')) {
-	// 				scrollbar2 = new SimpleBar(document.querySelector('#scrollbar-2'));
-	// 			}
-	// 			init = true;
-	// 		}
-	// 	}
-
-	// 	function destroyLibs() {
-	// 		if (init == true && isMobile == true) {
-	// 			if (scrollbar1) {
-	// 				scrollbar1.unMount();
-	// 			}
-
-	// 			if (scrollbar2) {
-	// 				scrollbar2.unMount();
-	// 			}
-	// 			init = false;
-	// 		}
-	// 	}
-
-	// 	checkMobile();
-	// 	initLibs();
-
-	// 	window.addEventListener('resize', checkMobile);
-	// })();
-
 	(function initDatePicker(){
 		$('.lk-filter__datepicker').datepicker({
 			range: true
@@ -379,8 +330,6 @@ import datepicker from 'air-datepicker';
 
 	(function initSearch(){
 		const btn = document.querySelector('.footer-toolbar__link--search');
-
-		// console.log(btn);
 
 		if (btn) {
 			btn.addEventListener('click', function(e){
@@ -401,6 +350,47 @@ import datepicker from 'air-datepicker';
 					input.focus();
 				}, 1000);
 				
+			}
+		}
+	})();
+
+	(function selectAllCart(){
+		const btn = document.querySelector('.select-all');
+		let table;
+		let flag;
+		let itemsArray;
+
+		if (btn) {
+			table = btn.parentNode.parentNode.parentNode;
+			itemsArray = table.querySelectorAll('.lk-checkbox__input');
+			flag = table.querySelector('.lk-table-toolbar--head .lk-table-toolbar__col--checkbox .lk-checkbox__input');
+			
+			btn.addEventListener('click', function(){
+				toggleFlag();
+				selectAll(flag, itemsArray);
+			});
+			flag.addEventListener('change', function(){
+				selectAll(flag, itemsArray);
+			});
+		}
+
+		function toggleFlag() {
+			if (flag.checked == true) {
+				flag.checked = false;
+			} else {
+				flag.checked = true;
+			}
+		}
+
+		function selectAll(flag, itemsArray) {
+			if (flag.checked == true) {
+				for (let i = 0; i < itemsArray.length; i++) {
+					itemsArray[i].checked = true;
+				}
+			} else {
+				for (let i = 0; i < itemsArray.length; i++) {
+					itemsArray[i].checked = false;
+				}
 			}
 		}
 	})();
