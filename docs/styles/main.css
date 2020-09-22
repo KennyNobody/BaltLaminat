@@ -6354,6 +6354,10 @@ i {
   flex-wrap: wrap;
 }
 
+.lk-form__discript {
+  color: #828282;
+}
+
 .lk-input {
   border: 1px solid #2E2E2E;
   height: 42px;
@@ -6646,6 +6650,11 @@ i {
   margin-bottom: 32px;
 }
 
+.lk-company__header--modal {
+  padding: 0px;
+  background: none;
+}
+
 .lk-company__grid {
   display: flex;
   flex-wrap: wrap;
@@ -6654,6 +6663,14 @@ i {
 .lk-company__column {
   width: calc(100% / 3);
   margin-bottom: 48px;
+}
+
+.lk-company__column--3 {
+  width: calc(60% - 10px);
+}
+
+.lk-company__column--2 {
+  width: calc(40% - 10px);
 }
 
 .lk-company__title {
@@ -6758,6 +6775,10 @@ i {
   cursor: pointer;
 }
 
+.lk-checkbox--form {
+  margin-bottom: 17px;
+}
+
 .lk-checkbox__input {
   display: none;
 }
@@ -6789,6 +6810,18 @@ i {
   display: block;
   opacity: 0;
   transition: 0.3s all;
+}
+
+.lk-checkbox__text {
+  margin-left: 20px;
+}
+
+.lk-checkbox__text a {
+  color: #00C25A;
+}
+
+.lk-checkbox__text a:hover {
+  text-decoration: none;
 }
 
 .lk-table {

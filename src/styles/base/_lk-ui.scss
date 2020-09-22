@@ -48,6 +48,9 @@
 		// 	justify-content: flex-start;
 		// }
 	}
+	&__discript {
+		color: #828282;
+	}
 }
 
 .lk-input {
@@ -273,6 +276,10 @@
 	}
 }
 
+.lk-checkbox {
+
+}
+
 .final-price {
 	background-color: $light;
 	padding: 28px 30px 42px 30px;
@@ -358,6 +365,10 @@
 			padding: 0px;
 			background-color: inherit;
 		}
+		&--modal {
+			padding: 0px;
+			background: none;
+		}
 	}
 	&__grid {
 		display: flex;
@@ -369,6 +380,12 @@
 		@include r(1200) {
 			width: 100%;
 			margin-bottom: 20px;
+		}
+		&--3 {
+			width: calc(60% - 10px);
+		}
+		&--2 {
+			width: calc(40% - 10px);
 		}
 	}
 	&__title {
@@ -490,6 +507,9 @@
 	display: flex;
 	align-items: center;
 	cursor: pointer;
+	&--form {
+		margin-bottom: 17px;
+	}
 	&__input {
 		display: none;
 		&:checked {
@@ -518,6 +538,15 @@
 			display: block;
 			opacity: 0;
 			transition: 0.3s all;
+		}
+	}
+	&__text {
+		margin-left: 20px;
+		a {
+			color: $green;
+			&:hover {
+				text-decoration: none;
+			}
 		}
 	}
 }
