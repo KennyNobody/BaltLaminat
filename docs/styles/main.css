@@ -11095,6 +11095,10 @@ path {
   cursor: pointer;
 }
 
+.nav-check__input {
+  display: none;
+}
+
 .nav-check__input:checked + .nav-check__content .nav-check__icon-marker {
   opacity: 1;
 }
