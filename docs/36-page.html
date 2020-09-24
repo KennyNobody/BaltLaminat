@@ -4586,7 +4586,7 @@
 	</form>
 </section>
 
-<section class="modal-service modal-service--hidden" id="org-info">
+<section class="modal-service modal-service--hidden" id="org-info" style="display: none;">
 	<div class="lk-company">
 		<p class="lk-company__header lk-company__header--modal">
 			ИП Мебель на заказ
@@ -4676,6 +4676,134 @@
 			</div>
 		</div>
 	</div>
+</section>
+
+<section class="modal-service modal-service--org" id="add-org" style="display: none;">
+	<form action="" class="lk-form">
+		<h2 class="title single__title lk-form__h1">
+			Новая организация 
+		</h2>
+		<div class="lk-form__section">
+			<p class="title-small title-small--product lk-company__title">
+				<span>Данные об организации</span>
+			</p>
+			<div class="lk-field">
+				<p class="lk-field__title">
+					Наименование организации
+				</p>
+				<div class="lk-field__wrapper lk-field__wrapper--50">
+					<input type="text" class="lk-input lk-field__input" placeholder="">
+				</div>
+				<p class="lk-field__discript lk-field__discript--50">
+					Заполните поле с названием
+					или ИНН и система заполнит
+					остальные поля.
+				</p>
+			</div>
+			<div class="lk-field">
+				<p class="lk-field__title">
+					ИНН
+				</p>
+				<div class="lk-field__wrapper lk-field__wrapper--50">
+					<input type="text" class="lk-input lk-field__input" placeholder="10 цифр" >
+				</div>
+				<p class="lk-field__discript lk-field__discript--50"></p>
+			</div>
+			<div class="lk-field">
+				<p class="lk-field__title">
+					ОГРН: 
+				</p>
+				<div class="lk-field__wrapper lk-field__wrapper--50">
+					<input type="text" class="lk-input lk-field__input" placeholder="9 цифр">
+				</div>
+				<p class="lk-field__discript lk-field__discript--50"></p>
+			</div>
+			<div class="lk-field">
+				<p class="lk-field__title">
+					КПП: 
+				</p>
+				<div class="lk-field__wrapper lk-field__wrapper--50">
+					<input type="text" class="lk-input lk-field__input" placeholder="9 цифр">
+				</div>
+				<p class="lk-field__discript lk-field__discript--50"></p>
+			</div>
+			<div class="lk-field">
+				<p class="lk-field__title">
+					ОКПО: 
+				</p>
+				<div class="lk-field__wrapper lk-field__wrapper--50">
+					<input type="text" class="lk-input lk-field__input" placeholder="">
+				</div>
+				<p class="lk-field__discript lk-field__discript--50"></p>
+			</div>
+			<div class="lk-field">
+				<p class="lk-field__title">
+					Юридический адрес организации: 
+				</p>
+				<div class="lk-field__wrapper lk-field__wrapper--50">
+					<input type="text" class="lk-input lk-field__input" placeholder="236000, Калининград, ул. Пушкина, д. 10">
+				</div>
+				<p class="lk-field__discript lk-field__discript--50"></p>
+			</div>
+			<div class="lk-field">
+				<p class="lk-field__title">
+					Телефон
+				</p>
+				<div class="lk-field__wrapper lk-field__wrapper--50">
+					<input type="text" class="lk-input lk-field__input" placeholder="">
+				</div>
+				<p class="lk-field__discript lk-field__discript--50"></p>
+			</div>
+		</div>
+
+		<div class="lk-form__section">
+			<p class="title-small title-small--product lk-company__title">
+				<span>Данные о банке</span>
+			</p>
+			<div class="lk-field">
+				<p class="lk-field__title">
+					Расчетный счет: 
+				</p>
+				<div class="lk-field__wrapper lk-field__wrapper--50">
+					<input type="text" class="lk-input lk-field__input" placeholder="">
+				</div>
+				<p class="lk-field__discript lk-field__discript--50"></p>
+			</div>
+			<div class="lk-field">
+				<p class="lk-field__title">
+					Название банка: 
+				</p>
+				<div class="lk-field__wrapper lk-field__wrapper--50">
+					<input type="text" class="lk-input lk-field__input" placeholder="">
+				</div>
+				<p class="lk-field__discript lk-field__discript--50"></p>
+			</div>
+			<div class="lk-field">
+				<p class="lk-field__title">
+					Кор./Счёт: 
+				</p>
+				<div class="lk-field__wrapper lk-field__wrapper--50">
+					<input type="text" class="lk-input lk-field__input" placeholder="">
+				</div>
+				<p class="lk-field__discript lk-field__discript--50"></p>
+			</div>
+			<div class="lk-field">
+				<p class="lk-field__title">
+					БИК:
+				</p>
+				<div class="lk-field__wrapper lk-field__wrapper--50">
+					<input type="text" class="lk-input lk-field__input" placeholder="">
+				</div>
+				<p class="lk-field__discript lk-field__discript--50"></p>
+			</div>
+		</div>
+		<div class="capcha lk-form__capcha">
+			Тут будет капча
+		</div>
+		<button class="btn btn--dark lk-form__btn">
+			Сохранить
+		</button>
+	</form>
 </section>
     </div>
     <script src="js/vendor.js"></script>
