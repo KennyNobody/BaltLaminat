@@ -5942,8 +5942,9 @@ var createPopper = /*#__PURE__*/popperGenerator(); // eslint-disable-next-line i
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return contains; });
 function contains(parent, child) {
-  // $FlowFixMe: hasOwnProperty doesn't seem to work in tests
-  var isShadow = Boolean(child.getRootNode && child.getRootNode().host); // First, attempt with faster native method
+  var rootNode = child.getRootNode && child.getRootNode(); // $FlowFixMe: Node is not aware of host
+
+  var isShadow = Boolean(rootNode && rootNode.host); // First, attempt with faster native method
 
   if (parent.contains(child)) {
     return true;

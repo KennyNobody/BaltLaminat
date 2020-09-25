@@ -1184,41 +1184,47 @@ __webpack_require__.r(__webpack_exports__);
   })();
 
   (function selectAllCart() {
-    var btn = document.querySelector('.select-all');
-    var table;
-    var flag;
-    var itemsArray;
+    var btn = document.querySelectorAll('.select-all');
 
     if (btn) {
-      table = btn.parentNode.parentNode.parentNode;
-      itemsArray = table.querySelectorAll('.lk-checkbox__input');
-      flag = table.querySelector('.lk-table-toolbar--head .lk-table-toolbar__col--checkbox .lk-checkbox__input');
-      btn.addEventListener('click', function () {
-        toggleFlag();
-        selectAll(flag, itemsArray);
-      });
-      flag.addEventListener('change', function () {
-        selectAll(flag, itemsArray);
-      });
-    }
+      var _loop4 = function _loop4(i) {
+        var table = void 0;
+        var flag = void 0;
+        var itemsArray = void 0;
+        table = btn[i].parentNode.parentNode.parentNode;
+        itemsArray = table.querySelectorAll('.lk-checkbox__input');
+        flag = table.querySelector('.lk-table-toolbar--head .lk-table-toolbar__col--checkbox .lk-checkbox__input');
+        btn[i].addEventListener('click', function () {
+          toggleFlag();
+          selectAll(flag, itemsArray);
+        });
+        flag.addEventListener('change', function () {
+          selectAll(flag, itemsArray);
+        });
 
-    function toggleFlag() {
-      if (flag.checked == true) {
-        flag.checked = false;
-      } else {
-        flag.checked = true;
-      }
-    }
+        function toggleFlag() {
+          if (flag.checked == true) {
+            flag.checked = false;
+          } else {
+            flag.checked = true;
+          }
+        }
 
-    function selectAll(flag, itemsArray) {
-      if (flag.checked == true) {
-        for (var i = 0; i < itemsArray.length; i++) {
-          itemsArray[i].checked = true;
+        function selectAll(flag, itemsArray) {
+          if (flag.checked == true) {
+            for (var _i = 0; _i < itemsArray.length; _i++) {
+              itemsArray[_i].checked = true;
+            }
+          } else {
+            for (var _i2 = 0; _i2 < itemsArray.length; _i2++) {
+              itemsArray[_i2].checked = false;
+            }
+          }
         }
-      } else {
-        for (var _i = 0; _i < itemsArray.length; _i++) {
-          itemsArray[_i].checked = false;
-        }
+      };
+
+      for (var i = 0; i < btn.length; i++) {
+        _loop4(i);
       }
     }
   })();
