@@ -2,6 +2,12 @@ var $ = require('jquery');
 
 window.JQ = $;
 
+import cookie from 'jquery.cookie';
+
+console.log(cookie);
+
+window.cookie = cookie;
+
 import "./ui";
 
 import "%modules%/header/header";

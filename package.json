@@ -73,6 +73,7 @@
         "choices.js": "^9.0.1",
         "dropzone": "^5.7.1",
         "jquery": "^3.5.1",
+        "jquery.cookie": "^1.4.1",
         "mmenu-js": "^8.5.13",
         "nouislider": "^14.6.0",
         "smart-grid": "^2.1.2",
