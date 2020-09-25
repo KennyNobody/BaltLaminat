@@ -355,44 +355,49 @@ import datepicker from 'air-datepicker';
 	})();
 
 	(function selectAllCart(){
-		const btn = document.querySelector('.select-all');
-		let table;
-		let flag;
-		let itemsArray;
+		const btn = document.querySelectorAll('.select-all');
 
 		if (btn) {
-			table = btn.parentNode.parentNode.parentNode;
-			itemsArray = table.querySelectorAll('.lk-checkbox__input');
-			flag = table.querySelector('.lk-table-toolbar--head .lk-table-toolbar__col--checkbox .lk-checkbox__input');
+			for (let i = 0; i < btn.length; i++) {
+				let table;
+				let flag;
+				let itemsArray;
+
+				table = btn[i].parentNode.parentNode.parentNode;
+				itemsArray = table.querySelectorAll('.lk-checkbox__input');
+				flag = table.querySelector('.lk-table-toolbar--head .lk-table-toolbar__col--checkbox .lk-checkbox__input');
+
+				btn[i].addEventListener('click', function(){
+					toggleFlag();
+					selectAll(flag, itemsArray);
+				});
+				flag.addEventListener('change', function(){
+					selectAll(flag, itemsArray);
+				});
+
+				function toggleFlag() {
+					if (flag.checked == true) {
+						flag.checked = false;
+					} else {
+						flag.checked = true;
+					}
+				}
+
+				function selectAll(flag, itemsArray) {
+					if (flag.checked == true) {
+						for (let i = 0; i < itemsArray.length; i++) {
+							itemsArray[i].checked = true;
+						}
+					} else {
+						for (let i = 0; i < itemsArray.length; i++) {
+							itemsArray[i].checked = false;
+						}
+					}
+				}
+			}
 			
-			btn.addEventListener('click', function(){
-				toggleFlag();
-				selectAll(flag, itemsArray);
-			});
-			flag.addEventListener('change', function(){
-				selectAll(flag, itemsArray);
-			});
 		}
 
-		function toggleFlag() {
-			if (flag.checked == true) {
-				flag.checked = false;
-			} else {
-				flag.checked = true;
-			}
-		}
-
-		function selectAll(flag, itemsArray) {
-			if (flag.checked == true) {
-				for (let i = 0; i < itemsArray.length; i++) {
-					itemsArray[i].checked = true;
-				}
-			} else {
-				for (let i = 0; i < itemsArray.length; i++) {
-					itemsArray[i].checked = false;
-				}
-			}
-		}
 	})();
 
 

@@ -30,10 +30,7 @@
 		bottom: 0px;
 		display: block;
 		background-color: $dark;
-		width: 15px;
-		@include r(1200) {
-			width: 8px;
-		}
+		width: 100%;
 	}
 	&:after {
 		content: "";
@@ -43,10 +40,7 @@
 		bottom: 0px;
 		display: block;
 		background-color: $dark;
-		width: 15px;
-		@include r(1200) {
-			width: 8px;
-		}
+		width: 100%;
 	}
 	@include r(1200) {
 		display: block;
