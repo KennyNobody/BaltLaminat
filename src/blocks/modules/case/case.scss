@@ -8,9 +8,6 @@
 .case {
 	padding-top: 50px;
 	margin-bottom: 50px;
-	@include r(1700) {
-
-	}
 	@include r(1200) {
 		padding-top: 25px;
 		margin-bottom: 25px;
@@ -20,7 +17,6 @@
 		height: 60px;
 		display: flex;
 		@include r(1200) {
-			// display: block;
 			height: auto;
 			margin-bottom: 15px;
 			justify-content: space-between;
@@ -30,15 +26,12 @@
 		font-size: 30px;
 		text-transform: uppercase;
 		font-weight: bold;
-		margin-right: 120px;
+		margin-right: 80px;
 		padding-left: 0px;
 		transition: 0.3s all;
 		height: fit-content;
 		transition: 0.3s all;
 		cursor: pointer;
-		@include r(1700) {
-			margin-right: 80px;
-		}
 		@include r(1200) {
 			font-size: 16px;
 			margin-right: 0px;
@@ -80,10 +73,7 @@
 		}
 	}
 	&__articles {
-		width: calc(100% / 12 * 8 - 16px);
-		@include r(1700) {
-			width: calc(100% / 12 * 8 - 10px);
-		}
+		width: calc(100% / 12 * 8 - 10px);
 		@include r(1200) {
 			width: 100%;
 			margin-bottom: 30px;
@@ -96,10 +86,7 @@
 		}
 	}
 	&__sidebar {
-		width: calc(100% / 12 * 4 - 16px);
-		@include r(1700) {
-			width: calc(100% / 12 * 4 - 10px);
-		}
+		width: calc(100% / 12 * 4 - 10px);
 		@include r(1200) {
 			width: 100%;	
 		}
@@ -122,22 +109,15 @@
 		}
 	}
 	&__form {
-		margin-bottom: 32px;
-		@include r(1700) {
-			margin-bottom: 20px;
-		}
+		margin-bottom: 20px;
 	}
 }
 
 .item {
-	width: calc(25% - 18px);
+	width: calc(25% - 10px);
 	text-decoration: none;
 	color: $dark;
-	margin-bottom: 30px;
-	@include r(1700) {
-		margin-bottom: 25px;
-		width: calc(25% - 10px);
-	}
+	margin-bottom: 25px;
 	@include r(1200) {
 		width: calc(100% / 3 - 8px);
 	}
@@ -159,11 +139,7 @@
 		box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.08);
 		// height: 248px;
 		width: 100%;
-		margin-bottom: 20px;
-		@include r(1700) {
-			// height: 180px;
-			margin-bottom: 16px;
-		}
+		margin-bottom: 16px;
 		@include r(440) {
 			margin-bottom: 10px;
 		}
@@ -175,11 +151,8 @@
 	}
 	&__title {
 		font-weight: bold;
-		font-size: 20px;
+		font-size: 16px;
 		line-height: 1.3;
-		@include r(1700) {
-			font-size: 16px;		
-		}
 		@include r(440) {
 			font-weight: normal;
 			font-size: 16px;
@@ -211,12 +184,8 @@
 		}
 	}
 	&__button {
-		padding-left: 32px;
-		padding-right: 32px;
-		@include r(1700) {
-			padding-left: 14px;
-			padding-right: 14px;
-		}
+		padding-left: 14px;
+		padding-right: 14px;
 		@include r(1200) {
 			border-radius: 0px 4px 4px 0px;
 			font-size: 14px;
@@ -233,13 +202,10 @@
 		padding: 20px 10px;
 	}
 	&__title {
-		margin-bottom: 20px;
+		margin-bottom: 10px;
 		font-weight: bold;
 		font-size: 30px;
 		line-height: 1.3;
-		@include r(1700) {
-			margin-bottom: 10px;
-		}
 		@include r(1200) {
 			font-size: 22px;
 			margin-bottom: 15px;
@@ -250,39 +216,26 @@
 	}
 	&__table {
 		font-weight: 500;
-		font-size: 18px;
+		font-size: 16px;
 		border-collapse: collapse;
 		width: 100%;
 		border: 3px solid $green;
-		@include r(1700) {
-			font-size: 16px;
-		}
 		td {
-			padding-top: 20px;
-			padding-bottom: 20px;
-			@include r(1700) {
-				padding-top: 14px;
-				padding-bottom: 14px;
-			}
+			padding-top: 14px;
+			padding-bottom: 14px;
 			@include r(1200) {
 				padding-top: 10px;
 				padding-bottom: 10px;
 			}
 			&:first-child {
-				width: 60%;
+				width: 75%;
 				padding-right: 10px;
-				@include r(1700) {
-					width: 75%;
-				}
 			}
 			&:last-child {
-				width: 40%;
+				width: 25%;
 				text-align: center;
 				padding-left: 10px;
 				padding-right: 10px;
-				@include r(1700) {
-					width: 25%;
-				}
 			}
 		}
 		table {

@@ -5,13 +5,10 @@
 	justify-content: space-between;
 	&__item {
 		display: block;
-		height: 234px;
+		height: 210px;
 		width: calc(100% / 4 - 12px);
 		margin-bottom: 16px;
 		position: relative;
-		@include r(1700) {
-			height: 210px;
-		}
 		@include r(1200) {
 			height: 180px;
 			width: calc(100% / 3 - 12px);

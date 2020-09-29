@@ -285,11 +285,8 @@
 
 .final-price {
 	background-color: $light;
-	padding: 28px 30px 42px 30px;
+	padding: 20px;
 	box-shadow: 2px 4px 30px rgba(0, 0, 0, 0.14);
-	@include r(1700) {
-		padding: 20px;
-	}
 	&__title {
 		font-weight: bold;
 		font-size: 20px;
@@ -307,16 +304,10 @@
 		}
 	}
 	&__text {
-		display: flex;
-		justify-content: space-between;
-		align-items: baseline;
-		margin-bottom: 22px;
-		@include r(1700) {
+		display: block;
+		margin-bottom: 8px;
+		span {
 			display: block;
-			margin-bottom: 8px;
-			span {
-				display: block;
-			}
 		}
 		strong {
 			font-weight: bold;
@@ -637,26 +628,20 @@
 			}
 		}
 		&--checkbox {
-			width: 60px;
+			width: 40px;
 			display: flex;
 			justify-content: center;
 			align-items: center;
 			border-right: 1px solid #E5E5E5;
-			@include r(1700) {
-				width: 40px;
-			}
 			@include r(1200) {
 				display: none;
 			}
 		}
 		&--number {
-			width: 60px;
+			width: 45px;
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			@include r(1700) {
-				width: 45px;
-			}
 			@include r(1200) {
 				display: none;
 			}
@@ -673,11 +658,8 @@
 		&--content {
 			min-width: 0px;
 			flex-grow: 1;
-			padding: 16px 32px;
+			padding: 16px 16px;
 			flex-shrink: 1;
-			@include r(1700) {
-				padding: 16px 16px;
-			}
 			@include r(1200) {
 				padding: 0px;
 				margin-bottom: 16px;
@@ -685,15 +667,11 @@
 			}
 		}
 		&--count {
-			padding: 16px 32px;
+			padding: 16px;
 			display: flex;
 			justify-content: center;
 			align-items:center;
-			width: 300px;
-			@include r(1700) {
-				padding: 16px 16px;
-				width: 220px;
-			}
+			width: 220px;
 			@include r(1200) {
 				max-width: 100%;
 				padding: 0px;
@@ -701,15 +679,11 @@
 			}
 		}
 		&--result {
-			width: 220px;
-			padding: 16px 32px;
+			width: 200px;
+			padding: 16px 16px;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
-			@include r(1700) {
-				padding: 16px 16px;
-				width: 200px;
-			}
 			@include r(1200) {
 				width: 100%;
 				padding: 0px;
@@ -779,27 +753,19 @@
 	display: flex;
 	&--head {
 		background-color: #F9F9F9;
-		padding-top: 15px;
-		padding-bottom: 15px;
+		padding-top: 10px;
+		padding-bottom: 10px;
 		align-items: center;
 		border-bottom: 1px solid #E5E5E5;
-		@include r(1700) {
-			padding-top: 10px;
-			padding-bottom: 10px;
-		}
 		@include r(1200) {
 			display: none;
 		}
 	}
 	&--footer {
 		background-color: $light;
-		padding-top: 35px;
-		padding-bottom: 35px;
+		padding-top: 10px;
+		padding-bottom: 10px;
 		align-items: stretch;
-		@include r(1700) {
-			padding-top: 10px;
-			padding-bottom: 10px;
-		}
 		@include r(1200) {
 			display: block;
 			padding: 20px;
@@ -825,12 +791,8 @@
 		&--grow {
 			flex-grow: 1;
 			min-width: 0px;
-			padding-left: 32px;
-			padding-right: 32px;
-			@include r(1700) {
-				padding-left: 16px;
-				padding-right: 16px;
-			}
+			padding-left: 16px;
+			padding-right: 16px;
 		}
 		&--footer-grow {
 			display: flex;
@@ -838,41 +800,26 @@
 			align-items: center;
 			flex-grow: 1;
 			min-width: 0px;
-			padding: 16px 32px;
-			@include r(1700) {
-				padding: 16px;
-			}
+			padding: 16px;
 			@include r(1200) {
 				display: block;
 				padding: 0px;
 			}
 		}
 		&--repair {
-			padding: 16px 32px;
-			width: 220px;
-			@include r(1700) {
-				width: 200px;
-				padding: 16px;
-			}
+			padding: 16px;
+			width: 200px;
 		}
 		&--removed {
-			padding: 16px 32px;
-			width: 300px;
+			padding: 16px;
+			width: 220px;
 			display: flex;
 			justify-content: flex-end;
-			@include r(1700) {
-				width: 220px;
-				padding: 16px;
-			}
 		}
 		&--result {
-			padding: 16px 32px;
-			width: 220px;
+			padding: 0px;
+			width: 200px;
 			display: block;
-			@include r(1200) {
-				padding: 0px;
-				width: 200px;
-			}
 		}
 	}
 	&__repair-btn {

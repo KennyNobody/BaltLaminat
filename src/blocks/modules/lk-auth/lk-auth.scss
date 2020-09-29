@@ -9,10 +9,7 @@
 	}
 	&__column {
 		width: 50%;
-		padding: 42px 140px 57px 140px;
-		@include r(1700) {
-			padding: 40px 70px 50px 70px;
-		}
+		padding: 40px 70px 50px 70px;
 		@include r(1200) {
 			width: 100%;
 		}

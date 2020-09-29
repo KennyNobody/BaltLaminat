@@ -113,11 +113,8 @@
 			height: 54px;
 			width: 54px;
 			transition: 0.3s all;
-			top: 7px;
+			top: 15px;
 			right: 0px;
-			@include r(1700) {
-				top: 15px;
-			}
 		}
 	}
 }

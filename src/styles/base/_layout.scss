@@ -11,14 +11,13 @@
 }
 
 .container {
-	max-width: 1680px;
+	max-width: 1200px;
 	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
 	padding-left: 15px;
 	padding-right: 15px;
-	@include r(1700) {
-		max-width: 1210px;
+	@include r(1200) {
 		padding-left: 8px;
 		padding-right: 8px;
 	}

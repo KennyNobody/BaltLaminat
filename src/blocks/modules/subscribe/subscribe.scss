@@ -1,6 +1,3 @@
-@include r(1700) {
-
-}
 @include r(1200) {
 
 }
@@ -24,11 +21,8 @@
 		font-weight: bold;
 		font-size: 20px;
 		min-width: 0px;
-		margin-right: 32px;
+		margin-right: 20px;
 		line-height: 1.25;
-		@include r(1700) {
-			margin-right: 20px;
-		}
 		@include r(1200) {
 			margin-right: 0px;
 			margin-bottom: 12px;
@@ -53,15 +47,11 @@
 		height: 50px;
 		border: none;
 		margin-right: 32px;
-		width: 388px;
+		width: 280px;
 		background: #4F4F4F;
 		color: $light;
 		padding-left: 23px;
 		padding-right: 23px;
-		font-family: $font-main;
-		@include r(1700) {
-			width: 280px;
-		}
 		@include r(1200) {
 			width: auto;
 			flex-grow: 1;

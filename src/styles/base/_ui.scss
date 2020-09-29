@@ -40,9 +40,6 @@
 	text-align: center;
 	padding-top: 5px;
 	padding-bottom: 5px;
-	@include r(1700) {
-
-	}
 	@include r(1200) {
 		font-size: 16px;
 	}
@@ -117,9 +114,6 @@
 	font-weight: bold;
 	font-size: 50px;
 	line-height: 1.3;
-	@include r(1700) {
-
-	}
 	@include r(1200) {
 		font-size: 30px;
 	}
@@ -449,6 +443,7 @@
 		border-bottom: 1px solid #E5E5E5;
 		padding-left: 12px;
 		padding-right: 12px;
+		font-size: 14px;
 		&:last-child {
 			border-bottom: 0px;
 		}
@@ -456,9 +451,6 @@
 			@include r(1200) {
 				background: #F9F9F9;
 			}
-		}
-		@include r(1700) {
-			font-size: 14px;
 		}
 		@include r(1200) {
 			display: block;

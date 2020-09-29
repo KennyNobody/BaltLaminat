@@ -56,11 +56,8 @@
 		max-width: 948px;
 		width: 100%;
 		margin-bottom: 2rem;
-		height: 570px;
+		height: 480px;
 		margin-top: 2rem;
-		@include r(1700) {
-			height: 480px;
-		}
 	}
 	picture {
 		padding-right: 140px;
@@ -123,14 +120,9 @@
 	svg {
 		flex-shrink: 0;
 		display: block;
-		width: 40px;
-		height: 40px;
-		margin-right: 24px;
-		@include r(1700) {
-			margin-right: 12px;
-			width: 26px;
-			height: 26px;
-		}
+		width: 26px;
+		height: 26px;
+		margin-right: 12px;
 		@include r(1200) {
 			width: 22px;
 			height: 22px;
@@ -140,13 +132,7 @@
 	span, a {
 		text-decoration: none;
 		color: $dark;
-		font-size: 20px;
-		@include r(1700) {
-			font-size: 16px;
-		}
-		@include r(1200) {
-			font-size: 16px;
-		}
+		font-size: 16px;
 	}
 	a {
 		&:hover {

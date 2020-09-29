@@ -64,19 +64,13 @@
 	}
 	&__partner {
 		display: block;
-		margin-bottom: 48px;
-		width: fit-content;
-		@include r(1700) {
-			width: auto;
-			margin-bottom: 20px;
-		}
+		width: auto;
+		margin-bottom: 20px;
 		img {
 			display: block;
 			width: 248px;
 			height: auto;
-			@include r(1700) {
-				max-width: 100%;
-			}
+			max-width: 100%;
 		}
 		&:hover {
 			opacity: 0.7;
@@ -86,10 +80,7 @@
 		margin-bottom: 60px;
 	}
 	&__offers {
-		width: calc(100% / 12 * 10 - 16px);
-		@include r(1700) {
-			width: 100%;
-		}
+		width: 100%;
 	}
 	&__ill {
 		display: block;

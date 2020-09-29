@@ -772,7 +772,7 @@ window.initSlider = function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var jquery_cookie__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery.cookie */ "./node_modules/jquery.cookie/jquery.cookie.js");
+/* WEBPACK VAR INJECTION */(function(__webpack_provided_window_dot_$) {/* harmony import */ var jquery_cookie__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery.cookie */ "./node_modules/jquery.cookie/jquery.cookie.js");
 /* harmony import */ var jquery_cookie__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery_cookie__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _ui__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ui */ "./src/js/import/ui.js");
 /* harmony import */ var _modules_header_header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! %modules%/header/header */ "./src/blocks/modules/header/header.js");
@@ -792,7 +792,9 @@ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"
 window.JQ = $;
 
 console.log(jquery_cookie__WEBPACK_IMPORTED_MODULE_0___default.a);
+__webpack_provided_window_dot_$ = $;
 window.cookie = jquery_cookie__WEBPACK_IMPORTED_MODULE_0___default.a;
+console.log($.cookie);
 
  // import "%modules%/footer/footer";
 
@@ -804,6 +806,7 @@ window.cookie = jquery_cookie__WEBPACK_IMPORTED_MODULE_0___default.a;
 
 
 
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
 

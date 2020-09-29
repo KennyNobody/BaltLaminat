@@ -20,9 +20,7 @@
 			width: calc(100% / 10 * 8 - 16px);
 		}
 		&--sm-desktop-full {
-			@include r(1700) {
-				width: 100%;
-			}
+			width: 100%;
 		}
 	}
 	&__ill {
