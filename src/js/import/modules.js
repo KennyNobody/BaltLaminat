@@ -4,13 +4,10 @@ window.JQ = $;
 
 import cookie from 'jquery.cookie';
 
-console.log(cookie);
-
 window.$ = $;
 
 window.cookie = cookie;
 
-console.log($.cookie)
 
 import "./ui";
 

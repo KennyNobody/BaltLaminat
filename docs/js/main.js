@@ -162,52 +162,91 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-(function () {
-  (function toggleDropdownLink() {
-    var dropdown = document.querySelectorAll('.select-sort');
+window.addEventListener('load', function () {
+  (function () {
+    (function toggleDropdownLink() {
+      var dropdown = document.querySelectorAll('.select-sort');
 
-    for (var i = 0; i < dropdown.length; i++) {
-      dropdown[i].addEventListener('change', function () {
-        toggleLink(this);
-      });
-    }
-
-    function toggleLink(item) {
-      var selected = item.options[item.selectedIndex].value;
-      window.location.href = selected;
-    }
-  })();
-
-  (function selectAll() {
-    var btns = document.querySelectorAll('.filter__btn-all');
-
-    if (btns) {
-      for (var i = 0; i < btns.length; i++) {
-        initSection(btns[i]);
+      for (var i = 0; i < dropdown.length; i++) {
+        dropdown[i].addEventListener('change', function () {
+          toggleLink(this);
+        });
       }
-    }
 
-    function initSection(item) {
-      var checked = false;
-      var inputArray = item.parentNode.parentNode.querySelectorAll('.filter-checkbox__input');
-      item.addEventListener('click', function () {
-        if (checked == false) {
-          for (var _i = 0; _i < inputArray.length; _i++) {
-            inputArray[_i].checked = true;
-          }
+      function toggleLink(item) {
+        var selected = item.options[item.selectedIndex].value;
+        window.location.href = selected;
+      }
+    })();
 
-          checked = true;
-        } else {
-          for (var _i2 = 0; _i2 < inputArray.length; _i2++) {
-            inputArray[_i2].checked = false;
-          }
+    (function selectAll() {
+      var btns = document.querySelectorAll('.filter__btn-all');
 
-          checked = false;
+      if (btns) {
+        for (var i = 0; i < btns.length; i++) {
+          initSection(btns[i]);
         }
-      });
-    }
+      }
+
+      function initSection(item) {
+        var checked = false;
+        var inputArray = item.parentNode.parentNode.querySelectorAll('.filter-checkbox__input');
+        item.addEventListener('click', function () {
+          if (checked == false) {
+            for (var _i = 0; _i < inputArray.length; _i++) {
+              inputArray[_i].checked = true;
+            }
+
+            checked = true;
+          } else {
+            for (var _i2 = 0; _i2 < inputArray.length; _i2++) {
+              inputArray[_i2].checked = false;
+            }
+
+            checked = false;
+          }
+        });
+      }
+    })();
+
+    (function sort() {
+      var toolbar = document.querySelector('.toolbar');
+
+      if (toolbar) {
+        var inputs = toolbar.querySelectorAll('input');
+        var selects = toolbar.querySelectorAll('select');
+
+        for (var i = 0; i < inputs.length; i++) {
+          inputs[i].addEventListener('change', changeState);
+        }
+
+        for (var n = 0; n < selects.length; n++) {
+          selects[n].addEventListener('change', changeState);
+        }
+      } // http://194.67.90.164/catalog/6256/?sort=catalog_PRICE_1&order=asc
+
+
+      function changeState() {
+        var type = toolbar.elements["layout"].value;
+        var sort = toolbar.elements["sort"].value;
+        var quanity = toolbar.elements["item-quality"].value;
+        var params = "?display=" + type + "&sort=" + sort + "&elementcount=" + quanity;
+        setUrl(params);
+      }
+
+      function setUrl(params) {
+        var oldUrl = window.location.href;
+        url = trimToLastForwardslash(oldUrl);
+        window.location.href = window.location.href + params; // console.log(url);
+      }
+
+      function trimToLastForwardslash(input) {
+        var lastBackSlash = input.lastIndexOf('/');
+        return lastBackSlash != -1 && lastBackSlash != input.length - 1 ? input.substring(0, lastBackSlash + 1) : input;
+      }
+    })();
   })();
-})();
+});
 
 /***/ }),
 
@@ -791,10 +830,8 @@ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"
 
 window.JQ = $;
 
-console.log(jquery_cookie__WEBPACK_IMPORTED_MODULE_0___default.a);
 __webpack_provided_window_dot_$ = $;
 window.cookie = jquery_cookie__WEBPACK_IMPORTED_MODULE_0___default.a;
-console.log($.cookie);
 
  // import "%modules%/footer/footer";
 

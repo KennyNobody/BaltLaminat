@@ -9520,7 +9520,7 @@
                         </aside>
                         <div class="catalog__main">
                             <div class="catalog__header">
-                                <div class="toolbar">
+                                <form class="toolbar">
                                     <div class="sort-type">
 
                                         <a href="#filter" class="sort-type__btn sort-type__btn--filter" data-fancybox="filter-modal">
@@ -9530,7 +9530,7 @@
                                         </a>
 
                                         <label type="radio" class="sort-type__btn sort-type__btn--masonry">
-                                            <input class="sort-type__input" checked type="radio" name="layout">
+                                            <input class="sort-type__input" checked type="radio" value="block" name="layout">
                                             <div class="sort-type__btn-content">
                                                 <svg class="icon-svg">
                                                     <use xlink:href="img/sprites/sprite.svg#icon-masonry"></use>
@@ -9542,7 +9542,7 @@
                                         </label>
 
                                         <label type="radio" class="sort-type__btn sort-type__btn--list">
-                                            <input class="sort-type__input" type="radio" name="layout">
+                                            <input class="sort-type__input" type="radio" value="list" name="layout">
                                             <div class="sort-type__btn-content">
                                                 <svg class="icon-svg">
                                                     <use xlink:href="img/sprites/sprite.svg#icon-list"></use>
@@ -9560,11 +9560,11 @@
                                         <p class="sort-price__title">
                                             Сортировать по:
                                         </p>
-                                        <select class="dropdown">
-                                            <option value="1">Цене (возрастанию)</option>
-                                            <option value="2">Цене (убыванию)</option>
-                                            <option value="3">Популярности (возрастанию)</option>
-                                            <option value="4">Популярности (убыванию)</option>
+                                        <select class="dropdown" name="sort">
+                                            <option value="catalog_PRICE&order=asc">Цене (возрастанию)</option>
+                                            <option value="catalog_PRICE&order=desc">Цене (убыванию)</option>
+                                            <option value="catalog_POPULAR&order=asc">Популярности (возрастанию)</option>
+                                            <option value="catalog_POPULAR&order=desc">Популярности (убыванию)</option>
 
                                         </select>
                                     </div>
@@ -9574,23 +9574,23 @@
                                             Показывать по:
                                         </p>
                                         <label class="sort-quanity__btn">
-                                            <input class="sort-quanity__input" checked type="radio" name="item-quality">
+                                            <input class="sort-quanity__input" checked type="radio" name="item-quality" value="20">
                                             <span>20</span>
                                         </label>
                                         <label class="sort-quanity__btn">
-                                            <input class="sort-quanity__input" type="radio" name="item-quality">
+                                            <input class="sort-quanity__input" type="radio" name="item-quality" value="40">
                                             <span>40</span>
                                         </label>
                                         <label class="sort-quanity__btn">
-                                            <input class="sort-quanity__input" type="radio" name="item-quality">
+                                            <input class="sort-quanity__input" type="radio" name="item-quality" value="100">
                                             <span>100</span>
                                         </label>
                                         <label class="sort-quanity__btn">
-                                            <input class="sort-quanity__input" type="radio" name="item-quality">
+                                            <input class="sort-quanity__input" type="radio" name="item-quality" value="all">
                                             <span>Все</span>
                                         </label>
                                     </div>
-                                </div>
+                                </form>
                             </div>
                             <div class="catalog__articles articles">
 
