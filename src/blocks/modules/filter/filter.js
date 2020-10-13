@@ -81,8 +81,8 @@ window.addEventListener('load', function(){
 				let oldUrl = window.location.href;
 				url = trimToLastForwardslash(oldUrl);
 
-				window.location.href = window.location.href + params;
-				// console.log(url);
+				window.location.href = url + params;
+				console.log(url + params);
 			}
 
 			function trimToLastForwardslash(input) {

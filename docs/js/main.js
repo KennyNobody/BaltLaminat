@@ -237,7 +237,8 @@ window.addEventListener('load', function () {
       function setUrl(params) {
         var oldUrl = window.location.href;
         url = trimToLastForwardslash(oldUrl);
-        window.location.href = window.location.href + params; // console.log(url);
+        window.location.href = url + params;
+        console.log(url + params);
       }
 
       function trimToLastForwardslash(input) {
@@ -307,9 +308,31 @@ window.addEventListener('load', function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tippy_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tippy.js */ "./node_modules/tippy.js/dist/tippy.esm.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e2) { throw _e2; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e3) { didErr = true; err = _e3; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+ // let tenantArrs = [
+// 	["7", "ART FLEX", "Описание магазина ART FLEX", "https://placehold.it/1800x400", "/tenants/art_flex/", "1"],
+// 	["2", "ASCONA", "Описание магазина ASCONA", "https://placehold.it/1800x400", "/tenants/askona/", "2"],
+// 	["3", "BOXX", "Описание магазина BOXX", "https://placehold.it/1800x400", "/tenants/boxx/", "10"],
+// 	["1", "Hilding Anders", "Описание магазина ART FLEX", "https://placehold.it/1800x400", "/tenants/hilding-anders/", "3"],
+// 	["2", "Lalala", "Описание магазина Lalala", "https://placehold.it/1800x400", "/tenants/lalala/", "1"],
+// 	["5", "Test Test", "Описание магазина TestTest", "https://placehold.it/1800x400", "/tenants/TestTest/", "5"]
+// ];
 
 (function initMapSlider() {
+  var map = document.querySelector('.map');
   var button = document.querySelectorAll('.map__change-floor');
   var layers = document.querySelectorAll('[data-floor]');
   var checkbox = document.querySelectorAll('[data-type]');
@@ -317,12 +340,38 @@ __webpack_require__.r(__webpack_exports__);
   var fields = document.querySelectorAll('.map__room');
   var floorNavs = document.querySelectorAll('[data-floorNavs]');
 
+  if (tenantArrs) {
+    var _iterator = _createForOfIteratorHelper(tenantArrs.entries()),
+        _step;
+
+    try {
+      for (_iterator.s(); !(_step = _iterator.n()).done;) {
+        var _step$value = _slicedToArray(_step.value, 2),
+            index = _step$value[0],
+            block = _step$value[1];
+
+        setAttrubutes(index, block);
+      }
+    } catch (err) {
+      _iterator.e(err);
+    } finally {
+      _iterator.f();
+    }
+  }
+
   for (var i = 0; i < button.length; i++) {
     button[i].addEventListener('click', toggleFloor);
   }
 
-  for (var _i = 0; _i < checkbox.length; _i++) {
-    checkbox[_i].addEventListener('click', toggleTypeField);
+  for (var _i2 = 0; _i2 < checkbox.length; _i2++) {
+    checkbox[_i2].addEventListener('click', toggleTypeField);
+  }
+
+  function setAttrubutes(index, block) {
+    var content = "<div class='map-tippy'><img src='" + block[3] + "' alt='" + block[1] + "' class='map-tippy__logo'><p class='map-tippy__title'>" + block[1] + "</p><p class='map-tippy__content'>" + block[2] + "</p><a href='" + block[4] + "' class='btn btn--dark map-tippy__btn'>Подробнее</a></div>";
+    var field = map.querySelector("#field-" + (index + 1));
+    field.setAttribute('data-tippy-content', content);
+    field.setAttribute('data-map-field', block[5]);
   }
 
   initTippy();
@@ -335,8 +384,8 @@ __webpack_require__.r(__webpack_exports__);
   }
 
   function toggleFloor() {
-    for (var _i2 = 0; _i2 < button.length; _i2++) {
-      button[_i2].classList.remove('map__change-floor--active');
+    for (var _i3 = 0; _i3 < button.length; _i3++) {
+      button[_i3].classList.remove('map__change-floor--active');
     }
 
     var activeFloor = +this.getAttribute('data-btn-floor');
@@ -347,31 +396,31 @@ __webpack_require__.r(__webpack_exports__);
   }
 
   function toggleActiveClass(number) {
-    for (var _i3 = 0; _i3 < layers.length; _i3++) {
-      if (layers[_i3].getAttribute('data-floor') == number) {
-        layers[_i3].classList.add('map__slide--active');
+    for (var _i4 = 0; _i4 < layers.length; _i4++) {
+      if (layers[_i4].getAttribute('data-floor') == number) {
+        layers[_i4].classList.add('map__slide--active');
       } else {
-        layers[_i3].classList.remove('map__slide--active');
+        layers[_i4].classList.remove('map__slide--active');
       }
     }
   }
 
   function toggleNavs(number) {
-    for (var _i4 = 0; _i4 < floorNavs.length; _i4++) {
-      if (floorNavs[_i4].getAttribute('data-floorNavs') == number) {
-        floorNavs[_i4].classList.remove('map-hidden');
+    for (var _i5 = 0; _i5 < floorNavs.length; _i5++) {
+      if (floorNavs[_i5].getAttribute('data-floorNavs') == number) {
+        floorNavs[_i5].classList.remove('map-hidden');
       } else {
-        floorNavs[_i4].classList.add('map-hidden');
+        floorNavs[_i5].classList.add('map-hidden');
       }
     }
   }
 
   function hidePreviousFloors(number) {
-    for (var _i5 = 0; _i5 < layers.length; _i5++) {
-      if (layers[_i5].getAttribute('data-floor') > number) {
-        layers[_i5].classList.add('map__slide--hide');
+    for (var _i6 = 0; _i6 < layers.length; _i6++) {
+      if (layers[_i6].getAttribute('data-floor') > number) {
+        layers[_i6].classList.add('map__slide--hide');
       } else {
-        layers[_i5].classList.remove('map__slide--hide');
+        layers[_i6].classList.remove('map__slide--hide');
       }
     }
   }
@@ -379,19 +428,19 @@ __webpack_require__.r(__webpack_exports__);
   function toggleTypeField(number) {
     var activeType = +this.getAttribute('data-type');
 
-    for (var _i6 = 0; _i6 < fields.length; _i6++) {
-      if (fields[_i6].getAttribute('data-map-field') == activeType) {
-        fields[_i6].classList.add('map__room--active');
+    for (var _i7 = 0; _i7 < fields.length; _i7++) {
+      if (fields[_i7].getAttribute('data-map-field') == activeType) {
+        fields[_i7].classList.add('map__room--active');
       } else {
-        fields[_i6].classList.remove('map__room--active');
+        fields[_i7].classList.remove('map__room--active');
       }
     }
 
-    for (var _i7 = 0; _i7 < partner.length; _i7++) {
-      if (partner[_i7].getAttribute('data-partner-type') == activeType) {
-        partner[_i7].classList.add('map__list-item--active');
+    for (var _i8 = 0; _i8 < partner.length; _i8++) {
+      if (partner[_i8].getAttribute('data-partner-type') == activeType) {
+        partner[_i8].classList.add('map__list-item--active');
       } else {
-        partner[_i7].classList.remove('map__list-item--active');
+        partner[_i8].classList.remove('map__list-item--active');
       }
     }
   }
