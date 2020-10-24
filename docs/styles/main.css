@@ -9014,13 +9014,12 @@ i {
 }
 
 .case__header {
-  margin-bottom: 50px;
-  height: 60px;
+  margin-bottom: 30px;
   display: flex;
 }
 
 .case__title {
-  font-size: 30px;
+  font-size: 20px;
   text-transform: uppercase;
   font-weight: bold;
   margin-right: 80px;
@@ -9039,7 +9038,7 @@ i {
 .case__title--active:after {
   left: 0px;
   position: absolute;
-  bottom: 12px;
+  bottom: 8px;
   height: 4px;
   width: 100%;
   background-color: #00C25A;
@@ -9079,7 +9078,11 @@ i {
 
 .case__status {
   font-weight: bold;
-  font-size: 30px;
+  font-size: 20px;
+}
+
+.case__status strong {
+  color: #00C25A;
 }
 
 .case__link-all {
@@ -9163,9 +9166,9 @@ i {
 }
 
 .data-table__title {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   font-weight: bold;
-  font-size: 30px;
+  font-size: 20px;
   line-height: 1.3;
 }
 
