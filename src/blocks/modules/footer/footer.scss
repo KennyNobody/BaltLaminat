@@ -51,7 +51,7 @@
 	}
 	&__contacts {
 		@include r(1200) {
-			display: flex;
+			display: block;
 			align-items: center;
 			padding-top: 16px;
 			padding-bottom: 16px;
@@ -99,11 +99,26 @@
 		}
 	}
 	&__btn {
-		width: 280px;
 		margin-bottom: 17px;
 		border-radius: 4px;
+		max-width: 100%;
 		@include r(1200) {
 			margin-bottom: 0px;
+			display: flex;
+		}
+		&--1 {
+			width: 320px;
+			margin-right: 15px;
+			@include r(1200) {
+				margin-bottom: 10px;
+				margin-right: 0px;
+			}
+		}
+		&--2 {
+			width: 140px;
+			@include r(1200) {
+				width: 320px;
+			}
 		}
 	}
 }

@@ -331,120 +331,124 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 // 	["5", "Test Test", "Описание магазина TestTest", "https://placehold.it/1800x400", "/tenants/TestTest/", "5"]
 // ];
 
-(function initMapSlider() {
-  var map = document.querySelector('.map');
-  var button = document.querySelectorAll('.map__change-floor');
-  var layers = document.querySelectorAll('[data-floor]');
-  var checkbox = document.querySelectorAll('[data-type]');
-  var partner = document.querySelectorAll('[data-partner-type]');
-  var fields = document.querySelectorAll('.map__room');
-  var floorNavs = document.querySelectorAll('[data-floorNavs]');
+window.addEventListener('load', function () {
+  (function initMapSlider() {
+    var tenantArrs = BX.message('tenants'); // window.tenantArrs = tenantArrs;
 
-  if (tenantArrs) {
-    var _iterator = _createForOfIteratorHelper(tenantArrs.entries()),
-        _step;
+    var map = document.querySelector('.map');
+    var button = document.querySelectorAll('.map__change-floor');
+    var layers = document.querySelectorAll('[data-floor]');
+    var checkbox = document.querySelectorAll('[data-type]');
+    var partner = document.querySelectorAll('[data-partner-type]');
+    var fields = document.querySelectorAll('.map__room');
+    var floorNavs = document.querySelectorAll('[data-floorNavs]'); // let tenantArrs = window.tenants;
 
-    try {
-      for (_iterator.s(); !(_step = _iterator.n()).done;) {
-        var _step$value = _slicedToArray(_step.value, 2),
-            index = _step$value[0],
-            block = _step$value[1];
+    if (tenantArrs) {
+      var _iterator = _createForOfIteratorHelper(tenantArrs.entries()),
+          _step;
 
-        setAttrubutes(index, block);
-      }
-    } catch (err) {
-      _iterator.e(err);
-    } finally {
-      _iterator.f();
-    }
-  }
+      try {
+        for (_iterator.s(); !(_step = _iterator.n()).done;) {
+          var _step$value = _slicedToArray(_step.value, 2),
+              index = _step$value[0],
+              block = _step$value[1];
 
-  for (var i = 0; i < button.length; i++) {
-    button[i].addEventListener('click', toggleFloor);
-  }
-
-  for (var _i2 = 0; _i2 < checkbox.length; _i2++) {
-    checkbox[_i2].addEventListener('click', toggleTypeField);
-  }
-
-  function setAttrubutes(index, block) {
-    var content = "<div class='map-tippy'><img src='" + block[3] + "' alt='" + block[1] + "' class='map-tippy__logo'><p class='map-tippy__title'>" + block[1] + "</p><p class='map-tippy__content'>" + block[2] + "</p><a href='" + block[4] + "' class='btn btn--dark map-tippy__btn'>Подробнее</a></div>";
-    var field = map.querySelector("#field-" + (index + 1));
-    field.setAttribute('data-tippy-content', content);
-    field.setAttribute('data-map-field', block[5]);
-  }
-
-  initTippy();
-
-  function initTippy() {
-    Object(tippy_js__WEBPACK_IMPORTED_MODULE_0__["default"])(fields, {
-      trigger: 'click',
-      allowHTML: true
-    });
-  }
-
-  function toggleFloor() {
-    for (var _i3 = 0; _i3 < button.length; _i3++) {
-      button[_i3].classList.remove('map__change-floor--active');
-    }
-
-    var activeFloor = +this.getAttribute('data-btn-floor');
-    this.classList.add('map__change-floor--active');
-    toggleActiveClass(activeFloor);
-    hidePreviousFloors(activeFloor);
-    toggleNavs(activeFloor);
-  }
-
-  function toggleActiveClass(number) {
-    for (var _i4 = 0; _i4 < layers.length; _i4++) {
-      if (layers[_i4].getAttribute('data-floor') == number) {
-        layers[_i4].classList.add('map__slide--active');
-      } else {
-        layers[_i4].classList.remove('map__slide--active');
-      }
-    }
-  }
-
-  function toggleNavs(number) {
-    for (var _i5 = 0; _i5 < floorNavs.length; _i5++) {
-      if (floorNavs[_i5].getAttribute('data-floorNavs') == number) {
-        floorNavs[_i5].classList.remove('map-hidden');
-      } else {
-        floorNavs[_i5].classList.add('map-hidden');
-      }
-    }
-  }
-
-  function hidePreviousFloors(number) {
-    for (var _i6 = 0; _i6 < layers.length; _i6++) {
-      if (layers[_i6].getAttribute('data-floor') > number) {
-        layers[_i6].classList.add('map__slide--hide');
-      } else {
-        layers[_i6].classList.remove('map__slide--hide');
-      }
-    }
-  }
-
-  function toggleTypeField(number) {
-    var activeType = +this.getAttribute('data-type');
-
-    for (var _i7 = 0; _i7 < fields.length; _i7++) {
-      if (fields[_i7].getAttribute('data-map-field') == activeType) {
-        fields[_i7].classList.add('map__room--active');
-      } else {
-        fields[_i7].classList.remove('map__room--active');
+          setAttrubutes(index, block);
+        }
+      } catch (err) {
+        _iterator.e(err);
+      } finally {
+        _iterator.f();
       }
     }
 
-    for (var _i8 = 0; _i8 < partner.length; _i8++) {
-      if (partner[_i8].getAttribute('data-partner-type') == activeType) {
-        partner[_i8].classList.add('map__list-item--active');
-      } else {
-        partner[_i8].classList.remove('map__list-item--active');
+    for (var i = 0; i < button.length; i++) {
+      button[i].addEventListener('click', toggleFloor);
+    }
+
+    for (var _i2 = 0; _i2 < checkbox.length; _i2++) {
+      checkbox[_i2].addEventListener('click', toggleTypeField);
+    }
+
+    function setAttrubutes(index, block) {
+      var content = "<div class='map-tippy'><img src='" + block[3] + "' alt='" + block[1] + "' class='map-tippy__logo'><p class='map-tippy__title'>" + block[1] + "</p><p class='map-tippy__content'>" + block[2] + "</p><a href='" + block[4] + "' class='btn btn--dark map-tippy__btn'>Подробнее</a></div>";
+      var field = map.querySelector("#field-" + (index + 1));
+      field.setAttribute('data-tippy-content', content);
+      field.setAttribute('data-map-field', block[5]);
+    }
+
+    initTippy();
+
+    function initTippy() {
+      Object(tippy_js__WEBPACK_IMPORTED_MODULE_0__["default"])(fields, {
+        trigger: 'click',
+        allowHTML: true
+      });
+    }
+
+    function toggleFloor() {
+      for (var _i3 = 0; _i3 < button.length; _i3++) {
+        button[_i3].classList.remove('map__change-floor--active');
+      }
+
+      var activeFloor = +this.getAttribute('data-btn-floor');
+      this.classList.add('map__change-floor--active');
+      toggleActiveClass(activeFloor);
+      hidePreviousFloors(activeFloor);
+      toggleNavs(activeFloor);
+    }
+
+    function toggleActiveClass(number) {
+      for (var _i4 = 0; _i4 < layers.length; _i4++) {
+        if (layers[_i4].getAttribute('data-floor') == number) {
+          layers[_i4].classList.add('map__slide--active');
+        } else {
+          layers[_i4].classList.remove('map__slide--active');
+        }
       }
     }
-  }
-})();
+
+    function toggleNavs(number) {
+      for (var _i5 = 0; _i5 < floorNavs.length; _i5++) {
+        if (floorNavs[_i5].getAttribute('data-floorNavs') == number) {
+          floorNavs[_i5].classList.remove('map-hidden');
+        } else {
+          floorNavs[_i5].classList.add('map-hidden');
+        }
+      }
+    }
+
+    function hidePreviousFloors(number) {
+      for (var _i6 = 0; _i6 < layers.length; _i6++) {
+        if (layers[_i6].getAttribute('data-floor') > number) {
+          layers[_i6].classList.add('map__slide--hide');
+        } else {
+          layers[_i6].classList.remove('map__slide--hide');
+        }
+      }
+    }
+
+    function toggleTypeField(number) {
+      var activeType = +this.getAttribute('data-type');
+
+      for (var _i7 = 0; _i7 < fields.length; _i7++) {
+        if (fields[_i7].getAttribute('data-map-field') == activeType) {
+          fields[_i7].classList.add('map__room--active');
+        } else {
+          fields[_i7].classList.remove('map__room--active');
+        }
+      }
+
+      for (var _i8 = 0; _i8 < partner.length; _i8++) {
+        if (partner[_i8].getAttribute('data-partner-type') == activeType) {
+          partner[_i8].classList.add('map__list-item--active');
+        } else {
+          partner[_i8].classList.remove('map__list-item--active');
+        }
+      }
+    }
+  })();
+});
 
 /***/ }),
 
