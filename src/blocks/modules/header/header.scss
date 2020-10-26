@@ -91,23 +91,6 @@
 	&__column {
 		width: 50%;
 	}
-	&__link {
-		text-decoration: none;
-		color: $light;
-		font-size: 14px;
-		margin-right: 42px;
-		width: -webkit-fill-available;
-		text-transform: uppercase;
-		&--active {
-			color: $green;
-		}
-		&:hover {
-			opacity: 0.7;
-		}
-		&:last-child {
-			margin-right: 0px;
-		}
-	}
 }
 
 .head-mobile {

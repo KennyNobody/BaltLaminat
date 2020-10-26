@@ -143,6 +143,11 @@
 			bottom: 1px;
 		}
 	}
+	&--modal {
+		color: $light;
+		font-size: 20px;
+		margin-bottom: 30px;
+	}
 	&:after {
 		left: 0px;
 		position: absolute;
