@@ -589,8 +589,14 @@
 	transition: 0.3s all;
 	padding-right: 16px;
 	background-color: inherit;
+	opacity: 0;
+	visibility: hidden;
 	&:hover {
 		opacity: 0.7;
+	}
+	&--visible {
+		visibility: visible;
+		opacity: 1;
 	}
 	&__icon {
 		width: 40px;
@@ -829,6 +835,12 @@
 		cursor: pointer;
 		background: none; 
 		transition: 0.3s all;
+		opacity: 0;
+		visibility: hidden;
+		&--visible {
+			visibility: visible;
+			opacity: 1;
+		}
 		&:hover {
 			opacity: 0.7;
 			text-decoration: none;

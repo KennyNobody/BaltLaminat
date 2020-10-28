@@ -6903,10 +6903,17 @@ i {
   transition: 0.3s all;
   padding-right: 16px;
   background-color: inherit;
+  opacity: 0;
+  visibility: hidden;
 }
 
 .remove-all:hover {
   opacity: 0.7;
+}
+
+.remove-all--visible {
+  visibility: visible;
+  opacity: 1;
 }
 
 .remove-all__icon {
@@ -7105,6 +7112,13 @@ i {
   cursor: pointer;
   background: none;
   transition: 0.3s all;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.lk-table-toolbar__repair-btn--visible {
+  visibility: visible;
+  opacity: 1;
 }
 
 .lk-table-toolbar__repair-btn:hover {
@@ -7851,6 +7865,12 @@ i {
   margin-bottom: 52px;
   display: flex;
   justify-content: space-between;
+  cursor: pointer;
+  transition: 0.3s all;
+}
+
+.modal-write__toolbar:hover {
+  opacity: 0.7;
 }
 
 .modal-service--hidden {

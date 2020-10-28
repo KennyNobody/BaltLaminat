@@ -960,14 +960,20 @@ window.cookie = jquery_cookie__WEBPACK_IMPORTED_MODULE_0___default.a;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var choices_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! choices.js */ "./node_modules/choices.js/public/assets/scripts/choices.js");
-/* harmony import */ var choices_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(choices_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var nouislider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! nouislider */ "./node_modules/nouislider/distribute/nouislider.js");
-/* harmony import */ var nouislider__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(nouislider__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var wnumb__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! wnumb */ "./node_modules/wnumb/wNumb.js");
-/* harmony import */ var wnumb__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(wnumb__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var air_datepicker__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! air-datepicker */ "./node_modules/air-datepicker/src/js/air-datepicker.js");
-/* harmony import */ var air_datepicker__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(air_datepicker__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var choices_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! choices.js */ "./node_modules/choices.js/public/assets/scripts/choices.js");
+/* harmony import */ var choices_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(choices_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var nouislider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! nouislider */ "./node_modules/nouislider/distribute/nouislider.js");
+/* harmony import */ var nouislider__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(nouislider__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var wnumb__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! wnumb */ "./node_modules/wnumb/wNumb.js");
+/* harmony import */ var wnumb__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(wnumb__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var air_datepicker__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! air-datepicker */ "./node_modules/air-datepicker/src/js/air-datepicker.js");
+/* harmony import */ var air_datepicker__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(air_datepicker__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var inputmask__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! inputmask */ "./node_modules/inputmask/index.js");
+/* harmony import */ var inputmask__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(inputmask__WEBPACK_IMPORTED_MODULE_5__);
+
+
 
 
 
@@ -1009,7 +1015,7 @@ window.addEventListener('load', function () {
       var elements = document.querySelectorAll('.dropdown');
 
       for (var n = 0; n < elements.length; n++) {
-        var choices = new choices_js__WEBPACK_IMPORTED_MODULE_0___default.a(elements[n], {
+        var choices = new choices_js__WEBPACK_IMPORTED_MODULE_1___default.a(elements[n], {
           silent: false,
           items: [],
           choices: [],
@@ -1069,7 +1075,7 @@ window.addEventListener('load', function () {
       var elements = document.querySelectorAll('.lk-dropdown');
 
       for (var n = 0; n < elements.length; n++) {
-        var choices = new choices_js__WEBPACK_IMPORTED_MODULE_0___default.a(elements[n], {
+        var choices = new choices_js__WEBPACK_IMPORTED_MODULE_1___default.a(elements[n], {
           silent: false,
           items: [],
           choices: [],
@@ -1129,7 +1135,7 @@ window.addEventListener('load', function () {
       var elements = document.querySelectorAll('.filter-dropdown');
 
       for (var n = 0; n < elements.length; n++) {
-        var choices = new choices_js__WEBPACK_IMPORTED_MODULE_0___default.a(elements[n], {
+        var choices = new choices_js__WEBPACK_IMPORTED_MODULE_1___default.a(elements[n], {
           silent: false,
           items: [],
           choices: [],
@@ -1222,7 +1228,7 @@ window.addEventListener('load', function () {
 
       if (slider) {
         var _loop2 = function _loop2(i) {
-          nouislider__WEBPACK_IMPORTED_MODULE_1___default.a.create(slider[i], {
+          nouislider__WEBPACK_IMPORTED_MODULE_2___default.a.create(slider[i], {
             start: [minPrice, maxPrice],
             connect: true,
             step: 1,
@@ -1230,7 +1236,7 @@ window.addEventListener('load', function () {
               'min': minPrice,
               'max': maxPrice
             },
-            format: wnumb__WEBPACK_IMPORTED_MODULE_2___default()({
+            format: wnumb__WEBPACK_IMPORTED_MODULE_3___default()({
               decimals: 0
             })
           });
@@ -1302,7 +1308,7 @@ window.addEventListener('load', function () {
     })();
 
     (function initDatePicker() {
-      $('.lk-filter__datepicker').datepicker({
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.lk-filter__datepicker').datepicker({
         range: true
       });
     })();
@@ -1340,15 +1346,25 @@ window.addEventListener('load', function () {
           var table = void 0;
           var flag = void 0;
           var itemsArray = void 0;
+          var btnRemove = void 0;
+          var btnRepair = void 0;
           table = btn[i].parentNode.parentNode.parentNode;
           itemsArray = table.querySelectorAll('.lk-checkbox__input');
           flag = table.querySelector('.lk-table-toolbar--head .lk-table-toolbar__col--checkbox .lk-checkbox__input');
+          btnRemove = table.querySelector('.remove-all');
+          btnRepair = table.querySelector('.lk-table-toolbar__repair-btn');
+          console.log(table);
           btn[i].addEventListener('click', function () {
             toggleFlag();
             selectAll(flag, itemsArray);
+            toggleRemoveBtn(flag);
           });
           flag.addEventListener('change', function () {
             selectAll(flag, itemsArray);
+            toggleRemoveBtn(flag);
+          });
+          btnRemove.addEventListener('click', function () {
+            btnRepair.classList.add('lk-table-toolbar__repair-btn--visible');
           });
 
           function toggleFlag() {
@@ -1370,6 +1386,14 @@ window.addEventListener('load', function () {
               }
             }
           }
+
+          function toggleRemoveBtn(flag) {
+            if (flag.checked == true) {
+              btnRemove.classList.add('remove-all--visible');
+            } else {
+              btnRemove.classList.remove('remove-all--visible');
+            }
+          }
         };
 
         for (var i = 0; i < btn.length; i++) {
@@ -1377,9 +1401,45 @@ window.addEventListener('load', function () {
         }
       }
     })();
+
+    (function initMasks() {
+      var phone = document.querySelectorAll(".input--phone");
+      var mail = document.querySelectorAll(".input--email");
+
+      for (var i = 0; i < phone.length; i++) {
+        setPhoneMask(phone[i]);
+      }
+
+      for (var n = 0; n < mail.length; n++) {
+        setEmailMask(mail[n]);
+      }
+
+      function setPhoneMask(selector) {
+        Inputmask({
+          "mask": "+7 (999) 999-9999"
+        }).mask(selector.querySelector('input'));
+      }
+
+      function setEmailMask(selector) {
+        Inputmask({
+          mask: "*{1,20}[.*{1,20}][.*{1,20}][.*{1,20}]@*{1,20}[.*{2,6}][.*{1,2}]",
+          greedy: false,
+          // onBeforePaste: function (pastedValue, opts) {
+          // 	pastedValue = pastedValue.toLowerCase();
+          // 	return pastedValue.replace("mailto:", "");
+          // },
+          definitions: {
+            '*': {
+              validator: "[0-9A-Za-z!#$%&'*+/=?^_`{|}~\-]",
+              cardinality: 1,
+              casing: "lower"
+            }
+          }
+        }).mask(selector.querySelector('input'));
+      }
+    })();
   })();
 });
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
 

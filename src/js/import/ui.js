@@ -1,7 +1,9 @@
+import $ from 'jquery';
 import Choices from 'choices.js';
 import noUiSlider from 'nouislider';
 import wNumb from 'wnumb';
 import datepicker from 'air-datepicker';
+import inputmask from 'inputmask';
 
 window.addEventListener('load', function() {
 	(function() {
@@ -363,17 +365,29 @@ window.addEventListener('load', function() {
 					let table;
 					let flag;
 					let itemsArray;
+					let btnRemove;
+					let btnRepair;
 
 					table = btn[i].parentNode.parentNode.parentNode;
 					itemsArray = table.querySelectorAll('.lk-checkbox__input');
 					flag = table.querySelector('.lk-table-toolbar--head .lk-table-toolbar__col--checkbox .lk-checkbox__input');
+					btnRemove = table.querySelector('.remove-all');
+					btnRepair = table.querySelector('.lk-table-toolbar__repair-btn');
+
+					console.log(table)
 
 					btn[i].addEventListener('click', function(){
 						toggleFlag();
 						selectAll(flag, itemsArray);
+						toggleRemoveBtn(flag);
 					});
 					flag.addEventListener('change', function(){
 						selectAll(flag, itemsArray);
+						toggleRemoveBtn(flag);
+					});
+
+					btnRemove.addEventListener('click', function() {
+						btnRepair.classList.add('lk-table-toolbar__repair-btn--visible');
 					});
 
 					function toggleFlag() {
@@ -395,14 +409,57 @@ window.addEventListener('load', function() {
 							}
 						}
 					}
+
+					function toggleRemoveBtn(flag) {
+						if (flag.checked == true) {
+							btnRemove.classList.add('remove-all--visible');
+						} else {
+							btnRemove.classList.remove('remove-all--visible');
+						}
+
+					}
 				}
 
 			}
 
 		})();
 
+		(function initMasks(){
 
+			let phone = document.querySelectorAll(".input--phone");
+			let mail = document.querySelectorAll(".input--email");
+
+			for (let i = 0; i < phone.length; i++) {
+				setPhoneMask(phone[i]);
+			}
+
+			for (let n = 0; n < mail.length; n++) {
+				setEmailMask(mail[n]);
+			}
+
+			function setPhoneMask(selector) {
+				Inputmask({
+					"mask": "+7 (999) 999-9999",
+				}).mask(selector.querySelector('input'));
+			}
+
+			function setEmailMask(selector) {
+				Inputmask({
+					mask: "*{1,20}[.*{1,20}][.*{1,20}][.*{1,20}]@*{1,20}[.*{2,6}][.*{1,2}]",
+					greedy: false,
+					// onBeforePaste: function (pastedValue, opts) {
+					// 	pastedValue = pastedValue.toLowerCase();
+					// 	return pastedValue.replace("mailto:", "");
+					// },
+					definitions: {
+						'*': {
+							validator: "[0-9A-Za-z!#$%&'*+/=?^_`{|}~\-]",
+							cardinality: 1,
+							casing: "lower"
+						}
+					}
+				}).mask(selector.querySelector('input'));
+			}
+		})();
 	})();
-})
-
-
+});
