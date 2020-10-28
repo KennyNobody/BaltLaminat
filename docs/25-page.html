@@ -4386,7 +4386,7 @@
 	</div>
 </section>
 
-<form id="modal-write" class="modal-write" style="display: none;">
+<form action="/file-upload" id="modal-write" class="modal-write dropzone" style="display: none;">
 	<h2 class="title modal-write__title">
 		Написать директору
 	</h2>
@@ -4428,6 +4428,9 @@
 
 	<div class="modal-write__toolbar">
 		<div class="dropfile">
+			<div class="fallback">
+				<input name="FND_USER_FILE" type="file" multiple />
+			</div>
 			<svg class="icon-svg dropfile__icon">
 				<use xlink:href="img/sprites/sprite.svg#icon-upload"></use>
 			</svg>

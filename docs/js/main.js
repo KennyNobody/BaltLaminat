@@ -559,72 +559,7 @@ $(document).ready(function () {
     }
   }
 
-  toggleTabs(); // $('[data-head-link]').click(function(e){
-  // 	e.preventDefault();
-  // 	let linkNum = $(this).attr('data-head-link');
-  // 	let headerLinkArray = document.querySelectorAll('a[data-head-link]');
-  // 	let modalLinkArray = document.querySelectorAll('a[data-modal-link]');
-  // 	let modalSectionArray = document.querySelectorAll('div[data-modal-section]');
-  // 	$.fancybox.open({
-  // 		src  : this.attributes[0].nodeValue,
-  // 		type : 'inline',
-  // 		hash : false,
-  // 		opts : {
-  // 			arrows: false,
-  // 			touch: false,
-  // 			beforeShow : function( instance, current ) {
-  // 				toggleActiveLink(linkNum);
-  // 				toggleTabs(linkNum);
-  // 			},
-  // 			beforeClose : function( ) {
-  // 				toggleActiveLink();
-  // 				toggleTabs();
-  // 			},
-  // 			baseTpl:
-  // 			'<div class="fancybox-container fancybox-container--menu" role="dialog" tabindex="-1">' +
-  // 			'<div class="fancybox-bg"></div>' +
-  // 			'<div class="fancybox-inner">' +
-  // 			'<div class="fancybox-infobar"><span data-fancybox-index></span>&nbsp;/&nbsp;<span data-fancybox-count></span></div>' +
-  // 			'<div class="fancybox-stage"></div>' +
-  // 			'<div class="fancybox-caption"><div class=""fancybox-caption__body"></div></div>' +
-  // 			'</div>' +
-  // 			'</div>',
-  // 		}
-  // 	});
-  // 	(function initModalLinks(){
-  // 		let dataItem;
-  // 		for (let i = 0; i < modalLinkArray.length; i++) {
-  // 			modalLinkArray[i].addEventListener('click', function(e){
-  // 				dataItem = modalLinkArray[i].getAttribute('data-modal-link');
-  // 				toggleActiveLink(dataItem);
-  // 				toggleTabs(dataItem);
-  // 			})
-  // 		}
-  // 	})();
-  // 	function toggleActiveLink(activeItem){
-  // 		let dataItem;
-  // 		for (let i = 0; i < modalLinkArray.length; i++) {
-  // 			dataItem = modalLinkArray[i].getAttribute('data-modal-link');
-  // 			if (dataItem == activeItem) {
-  // 				modalLinkArray[i].classList.add('head-nav__link--active');
-  // 			} else {
-  // 				modalLinkArray[i].classList.remove('head-nav__link--active');
-  // 			}
-  // 		}
-  // 	}
-  // 	function toggleTabs(activeItem) {
-  // 		let dataItem;
-  // 		for (let i = 0; i < modalSectionArray.length; i++) {
-  // 			dataItem = modalSectionArray[i].getAttribute('data-modal-section');
-  // 			if (dataItem == activeItem) {
-  // 				modalSectionArray[i].classList.add('modal-menu__content--active');
-  // 			} else {
-  // 				modalSectionArray[i].classList.remove('modal-menu__content--active');
-  // 			}
-  // 		}
-  // 	}
-  // });
-
+  toggleTabs();
   $('[data-fancybox="menu"]').fancybox({
     type: 'inline',
     baseTpl: '<div class="fancybox-container fancybox-container--menu" role="dialog" tabindex="-1">' + '<div class="fancybox-bg"></div>' + '<div class="fancybox-inner">' + '<div class="fancybox-infobar"><span data-fancybox-index></span>&nbsp;/&nbsp;<span data-fancybox-count></span></div>' + '<div class="fancybox-stage"></div>' + '<div class="fancybox-caption"><div class=""fancybox-caption__body"></div></div>' + '</div>' + '</div>'
@@ -648,7 +583,8 @@ $(document).ready(function () {
   });
   $('[data-fancybox="gallery"]').fancybox();
   var myDropzone = new dropzone__WEBPACK_IMPORTED_MODULE_0___default.a(".dropfile", {
-    url: pathToScript
+    url: pathToScript,
+    paramName: 'FND_USER_FILE'
   });
   dropzone__WEBPACK_IMPORTED_MODULE_0___default.a.clickable = true;
 
