@@ -505,10 +505,14 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 __webpack_provided_window_dot_$ = $;
 $(document).ready(function () {
+  var _Dropzone;
+
   function toggleTabs() {
     var modalLinkArray = document.querySelectorAll('a[data-modal-link]');
     var modalSectionArray = document.querySelectorAll('div[data-modal-section]');
@@ -582,11 +586,24 @@ $(document).ready(function () {
     }
   });
   $('[data-fancybox="gallery"]').fancybox();
-  var myDropzone = new dropzone__WEBPACK_IMPORTED_MODULE_0___default.a(".dropfile", {
-    url: pathToScript,
-    paramName: 'FND_USER_FILE'
-  });
-  dropzone__WEBPACK_IMPORTED_MODULE_0___default.a.clickable = true;
+  var myDropzone = new dropzone__WEBPACK_IMPORTED_MODULE_0___default.a(".dropfile", (_Dropzone = {
+    paramName: 'FND_USER_FILE',
+    uploadMultiple: true,
+    autoProcessQueue: false,
+    url: '/local/ajax/form_for_director.php'
+  }, _defineProperty(_Dropzone, "uploadMultiple", true), _defineProperty(_Dropzone, "clickable", true), _defineProperty(_Dropzone, "init", function init() {
+    // this.on("maxfilesexceeded", function(file) {
+    // 	this.removeAllFiles();
+    // 	this.addFile(file);
+    // });
+    this.on('success', function (file, response) {
+      JSON.parse(response);
+      console.log(response);
+      $("#ideaform").append($('<input type="hidden" name="file"  value=' + response + '>'));
+    });
+  }), _defineProperty(_Dropzone, "accept", function accept(file, done) {
+    console.log(file);
+  }), _Dropzone));
 
   (function initEggs() {
     function runOnKeys(func) {
@@ -1372,6 +1389,77 @@ window.addEventListener('load', function () {
             }
           }
         }).mask(selector.querySelector('input'));
+      }
+    })();
+
+    (function sortTable() {
+      var form = document.querySelector('.lk-filter');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var articles = form.parentNode.querySelectorAll('.lk-order');
+        var dateZero = 0;
+        var dateNow = new Date().getTime();
+        var orderId = form.elements['select-number'].value; // let dateStart = (new Date(form.elements['select-date'].value.split(',')[0])).getTime() || dateZero;
+        // let dateEnd = (new Date(form.elements['select-date'].value.split(',')[1])).getTime() || dateNow;
+
+        var dateStart;
+        var dateEnd;
+
+        (function () {
+          if (form.elements['select-date'].value.split(',')[0]) {
+            var dateString = form.elements['select-date'].value.split(',')[0];
+            dateString = dateString.split('.');
+            dateStart = new Date(dateString[2], dateString[1] - 1, dateString[0]).getTime();
+          } else {
+            dateStart = 0;
+          } // let dateString = form.elements['select-date'].value.split(',')[0] || 0;
+          // dateString = dateString.split('.');
+          // dateStart = new Date(dateString[2], dateString[1] - 1, dateString[0]).getTime();
+
+        })();
+
+        (function () {
+          if (form.elements['select-date'].value.split(',')[1]) {
+            var dateString = form.elements['select-date'].value.split(',')[1];
+            dateString = dateString.split('.');
+            dateEnd = new Date(dateString[2], dateString[1] - 1, dateString[0]).getTime();
+          } else {
+            dateEnd = new Date().getTime();
+          } // let dateString = form.elements['select-date'].value.split(',')[1] || (new Date()).getTime();
+          // dateString = dateString.split('.');
+          // dateEnd = new Date(dateString[2], dateString[1] - 1, dateString[0]).getTime();
+
+        })();
+
+        changeTable(dateStart, dateEnd, orderId, articles);
+      });
+
+      function changeTable(dateStart, dateEnd, orderId, array) {
+        resetTable(array);
+
+        for (var i = 0; i < array.length; i++) {
+          var id = array[i].getAttribute('data-id');
+          var date = +(array[i].getAttribute('data-time') + '000');
+          console.log('--------');
+          console.log(dateStart);
+          console.log(date);
+          console.log(dateEnd);
+          console.log('--------');
+
+          if (dateStart >= date >= dateEnd) {
+            array[i].classList.add('lk-order--hidden');
+          }
+
+          if (orderId && orderId != id) {
+            array[i].classList.add('lk-order--hidden');
+          }
+        }
+      }
+
+      function resetTable(array) {
+        for (var i = 0; i < array.length; i++) {
+          array[i].classList.remove('lk-order--hidden');
+        }
       }
     })();
   })();

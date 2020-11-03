@@ -90,11 +90,30 @@ $(document).ready(function() {
 
 	$('[data-fancybox="gallery"]').fancybox();
 
+
 	var myDropzone = new Dropzone(".dropfile", { 
-		url: pathToScript,
-		paramName: 'FND_USER_FILE'
+		paramName: 'FND_USER_FILE',
+		uploadMultiple: true,
+		autoProcessQueue: false,
+		url: '/local/ajax/form_for_director.php',
+		uploadMultiple: true,
+		clickable: true,
+		init: function() {
+			// this.on("maxfilesexceeded", function(file) {
+			// 	this.removeAllFiles();
+			// 	this.addFile(file);
+			// });
+
+			this.on('success', function(file, response) {
+				JSON.parse(response);
+				console.log(response);
+				$("#ideaform").append($('<input type="hidden" name="file"  value='+response+'>'));
+			});
+		},
+		accept: function(file, done) {
+			console.log(file);
+		}
 	});
-	Dropzone.clickable = true;
 
 	(function initEggs(){
 		function runOnKeys(func, ...codes) {

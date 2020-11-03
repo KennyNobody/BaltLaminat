@@ -222,23 +222,26 @@
 								<h2 class="title single__title">
 									Заказы
 								</h2>
-								<div class="lk-filter">
+								<form class="lk-filter">
 									<p class="lk-filter__text">
 										Период
 									</p>
-									<input class="lk-filter__datepicker" type="text" data-position="right top" style="background-image: url('img/calendar.svg')">
-									<select class="lk-dropdown">
-										<option value="1">Все заказы</option>
-										<option value="1">1023-219</option>
-										<option value="2">1023-220</option>
-										<option value="3">1023-221</option>
+									<input class="lk-filter__datepicker" name="select-date" type="text" data-position="right top" style="background-image: url('img/calendar.svg')">
+									<select class="lk-dropdown" name="select-number">
+										<option value="">Все заказы</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="5">5</option>
+										<option value="6">6</option>
 									</select>
 									<button class="lk-filter__btn btn btn--green">
 										Показать
 									</button>
-								</div>
+								</form>
 								<div class="lk-orders">
-									<article class="lk-order">
+									<article class="lk-order" data-time="1560260000" data-id="1">
 										<div class="lk-order__line lk-order__line--head">
 											<div class="lk-order__col lk-order__col--number">
 												1
@@ -259,7 +262,7 @@
 											<div class="lk-order__col lk-order__col--date">
 												<p class="lk-order__text">
 													<strong>Дата:</strong>
-													<time>13.05.2020 10:02:25</time>
+													<time>13.05.2020</time>
 												</p>
 											</div>
 											<div class="lk-order__col lk-order__col--count">
@@ -280,7 +283,7 @@
 											</div>
 										</div>
 									</article>
-									<article class="lk-order">
+									<article class="lk-order" data-time="1570550000" data-id="2">
 										<div class="lk-order__line lk-order__line--head">
 											<div class="lk-order__col lk-order__col--number">
 												1
@@ -301,7 +304,7 @@
 											<div class="lk-order__col lk-order__col--date">
 												<p class="lk-order__text">
 													<strong>Дата:</strong>
-													<time>13.05.2020 10:02:25</time>
+													<time>13.05.2020</time>
 												</p>
 											</div>
 											<div class="lk-order__col lk-order__col--count">
@@ -322,7 +325,7 @@
 											</div>
 										</div>
 									</article>
-									<article class="lk-order">
+									<article class="lk-order" data-time="1580560000" data-id="3">
 										<div class="lk-order__line lk-order__line--head">
 											<div class="lk-order__col lk-order__col--number">
 												1
@@ -343,7 +346,133 @@
 											<div class="lk-order__col lk-order__col--date">
 												<p class="lk-order__text">
 													<strong>Дата:</strong>
-													<time>13.05.2020 10:02:25</time>
+													<time>13.05.2020</time>
+												</p>
+											</div>
+											<div class="lk-order__col lk-order__col--count">
+												<p class="lk-order__text">
+													<b>4</b> товара на сумму <b>4050</b> руб.
+												</p>
+											</div>
+											<div class="lk-order__col lk-order__col--status">
+												<p class="lk-order__status lk-order__status--red">
+													Отменен
+												</p>
+												<!-- <p class="lk-order__status lk-order__status--yellow">
+													Обработка
+												</p> -->
+												<!-- <p class="lk-order__status lk-order__status--green">
+													Оплачен
+												</p> -->
+											</div>
+										</div>
+									</article>
+									<article class="lk-order" data-time="1596501200" data-id="4">
+										<div class="lk-order__line lk-order__line--head">
+											<div class="lk-order__col lk-order__col--number">
+												1
+											</div>
+											<div class="lk-order__col lk-order__col--grow lk-order__col--info">
+												<p class="lk-order__head-text">
+													Заказ № <a href="">1023-219</a>
+												</p>
+											</div>
+										</div>
+										<div class="lk-order__line">
+											<div class="lk-order__col lk-order__col--grow lk-order__col--person">
+												<p class="lk-order__text">
+													<strong>Ответственный:</strong>
+													Лисицина Лидия Ивановна
+												</p>
+											</div>
+											<div class="lk-order__col lk-order__col--date">
+												<p class="lk-order__text">
+													<strong>Дата:</strong>
+													<time>13.05.2020</time>
+												</p>
+											</div>
+											<div class="lk-order__col lk-order__col--count">
+												<p class="lk-order__text">
+													<b>4</b> товара на сумму <b>4050</b> руб.
+												</p>
+											</div>
+											<div class="lk-order__col lk-order__col--status">
+												<!-- <p class="lk-order__status lk-order__status--red">
+													Отменен
+												</p>
+												<p class="lk-order__status lk-order__status--yellow">
+													Обработка
+												</p> -->
+												<p class="lk-order__status lk-order__status--green">
+													Оплачен
+												</p>
+											</div>
+										</div>
+									</article>
+									<article class="lk-order" data-time="1603501200" data-id="5">
+										<div class="lk-order__line lk-order__line--head">
+											<div class="lk-order__col lk-order__col--number">
+												1
+											</div>
+											<div class="lk-order__col lk-order__col--grow lk-order__col--info">
+												<p class="lk-order__head-text">
+													Заказ № <a href="">1023-219</a>
+												</p>
+											</div>
+										</div>
+										<div class="lk-order__line">
+											<div class="lk-order__col lk-order__col--grow lk-order__col--person">
+												<p class="lk-order__text">
+													<strong>Ответственный:</strong>
+													Лисицина Лидия Ивановна
+												</p>
+											</div>
+											<div class="lk-order__col lk-order__col--date">
+												<p class="lk-order__text">
+													<strong>Дата:</strong>
+													<time>13.05.2020</time>
+												</p>
+											</div>
+											<div class="lk-order__col lk-order__col--count">
+												<p class="lk-order__text">
+													<b>4</b> товара на сумму <b>4050</b> руб.
+												</p>
+											</div>
+											<div class="lk-order__col lk-order__col--status">
+												<!-- <p class="lk-order__status lk-order__status--red">
+													Отменен
+												</p> -->
+												<p class="lk-order__status lk-order__status--yellow">
+													Обработка
+												</p>
+												<!-- <p class="lk-order__status lk-order__status--green">
+													Оплачен
+												</p> -->
+											</div>
+										</div>
+									</article>
+									<article class="lk-order" data-time="1603771200" data-id="6">
+										<div class="lk-order__line lk-order__line--head">
+											<div class="lk-order__col lk-order__col--number">
+												1
+											</div>
+											<div class="lk-order__col lk-order__col--grow lk-order__col--info">
+												<p class="lk-order__head-text">
+													Заказ № <a href="">1023-219</a>
+												</p>
+											</div>
+										</div>
+										<div class="lk-order__line">
+											<div class="lk-order__col lk-order__col--grow lk-order__col--person">
+												<p class="lk-order__text">
+													<strong>Ответственный:</strong>
+													Лисицина Лидия Ивановна
+												</p>
+											</div>
+											<div class="lk-order__col lk-order__col--date">
+												<p class="lk-order__text">
+													<strong>Дата:</strong>
+													<time>13.05.2020</time>
 												</p>
 											</div>
 											<div class="lk-order__col lk-order__col--count">

@@ -208,6 +208,12 @@
 				width: 22px;
 				margin-right: 6px;
 			}
+			&:nth-child(1) {
+				display: block;
+			}
+			&:nth-child(2) {
+				display: none;
+			}
 		}
 		span {
 			font-weight: bold;
@@ -216,6 +222,16 @@
 			color: #828282;
 			@include r(1200) {
 				font-size: 16px;
+			}
+		}
+		&--active {
+			svg {
+				&:nth-child(2) {
+					display: block;
+				}
+				&:nth-child(1) {
+					display: none;
+				}
 			}
 		}
 	}

@@ -461,5 +461,81 @@ window.addEventListener('load', function() {
 				}).mask(selector.querySelector('input'));
 			}
 		})();
+
+		(function sortTable(){
+			let form = document.querySelector('.lk-filter');
+
+			form.addEventListener('submit', function(e) {
+				e.preventDefault();
+
+				let articles = form.parentNode.querySelectorAll('.lk-order');
+
+				let dateZero = 0;
+				let dateNow = (new Date()).getTime();
+
+				let orderId = form.elements['select-number'].value;
+				// let dateStart = (new Date(form.elements['select-date'].value.split(',')[0])).getTime() || dateZero;
+				// let dateEnd = (new Date(form.elements['select-date'].value.split(',')[1])).getTime() || dateNow;
+				let dateStart;
+				let dateEnd;
+
+				(function() {
+					if (form.elements['select-date'].value.split(',')[0]) {
+						let dateString = form.elements['select-date'].value.split(',')[0];
+						dateString = dateString.split('.');
+						dateStart = new Date(dateString[2], dateString[1] - 1, dateString[0]).getTime()
+					} else {
+						dateStart = 0;
+					}
+					// let dateString = form.elements['select-date'].value.split(',')[0] || 0;
+					// dateString = dateString.split('.');
+					// dateStart = new Date(dateString[2], dateString[1] - 1, dateString[0]).getTime();
+				})();
+
+				(function() {
+					if (form.elements['select-date'].value.split(',')[1]) {
+						let dateString = form.elements['select-date'].value.split(',')[1];
+						dateString = dateString.split('.');
+						dateEnd = new Date(dateString[2], dateString[1] - 1, dateString[0]).getTime();
+					} else {
+						dateEnd = (new Date()).getTime();
+					}
+					// let dateString = form.elements['select-date'].value.split(',')[1] || (new Date()).getTime();
+					// dateString = dateString.split('.');
+					// dateEnd = new Date(dateString[2], dateString[1] - 1, dateString[0]).getTime();
+				})();
+
+				changeTable(dateStart, dateEnd, orderId, articles);
+			});
+
+			function changeTable(dateStart, dateEnd, orderId, array) {
+				resetTable(array);
+
+				for (let i = 0; i < array.length; i++) {
+					let id = array[i].getAttribute('data-id');
+					let date = +(array[i].getAttribute('data-time') + '000');
+
+					console.log('--------');
+					console.log(dateStart);
+					console.log(date);
+					console.log(dateEnd);
+					console.log('--------');
+
+					if (dateStart >= date >= dateEnd) {
+						array[i].classList.add('lk-order--hidden');
+					}
+
+					if (orderId && orderId != id) {
+						array[i].classList.add('lk-order--hidden');
+					}
+				}
+			}
+
+			function resetTable(array) {
+				for (let i = 0; i < array.length; i++) {
+					array[i].classList.remove('lk-order--hidden'); 
+				}
+			}
+		})();
 	})();
 });

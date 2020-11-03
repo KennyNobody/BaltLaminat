@@ -880,6 +880,9 @@
 .lk-order {
 	background-color: $light;
 	border-bottom: 1px solid #E5E5E5;
+	&--hidden {
+		display: none;
+	}
 	&:last-of-type {
 		border-bottom: 0px;
 	}
@@ -994,6 +997,7 @@
 	&__text {
 		strong {
 			color: #828282;
+			display: block;
 			@include r(1200) {
 				display: block;
 			}
