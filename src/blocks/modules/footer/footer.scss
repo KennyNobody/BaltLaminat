@@ -152,6 +152,15 @@
 		@include r(440) {
 			font-size: 14px;
 		}
+		svg {
+			fill: #BDBDBD;
+		}
+		&--active {
+			color: $green;
+			svg {
+				fill: $green;
+			}
+		}
 	}
 	&__icon {
 		display: block;

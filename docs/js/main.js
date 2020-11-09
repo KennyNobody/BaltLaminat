@@ -505,14 +505,10 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 
 
 __webpack_provided_window_dot_$ = $;
 $(document).ready(function () {
-  var _Dropzone;
-
   function toggleTabs() {
     var modalLinkArray = document.querySelectorAll('a[data-modal-link]');
     var modalSectionArray = document.querySelectorAll('div[data-modal-section]');
@@ -586,24 +582,66 @@ $(document).ready(function () {
     }
   });
   $('[data-fancybox="gallery"]').fancybox();
-  var myDropzone = new dropzone__WEBPACK_IMPORTED_MODULE_0___default.a(".dropfile", (_Dropzone = {
-    paramName: 'FND_USER_FILE',
-    uploadMultiple: true,
-    autoProcessQueue: false,
-    url: '/local/ajax/form_for_director.php'
-  }, _defineProperty(_Dropzone, "uploadMultiple", true), _defineProperty(_Dropzone, "clickable", true), _defineProperty(_Dropzone, "init", function init() {
-    // this.on("maxfilesexceeded", function(file) {
-    // 	this.removeAllFiles();
-    // 	this.addFile(file);
-    // });
-    this.on('success', function (file, response) {
-      JSON.parse(response);
-      console.log(response);
-      $("#ideaform").append($('<input type="hidden" name="file"  value=' + response + '>'));
+  var uploadedFile;
+
+  (function initDropzone() {
+    var form = document.querySelector('#modal-write');
+    var myDropzone = new dropzone__WEBPACK_IMPORTED_MODULE_0___default.a(form.querySelector(".dropfile"), {
+      url: form.action,
+      autoProcessQueue: false,
+      uploadMultiple: false,
+      clickable: true,
+      init: function init() {
+        form.addEventListener('submit', function () {
+          console.log('Отправка'); // this.processQueue();
+        });
+        this.on("addedfiles", function (file) {
+          uploadedFile = file;
+        });
+      } // sending: function() {
+      // 	console.log('Отправляем');
+      // },
+      // accept: function(file, done) {
+      // 	console.log('Ушло');
+      // 	console.log(file);
+      // 	console.log(done);
+      // }
+
     });
-  }), _defineProperty(_Dropzone, "accept", function accept(file, done) {
-    console.log(file);
-  }), _Dropzone));
+    form.addEventListener('submit', function (e) {
+      e.stopPropagation();
+      e.preventDefault(); // var action = this.attr('action');
+      // var $file = $form.find('input[type="file"]');
+
+      console.log(this);
+      var formData = new FormData(this);
+      formData.append('FILES', uploadedFile);
+      console.log(uploadedFile);
+      $.ajax({
+        url: this.action,
+        processData: false,
+        contentType: false,
+        data: formData,
+        type: "post",
+        dataType: "JSON",
+        success: function success(result) {
+          console.log('success');
+          console.log(result);
+          $('#idmodal').find('h4').html('Форма обратной связи');
+          $('#idmodal').find('p').html('Форма успешно отправлена');
+          $.fancybox.open({
+            src: '#idmodal'
+          });
+        },
+        error: function error(result) {
+          console.log('error');
+          console.log(result);
+        }
+      });
+    });
+  })(); // $('.form_for_director .modal-write__btn').on('click', function (e) {
+  // });
+
 
   (function initEggs() {
     function runOnKeys(func) {
@@ -931,7 +969,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-window.addEventListener('load', function () {
+document.addEventListener('DOMContentLoaded', function () {
   (function () {
     (function initCounters() {
       var counter = document.querySelectorAll('.counter');
@@ -1217,20 +1255,20 @@ window.addEventListener('load', function () {
       }
     })();
 
-    (function resize() {
+    (function resizeImage() {
       var resized = document.querySelectorAll('.resized');
 
       if (resized) {
-        window.addEventListener('resize', function () {
-          for (var i = 0; i < resized.length; i++) {
-            resized[i].setAttribute("style", "height:" + resized[i].offsetWidth + 'px');
-          }
-        });
-        window.addEventListener('load', function () {
-          for (var i = 0; i < resized.length; i++) {
-            resized[i].setAttribute("style", "height:" + resized[i].offsetWidth + 'px');
-          }
-        });
+        change(); // window.addEventListener('resize', function(){
+        // 	console.log('Ресайз при изменении экрана');
+        // 	change();
+        // });
+      }
+
+      function change() {
+        for (var i = 0; i < resized.length; i++) {
+          resized[i].setAttribute("style", "height:" + resized[i].offsetWidth + 'px');
+        }
       }
     })();
 
@@ -1377,10 +1415,6 @@ window.addEventListener('load', function () {
         Inputmask({
           mask: "*{1,20}[.*{1,20}][.*{1,20}][.*{1,20}]@*{1,20}[.*{2,6}][.*{1,2}]",
           greedy: false,
-          // onBeforePaste: function (pastedValue, opts) {
-          // 	pastedValue = pastedValue.toLowerCase();
-          // 	return pastedValue.replace("mailto:", "");
-          // },
           definitions: {
             '*': {
               validator: "[0-9A-Za-z!#$%&'*+/=?^_`{|}~\-]",
@@ -1394,45 +1428,40 @@ window.addEventListener('load', function () {
 
     (function sortTable() {
       var form = document.querySelector('.lk-filter');
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        var articles = form.parentNode.querySelectorAll('.lk-order');
-        var dateZero = 0;
-        var dateNow = new Date().getTime();
-        var orderId = form.elements['select-number'].value; // let dateStart = (new Date(form.elements['select-date'].value.split(',')[0])).getTime() || dateZero;
-        // let dateEnd = (new Date(form.elements['select-date'].value.split(',')[1])).getTime() || dateNow;
 
-        var dateStart;
-        var dateEnd;
+      if (form) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var articles = form.parentNode.querySelectorAll('.lk-order');
+          var dateZero = 0;
+          var dateNow = new Date().getTime();
+          var orderId = form.elements['select-number'].value;
+          var dateStart;
+          var dateEnd;
 
-        (function () {
-          if (form.elements['select-date'].value.split(',')[0]) {
-            var dateString = form.elements['select-date'].value.split(',')[0];
-            dateString = dateString.split('.');
-            dateStart = new Date(dateString[2], dateString[1] - 1, dateString[0]).getTime();
-          } else {
-            dateStart = 0;
-          } // let dateString = form.elements['select-date'].value.split(',')[0] || 0;
-          // dateString = dateString.split('.');
-          // dateStart = new Date(dateString[2], dateString[1] - 1, dateString[0]).getTime();
+          (function () {
+            if (form.elements['select-date'].value.split(',')[0]) {
+              var dateString = form.elements['select-date'].value.split(',')[0];
+              dateString = dateString.split('.');
+              dateStart = new Date(dateString[2], dateString[1] - 1, dateString[0]).getTime();
+            } else {
+              dateStart = 0;
+            }
+          })();
 
-        })();
+          (function () {
+            if (form.elements['select-date'].value.split(',')[1]) {
+              var dateString = form.elements['select-date'].value.split(',')[1];
+              dateString = dateString.split('.');
+              dateEnd = new Date(dateString[2], dateString[1] - 1, dateString[0]).getTime();
+            } else {
+              dateEnd = new Date().getTime();
+            }
+          })();
 
-        (function () {
-          if (form.elements['select-date'].value.split(',')[1]) {
-            var dateString = form.elements['select-date'].value.split(',')[1];
-            dateString = dateString.split('.');
-            dateEnd = new Date(dateString[2], dateString[1] - 1, dateString[0]).getTime();
-          } else {
-            dateEnd = new Date().getTime();
-          } // let dateString = form.elements['select-date'].value.split(',')[1] || (new Date()).getTime();
-          // dateString = dateString.split('.');
-          // dateEnd = new Date(dateString[2], dateString[1] - 1, dateString[0]).getTime();
-
-        })();
-
-        changeTable(dateStart, dateEnd, orderId, articles);
-      });
+          changeTable(dateStart, dateEnd, orderId, articles);
+        });
+      }
 
       function changeTable(dateStart, dateEnd, orderId, array) {
         resetTable(array);
@@ -1440,13 +1469,8 @@ window.addEventListener('load', function () {
         for (var i = 0; i < array.length; i++) {
           var id = array[i].getAttribute('data-id');
           var date = +(array[i].getAttribute('data-time') + '000');
-          console.log('--------');
-          console.log(dateStart);
-          console.log(date);
-          console.log(dateEnd);
-          console.log('--------');
 
-          if (dateStart >= date >= dateEnd) {
+          if (dateStart <= date && date <= dateEnd) {} else {
             array[i].classList.add('lk-order--hidden');
           }
 

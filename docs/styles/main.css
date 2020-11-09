@@ -7698,6 +7698,18 @@ i {
   display: block;
 }
 
+.footer-toolbar__link svg {
+  fill: #BDBDBD;
+}
+
+.footer-toolbar__link--active {
+  color: #00C25A;
+}
+
+.footer-toolbar__link--active svg {
+  fill: #00C25A;
+}
+
 .footer-toolbar__icon {
   display: block;
   margin-left: auto;
@@ -7841,6 +7853,7 @@ i {
 
 .modal-menu__nav-link--active {
   color: #00C25A;
+  text-decoration: underline;
 }
 
 .modal-menu__link {
@@ -9081,7 +9094,7 @@ i {
 .case__title--active:after {
   left: 0px;
   position: absolute;
-  bottom: 8px;
+  bottom: 4px;
   height: 4px;
   width: 100%;
   background-color: #00C25A;
@@ -12365,7 +12378,7 @@ path {
   }
 
   .case__title--active:after {
-    bottom: 5px;
+    bottom: 2px;
   }
 
   .case__content {

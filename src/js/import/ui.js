@@ -5,7 +5,10 @@ import wNumb from 'wnumb';
 import datepicker from 'air-datepicker';
 import inputmask from 'inputmask';
 
-window.addEventListener('load', function() {
+
+
+document.addEventListener('DOMContentLoaded',function(){
+
 	(function() {
 
 
@@ -286,22 +289,24 @@ window.addEventListener('load', function() {
 			}
 		})();
 
-		(function resize(){
+		(function resizeImage (){
 			const resized = document.querySelectorAll('.resized');
 
 			if (resized) {
-				window.addEventListener('resize', function(){
-					for (let i = 0; i < resized.length; i++) {
-						resized[i].setAttribute("style","height:" + resized[i].offsetWidth + 'px');
-					}
-				});
+				change();
 
-				window.addEventListener('load', function(){
-					for (let i = 0; i < resized.length; i++) {
-						resized[i].setAttribute("style","height:" + resized[i].offsetWidth + 'px');
-					}
-				});
+				// window.addEventListener('resize', function(){
+				// 	console.log('Ресайз при изменении экрана');
+				// 	change();
+				// });
 			}
+
+			function change() {
+				for (let i = 0; i < resized.length; i++) {
+					resized[i].setAttribute("style","height:" + resized[i].offsetWidth + 'px');
+				}
+			}
+
 		})();
 
 		(function toggleInputEyes(){
@@ -447,10 +452,6 @@ window.addEventListener('load', function() {
 				Inputmask({
 					mask: "*{1,20}[.*{1,20}][.*{1,20}][.*{1,20}]@*{1,20}[.*{2,6}][.*{1,2}]",
 					greedy: false,
-					// onBeforePaste: function (pastedValue, opts) {
-					// 	pastedValue = pastedValue.toLowerCase();
-					// 	return pastedValue.replace("mailto:", "");
-					// },
 					definitions: {
 						'*': {
 							validator: "[0-9A-Za-z!#$%&'*+/=?^_`{|}~\-]",
@@ -465,48 +466,42 @@ window.addEventListener('load', function() {
 		(function sortTable(){
 			let form = document.querySelector('.lk-filter');
 
-			form.addEventListener('submit', function(e) {
-				e.preventDefault();
+			if (form) {
+				form.addEventListener('submit', function(e) {
+					e.preventDefault();
 
-				let articles = form.parentNode.querySelectorAll('.lk-order');
+					let articles = form.parentNode.querySelectorAll('.lk-order');
 
-				let dateZero = 0;
-				let dateNow = (new Date()).getTime();
+					let dateZero = 0;
+					let dateNow = (new Date()).getTime();
 
-				let orderId = form.elements['select-number'].value;
-				// let dateStart = (new Date(form.elements['select-date'].value.split(',')[0])).getTime() || dateZero;
-				// let dateEnd = (new Date(form.elements['select-date'].value.split(',')[1])).getTime() || dateNow;
-				let dateStart;
-				let dateEnd;
+					let orderId = form.elements['select-number'].value;
+					let dateStart;
+					let dateEnd;
 
-				(function() {
-					if (form.elements['select-date'].value.split(',')[0]) {
-						let dateString = form.elements['select-date'].value.split(',')[0];
-						dateString = dateString.split('.');
-						dateStart = new Date(dateString[2], dateString[1] - 1, dateString[0]).getTime()
-					} else {
-						dateStart = 0;
-					}
-					// let dateString = form.elements['select-date'].value.split(',')[0] || 0;
-					// dateString = dateString.split('.');
-					// dateStart = new Date(dateString[2], dateString[1] - 1, dateString[0]).getTime();
-				})();
+					(function() {
+						if (form.elements['select-date'].value.split(',')[0]) {
+							let dateString = form.elements['select-date'].value.split(',')[0];
+							dateString = dateString.split('.');
+							dateStart = new Date(dateString[2], dateString[1] - 1, dateString[0]).getTime()
+						} else {
+							dateStart = 0;
+						}
+					})();
 
-				(function() {
-					if (form.elements['select-date'].value.split(',')[1]) {
-						let dateString = form.elements['select-date'].value.split(',')[1];
-						dateString = dateString.split('.');
-						dateEnd = new Date(dateString[2], dateString[1] - 1, dateString[0]).getTime();
-					} else {
-						dateEnd = (new Date()).getTime();
-					}
-					// let dateString = form.elements['select-date'].value.split(',')[1] || (new Date()).getTime();
-					// dateString = dateString.split('.');
-					// dateEnd = new Date(dateString[2], dateString[1] - 1, dateString[0]).getTime();
-				})();
+					(function() {
+						if (form.elements['select-date'].value.split(',')[1]) {
+							let dateString = form.elements['select-date'].value.split(',')[1];
+							dateString = dateString.split('.');
+							dateEnd = new Date(dateString[2], dateString[1] - 1, dateString[0]).getTime();
+						} else {
+							dateEnd = (new Date()).getTime();
+						}
+					})();
 
-				changeTable(dateStart, dateEnd, orderId, articles);
-			});
+					changeTable(dateStart, dateEnd, orderId, articles);
+				});
+			}
 
 			function changeTable(dateStart, dateEnd, orderId, array) {
 				resetTable(array);
@@ -515,13 +510,9 @@ window.addEventListener('load', function() {
 					let id = array[i].getAttribute('data-id');
 					let date = +(array[i].getAttribute('data-time') + '000');
 
-					console.log('--------');
-					console.log(dateStart);
-					console.log(date);
-					console.log(dateEnd);
-					console.log('--------');
-
-					if (dateStart >= date >= dateEnd) {
+					if (dateStart <= date && date <= dateEnd) {
+						
+					} else {
 						array[i].classList.add('lk-order--hidden');
 					}
 
@@ -538,4 +529,5 @@ window.addEventListener('load', function() {
 			}
 		})();
 	})();
+
 });

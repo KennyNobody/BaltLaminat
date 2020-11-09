@@ -90,30 +90,77 @@ $(document).ready(function() {
 
 	$('[data-fancybox="gallery"]').fancybox();
 
+	let uploadedFile;
 
-	var myDropzone = new Dropzone(".dropfile", { 
-		paramName: 'FND_USER_FILE',
-		uploadMultiple: true,
-		autoProcessQueue: false,
-		url: '/local/ajax/form_for_director.php',
-		uploadMultiple: true,
-		clickable: true,
-		init: function() {
-			// this.on("maxfilesexceeded", function(file) {
-			// 	this.removeAllFiles();
-			// 	this.addFile(file);
-			// });
+	(function initDropzone(){
+		let form = document.querySelector('#modal-write');
 
-			this.on('success', function(file, response) {
-				JSON.parse(response);
-				console.log(response);
-				$("#ideaform").append($('<input type="hidden" name="file"  value='+response+'>'));
-			});
-		},
-		accept: function(file, done) {
-			console.log(file);
-		}
-	});
+		let myDropzone = new Dropzone(form.querySelector(".dropfile"), { 
+			url: form.action,
+			autoProcessQueue: false,
+			uploadMultiple: false,
+			clickable: true,
+			init: function() {
+				form.addEventListener('submit', function(){
+					console.log('Отправка');
+					// this.processQueue();
+				});
+
+				this.on("addedfiles", function(file) {
+					uploadedFile = file;
+				});
+			},
+			// sending: function() {
+			// 	console.log('Отправляем');
+			// },
+			// accept: function(file, done) {
+			// 	console.log('Ушло');
+			// 	console.log(file);
+			// 	console.log(done);
+			// }
+		});
+
+		form.addEventListener('submit', function(e) {
+			e.stopPropagation();
+			e.preventDefault();
+			// var action = this.attr('action');
+			// var $file = $form.find('input[type="file"]');
+			console.log(this);
+			var formData = new FormData(this);
+
+			formData.append('FILES', uploadedFile);
+
+			console.log(uploadedFile);
+
+			$.ajax({
+				url: this.action,
+				processData: false,
+				contentType: false,
+				data: formData,
+				type: "post",
+				dataType: "JSON",
+				success: function (result) {
+					console.log('success');
+					console.log(result);
+					$('#idmodal').find('h4').html('Форма обратной связи');
+					$('#idmodal').find('p').html('Форма успешно отправлена');
+					$.fancybox.open({
+						src: '#idmodal'
+					});
+				},
+				error: function (result) {
+					console.log('error');
+					console.log(result);
+				}
+			})
+		});
+
+		
+	})();
+
+	// $('.form_for_director .modal-write__btn').on('click', function (e) {
+		
+	// });
 
 	(function initEggs(){
 		function runOnKeys(func, ...codes) {
