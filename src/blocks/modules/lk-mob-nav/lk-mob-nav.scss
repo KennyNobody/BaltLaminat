@@ -1,0 +1,35 @@
+.lk-mob-nav {
+	display: none;
+	@include r(1200) {
+		display: block;
+	}
+	&__title {
+		text-transform: uppercase;
+		color: $green;
+		font-weight: 700;
+		font-size: 20px;
+		margin-bottom: 15px;
+	}
+	&__link {
+		padding: 16px 0px;
+		display: flex;
+		align-items: center;
+		border-bottom: 1px solid #E5E5E5;
+		font-weight: bold;
+		font-size: 14px;
+		color: $dark;
+		text-decoration: none;
+		svg {
+			width: 22px;
+			height: 22px;
+			margin-right: 16px;
+		}
+		span {
+			display: inline-block;
+			margin-right: 5px;
+		}
+		strong {
+			color: $green;
+		}
+	}
+}

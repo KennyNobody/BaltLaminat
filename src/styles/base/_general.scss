@@ -40,3 +40,9 @@ i {
 		background: none;
 	}
 }
+
+.mobile-hidden {
+	@include r(1200) {
+		display: none !important;
+	}
+}

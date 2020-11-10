@@ -123,14 +123,10 @@ $(document).ready(function() {
 		form.addEventListener('submit', function(e) {
 			e.stopPropagation();
 			e.preventDefault();
-			// var action = this.attr('action');
-			// var $file = $form.find('input[type="file"]');
-			console.log(this);
+
 			var formData = new FormData(this);
 
 			formData.append('FILES', uploadedFile);
-
-			console.log(uploadedFile);
 
 			$.ajax({
 				url: this.action,
@@ -140,8 +136,6 @@ $(document).ready(function() {
 				type: "post",
 				dataType: "JSON",
 				success: function (result) {
-					console.log('success');
-					console.log(result);
 					$('#idmodal').find('h4').html('Форма обратной связи');
 					$('#idmodal').find('p').html('Форма успешно отправлена');
 					$.fancybox.open({
