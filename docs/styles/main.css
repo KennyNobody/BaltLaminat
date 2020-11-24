@@ -5686,6 +5686,7 @@ i {
 
 .search {
   position: relative;
+  display: flex;
 }
 
 .search__input {
@@ -10664,10 +10665,11 @@ i {
 
 .card__title {
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   text-decoration: none;
   display: block;
   color: #2E2E2E;
+  flex-grow: 1;
 }
 
 .card__title:hover {
@@ -10676,7 +10678,6 @@ i {
 
 .card__content {
   margin-bottom: 16px;
-  flex-grow: 1;
 }
 
 .card__toolbar {
