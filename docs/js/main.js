@@ -477,6 +477,9 @@ __webpack_require__.r(__webpack_exports__);
       "content": mobileContacts
     }, {
       "position": "bottom",
+      "content": mobileAdress
+    }, {
+      "position": "bottom",
       "content": mobileLinks
     }]
   }, {

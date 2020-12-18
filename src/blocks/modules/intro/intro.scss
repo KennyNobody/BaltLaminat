@@ -135,7 +135,6 @@
 			display: block;
 			justify-content: center;
 			position: relative;
-			min-height: 180px;
 			padding-bottom: 88px;
 			min-height: 500px;
 			background-position: center;
@@ -147,7 +146,7 @@
 	&__content {
 		width: 50%;
 		padding: 41px 47px 63px 47px;
-		min-height: 636px;
+		min-height: 540px;
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;

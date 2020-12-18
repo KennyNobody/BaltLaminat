@@ -22,6 +22,10 @@ import Mmenu from 'mmenu-js';
 		},
 		{
 			"position": "bottom",
+			"content": mobileAdress
+		},
+		{
+			"position": "bottom",
 			"content": mobileLinks
 		}
 		],
