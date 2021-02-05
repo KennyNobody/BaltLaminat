@@ -169,14 +169,14 @@ window.addEventListener('load', function () {
 
       for (var i = 0; i < dropdown.length; i++) {
         dropdown[i].addEventListener('change', function () {
-          toggleLink(this);
+          // toggleLink(this);
+          changeState();
         });
-      }
+      } // function toggleLink(item) {
+      // 	let selected = item.options[item.selectedIndex].value;
+      // 	window.location.href = selected;
+      // }
 
-      function toggleLink(item) {
-        var selected = item.options[item.selectedIndex].value;
-        window.location.href = selected;
-      }
     })();
 
     (function selectAll() {
@@ -211,6 +211,25 @@ window.addEventListener('load', function () {
 
     (function sort() {
       var toolbar = document.querySelector('.toolbar');
+      var searchForm = document.querySelector('.search--catalog');
+      var searchFilter = document.querySelector('#filter-search');
+
+      if (searchFilter) {
+        (function () {
+          var items = searchFilter.querySelectorAll('.filter-checkbox__input');
+
+          var _loop = function _loop(i) {
+            items[i].addEventListener('change', function () {
+              var filterString = "&" + items[i].value;
+              changeState();
+            });
+          };
+
+          for (var i = 0; i < items.length; i++) {
+            _loop(i);
+          }
+        })();
+      }
 
       if (toolbar) {
         var inputs = toolbar.querySelectorAll('input');
@@ -223,6 +242,13 @@ window.addEventListener('load', function () {
         for (var n = 0; n < selects.length; n++) {
           selects[n].addEventListener('change', changeState);
         }
+      }
+
+      if (searchForm) {
+        searchForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          changeState();
+        });
       } // http://194.67.90.164/catalog/6256/?sort=catalog_PRICE_1&order=asc
 
 
@@ -230,7 +256,18 @@ window.addEventListener('load', function () {
         var type = toolbar.elements["layout"].value;
         var sort = toolbar.elements["sort"].value;
         var quanity = toolbar.elements["item-quality"].value;
-        var params = "?display=" + type + "&sort=" + sort + "&elementcount=" + quanity;
+        var searchCat = "";
+        var q = "";
+
+        if (searchForm) {
+          q = "&q=" + searchForm.elements["q"].value;
+        }
+
+        if (searchFilter) {
+          searchCat = "&" + searchFilter.elements["sectionsFilter"].value;
+        }
+
+        var params = "?display=" + type + "&sort=" + sort + "&elementcount=" + quanity + q + searchCat;
         setUrl(params);
       }
 
@@ -238,7 +275,6 @@ window.addEventListener('load', function () {
         var oldUrl = window.location.href;
         url = trimToLastForwardslash(oldUrl);
         window.location.href = url + params;
-        console.log(url + params);
       }
 
       function trimToLastForwardslash(input) {
@@ -247,7 +283,7 @@ window.addEventListener('load', function () {
       }
     })();
   })();
-});
+}); // 28067
 
 /***/ }),
 
@@ -474,13 +510,13 @@ __webpack_require__.r(__webpack_exports__);
       "content": ["searchfield"]
     }, {
       "position": "bottom",
-      "content": mobileContacts
+      "content": mobileContacts || null
     }, {
       "position": "bottom",
-      "content": mobileAdress
+      "content": mobileAdress || null
     }, {
       "position": "bottom",
-      "content": mobileLinks
+      "content": mobileLinks || null
     }]
   }, {
     "language": "ru"
@@ -570,7 +606,9 @@ $(document).ready(function () {
   $('[data-fancybox="modal"]').fancybox({
     arrows: false
   });
-  $('[data-fancybox="swiper-gallery"]').fancybox({});
+  $('[data-fancybox="swiper-gallery"]').fancybox({
+    loop: true
+  });
   $('[data-fancybox="filter-modal"]').fancybox({
     slideClass: "filter-fancybox",
     touch: false
@@ -801,13 +839,15 @@ window.initSlider = function () {
         spaceBetween: 32,
         freeMode: true,
         observer: true,
-        observeParents: true
+        loop: true,
+        observeParents: true,
+        loopAdditionalSlides: 0
       });
       var mySwiperTop = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](sliderTop[i], {
         slidesPerView: 1,
         observer: true,
         observeParents: true,
-        loop: false,
+        loop: true,
         loopAdditionalSlides: 0,
         navigation: {
           nextEl: '.slider-bottom__btn--right',
@@ -1341,7 +1381,15 @@ document.addEventListener('DOMContentLoaded', function () {
           flag = table.querySelector('.lk-table-toolbar--head .lk-table-toolbar__col--checkbox .lk-checkbox__input');
           btnRemove = table.querySelector('.remove-all');
           btnRepair = table.querySelector('.lk-table-toolbar__repair-btn');
-          console.log(table);
+
+          for (var _i = 0; _i < itemsArray.length; _i++) {
+            itemsArray[_i].addEventListener('change', function () {
+              if (this.checked == true) {
+                btnRemove.classList.add('remove-all--visible');
+              }
+            });
+          }
+
           btn[i].addEventListener('click', function () {
             toggleFlag();
             selectAll(flag, itemsArray);
@@ -1365,12 +1413,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
           function selectAll(flag, itemsArray) {
             if (flag.checked == true) {
-              for (var _i = 0; _i < itemsArray.length; _i++) {
-                itemsArray[_i].checked = true;
+              for (var _i2 = 0; _i2 < itemsArray.length; _i2++) {
+                itemsArray[_i2].checked = true;
               }
             } else {
-              for (var _i2 = 0; _i2 < itemsArray.length; _i2++) {
-                itemsArray[_i2].checked = false;
+              for (var _i3 = 0; _i3 < itemsArray.length; _i3++) {
+                itemsArray[_i3].checked = false;
               }
             }
           }

@@ -379,13 +379,20 @@ document.addEventListener('DOMContentLoaded',function(){
 					btnRemove = table.querySelector('.remove-all');
 					btnRepair = table.querySelector('.lk-table-toolbar__repair-btn');
 
-					console.log(table)
+					for (let i = 0; i < itemsArray.length; i++) {
+						itemsArray[i].addEventListener('change', function() {
+							if (this.checked == true) {
+								btnRemove.classList.add('remove-all--visible');
+							}
+						});
+					}
 
 					btn[i].addEventListener('click', function(){
 						toggleFlag();
 						selectAll(flag, itemsArray);
 						toggleRemoveBtn(flag);
 					});
+
 					flag.addEventListener('change', function(){
 						selectAll(flag, itemsArray);
 						toggleRemoveBtn(flag);

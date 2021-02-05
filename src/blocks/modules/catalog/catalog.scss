@@ -877,8 +877,9 @@
 	flex-direction: column;
 	@include r(1200) {
 		width: 100%;
-		flex-direction: row;
+		// flex-direction: row;
 		flex-wrap: wrap;
+		align-items: center;
 	}
 	&--clear {
 		height: 0px;
@@ -903,10 +904,10 @@
 		display: block;
 		position: relative;
 		@include r(1200) {
-			width: 70px;
-			height: 70px;
+			width: 270px;
+			height: 270px;
 			order: -8;
-			margin-right: 16px;
+			// margin-right: 16px;
 			flex-shrink: 0;
 		}
 		&:hover {
@@ -944,23 +945,42 @@
 			background-color: $red;
 		}
 	}
+	&__title-box {
+		height: 48px;
+		position: relative;
+		transition: 0.3s all;
+		margin-bottom: 10px;
+		z-index: 2;
+	}
 	&__title {
 		font-weight: bold;
-		margin-bottom: 10px;
 		text-decoration: none;
 		display: block;
 		color: $dark;
 		flex-grow: 1;
+		word-wrap: break-word;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		right: 0px;
+		max-height: 48px;
+		background-color: $light;
+		overflow: hidden;
 		@include r(1200) {
 			order: -9;
 			width: 100%;
+			text-align: center;
+			position: relative;
 		}
 		&:hover {
-			opacity: 0.7;
+			max-height: 500px;
 		}
 	}
 	&__content {
 		margin-bottom: 16px;
+		@include r(1200) {
+			text-align: center;
+		}
 	}
 	&__toolbar {
 		margin-bottom: 17px;
@@ -1066,6 +1086,9 @@
 		height: 40px;
 		transition: 0.3s all;
 		cursor: pointer;
+		@include r(1200) {
+			max-width: 180px;
+		}
 		&--green {
 			&:hover {
 				background-color: $green;

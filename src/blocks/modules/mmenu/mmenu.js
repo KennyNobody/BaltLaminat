@@ -18,15 +18,15 @@ import Mmenu from 'mmenu-js';
 		},
 		{
 			"position": "bottom",
-			"content": mobileContacts
+			"content": mobileContacts || null,
 		},
 		{
 			"position": "bottom",
-			"content": mobileAdress
+			"content": mobileAdress || null,
 		},
 		{
 			"position": "bottom",
-			"content": mobileLinks
+			"content": mobileLinks || null,
 		}
 		],
 	}, {

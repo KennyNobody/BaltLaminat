@@ -436,7 +436,7 @@
 		padding: 20px;
 	}
 	&__title {
-		text-transform: uppercase;
+		// text-transform: uppercase;
 		font-weight: bold;
 		margin-bottom: 23px;
 		font-size: 20px;
@@ -589,8 +589,8 @@
 	transition: 0.3s all;
 	padding-right: 16px;
 	background-color: inherit;
-	opacity: 0;
-	visibility: hidden;
+	// opacity: 0;
+	// visibility: hidden;
 	&:hover {
 		opacity: 0.7;
 	}
@@ -825,7 +825,9 @@
 		&--result {
 			padding: 0px;
 			width: 200px;
-			display: block;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
 		}
 	}
 	&__repair-btn {

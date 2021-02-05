@@ -15,8 +15,11 @@
 	&__icon {
 		position: absolute;
 		z-index: 2;
-		right: 10px;
-		bottom: 10px;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		transition: 0.3s all;
+		opacity: 0;
 		svg {
 			width: 50px;
 			height: 50px;
@@ -26,7 +29,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		height: 528px;
+		// height: 528px;
 		outline: none;
 		position: relative;
 		@include r(1200) {
@@ -37,6 +40,11 @@
 			width: 100%;
 			display: block;
 			object-fit: contain;
+		}
+		&:hover {
+			.slider-top__icon {
+				opacity: 0.7;
+			}
 		}
 	}
 	&__pagination {

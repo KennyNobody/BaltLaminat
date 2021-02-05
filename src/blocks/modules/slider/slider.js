@@ -13,14 +13,16 @@ window.initSlider = function() {
 				spaceBetween: 32,
 				freeMode: true,
 				observer: true,
+				loop: true,
 				observeParents: true,
+				loopAdditionalSlides: 0,
 			});
 
 			let mySwiperTop = new Swiper (sliderTop[i], {
 				slidesPerView: 1,
 				observer: true,
 				observeParents: true,
-				loop: false,
+				loop: true,
 				loopAdditionalSlides: 0,
 				navigation: {
 					nextEl: '.slider-bottom__btn--right',

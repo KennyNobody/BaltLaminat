@@ -5,14 +5,15 @@ window.addEventListener('load', function(){
 
 			for (let i = 0; i < dropdown.length; i++) {
 				dropdown[i].addEventListener('change', function(){
-					toggleLink(this);
+					// toggleLink(this);
+					changeState();
 				})
 			}
 
-			function toggleLink(item) {
-				let selected = item.options[item.selectedIndex].value;
-				window.location.href = selected;
-			}
+			// function toggleLink(item) {
+			// 	let selected = item.options[item.selectedIndex].value;
+			// 	window.location.href = selected;
+			// }
 		})();
 
 		(function selectAll(){
@@ -50,6 +51,19 @@ window.addEventListener('load', function(){
 
 		(function sort(){
 			const toolbar = document.querySelector('.toolbar');
+			const searchForm = document.querySelector('.search--catalog');
+			const searchFilter = document.querySelector('#filter-search');
+
+			if (searchFilter) {
+				let items = searchFilter.querySelectorAll('.filter-checkbox__input');
+
+				for (let i = 0; i < items.length; i++) {
+					items[i].addEventListener('change', function() {
+						let filterString = "&" + items[i].value;
+						changeState();
+					});
+				}
+			}
 
 			if (toolbar) {
 				const inputs = toolbar.querySelectorAll('input');
@@ -65,14 +79,31 @@ window.addEventListener('load', function(){
 				}
 			}
 
+			if (searchForm) {
+				searchForm.addEventListener('submit', function(e) {
+					e.preventDefault();
+					changeState();
+				})
+			}
+
 			// http://194.67.90.164/catalog/6256/?sort=catalog_PRICE_1&order=asc
 
 			function changeState() {
 				let type = toolbar.elements["layout"].value;
 				let sort = toolbar.elements["sort"].value;
 				let quanity = toolbar.elements["item-quality"].value;
-				
-				let params = "?display=" + type + "&sort=" + sort + "&elementcount=" + quanity;
+				let searchCat = "";
+				let q = "";
+
+				if (searchForm) {
+					q = "&q=" + searchForm.elements["q"].value;
+				}
+
+				if (searchFilter) {
+					searchCat = "&" + searchFilter.elements["sectionsFilter"].value;
+				}
+
+				let params = "?display=" + type + "&sort=" + sort + "&elementcount=" + quanity + q + searchCat;
 
 				setUrl(params);
 			}
@@ -82,7 +113,6 @@ window.addEventListener('load', function(){
 				url = trimToLastForwardslash(oldUrl);
 
 				window.location.href = url + params;
-				console.log(url + params);
 			}
 
 			function trimToLastForwardslash(input) {
@@ -93,3 +123,5 @@ window.addEventListener('load', function(){
 		})();
 	})();
 });
+
+// 28067

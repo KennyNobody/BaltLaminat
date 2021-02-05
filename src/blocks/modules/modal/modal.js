@@ -69,7 +69,7 @@ $(document).ready(function() {
 	});
 
 	$('[data-fancybox="swiper-gallery"]').fancybox({
-		
+		loop: true
 	});
 
 	$('[data-fancybox="filter-modal"]').fancybox({
