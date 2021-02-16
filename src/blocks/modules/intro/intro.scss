@@ -129,7 +129,7 @@
 			color: $light;
 		}
 	}
-	&__columns {
+	&__slide {
 		display: flex;
 		@include r(1200) {
 			display: block;

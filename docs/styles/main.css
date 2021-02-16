@@ -7478,6 +7478,7 @@ i {
 
 .top-nav__link svg {
   margin-right: 10px;
+  fill: #00B152;
 }
 
 .top-nav__link span {
@@ -9117,7 +9118,7 @@ i {
   color: #ffffff;
 }
 
-.intro__columns {
+.intro__slide {
   display: flex;
 }
 
@@ -12466,7 +12467,7 @@ path {
     overflow-y: hidden;
   }
 
-  .intro__columns {
+  .intro__slide {
     display: block;
     justify-content: center;
     position: relative;
@@ -13187,7 +13188,7 @@ path {
 }
 
 @media only screen and (max-width: 800px) {
-  .intro__columns {
+  .intro__slide {
     min-height: 0px;
   }
 }

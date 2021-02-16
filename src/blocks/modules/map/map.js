@@ -1,19 +1,19 @@
 import tippy from 'tippy.js';
 
 // let tenantArrs = [
-// 	["7", "ART FLEX", "Описание магазина ART FLEX", "https://placehold.it/1800x400", "/tenants/art_flex/", "1"],
-// 	["2", "ASCONA", "Описание магазина ASCONA", "https://placehold.it/1800x400", "/tenants/askona/", "2"],
-// 	["3", "BOXX", "Описание магазина BOXX", "https://placehold.it/1800x400", "/tenants/boxx/", "10"],
-// 	["1", "Hilding Anders", "Описание магазина ART FLEX", "https://placehold.it/1800x400", "/tenants/hilding-anders/", "3"],
-// 	["2", "Lalala", "Описание магазина Lalala", "https://placehold.it/1800x400", "/tenants/lalala/", "1"],
-// 	["5", "Test Test", "Описание магазина TestTest", "https://placehold.it/1800x400", "/tenants/TestTest/", "5"]
+// [[7, 9], "ART FLEX", "Описание магазина ART FLEX", "https://placehold.it/1800x400", "/tenants/art_flex/", [2, 1]],
+// [[2], "ASCONA", "Описание магазина ASCONA", "https://placehold.it/1800x400", "/tenants/askona/", [9, 4, 2, 1]],
+// [[3], "BOXX", "Описание магазина BOXX", "https://placehold.it/1800x400", "/tenants/boxx/", [2, 1]],
+// [[1], "Hilding Anders", "Описание магазина ART FLEX", "https://placehold.it/1800x400", "/tenants/hilding-anders/", 3],
+// [[2], "Lalala", "Описание магазина Lalala", "https://placehold.it/1800x400", "/tenants/lalala/", 1],
+// [[5], "Test Test", "Описание магазина TestTest", "https://placehold.it/1800x400", "/tenants/TestTest/", 5]
 // ];
 
 
 window.addEventListener('load', function(){
 	(function initMapSlider() {
 		let tenantArrs = BX.message('tenants');
-		// window.tenantArrs = tenantArrs;
+		window.tenantArrs = tenantArrs;
 
 		const map = document.querySelector('.map');
 		const button = document.querySelectorAll('.map__change-floor');
@@ -29,7 +29,6 @@ window.addEventListener('load', function(){
 			for (let [index, block] of tenantArrs.entries()) {
 				setAttrubutes(index, block);
 			}
-
 		}
 
 		for (let i = 0; i < button.length; i++) {
@@ -42,9 +41,14 @@ window.addEventListener('load', function(){
 
 		function setAttrubutes(index, block) {
 			let content = "<div class='map-tippy'><img src='"+ block[3] +"' alt='"+ block[1] +"' class='map-tippy__logo'><p class='map-tippy__title'>"+ block[1] +"</p><p class='map-tippy__content'>"+ block[2] +"</p><a href='"+ block[4] +"' class='btn btn--dark map-tippy__btn'>Подробнее</a></div>";
-			let field = map.querySelector("#field-" + (index + 1));
-			field.setAttribute('data-tippy-content', content);
-			field.setAttribute('data-map-field', block[5]);
+
+			let pointArray = block[0];
+
+			for (let i = 0; i < block[0].length; i++) {
+				let field = map.querySelector("#field-" + (block[0][i]));
+				field.setAttribute('data-tippy-content', content);
+				field.setAttribute('data-map-field', block[5]);
+			}
 		}
 
 		initTippy();
@@ -99,6 +103,7 @@ window.addEventListener('load', function(){
 
 		function toggleTypeField (number) {
 			let activeType = +this.getAttribute('data-type');
+
 			for (let i = 0; i < fields.length; i++) {
 				if (fields[i].getAttribute('data-map-field') == activeType) {
 					fields[i].classList.add('map__room--active');
@@ -107,11 +112,30 @@ window.addEventListener('load', function(){
 				}
 			}
 
+			compareArray(this, activeType);
+		}
+
+		function compareArray(item, id) {
 			for (let i = 0; i < partner.length; i++) {
-				if (partner[i].getAttribute('data-partner-type') == activeType) {
+
+				let itemCategories = partner[i].getAttribute('data-partner-type');
+				let itemCategoriesArray = itemCategories.split(',');
+
+				if (checkSubcat(id, itemCategoriesArray)) {
 					partner[i].classList.add('map__list-item--active');
 				} else {
 					partner[i].classList.remove('map__list-item--active');
+				}
+
+				console.log(checkSubcat(id, itemCategoriesArray));
+			}
+		}
+
+		function checkSubcat(id, itemCategoriesArray) {
+			for (let n = 0; n < itemCategoriesArray.length; n++) {
+				if (itemCategoriesArray[n] == id) {
+					return true;
+					break;
 				}
 			}
 		}
