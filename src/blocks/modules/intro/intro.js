@@ -10,14 +10,15 @@ document.addEventListener('DOMContentLoaded', () => {
 			delay: 5000,
 			disableOnInteraction: false,
 		},
-		// pagination: {
-		// 	el: '.slider-top__pagination',
-		// 	type: 'fraction',
-		// },
-		// navigation: {
-		// 	nextEl: '.slider-top__btn--next',
-		// 	prevEl: '.slider-top__btn--prev',
-		// 	disabledClass: 'slider-top__btn--disabled'
-		// },
+		slideActiveClass: 'intro__slide--active',
+		pagination: {
+			el: '.intro__pagination',
+			clickable: true,
+			bulletClass: 'intro__bullet',
+			bulletActiveClass: 'intro__bullet--active',
+			renderBullet: function (index, className) {
+				return '<div class="' + className + '"><p class="intro__bullet-text">' + this.slides[index].getAttribute('data-title') + '</p><div class="intro__progress-line"></div></div>';
+			},
+		},
 	});
 })
