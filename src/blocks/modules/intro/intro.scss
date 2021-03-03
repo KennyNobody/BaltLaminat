@@ -1,134 +1,7 @@
 .intro {
-	// &--type-1 {
-	// 	color: $dark;
-	// 	.intro__content {
-	// 		background-color: $green;
-	// 	}
-	// 	.intro__btn {
-	// 		background-color: $dark;
-	// 		color: $light;
-	// 	}
-	// }
-	// &--type-2 {
-	// 	color: $light;
-	// 	.intro__content {
-	// 		background-color: $black;
-	// 	}
-	// 	.intro__btn {
-	// 		background-color: $light;
-	// 		color: $black;
-	// 	}
-	// }
-	// &--type-3 {
-	// 	color: $light;
-	// 	.intro__content {
-	// 		background-color: #002278;
-	// 	}
-	// 	.intro__btn {
-	// 		background-color: $light;
-	// 		color: $black;
-	// 	}
-	// }
-	// &--type-4 {
-	// 	color: $light;
-	// 	.intro__content {
-	// 		background-color: #363636;
-	// 	}
-	// 	.intro__btn {
-	// 		background-color: $light;
-	// 		color: $black;
-	// 	}
-	// }
-	// &--type-5 {
-	// 	color: $light;
-	// 	.intro__content {
-	// 		background-color: #770000;
-	// 	}
-	// 	.intro__btn {
-	// 		background-color: $light;
-	// 		color: $black;
-	// 	}
-	// }
-	// &--type-6 {
-	// 	color: $light;
-	// 	.intro__content {
-	// 		background-color: #E04F14;
-	// 	}
-	// 	.intro__btn {
-	// 		background-color: $light;
-	// 		color: $black;
-	// 	}
-	// }
-	// &--type-7 {
-	// 	color: $dark;
-	// 	.intro__content {
-	// 		background-color: #EFAC00;
-	// 	}
-	// 	.intro__btn {
-	// 		background-color: $dark;
-	// 		color: $light;
-	// 	}
-	// }
-	// &--type-8 {
-	// 	color: $light;
-	// 	.intro__content {
-	// 		background-color: #115500;
-	// 	}
-	// 	.intro__btn {
-	// 		background-color: $light;
-	// 		color: $black;
-	// 	}
-	// }
-	// &--type-9 {
-	// 	color: $light;
-	// 	.intro__content {
-	// 		background-color: #431554;
-	// 	}
-	// 	.intro__btn {
-	// 		background-color: $light;
-	// 		color: $black;
-	// 	}
-	// }
-	// &--type-10 {
-	// 	color: $light;
-	// 	.intro__content {
-	// 		background-color: #0088EB;
-	// 	}
-	// 	.intro__btn {
-	// 		background-color: $light;
-	// 		color: $black;
-	// 	}
-	// }
-	// &--type-11 {
-	// 	color: $light;
-	// 	.intro__content {
-	// 		background-color: #00A98B;
-	// 	}
-	// 	.intro__btn {
-	// 		background-color: $light;
-	// 		color: $black;
-	// 	}
-	// }
-	// &--type-12 {
-	// 	color: $dark;
-	// 	.intro__content {
-	// 		background-color: #CEB094;
-	// 	}
-	// 	.intro__btn {
-	// 		background-color: $dark;
-	// 		color: $light;
-	// 	}
-	// }
-	// &--type-13 {
-	// 	color: $dark;
-	// 	.intro__content {
-	// 		background-color: #AADE55;
-	// 	}
-	// 	.intro__btn {
-	// 		background-color: $dark;
-	// 		color: $light;
-	// 	}
-	// }
+	@include r(1200) {
+		margin-bottom: 35px;
+	}
 	&__slider {
 		overflow: visible;
 	}
@@ -150,7 +23,7 @@
 			display: block;
 			justify-content: center;
 			position: relative;
-			padding-bottom: 88px;
+			padding-bottom: 40px;
 			min-height: 500px;
 			background-position: center;
 		}
@@ -167,7 +40,7 @@
 		align-items: flex-start;
 		@include r(1200) {
 			text-align: center;
-			min-width: 272px;
+			width: 100%;
 			display: block;
 			padding: 22px;
 			min-height: 0px;
@@ -205,29 +78,20 @@
 		max-width: 100%;
 		width: auto;
 		display: block;
+		@include r(1200) {
+			// width: 100%;
+			margin-left: auto;
+			margin-right: auto;
+			height: 45px;
+			
+		}
 	}
-	// &__title {
-	// 	font-weight: bold;
-	// 	font-size: 30px;
-	// 	margin-bottom: 45px;
-	// 	flex-grow: 1;
-	// 	line-height: 1.2;
-	// 	&--large {
-	// 		font-size: 44px;
-	// 		font-weight: 700;
-	// 		text-transform: uppercase;
-	// 	}
-	// 	@include r(1200) {
-	// 		font-size: 22px;
-	// 		margin-bottom: 0px;
-	// 	}
-	// }
 	&__btn {
 		width: 194px;
 		text-transform: uppercase;
-		@include r(1200) {
-			display: none;
-		}
+		// @include r(1200) {
+		// 	display: none;
+		// }
 	}
 	&__editor {
 		flex-grow: 1;
@@ -240,23 +104,38 @@
 		h1, h2 {
 			font-size: 44px;
 			text-transform: uppercase;
+			@include r(1200) {
+				font-size: 24px;
+			}
 		}
 		h3 {
 			font-size: 30px;
 			font-weight: 700;
 			text-transform: uppercase;
+			@include r(1200) {
+				font-size: 18px;
+			}
 		}
 		h4 {
 			font-size: 30px;
 			font-weight: 700;
+			@include r(1200) {
+				font-size: 18px;
+			}
 		}
 		h5 {
 			font-size: 24px;
 			font-weight: 700;
+			@include r(1200) {
+				font-size: 18px;
+			}
 		}
 		h6 {
 			font-size: 18px;
 			font-weight: 700;
+			@include r(1200) {
+				font-size: 16px;
+			}
 		}
 		p {
 			margin-bottom: 1rem;
@@ -265,6 +144,9 @@
 			font-weight: 700;
 			font-size: 26px;
 			display: block;
+			@include r(1200) {
+				font-size: 20px;
+			}
 		}
 	}
 	&__pagination {
@@ -288,10 +170,18 @@
 		cursor: pointer;
 		transition: 0.3s all;
 		position: relative;
+		@include r(1200) {
+			padding: 0;
+			height: 10px;
+			width: 10px;
+		}
 		&:hover {
 			opacity: 0.7;
 		}
 		&--active {
+			@include r(1200) {
+				background-color: $dark;
+			}
 			.intro__progress-line:after {
 				left: 0%;
 				visibility: visible;
@@ -303,6 +193,9 @@
 		overflow: hidden;
 		text-overflow: ellipsis;
 		margin-bottom: 28px;
+		@include r(1200) {
+			display: none;
+		}
 	}
 	&__progress-line {
 		width: 100%;
@@ -312,6 +205,9 @@
 		position: relative;
 		transition: 0.3s;
 		overflow: hidden;
+		@include r(1200) {
+			display: none;
+		}
 		&:after {
 			display: block;
 			content: "";

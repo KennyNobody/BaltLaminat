@@ -6,10 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
 		observer: true,
 		observeParents: true,
 		autoHeight: true,
-		autoplay: {
-			delay: 5000,
-			disableOnInteraction: false,
-		},
+		// autoplay: {
+		// 	delay: 5000,
+		// 	disableOnInteraction: false,
+		// },
 		slideActiveClass: 'intro__slide--active',
 		pagination: {
 			el: '.intro__pagination',

@@ -1,0 +1,38 @@
+.tabs {
+	&__nav {
+		display: flex;
+		flex-wrap: wrap;
+		@include r(1200) {
+			display: none;
+		}
+	}
+	&__link {
+		padding-top: 11px;
+		padding-bottom: 11px;
+		position: relative;
+		display: inline-block;
+		margin-right: 60px;
+		font-weight: 700;
+		color: $dark;
+		transition: 0.3s all;
+		text-decoration: none;
+		border-bottom: 3px solid $light;
+		&--active {
+			border-bottom: 3px solid $green;
+			pointer-events: none;
+		}
+		&:hover {
+			opacity: 0.7;
+		}
+	}
+	&__select {
+		display: none;
+		@include r(1200) {
+			display: block;
+			width: 100%;
+			height: 40px;
+			margin-bottom: 20px;
+			font-family: $font-main;
+		}
+	}
+}

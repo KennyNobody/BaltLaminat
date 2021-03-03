@@ -5566,6 +5566,10 @@ i {
   font-size: 16px;
 }
 
+.text :last-child {
+  margin-bottom: 0;
+}
+
 .text--center {
   text-align: center;
 }
@@ -8953,6 +8957,75 @@ i {
 .socials__link svg {
   height: 32px;
   width: 32px;
+}
+
+.tabs__nav {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tabs__link {
+  padding-top: 11px;
+  padding-bottom: 11px;
+  position: relative;
+  display: inline-block;
+  margin-right: 60px;
+  font-weight: 700;
+  color: #2E2E2E;
+  transition: 0.3s all;
+  text-decoration: none;
+  border-bottom: 3px solid #ffffff;
+}
+
+.tabs__link--active {
+  border-bottom: 3px solid #00B152;
+  pointer-events: none;
+}
+
+.tabs__link:hover {
+  opacity: 0.7;
+}
+
+.tabs__select {
+  display: none;
+}
+
+.info-company {
+  margin-bottom: 45px;
+}
+
+.info-company__title {
+  font-weight: 700;
+  line-height: 1.2;
+  font-size: 50px;
+  margin-bottom: 22px;
+}
+
+.info-company__columns {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.info-company__content {
+  width: 50%;
+}
+
+.info-company__preview {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.info-company__logo {
+  display: block;
+  text-decoration: none;
+  color: #2E2E2E;
+}
+
+.info-company__logo img {
+  width: 120px;
+  height: auto;
 }
 
 .intro__slider {
@@ -12433,18 +12506,34 @@ path {
     overflow-y: hidden;
   }
 
+  .tabs__nav {
+    display: none;
+  }
+
+  .tabs__select {
+    display: block;
+    width: 100%;
+    height: 40px;
+    margin-bottom: 20px;
+    font-family: "Ubuntu", sans-serif;
+  }
+
+  .intro {
+    margin-bottom: 35px;
+  }
+
   .intro__slide {
     display: block;
     justify-content: center;
     position: relative;
-    padding-bottom: 88px;
+    padding-bottom: 40px;
     min-height: 500px;
     background-position: center;
   }
 
   .intro__content {
     text-align: center;
-    min-width: 272px;
+    width: 100%;
     display: block;
     padding: 22px;
     min-height: 0px;
@@ -12465,7 +12554,53 @@ path {
     height: auto;
   }
 
-  .intro__btn {
+  .intro__logo {
+    margin-left: auto;
+    margin-right: auto;
+    height: 45px;
+  }
+
+  .intro__editor h1,
+  .intro__editor h2 {
+    font-size: 24px;
+  }
+
+  .intro__editor h3 {
+    font-size: 18px;
+  }
+
+  .intro__editor h4 {
+    font-size: 18px;
+  }
+
+  .intro__editor h5 {
+    font-size: 18px;
+  }
+
+  .intro__editor h6 {
+    font-size: 16px;
+  }
+
+  .intro__editor b,
+  .intro__editor strong {
+    font-size: 20px;
+  }
+
+  .intro__bullet {
+    padding: 0;
+    height: 10px;
+    width: 10px;
+  }
+
+  .intro__bullet--active {
+    background-color: #2E2E2E;
+  }
+
+  .intro__bullet-text {
+    display: none;
+  }
+
+  .intro__progress-line {
     display: none;
   }
 
@@ -13169,6 +13304,27 @@ path {
 }
 
 @media only screen and (max-width: 680px) {
+  .info-company__title {
+    font-size: 24px;
+    margin-bottom: 18px;
+  }
+
+  .info-company__columns {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .info-company__content {
+    width: 100%;
+  }
+
+  .info-company__preview {
+    margin-bottom: 20px;
+    order: -1;
+    display: block;
+    width: 100%;
+  }
+
   .product-video iframe {
     height: 300px;
   }
