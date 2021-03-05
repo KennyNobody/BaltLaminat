@@ -24,11 +24,13 @@
 		@include r(680) {
 			width: 100%;
 		}
+		&  + .info-company__preview {
+			justify-content: flex-end;
+		}
 	}
 	&__preview {
 		width: 50%;
 		display: flex;
-		justify-content: flex-end;
 		@include r(680) {
 			margin-bottom: 20px;
 			order: -1;

@@ -9,12 +9,14 @@
 
 	}
 	&__slide {
-		display: flex;
 		background-color: $dark;
 		color: $light;
 		opacity: 0;
 		visibility: hidden;
 		transition: 0.3s all;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
 		&--active {
 			visibility: visible;
 			opacity: 1;
@@ -30,6 +32,9 @@
 		@include r(800) {
 			min-height: 0px;
 		}
+	}
+	&__container {
+		display: flex;
 	}
 	&__content {
 		width: 50%;
@@ -149,6 +154,11 @@
 			}
 		}
 	}
+	&__pagination-container {
+		margin-top: -30px;
+		position: relative;
+		z-index: 2;
+	} 
 	&__pagination {
 		width: 100%;
 		display: flex;
@@ -156,7 +166,7 @@
 		position: relative;
 		bottom: 0;
 		z-index: 2;
-		margin-top: -30px;
+		
 	}
 	&__bullet {
 		display: block;

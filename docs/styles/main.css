@@ -7484,6 +7484,7 @@ i {
   text-decoration: none;
   display: inline-flex;
   align-items: center;
+  text-transform: uppercase;
 }
 
 .top-nav__link svg {
@@ -9011,10 +9012,13 @@ i {
   width: 50%;
 }
 
+.info-company__content + .info-company__preview {
+  justify-content: flex-end;
+}
+
 .info-company__preview {
   width: 50%;
   display: flex;
-  justify-content: flex-end;
 }
 
 .info-company__logo {
@@ -9033,17 +9037,23 @@ i {
 }
 
 .intro__slide {
-  display: flex;
   background-color: #2E2E2E;
   color: #ffffff;
   opacity: 0;
   visibility: hidden;
   transition: 0.3s all;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .intro__slide--active {
   visibility: visible;
   opacity: 1;
+}
+
+.intro__container {
+  display: flex;
 }
 
 .intro__content {
@@ -9137,6 +9147,12 @@ i {
   display: block;
 }
 
+.intro__pagination-container {
+  margin-top: -30px;
+  position: relative;
+  z-index: 2;
+}
+
 .intro__pagination {
   width: 100%;
   display: flex;
@@ -9144,7 +9160,6 @@ i {
   position: relative;
   bottom: 0;
   z-index: 2;
-  margin-top: -30px;
 }
 
 .intro__bullet {
