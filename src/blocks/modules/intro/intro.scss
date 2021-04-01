@@ -17,6 +17,7 @@
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
+		height: 580px;
 		&--active {
 			visibility: visible;
 			opacity: 1;
@@ -26,7 +27,8 @@
 			justify-content: center;
 			position: relative;
 			padding-bottom: 40px;
-			min-height: 500px;
+			// min-height: 500px;
+			height: 760px;
 			background-position: center;
 		}
 		@include r(800) {
@@ -35,6 +37,11 @@
 	}
 	&__container {
 		display: flex;
+		@include r(1200) {
+			flex-direction: column;
+			height: 100%;
+			justify-content: center;
+		}
 	}
 	&__content {
 		width: 50%;
@@ -62,9 +69,10 @@
 		justify-content: center;
 		@include r(1200) {
 			width: 100%;
+			// margin-left: auto;
+			// margin-right: auto;
 			min-height: 0px;
-			height: auto;
-			display: none;
+			// height: auto;
 		}
 		img {
 			display: block;
@@ -72,8 +80,11 @@
 			width: 80%;
 			object-fit: cover;
 			@include r(1200) {
-				width: 100%;
-				height: auto;
+				margin-left: auto;
+				margin-right: auto;
+				width: auto;
+				height: 280px;
+				max-width: 100%;
 			}
 		}
 	}

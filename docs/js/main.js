@@ -326,11 +326,10 @@ document.addEventListener('DOMContentLoaded', function () {
     slidesPerView: 1,
     observer: true,
     observeParents: true,
-    autoHeight: true,
-    // autoplay: {
-    // 	delay: 5000,
-    // 	disableOnInteraction: false,
-    // },
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false
+    },
     slideActiveClass: 'intro__slide--active',
     pagination: {
       el: '.intro__pagination',
@@ -712,7 +711,8 @@ $(document).ready(function () {
       e.stopPropagation();
       e.preventDefault();
       var formData = new FormData(this);
-      formData.append('FILES', uploadedFile);
+      formData.append('FILES', uploadedFile[0]);
+      console.log(formData);
       $.ajax({
         url: this.action,
         processData: false,
@@ -726,16 +726,16 @@ $(document).ready(function () {
           $.fancybox.open({
             src: '#idmodal'
           });
+          console.log(result);
         },
         error: function error(result) {
           console.log('error');
           console.log(result);
+          console.log(this);
         }
       });
     });
-  })(); // $('.form_for_director .modal-write__btn').on('click', function (e) {
-  // });
-
+  })();
 
   (function initEggs() {
     function runOnKeys(func) {
@@ -812,7 +812,7 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToAr
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
 (function () {
-  var columnsGrid = document.querySelectorAll('.grid__column--editable');
+  var columnsGrid = document.querySelectorAll('.mobile--unwrap');
   var columnsService = document.querySelectorAll('.service__column--editable');
   var cachedWidth = $(window).width();
   $(window).resize(function () {
@@ -868,6 +868,18 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       } else {
         title.classList.remove('product-card__title--visible');
       }
+    });
+  }
+})();
+
+(function showMore() {
+  var parent = document.querySelector('.product-info');
+
+  if (parent) {
+    var content = parent.querySelector('.product-info__content');
+    var btn = parent.querySelector('.product-info__more');
+    btn.addEventListener('click', function () {
+      content.classList.toggle('product-info__content--full');
     });
   }
 })();
@@ -1061,6 +1073,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var air_datepicker__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(air_datepicker__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var inputmask__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! inputmask */ "./node_modules/inputmask/index.js");
 /* harmony import */ var inputmask__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(inputmask__WEBPACK_IMPORTED_MODULE_5__);
+function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 
 
 
@@ -1592,6 +1610,47 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       }
     })();
+  })();
+
+  (function setHiddenInput() {
+    var form = document.querySelectorAll('.input--select');
+
+    var _iterator = _createForOfIteratorHelper(form),
+        _step;
+
+    try {
+      for (_iterator.s(); !(_step = _iterator.n()).done;) {
+        var item = _step.value;
+        addListener(item);
+      }
+    } catch (err) {
+      _iterator.e(err);
+    } finally {
+      _iterator.f();
+    }
+
+    function addListener(item) {
+      var select = item.querySelector('select');
+      var input = item.querySelector('input');
+      select.addEventListener('change', function () {
+        input.value = select.options[select.selectedIndex].text;
+      });
+    }
+  })();
+
+  (function changeDownloadLink() {
+    var select = document.querySelector('.tabs__select');
+
+    if (select) {
+      select.addEventListener('change', function () {
+        changeLink(select.options[select.selectedIndex].value);
+      });
+    }
+
+    function changeLink(url) {
+      var link = window.location.origin + '/downloads' + url + '/';
+      window.location.href = link;
+    }
   })();
 });
 

@@ -67,6 +67,12 @@
 		&--8 {
 			width: calc(100% / 12 * 8 - 12px);
 		}
+		&--9 {
+			width: calc(100% / 12 * 9 - 12px);
+		}
+		&--12 {
+			width: 100%;
+		}
 	}
 	&__block {
 		@include r(1200) {
@@ -88,7 +94,6 @@
 	justify-content: space-between;
 	flex-wrap: wrap;
 	&__column {
-		// margin-bottom: 50px;
 		@include r(1200) {
 			margin-bottom: 30px;
 			width: 100%;

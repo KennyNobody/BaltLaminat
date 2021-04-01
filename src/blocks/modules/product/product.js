@@ -1,5 +1,5 @@
 (function(){
-	const columnsGrid = document.querySelectorAll('.grid__column--editable');
+	const columnsGrid = document.querySelectorAll('.mobile--unwrap');
 	const columnsService = document.querySelectorAll('.service__column--editable');
 
 	var cachedWidth = $(window).width();
@@ -56,5 +56,19 @@
 				title.classList.remove('product-card__title--visible');
 			}
 		});
+	}
+})();
+
+(function showMore() {
+	const parent = document.querySelector('.product-info');
+
+	if (parent) {
+		const content = parent.querySelector('.product-info__content');
+
+		const btn = parent.querySelector('.product-info__more');
+
+		btn.addEventListener('click', function() {
+			content.classList.toggle('product-info__content--full');
+		})
 	}
 })();

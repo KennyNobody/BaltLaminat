@@ -126,7 +126,9 @@ $(document).ready(function() {
 
 			var formData = new FormData(this);
 
-			formData.append('FILES', uploadedFile);
+			formData.append('FILES', uploadedFile[0]);
+
+			console.log(formData)
 
 			$.ajax({
 				url: this.action,
@@ -141,20 +143,19 @@ $(document).ready(function() {
 					$.fancybox.open({
 						src: '#idmodal'
 					});
+
+					console.log(result);
 				},
-				error: function (result) {
+				error: function error(result) {
 					console.log('error');
 					console.log(result);
+					console.log(this);
 				}
 			})
 		});
-
 		
 	})();
 
-	// $('.form_for_director .modal-write__btn').on('click', function (e) {
-		
-	// });
 
 	(function initEggs(){
 		function runOnKeys(func, ...codes) {

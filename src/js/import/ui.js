@@ -537,4 +537,38 @@ document.addEventListener('DOMContentLoaded',function(){
 		})();
 	})();
 
+
+	(function setHiddenInput() {
+		let form  = document.querySelectorAll('.input--select');
+
+		for (let item of form) {
+			addListener(item);
+		}
+
+		function addListener(item) {
+			let select = item.querySelector('select');
+			let input = item.querySelector('input');
+
+			select.addEventListener('change', function() {
+				input.value = select.options[select.selectedIndex].text;
+			})
+		}
+	})();
+
+	(function changeDownloadLink() {
+		let select = document.querySelector('.tabs__select');
+
+		if (select) {
+			select.addEventListener('change', function() {
+				changeLink(select.options[select.selectedIndex].value);
+			});
+		}		
+
+		function changeLink(url) {
+			let link = window.location.origin + '/downloads' + url + '/';
+
+			window.location.href = link;
+		}
+	})();
+
 });
