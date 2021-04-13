@@ -692,26 +692,22 @@ $(document).ready(function () {
       clickable: true,
       init: function init() {
         form.addEventListener('submit', function () {
-          console.log('Отправка'); // this.processQueue();
+          console.log('Отправка');
         });
         this.on("addedfiles", function (file) {
           uploadedFile = file;
         });
-      } // sending: function() {
-      // 	console.log('Отправляем');
-      // },
-      // accept: function(file, done) {
-      // 	console.log('Ушло');
-      // 	console.log(file);
-      // 	console.log(done);
-      // }
-
+      }
     });
     form.addEventListener('submit', function (e) {
       e.stopPropagation();
       e.preventDefault();
       var formData = new FormData(this);
-      formData.append('FILES', uploadedFile[0]);
+
+      for (var i = 0; i < uploadedFile.length; i++) {
+        formData.append("FILES[]", uploadedFile[i]);
+      }
+
       console.log(formData);
       $.ajax({
         url: this.action,
